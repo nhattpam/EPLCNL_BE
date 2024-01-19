@@ -1,0 +1,12 @@
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\bin\Debug\net6.0\Helpers.deps.json
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\bin\Debug\net6.0\Helpers.dll
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\bin\Debug\net6.0\Helpers.pdb
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\Helpers.csproj.AssemblyReference.cache
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\Helpers.GeneratedMSBuildEditorConfig.editorconfig
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\Helpers.AssemblyInfoInputs.cache
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\Helpers.AssemblyInfo.cs
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\Helpers.csproj.CoreCompileInputs.cache
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\Helpers.dll
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\refint\Helpers.dll
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\Helpers.pdb
+D:\capstone project\eplcnl-be\BE_EPLCNL\Helpers\obj\Debug\net6.0\ref\Helpers.dll

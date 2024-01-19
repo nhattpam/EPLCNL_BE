@@ -1,0 +1,16 @@
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.AssemblyReference.cache
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfoInputs.cache
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfo.cs
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.CoreCompileInputs.cache
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.dll
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\bin\Debug\net6.0\BusinessObject.runtimeconfig.json
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\obj\Debug\net6.0\BusinessObject.genruntimeconfig.cache
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\bin\Debug\net6.0\appsettings.Development.json
+D:\capstone project\eplcnl-be\BE_EPLCNL\BusinessObject\bin\Debug\net6.0\appsettings.json
