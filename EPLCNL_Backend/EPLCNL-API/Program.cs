@@ -17,6 +17,11 @@ using Service.ClassPraticesService;
 using Service.ClassTopicsService;
 using Service.ClassTypesService;
 using Service.CoursesService;
+using Service.AccountForumsService;
+using Service.AccountsService;
+using Service.AccountSurveysService;
+using Service.AssignmentAttemptsService;
+using Service.AssignmentsService;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -48,6 +53,11 @@ builder.Services.AddScoped<IClassPracticeService, ClassPracticeService>();
 builder.Services.AddScoped<IClassTopicService, ClassTopicService>();
 builder.Services.AddScoped<IClassTypeService, ClassTypeService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IAccountForumService, AccountForumService>();
+builder.Services.AddScoped<IAccountSurveyService, AccountSurveyService>();
+builder.Services.AddScoped<IAssignmentService, AssignmentService>();
+builder.Services.AddScoped<IAssignmentAttemptService, AssignmentAttemptService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 builder.Services.AddMvc().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
