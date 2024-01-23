@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Data.Models
 {
@@ -14,6 +13,6 @@ namespace Data.Models
         public Guid Id { get; set; }
         public string? Name { get; set; }
 
-        [JsonIgnore]public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
     }
 }

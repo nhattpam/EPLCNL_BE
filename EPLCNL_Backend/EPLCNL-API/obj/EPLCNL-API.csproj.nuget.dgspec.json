@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {}
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj": {
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\obj\\",
+        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,6 +50,12 @@
               "target": "Package",
               "version": "[6.0.26, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.26, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -79,14 +85,14 @@
         }
       }
     },
-    "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
         "projectName": "EPLCNL-API",
-        "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
         "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\EPLCNL-API\\obj\\",
+        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -103,17 +109,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Helpers\\Helpers.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj"
               },
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Service\\Service.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj"
               },
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -135,6 +141,12 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.26, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -164,14 +176,14 @@
         }
       }
     },
-    "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
+        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
         "projectName": "Helpers",
-        "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
+        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
         "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Helpers\\obj\\",
+        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -188,11 +200,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -232,14 +244,14 @@
         }
       }
     },
-    "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Service\\Service.csproj": {
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Service\\Service.csproj",
+        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Service\\obj\\",
+        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -256,11 +268,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -300,14 +312,14 @@
         }
       }
     },
-    "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
         "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",

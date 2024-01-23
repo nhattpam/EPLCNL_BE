@@ -5,6 +5,7 @@ namespace Data.Models
 {
     public partial class CertificateCourse
     {
+        public Guid Id { get; set; }
         public Guid? CertificateId { get; set; }
         public Guid? CourseId { get; set; }
         public string? Description { get; set; }

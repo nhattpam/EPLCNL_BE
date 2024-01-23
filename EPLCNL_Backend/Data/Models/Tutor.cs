@@ -7,6 +7,7 @@ namespace Data.Models
     {
         public Tutor()
         {
+            AccountForums = new HashSet<AccountForum>();
             Courses = new HashSet<Course>();
             PaperWorks = new HashSet<PaperWork>();
         }
@@ -20,6 +21,7 @@ namespace Data.Models
         public virtual Account? Account { get; set; }
         public virtual Center? Center { get; set; }
         public virtual Staff? Staff { get; set; }
+        public virtual ICollection<AccountForum> AccountForums { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
         public virtual ICollection<PaperWork> PaperWorks { get; set; }
     }
