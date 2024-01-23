@@ -5,6 +5,11 @@ using Helper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Service;
+using Service.AccountForumsService;
+using Service.AccountsService;
+using Service.AccountSurveysService;
+using Service.AssignmentAttemptsService;
+using Service.AssignmentsService;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +30,11 @@ builder.Services.AddDbContext<EPLCNLContext>(options =>
 // Add other services
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IAccountForumService, AccountForumService>();
+builder.Services.AddScoped<IAccountSurveyService, AccountSurveyService>();
+builder.Services.AddScoped<IAssignmentService, AssignmentService>();
+builder.Services.AddScoped<IAssignmentAttemptService, AssignmentAttemptService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 builder.Services.AddMvc().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);

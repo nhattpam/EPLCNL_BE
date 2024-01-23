@@ -15,3 +15,20 @@ C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
 C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
 C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
 C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
+D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
