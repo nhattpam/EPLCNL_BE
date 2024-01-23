@@ -53,19 +53,19 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<AccountForumResponse>> Delete([FromQuery] Guid learnerid, Guid tutorid)
+        public async Task<ActionResult<AccountForumResponse>> Delete([FromQuery] Guid id)
         {
-            var rs = await _accountforumService.Delete(learnerid, tutorid);
+            var rs = await _accountforumService.Delete(id);
             return Ok(rs);
         }
 
 
         [HttpPut]
-        public async Task<ActionResult<AccountForumResponse>> Update([FromQuery] Guid learnerid, Guid tutorid, [FromBody] AccountForumRequest request)
+        public async Task<ActionResult<AccountForumResponse>> Update([FromQuery] Guid id, [FromBody] AccountForumRequest request)
         {
             try
             {
-                var rs = await _accountforumService.Update(learnerid,tutorid, request);
+                var rs = await _accountforumService.Update(id, request);
                 return Ok(rs);
             }
             catch (Exception ex)

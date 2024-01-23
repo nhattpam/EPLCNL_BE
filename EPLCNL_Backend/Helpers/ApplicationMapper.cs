@@ -48,6 +48,12 @@ namespace Helper
             CreateMap<Assignment,AssignmentResponse>().ReverseMap();
             CreateMap<AssignmentAttempt,AssignmentAttemptRequest>().ReverseMap();
             CreateMap<AssignmentAttempt,AssignmentAttemptResponse>().ReverseMap();
+            CreateMap<Tutor,TutorRequest>().ReverseMap();
+            CreateMap<Tutor,TutorResponse>().ReverseMap();
+            CreateMap<Transaction,TransactionRequest>().ReverseMap();
+            CreateMap<Transaction,TransactionResponse>().ReverseMap();
+            CreateMap<Wallet,WalletRequest>().ReverseMap();
+            CreateMap<Wallet,WalletResponse>().ReverseMap();
         }
     }
 }
