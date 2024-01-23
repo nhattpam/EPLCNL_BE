@@ -84,6 +84,22 @@ namespace Helper
             CreateMap<Staff, StaffResponse>().ReverseMap();
             CreateMap<Survey, SurveyRequest>().ReverseMap();
             CreateMap<Survey, SurveyResponse>().ReverseMap();
+            CreateMap<Account,AccountRequest>().ReverseMap();
+            CreateMap<Account,AccountResponse>().ReverseMap();
+            CreateMap<AccountForum,AccountForumRequest>().ReverseMap();
+            CreateMap<AccountForum,AccountForumResponse>().ReverseMap();
+            CreateMap<AccountSurvey,AccountSurveyRequest>().ReverseMap();
+            CreateMap<AccountSurvey,AccountSurveyResponse>().ReverseMap();
+            CreateMap<Assignment,AssignmentRequest>().ReverseMap();
+            CreateMap<Assignment,AssignmentResponse>().ReverseMap();
+            CreateMap<AssignmentAttempt,AssignmentAttemptRequest>().ReverseMap();
+            CreateMap<AssignmentAttempt,AssignmentAttemptResponse>().ReverseMap();
+            CreateMap<Tutor,TutorRequest>().ReverseMap();
+            CreateMap<Tutor,TutorResponse>().ReverseMap();
+            CreateMap<Transaction,TransactionRequest>().ReverseMap();
+            CreateMap<Transaction,TransactionResponse>().ReverseMap();
+            CreateMap<Wallet,WalletRequest>().ReverseMap();
+            CreateMap<Wallet,WalletResponse>().ReverseMap();
         }
     }
 }

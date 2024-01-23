@@ -38,6 +38,7 @@ namespace Service.AccountForumsService
             try
             {
                 var accountforum = _mapper.Map<AccountForumRequest, AccountForum>(request);
+                accountforum.Id = Guid.NewGuid();
                 accountforum.MessagedDate = DateTime.Now;
                 await _unitOfWork.Repository<AccountForum>().InsertAsync(accountforum);
                 await _unitOfWork.CommitAsync();
@@ -50,33 +51,20 @@ namespace Service.AccountForumsService
             }
         }
 
-        public async Task<AccountForumResponse> Delete(Guid learnerid, Guid tutorid)
+        public async Task<AccountForumResponse> Delete(Guid id)
         {
             try
             {
-                AccountForum accountforumlearner = null;
-                accountforumlearner = _unitOfWork.Repository<AccountForum>()
-                    .Find(p => p.LearnerId == learnerid);
-                AccountForum accountforumtutor = null;
-                accountforumtutor = _unitOfWork.Repository<AccountForum>()
-                    .Find(p => p.TutorId == tutorid);
-                if (accountforumlearner != null)
+                AccountForum accountforum = null;
+                accountforum = _unitOfWork.Repository<AccountForum>()
+                    .Find(p => p.Id == id);
+                if (accountforum == null)
                 {
-                    await _unitOfWork.Repository<AccountForum>().HardDeleteGuid((Guid)accountforumlearner.LearnerId);
-                    await _unitOfWork.CommitAsync();
-                    return _mapper.Map<AccountForum, AccountForumResponse>(accountforumlearner);
+                    throw new Exception("Bi trung id");
                 }
-                else if (accountforumtutor != null)
-                {
-                    await _unitOfWork.Repository<AccountForum>().HardDeleteGuid((Guid)accountforumtutor.TutorId);
-                    await _unitOfWork.CommitAsync();
-                    return _mapper.Map<AccountForum, AccountForumResponse>(accountforumtutor);
-                }
-                else
-                {
-                    throw new Exception("Id is not existed");
-                }
-                
+                await _unitOfWork.Repository<AccountForum>().HardDeleteGuid(accountforum.Id);
+                await _unitOfWork.CommitAsync();
+                return _mapper.Map<AccountForum, AccountForumResponse>(accountforum);
             }
             catch (Exception ex)
             {
@@ -84,39 +72,22 @@ namespace Service.AccountForumsService
             }
         }
 
-        public async Task<AccountForumResponse> Update(Guid learnerid,Guid tutorid, AccountForumRequest request)
+        public async Task<AccountForumResponse> Update(Guid id, AccountForumRequest request)
         {
             try
             {
-                AccountForum accountforumlearner = _unitOfWork.Repository<AccountForum>()
-                            .Find(x => x.LearnerId == learnerid);
-                AccountForum accountforumtutor = _unitOfWork.Repository<AccountForum>()
-                            .Find(x => x.TutorId == tutorid);
-                if (accountforumlearner != null)
-                {
-                    accountforumlearner = _mapper.Map(request, accountforumlearner);
-                    accountforumlearner.MessagedDate = DateTime.Now;
-
-                    await _unitOfWork.Repository<AccountForum>().UpdateDetached(accountforumlearner);
-                    await _unitOfWork.CommitAsync();
-
-                    return _mapper.Map<AccountForum, AccountForumResponse>(accountforumlearner);
-                }
-                else if(accountforumtutor != null)
-                {
-                    accountforumtutor = _mapper.Map(request, accountforumtutor);
-                    accountforumtutor.MessagedDate = DateTime.Now;
-
-                    await _unitOfWork.Repository<AccountForum>().UpdateDetached(accountforumtutor);
-                    await _unitOfWork.CommitAsync();
-
-                    return _mapper.Map<AccountForum, AccountForumResponse>(accountforumtutor);
-                }
-                else
+                AccountForum accountforum = _unitOfWork.Repository<AccountForum>()
+                            .Find(x => x.Id == id);
+                if (accountforum == null)
                 {
                     throw new Exception();
                 }
-               
+                accountforum = _mapper.Map(request, accountforum);
+
+                await _unitOfWork.Repository<AccountForum>().UpdateDetached(accountforum);
+                await _unitOfWork.CommitAsync();
+
+                return _mapper.Map<AccountForum, AccountForumResponse>(accountforum);
             }
 
             catch (Exception ex)

@@ -7,7 +7,7 @@ namespace Service.AccountForumsService
     {
         Task<List<AccountForumResponse>> GetAccountForums();
         Task<AccountForumResponse> Create(AccountForumRequest request);
-        Task<AccountForumResponse> Update(Guid learnerid, Guid tutorid, AccountForumRequest request);
-        Task<AccountForumResponse> Delete(Guid learnerid, Guid tutorid);
+        Task<AccountForumResponse> Update(Guid id, AccountForumRequest request);
+        Task<AccountForumResponse> Delete(Guid id);
     }
 }

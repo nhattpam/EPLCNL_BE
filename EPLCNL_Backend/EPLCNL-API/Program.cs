@@ -41,6 +41,9 @@ using Service.QuizAttemptsService;
 using Service.RefundRequestsService;
 using Service.StaffsService;
 using Service.SurveysService;
+using Service.TutorService;
+using Service.TransactionsService;
+using Service.WalletsService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -94,6 +97,9 @@ builder.Services.AddScoped<IQuizAttemptService, QuizAttemptService>();
 builder.Services.AddScoped<IRefundRequestService, RefundRequestService>();
 builder.Services.AddScoped<IStaffService, StaffService>();
 builder.Services.AddScoped<ISurveyService, SurveyService>();
+builder.Services.AddScoped<ITutorService, TutorService>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IWalletService, WalletService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 builder.Services.AddMvc().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);

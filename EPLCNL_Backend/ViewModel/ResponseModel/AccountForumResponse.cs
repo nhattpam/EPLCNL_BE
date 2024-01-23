@@ -8,6 +8,7 @@ namespace ViewModel.ResponseModel
 {
     public class AccountForumResponse
     {
+        public Guid Id { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? TutorId { get; set; }
         public Guid? ForumId { get; set; }
