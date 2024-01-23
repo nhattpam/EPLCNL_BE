@@ -2349,11 +2349,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\Data\\obj\\",
+      "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PwVs+z2t4rNyKjyrsIATKC2h/oMhsIUw75ywxpQ/IRTntM8O6R0FKGG+xr2lwMKuPpzZGqbSXQ/0W5VWh55vsQ==",
+  "dgSpecHash": "IBsdVeY+FBZ1jptrsdF95d/QTiCnZxXjZTNqdgvuti/CfrA3kRTAUbHcvkduOaXWH78UhjB/zThYckasnX/LTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\meoca\\source\\repos\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+  "projectFilePath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\meoca\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\meoca\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

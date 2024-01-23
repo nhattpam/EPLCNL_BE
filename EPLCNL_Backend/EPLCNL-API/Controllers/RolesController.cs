@@ -19,12 +19,7 @@ namespace EPLCNL_API.Controllers
             _roleService = roleService;
         }
 
-        /// <summary>
-        /// Get List Product In Menu
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="paging"></param>
-        /// <returns></returns>
+      
         [HttpGet]
         public async Task<ActionResult<List<RoleResponse>>> GetAllRoles()
         {

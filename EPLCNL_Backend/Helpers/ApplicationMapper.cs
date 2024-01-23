@@ -16,6 +16,12 @@ namespace Helper
         {
             CreateMap<Role,RoleRequest>().ReverseMap();
             CreateMap<Role,RoleResponse>().ReverseMap();
+            CreateMap<Category, CategoryRequest>().ReverseMap();
+            CreateMap<Category, CategoryResponse>().ReverseMap();
+            CreateMap<Center, CenterRequest>().ReverseMap();
+            CreateMap<Center, CenterResponse>().ReverseMap();
+            CreateMap<Certificate, CertificateRequest>().ReverseMap();
+            CreateMap<Certificate, CertificateResponse>().ReverseMap();
         }
     }
 }
