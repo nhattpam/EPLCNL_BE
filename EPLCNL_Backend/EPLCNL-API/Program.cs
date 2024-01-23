@@ -5,6 +5,18 @@ using Helper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Service;
+using Service.CategoriesService;
+using Service.CentersService;
+using Service.CertificateCoursesService;
+using Service.CertificatesService;
+using Service.ClassLessonsService;
+using Service.ClassMaterialsService;
+using Service.ClassModulesService;
+using Service.ClassPracticesService;
+using Service.ClassPraticesService;
+using Service.ClassTopicsService;
+using Service.ClassTypesService;
+using Service.CoursesService;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +37,17 @@ builder.Services.AddDbContext<EPLCNLContext>(options =>
 // Add other services
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICenterService, CenterService>();
+builder.Services.AddScoped<ICertificateCourseService, CertificateCourseService>();
+builder.Services.AddScoped<ICertificateService, CertificateService>();
+builder.Services.AddScoped<IClassLessonService, ClassLessonService>();
+builder.Services.AddScoped<IClassMaterialService, ClassMaterialService>();
+builder.Services.AddScoped<IClassModuleService, ClassModuleService>();
+builder.Services.AddScoped<IClassPracticeService, ClassPracticeService>();
+builder.Services.AddScoped<IClassTopicService, ClassTopicService>();
+builder.Services.AddScoped<IClassTypeService, ClassTypeService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 builder.Services.AddMvc().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);

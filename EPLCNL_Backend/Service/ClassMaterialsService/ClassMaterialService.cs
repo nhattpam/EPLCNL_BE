@@ -13,7 +13,7 @@ using ViewModel.ResponseModel;
 
 namespace Service.ClassMaterialsService
 {
-    public class ClassMaterialService
+    public class ClassMaterialService : IClassMaterialService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;

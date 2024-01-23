@@ -7,7 +7,7 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
-    [Route("api/[categories]")]
+    [Route("api/categories")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<CategoryResponse>>> GetAllCategorys()
+        public async Task<ActionResult<List<CategoryResponse>>> GetAllCategories()
         {
             try
             {

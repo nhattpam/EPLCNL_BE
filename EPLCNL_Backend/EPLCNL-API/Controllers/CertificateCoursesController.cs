@@ -7,7 +7,7 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
-    [Route("api/[certificate-courses]")]
+    [Route("api/certificate-courses")]
     [ApiController]
     public class CertificateCoursesController : ControllerBase
     {

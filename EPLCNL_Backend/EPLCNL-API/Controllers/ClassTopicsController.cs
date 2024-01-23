@@ -6,7 +6,7 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
-    [Route("api/[class-topics]")]
+    [Route("api/class-topics")]
     [ApiController]
     public class ClassTopicsController : ControllerBase
     {

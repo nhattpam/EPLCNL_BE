@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.ClassPraticesService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ using ViewModel.ResponseModel;
 
 namespace Service.ClassPracticesService
 {
-    public class ClassPracticeService
+    public class ClassPracticeService : IClassPracticeService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
