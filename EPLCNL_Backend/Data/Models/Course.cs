@@ -11,7 +11,6 @@ namespace Data.Models
             ClassTypes = new HashSet<ClassType>();
             Enrollments = new HashSet<Enrollment>();
             Feedbacks = new HashSet<Feedback>();
-            Forums = new HashSet<Forum>();
             Modules = new HashSet<Module>();
             Transactions = new HashSet<Transaction>();
         }
@@ -31,11 +30,11 @@ namespace Data.Models
 
         public virtual Category? Category { get; set; }
         public virtual Tutor? Tutor { get; set; }
+        public virtual Forum? Forum { get; set; }
         public virtual ICollection<CertificateCourse> CertificateCourses { get; set; }
         public virtual ICollection<ClassType> ClassTypes { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
-        public virtual ICollection<Forum> Forums { get; set; }
         public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
