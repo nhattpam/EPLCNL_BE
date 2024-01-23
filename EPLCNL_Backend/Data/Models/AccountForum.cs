@@ -5,6 +5,7 @@ namespace Data.Models
 {
     public partial class AccountForum
     {
+        public Guid Id { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? TutorId { get; set; }
         public Guid? ForumId { get; set; }

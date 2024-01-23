@@ -11,6 +11,7 @@ namespace Data.Models
             Feedbacks = new HashSet<Feedback>();
             Learners = new HashSet<Learner>();
             Tutors = new HashSet<Tutor>();
+            Wallets = new HashSet<Wallet>();
             Staff = new HashSet<Staff>();
         }
 
@@ -32,11 +33,11 @@ namespace Data.Models
         public Guid? UpdatedBy { get; set; }
 
         public virtual Role? Role { get; set; }
-        public virtual Wallet? Wallet { get; set; }
         public virtual ICollection<Center> Centers { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Learner> Learners { get; set; }
         public virtual ICollection<Tutor> Tutors { get; set; }
+        public virtual ICollection<Wallet> Wallets { get; set; }
         public virtual ICollection<Staff> Staff { get; set; }
     }
 }

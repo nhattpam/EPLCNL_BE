@@ -151,3 +151,5 @@ C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-API.csproj.CopyComplete
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-API.genruntimeconfig.cache
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\ref\EPLCNL-API.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
