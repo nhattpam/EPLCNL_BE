@@ -7,7 +7,7 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
-    [Route("api/accountsurveys")]
+    [Route("api/account-surveys")]
     [ApiController]
     public class AccountSurveysController : ControllerBase
     {
