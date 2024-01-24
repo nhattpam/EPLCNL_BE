@@ -7,6 +7,8 @@ using Service.AccountsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using ViewModel.RequestModel;
@@ -35,16 +37,51 @@ namespace Service.CentersService
             return list;
         }
 
+        public async Task<CenterResponse> Get(Guid id)
+        {
+            try
+            {
+                Center center = null;
+                center = await _unitOfWork.Repository<Center>().GetAll()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (center == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Center, CenterResponse>(center);
+            }
+           
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+
         public async Task<CenterResponse> Create(CenterRequest request)
         {
             try
             {
+                // Specify the time zone you want (UTC+7 in this case)
+                TimeZoneInfo desiredTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time"); // "SE Asia Standard Time" is the IANA time zone identifier for UTC+7
+
+                // Get the current UTC time
+                DateTime utcNow = DateTime.UtcNow;
+
+                // Convert the UTC time to the desired time zone
+                DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, desiredTimeZone);
+
                 AccountResponse account = await _accountService.Create(new AccountRequest()
                 {
                     Email = request.Email,
                     Password = request.Email,
                     FullName = request.Name,
-                    RoleId = new Guid("14191B0A-2EC2-48E3-9EDE-C34D5DE0BA32")
+                    RoleId = new Guid("14191B0A-2EC2-48E3-9EDE-C34D5DE0BA32"),
+                    CreatedDate = localTime,
+                    IsActive = false
                 });
                 var center = _mapper.Map<CenterRequest, Center>(request);
                 center.Id = Guid.NewGuid();
@@ -70,7 +107,7 @@ namespace Service.CentersService
                     .Find(p => p.Id == id);
                 if (center == null)
                 {
-                    throw new Exception("Bi trung id");
+                    throw new Exception("khong tim thay");
                 }
                 await _unitOfWork.Repository<Center>().HardDeleteGuid(center.Id);
                 await _unitOfWork.CommitAsync();

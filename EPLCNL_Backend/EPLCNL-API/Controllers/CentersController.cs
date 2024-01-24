@@ -36,6 +36,24 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CenterResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<CenterResponse>> Get(Guid id)
+        {
+            try
+            {
+                var rs = await _centerService.Get(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -52,25 +70,25 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<CenterResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<CenterResponse>> Delete( Guid id)
         {
             var rs = await _centerService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<CenterResponse>> Update([FromQuery] Guid id, [FromBody] CenterRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<CenterResponse>> Update(Guid id, [FromBody] CenterRequest request)
         {
             try
             {
                 var rs = await _centerService.Update(id, request);
                 return Ok(rs);
             }
-            catch (Exception ex)
+            catch
             {
-                return BadRequest(ex.Message);
+                return NotFound();
             }
         }
     }

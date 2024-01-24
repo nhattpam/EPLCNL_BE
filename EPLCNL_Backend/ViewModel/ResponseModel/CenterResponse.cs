@@ -16,5 +16,7 @@ namespace ViewModel.ResponseModel
         public string? Email { get; set; }
         public bool? IsActive { get; set; }
         public Guid? StaffId { get; set; }
+        public virtual StaffResponse? Staff { get; set; }
+
     }
 }

@@ -11,6 +11,7 @@ namespace Service.CentersService
     public interface ICenterService
     {
         public Task<List<CenterResponse>> GetAll();
+        public Task<CenterResponse> Get(Guid id);
 
         public Task<CenterResponse> Create(CenterRequest request);
 
