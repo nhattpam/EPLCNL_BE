@@ -32,15 +32,45 @@ namespace Service.AccountsService
             return list;
         }
 
+        public async Task<AccountResponse> Get(Guid id)
+        {
+            try
+            {
+                Account center = null;
+                center = await _unitOfWork.Repository<Account>().GetAll()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (center == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Account, AccountResponse>(center);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<AccountResponse> Create(AccountRequest request)
         {
+            // Specify the time zone you want (UTC+7 in this case)
+            TimeZoneInfo desiredTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time"); // "SE Asia Standard Time" is the IANA time zone identifier for UTC+7
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to the desired time zone
+            DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, desiredTimeZone);
             try
             {
                 var account = _mapper.Map<AccountRequest, Account>(request);
                 account.Id = Guid.NewGuid();
-                account.CreatedDate = DateTime.Now;
+                account.CreatedDate = localTime;
                 account.IsDeleted = false;
-                account.IsActive = false;
                 await _unitOfWork.Repository<Account>().InsertAsync(account);
                 await _unitOfWork.CommitAsync();
 

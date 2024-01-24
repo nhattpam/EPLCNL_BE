@@ -65,22 +65,12 @@ namespace Service.CentersService
         {
             try
             {
-                // Specify the time zone you want (UTC+7 in this case)
-                TimeZoneInfo desiredTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time"); // "SE Asia Standard Time" is the IANA time zone identifier for UTC+7
-
-                // Get the current UTC time
-                DateTime utcNow = DateTime.UtcNow;
-
-                // Convert the UTC time to the desired time zone
-                DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, desiredTimeZone);
-
                 AccountResponse account = await _accountService.Create(new AccountRequest()
                 {
                     Email = request.Email,
                     Password = request.Email,
                     FullName = request.Name,
                     RoleId = new Guid("14191B0A-2EC2-48E3-9EDE-C34D5DE0BA32"),
-                    CreatedDate = localTime,
                     IsActive = false
                 });
                 var center = _mapper.Map<CenterRequest, Center>(request);

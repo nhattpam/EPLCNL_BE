@@ -3,7 +3,9 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.AccountsService;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +19,13 @@ namespace Service.TutorService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public TutorService(IUnitOfWork unitOfWork, IMapper mapper)
+        private IAccountService _accountService;
+
+        public TutorService(IUnitOfWork unitOfWork, IMapper mapper, IAccountService accountService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _accountService = accountService;
         }
 
         public async Task<List<TutorResponse>> GetAll()

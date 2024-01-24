@@ -13,5 +13,8 @@ namespace ViewModel.ResponseModel
         public bool? IsFreelancer { get; set; }
         public Guid? CenterId { get; set; }
         public Guid? StaffId { get; set; }
+        public virtual AccountResponse? Account { get; set; }
+        public virtual CenterResponse? Center { get; set; }
+        public virtual StaffResponse? Staff { get; set; }
     }
 }

@@ -41,15 +41,8 @@ namespace Service.StaffsService
         {
             try
             {
-                AccountResponse account = await _accountService.Create(new AccountRequest()
-                {
-                   
-                    RoleId = new Guid("887428D0-9DED-449C-94EE-7C8A489AB763"),
-                    IsActive = true,
-                });
                 var staff = _mapper.Map<StaffRequest, Staff>(request);
                 staff.Id = Guid.NewGuid();
-                staff.AccountId = account.Id;
                 await _unitOfWork.Repository<Staff>().InsertAsync(staff);
                 await _unitOfWork.CommitAsync();
 
