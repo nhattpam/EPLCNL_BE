@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.AccountsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,12 @@ namespace Service.CentersService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public CenterService(IUnitOfWork unitOfWork, IMapper mapper)
+        private IAccountService _accountService;
+        public CenterService(IUnitOfWork unitOfWork, IMapper mapper, IAccountService accountService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _accountService = accountService;
         }
 
         public async Task<List<CenterResponse>> GetAll()
@@ -36,8 +39,10 @@ namespace Service.CentersService
         {
             try
             {
+                AccountResponse account = await _accountService.Create(new AccountRequest());
                 var center = _mapper.Map<CenterRequest, Center>(request);
                 center.Id = Guid.NewGuid();
+                center.AccountId = account.Id;
                 await _unitOfWork.Repository<Center>().InsertAsync(center);
                 await _unitOfWork.CommitAsync();
 
