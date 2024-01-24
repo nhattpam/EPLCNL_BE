@@ -48,9 +48,7 @@ namespace EPLCNL_API.Controllers
                     var adminModel = new AccountResponse
                     {
                         Email = _configuration["Admin:Email"],
-                        Password = _configuration["Admin:Password"],
-                        PhoneNumber = "lol",
-                        FullName = "I'm Admin",
+                        Password = _configuration["Admin:Password"]
                     };
                     var token = GenerateToken(adminModel);
 
@@ -104,17 +102,15 @@ namespace EPLCNL_API.Controllers
             var tokenDescription = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Name, model.FullName),
-                    new Claim(ClaimTypes.Email, model.Email),
-                    new Claim("Phone", model.PhoneNumber),
                     new Claim("Id", model.Id.ToString()),
+                    new Claim(ClaimTypes.Role, model.RoleId.ToString()),
 
                     //roles
                     new Claim("Token Id", Guid.NewGuid().ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(1440),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKeyBytes)
-                        , SecurityAlgorithms.HmacSha512Signature)
+                        , SecurityAlgorithms.HmacSha256Signature)
             };
 
             var token = jwtTokenHandler.CreateToken(tokenDescription);
