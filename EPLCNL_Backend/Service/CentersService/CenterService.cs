@@ -39,10 +39,17 @@ namespace Service.CentersService
         {
             try
             {
-                AccountResponse account = await _accountService.Create(new AccountRequest());
+                AccountResponse account = await _accountService.Create(new AccountRequest()
+                {
+                    Email = request.Email,
+                    Password = request.Email,
+                    FullName = request.Name,
+                    RoleId = new Guid("14191B0A-2EC2-48E3-9EDE-C34D5DE0BA32")
+                });
                 var center = _mapper.Map<CenterRequest, Center>(request);
                 center.Id = Guid.NewGuid();
                 center.AccountId = account.Id;
+                center.IsActive = false;
                 await _unitOfWork.Repository<Center>().InsertAsync(center);
                 await _unitOfWork.CommitAsync();
 

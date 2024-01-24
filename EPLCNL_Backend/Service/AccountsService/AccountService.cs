@@ -103,6 +103,10 @@ namespace Service.AccountsService
             { 
                 Account account = _unitOfWork.Repository<Account>()
                            .Find(x => x.Email.Equals(accc.Email) && x.Password.Equals(accc.Password));
+                if(account == null)
+                {
+                    return null;
+                }
                 return _mapper.Map<Account, AccountResponse>(account);
             }
 
