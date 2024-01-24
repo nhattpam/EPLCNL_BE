@@ -13,7 +13,7 @@ using ViewModel.ResponseModel;
 
 namespace Service.AccountsService
 {
-    public class AccountService: IAccountService
+    public class AccountService : IAccountService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
@@ -23,7 +23,7 @@ namespace Service.AccountsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<AccountResponse>> GetAccounts()
+        public async Task<List<AccountResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Account>().GetAll()
@@ -98,5 +98,14 @@ namespace Service.AccountsService
             }
         }
 
+        public async Task<AccountResponse> Login(LoginMem accc)
+        {
+            { 
+                Account account = _unitOfWork.Repository<Account>()
+                           .Find(x => x.Email.Equals(accc.Email) && x.Password.Equals(accc.Password));
+                return _mapper.Map<Account, AccountResponse>(account);
+            }
+
+        }
     }
 }

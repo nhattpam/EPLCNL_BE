@@ -23,7 +23,7 @@ namespace Service.ModulesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ModuleResponse>> GetModules()
+        public async Task<List<ModuleResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Module>().GetAll()

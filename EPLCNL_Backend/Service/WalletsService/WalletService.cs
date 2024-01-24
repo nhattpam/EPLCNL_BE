@@ -23,7 +23,7 @@ namespace Service.WalletsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<WalletResponse>> GetWallets()
+        public async Task<List<WalletResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Wallet>().GetAll()

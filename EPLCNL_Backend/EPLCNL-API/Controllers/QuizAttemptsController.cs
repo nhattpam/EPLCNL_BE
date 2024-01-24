@@ -19,11 +19,14 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<QuizAttemptResponse>>> GetAllQuizAttempts()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<QuizAttemptResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<QuizAttemptResponse>>> GetAll()
         {
             try
             {
-                var rs = await _quizAttemptService.GetQuizAttempts();
+                var rs = await _quizAttemptService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -33,12 +36,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<QuizAttemptResponse>> Create([FromBody] QuizAttemptRequest request)
         {
             try
             {
                 var result = await _quizAttemptService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

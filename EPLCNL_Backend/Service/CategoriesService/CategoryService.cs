@@ -23,7 +23,7 @@ namespace Service.CategoriesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<CategoryResponse>> GetCategories()
+        public async Task<List<CategoryResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Category>().GetAll()

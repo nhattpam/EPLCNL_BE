@@ -6,7 +6,7 @@ namespace Service
 {
     public interface IRoleService
     {
-        public  Task<List<RoleResponse>> GetRoles();
+        public  Task<List<RoleResponse>> GetAll();
 
         public Task<RoleResponse> Create(RoleRequest request);
 

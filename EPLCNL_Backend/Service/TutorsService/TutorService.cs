@@ -23,7 +23,7 @@ namespace Service.TutorService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<TutorResponse>> GetTutors()
+        public async Task<List<TutorResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Tutor>().GetAll()

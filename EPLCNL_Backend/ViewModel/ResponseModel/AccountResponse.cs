@@ -24,5 +24,7 @@ namespace ViewModel.ResponseModel
         public Guid? CreatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid? UpdatedBy { get; set; }
+        public virtual RoleResponse? Role { get; set; }
+
     }
 }

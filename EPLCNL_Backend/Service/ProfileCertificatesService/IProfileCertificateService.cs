@@ -10,7 +10,7 @@ namespace Service.ProfileCertificatesService
 {
     public interface IProfileCertificateService
     {
-        public Task<List<ProfileCertificateResponse>> GetProfileCertificates();
+        public Task<List<ProfileCertificateResponse>> GetAll();
 
         public Task<ProfileCertificateResponse> Create(ProfileCertificateRequest request);
 

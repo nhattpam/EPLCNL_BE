@@ -23,7 +23,7 @@ namespace Service.AccountSurveysService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<AccountSurveyResponse>> GetAccountSurveys()
+        public async Task<List<AccountSurveyResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<AccountSurvey>().GetAll()

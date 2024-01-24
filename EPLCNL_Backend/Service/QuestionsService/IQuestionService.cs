@@ -10,7 +10,7 @@ namespace Service.QuestionsService
 {
     public interface IQuestionService
     {
-        public Task<List<QuestionResponse>> GetQuestions();
+        public Task<List<QuestionResponse>> GetAll();
 
         public Task<QuestionResponse> Create(QuestionRequest request);
 

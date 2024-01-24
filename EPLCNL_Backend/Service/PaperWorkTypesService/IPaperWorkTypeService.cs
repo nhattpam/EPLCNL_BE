@@ -10,7 +10,7 @@ namespace Service.PaperWorkTypesService
 {
     public interface IPaperWorkTypeService
     {
-        public Task<List<PaperWorkTypeResponse>> GetPaperWorkTypes();
+        public Task<List<PaperWorkTypeResponse>> GetAll();
 
         public Task<PaperWorkTypeResponse> Create(PaperWorkTypeRequest request);
 

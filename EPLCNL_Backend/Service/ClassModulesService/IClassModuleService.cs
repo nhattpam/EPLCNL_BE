@@ -10,7 +10,7 @@ namespace Service.ClassModulesService
 {
     public interface IClassModuleService
     {
-        public Task<List<ClassModuleResponse>> GetClassModules();
+        public Task<List<ClassModuleResponse>> GetAll();
 
         public Task<ClassModuleResponse> Create(ClassModuleRequest request);
 

@@ -20,4 +20,10 @@ namespace ViewModel.RequestModel
         public Guid? CreatedBy { get; set; }
         public Guid? UpdatedBy { get; set; }
     }
+
+    public class LoginMem
+    {
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+    }
 }

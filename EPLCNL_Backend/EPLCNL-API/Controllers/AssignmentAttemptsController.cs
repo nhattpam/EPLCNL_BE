@@ -18,18 +18,16 @@ namespace EPLCNL_API.Controllers
             _assignmentattemptService = assignmentattemptService;
         }
 
-        /// <summary>
-        /// Get List Product In Menu
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="paging"></param>
-        /// <returns></returns>
+
         [HttpGet]
-        public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAllAssignmentAttempts()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AssignmentAttemptResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAll()
         {
             try
             {
-                var rs = await _assignmentattemptService.GetAssignmentAttempts();
+                var rs = await _assignmentattemptService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -44,7 +42,7 @@ namespace EPLCNL_API.Controllers
             try
             {
                 var result = await _assignmentattemptService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

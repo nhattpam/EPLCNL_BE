@@ -10,7 +10,7 @@ namespace Service.CertificateCoursesService
 {
     public interface ICertificateCourseService
     {
-        public Task<List<CertificateCourseResponse>> GetCertificateCourses();
+        public Task<List<CertificateCourseResponse>> GetAll();
 
         public Task<CertificateCourseResponse> Create(CertificateCourseRequest request);
 

@@ -19,11 +19,14 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<ProfileCertificateResponse>>> GetAllProfileCertificates()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProfileCertificateResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ProfileCertificateResponse>>> GetAll()
         {
             try
             {
-                var rs = await _profileCertificateService.GetProfileCertificates();
+                var rs = await _profileCertificateService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -33,12 +36,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ProfileCertificateResponse>> Create([FromBody] ProfileCertificateRequest request)
         {
             try
             {
                 var result = await _profileCertificateService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

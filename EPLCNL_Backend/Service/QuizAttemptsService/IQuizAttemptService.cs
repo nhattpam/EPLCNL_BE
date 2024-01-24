@@ -10,7 +10,7 @@ namespace Service.QuizAttemptsService
 {
     public interface IQuizAttemptService
     {
-        public Task<List<QuizAttemptResponse>> GetQuizAttempts();
+        public Task<List<QuizAttemptResponse>> GetAll();
 
         public Task<QuizAttemptResponse> Create(QuizAttemptRequest request);
 

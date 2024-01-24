@@ -20,12 +20,15 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<CenterResponse>>> GetAllCenters()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<CenterResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<CenterResponse>>> GetAll()
         {
             try
             {
-                var rs = await _centerService.GetCenters();
-                return Ok(rs);
+                var rs = await _centerService.GetAll();
+                return CreatedAtAction(nameof(Create), rs);
             }
             catch (Exception ex)
             {
@@ -34,12 +37,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<CenterResponse>> Create([FromBody] CenterRequest request)
         {
             try
             {
                 var result = await _centerService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

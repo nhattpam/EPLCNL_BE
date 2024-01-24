@@ -10,7 +10,7 @@ namespace Service.ClassLessonsService
 {
     public interface IClassLessonService
     {
-        public Task<List<ClassLessonResponse>> GetClassLessons();
+        public Task<List<ClassLessonResponse>> GetAll();
 
         public Task<ClassLessonResponse> Create(ClassLessonRequest request);
 

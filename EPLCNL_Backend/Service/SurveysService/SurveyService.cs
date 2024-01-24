@@ -23,7 +23,7 @@ namespace Service.SurveysService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<SurveyResponse>> GetSurveys()
+        public async Task<List<SurveyResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Survey>().GetAll()

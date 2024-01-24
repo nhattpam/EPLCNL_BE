@@ -23,7 +23,7 @@ namespace Service.QuestionsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<QuestionResponse>> GetQuestions()
+        public async Task<List<QuestionResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Question>().GetAll()

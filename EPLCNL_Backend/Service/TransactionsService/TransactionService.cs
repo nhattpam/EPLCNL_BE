@@ -23,7 +23,7 @@ namespace Service.TransactionsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<TransactionResponse>> GetTransactions()
+        public async Task<List<TransactionResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Transaction>().GetAll()

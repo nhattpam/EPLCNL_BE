@@ -23,7 +23,7 @@ namespace Service.LearnersService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<LearnerResponse>> GetLearners()
+        public async Task<List<LearnerResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Learner>().GetAll()

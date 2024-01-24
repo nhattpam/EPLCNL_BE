@@ -10,7 +10,7 @@ namespace Service.LearnersService
 {
     public interface ILearnerService
     {
-        public Task<List<LearnerResponse>> GetLearners();
+        public Task<List<LearnerResponse>> GetAll();
 
         public Task<LearnerResponse> Create(LearnerRequest request);
 

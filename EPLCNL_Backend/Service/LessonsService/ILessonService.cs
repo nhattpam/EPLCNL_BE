@@ -10,7 +10,7 @@ namespace Service.LessonsService
 {
     public interface ILessonService
     {
-        public Task<List<LessonResponse>> GetLessons();
+        public Task<List<LessonResponse>> GetAll();
 
         public Task<LessonResponse> Create(LessonRequest request);
 

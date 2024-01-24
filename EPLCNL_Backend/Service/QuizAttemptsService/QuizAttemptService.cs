@@ -23,7 +23,7 @@ namespace Service.QuizAttemptsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<QuizAttemptResponse>> GetQuizAttempts()
+        public async Task<List<QuizAttemptResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<QuizAttempt>().GetAll()

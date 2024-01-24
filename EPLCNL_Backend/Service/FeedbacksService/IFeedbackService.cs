@@ -10,7 +10,7 @@ namespace Service.FeedbacksService
 {
     public interface IFeedbackService
     {
-        public Task<List<FeedbackResponse>> GetFeedbacks();
+        public Task<List<FeedbackResponse>> GetAll();
 
         public Task<FeedbackResponse> Create(FeedbackRequest request);
 

@@ -10,7 +10,7 @@ namespace Service.PaymentMethodsService
 {
     public interface IPaymentMethodService
     {
-        public Task<List<PaymentMethodResponse>> GetPaymentMethods();
+        public Task<List<PaymentMethodResponse>> GetAll();
 
         public Task<PaymentMethodResponse> Create(PaymentMethodRequest request);
 

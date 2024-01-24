@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Service;
 using Service.AccountForumsService;
+using System.Net.Mime;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
 
@@ -18,18 +19,16 @@ namespace EPLCNL_API.Controllers
             _accountforumService = accountforumService;
         }
 
-        /// <summary>
-        /// Get List Product In Menu
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="paging"></param>
-        /// <returns></returns>
+ 
         [HttpGet]
-        public async Task<ActionResult<List<AccountForumResponse>>> GetAllAccountForums()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AccountForumResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<AccountForumResponse>>> GetAll()
         {
             try
             {
-                var rs = await _accountforumService.GetAccountForums();
+                var rs = await _accountforumService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -39,12 +38,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<AccountForumResponse>> Create([FromBody] AccountForumRequest request)
         {
             try
             {
                 var result = await _accountforumService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

@@ -23,7 +23,7 @@ namespace Service.ForumsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ForumResponse>> GetForums()
+        public async Task<List<ForumResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Forum>().GetAll()

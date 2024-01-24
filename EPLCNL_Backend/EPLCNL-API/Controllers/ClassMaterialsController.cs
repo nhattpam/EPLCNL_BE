@@ -19,11 +19,14 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<ClassMaterialResponse>>> GetAllClassMaterials()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ClassMaterialResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ClassMaterialResponse>>> GetAll()
         {
             try
             {
-                var rs = await _ClassMaterialService.GetClassMaterials();
+                var rs = await _ClassMaterialService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -33,12 +36,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ClassMaterialResponse>> Create([FromBody] ClassMaterialRequest request)
         {
             try
             {
                 var result = await _ClassMaterialService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

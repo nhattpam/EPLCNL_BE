@@ -10,7 +10,7 @@ namespace Service.SurveysService
 {
     public interface ISurveyService
     {
-        public Task<List<SurveyResponse>> GetSurveys();
+        public Task<List<SurveyResponse>> GetAll();
 
         public Task<SurveyResponse> Create(SurveyRequest request);
 

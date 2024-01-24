@@ -10,7 +10,7 @@ namespace Service.ClassPraticesService
 {
     public interface IClassPracticeService
     {
-        public Task<List<ClassPracticeResponse>> GetClassPractices();
+        public Task<List<ClassPracticeResponse>> GetAll();
 
         public Task<ClassPracticeResponse> Create(ClassPracticeRequest request);
 

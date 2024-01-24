@@ -23,7 +23,7 @@ namespace Service.CentersService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<CenterResponse>> GetCenters()
+        public async Task<List<CenterResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Center>().GetAll()

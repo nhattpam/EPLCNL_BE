@@ -24,7 +24,7 @@ namespace Service.ClassPracticesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ClassPracticeResponse>> GetClassPractices()
+        public async Task<List<ClassPracticeResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<ClassPractice>().GetAll()

@@ -16,20 +16,27 @@ namespace EPLCNL_API.Controllers
         {
             _accountService = accountService;
         }
+
         [HttpGet]
-        public async Task<ActionResult<List<AccountResponse>>> GetAllAccounts()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AccountResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<AccountResponse>>> GetAll()
         {
             try
             {
-                var rs = await _accountService.GetAccounts();
-                return Ok(rs);
+                var rs = await _accountService.GetAll();
+                return CreatedAtAction(nameof(Create), rs);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<AccountResponse>> Create([FromBody] AccountRequest request)
         {
             try

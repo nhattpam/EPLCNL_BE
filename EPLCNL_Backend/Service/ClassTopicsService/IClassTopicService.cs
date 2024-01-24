@@ -10,7 +10,7 @@ namespace Service.ClassTopicsService
 {
     public interface IClassTopicService
     {
-        public Task<List<ClassTopicResponse>> GetClassTopics();
+        public Task<List<ClassTopicResponse>> GetAll();
 
         public Task<ClassTopicResponse> Create(ClassTopicRequest request);
 

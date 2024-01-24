@@ -23,7 +23,7 @@ namespace Service.StaffsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<StaffResponse>> GetStaffs()
+        public async Task<List<StaffResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Staff>().GetAll()

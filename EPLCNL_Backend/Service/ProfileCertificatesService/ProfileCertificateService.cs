@@ -23,7 +23,7 @@ namespace Service.ProfileCertificatesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ProfileCertificateResponse>> GetProfileCertificates()
+        public async Task<List<ProfileCertificateResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<ProfileCertificate>().GetAll()

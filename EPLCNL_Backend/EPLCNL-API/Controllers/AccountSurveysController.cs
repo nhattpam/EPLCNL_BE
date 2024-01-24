@@ -18,18 +18,12 @@ namespace EPLCNL_API.Controllers
             _accountsurveyService = accountsurveyService;
         }
 
-        /// <summary>
-        /// Get List Product In Menu
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="paging"></param>
-        /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<List<AccountSurveyResponse>>> GetAllAccountSurveys()
+        public async Task<ActionResult<List<AccountSurveyResponse>>> GetAll()
         {
             try
             {
-                var rs = await _accountsurveyService.GetAccountSurveys();
+                var rs = await _accountsurveyService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -39,12 +33,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<AccountSurveyResponse>> Create([FromBody] AccountSurveyRequest request)
         {
             try
             {
                 var result = await _accountsurveyService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

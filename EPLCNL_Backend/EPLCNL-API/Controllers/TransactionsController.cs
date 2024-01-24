@@ -18,12 +18,16 @@ namespace EPLCNL_API.Controllers
         }
 
 
+
         [HttpGet]
-        public async Task<ActionResult<List<TransactionResponse>>> GetAllTransactions()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TransactionResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<TransactionResponse>>> GetAll()
         {
             try
             {
-                var rs = await _transactionService.GetTransactions();
+                var rs = await _transactionService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -33,12 +37,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<TransactionResponse>> Create([FromBody] TransactionRequest request)
         {
             try
             {
                 var result = await _transactionService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

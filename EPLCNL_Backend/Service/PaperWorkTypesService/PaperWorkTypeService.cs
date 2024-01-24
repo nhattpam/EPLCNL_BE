@@ -23,7 +23,7 @@ namespace Service.PaperWorkTypesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<PaperWorkTypeResponse>> GetPaperWorkTypes()
+        public async Task<List<PaperWorkTypeResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<PaperWorkType>().GetAll()

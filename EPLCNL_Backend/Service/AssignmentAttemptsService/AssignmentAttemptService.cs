@@ -24,7 +24,7 @@ namespace Service.AssignmentAttemptsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<AssignmentAttemptResponse>> GetAssignmentAttempts()
+        public async Task<List<AssignmentAttemptResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<AssignmentAttempt>().GetAll()

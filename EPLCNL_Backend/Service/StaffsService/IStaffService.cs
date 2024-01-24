@@ -10,7 +10,7 @@ namespace Service.StaffsService
 {
     public interface IStaffService
     {
-        public Task<List<StaffResponse>> GetStaffs();
+        public Task<List<StaffResponse>> GetAll();
 
         public Task<StaffResponse> Create(StaffRequest request);
 

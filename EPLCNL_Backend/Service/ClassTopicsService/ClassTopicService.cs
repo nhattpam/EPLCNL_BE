@@ -23,7 +23,7 @@ namespace Service.ClassTopicsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ClassTopicResponse>> GetClassTopics()
+        public async Task<List<ClassTopicResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<ClassTopic>().GetAll()

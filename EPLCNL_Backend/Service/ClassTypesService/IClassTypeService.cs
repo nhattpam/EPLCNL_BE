@@ -10,7 +10,7 @@ namespace Service.ClassTypesService
 {
     public interface IClassTypeService
     {
-        public Task<List<ClassTypeResponse>> GetClassTypes();
+        public Task<List<ClassTypeResponse>> GetAll();
 
         public Task<ClassTypeResponse> Create(ClassTypeRequest request);
 

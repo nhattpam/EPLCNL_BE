@@ -23,7 +23,7 @@ namespace Service.CertificatesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<CertificateResponse>> GetCertificates()
+        public async Task<List<CertificateResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Certificate>().GetAll()

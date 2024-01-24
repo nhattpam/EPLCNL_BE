@@ -23,7 +23,7 @@ namespace Service.AssignmentsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<AssignmentResponse>> GetAssignments()
+        public async Task<List<AssignmentResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Assignment>().GetAll()

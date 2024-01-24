@@ -10,7 +10,7 @@ namespace Service.CategoriesService
 {
     public interface ICategoryService
     {
-        public Task<List<CategoryResponse>> GetCategories();
+        public Task<List<CategoryResponse>> GetAll();
 
         public Task<CategoryResponse> Create(CategoryRequest request);
 

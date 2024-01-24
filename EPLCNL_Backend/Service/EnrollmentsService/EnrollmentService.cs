@@ -23,7 +23,7 @@ namespace Service.EnrollmentsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<EnrollmentResponse>> GetEnrollments()
+        public async Task<List<EnrollmentResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Enrollment>().GetAll()

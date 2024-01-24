@@ -23,7 +23,7 @@ namespace Service.ClassTypesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ClassTypeResponse>> GetClassTypes()
+        public async Task<List<ClassTypeResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<ClassType>().GetAll()

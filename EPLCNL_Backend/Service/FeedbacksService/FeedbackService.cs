@@ -23,7 +23,7 @@ namespace Service.FeedbacksService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<FeedbackResponse>> GetFeedbacks()
+        public async Task<List<FeedbackResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Feedback>().GetAll()

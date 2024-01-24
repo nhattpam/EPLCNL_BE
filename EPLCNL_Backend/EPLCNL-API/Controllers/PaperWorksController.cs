@@ -19,11 +19,14 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<PaperWorkResponse>>> GetAllPaperWorks()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PaperWorkResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<PaperWorkResponse>>> GetAll()
         {
             try
             {
-                var rs = await _paperWorkService.GetPaperWorks();
+                var rs = await _paperWorkService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -33,12 +36,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PaperWorkResponse>> Create([FromBody] PaperWorkRequest request)
         {
             try
             {
                 var result = await _paperWorkService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

@@ -10,7 +10,7 @@ namespace Service.CentersService
 {
     public interface ICenterService
     {
-        public Task<List<CenterResponse>> GetCenters();
+        public Task<List<CenterResponse>> GetAll();
 
         public Task<CenterResponse> Create(CenterRequest request);
 

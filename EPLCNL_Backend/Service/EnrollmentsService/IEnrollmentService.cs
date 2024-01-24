@@ -10,7 +10,7 @@ namespace Service.EnrollmentsService
 {
     public interface IEnrollmentService
     {
-        public Task<List<EnrollmentResponse>> GetEnrollments();
+        public Task<List<EnrollmentResponse>> GetAll();
 
         public Task<EnrollmentResponse> Create(EnrollmentRequest request);
 

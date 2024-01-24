@@ -10,7 +10,7 @@ namespace Service.QuizzesService
 {
     public interface IQuizService
     {
-        public Task<List<QuizResponse>> GetQuizzes();
+        public Task<List<QuizResponse>> GetAll();
 
         public Task<QuizResponse> Create(QuizRequest request);
 

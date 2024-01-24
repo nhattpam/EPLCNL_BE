@@ -23,7 +23,7 @@ namespace Service.PaymentMethodsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<PaymentMethodResponse>> GetPaymentMethods()
+        public async Task<List<PaymentMethodResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<PaymentMethod>().GetAll()

@@ -24,7 +24,7 @@ namespace Service.AccountForumsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<AccountForumResponse>> GetAccountForums()
+        public async Task<List<AccountForumResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<AccountForum>().GetAll()

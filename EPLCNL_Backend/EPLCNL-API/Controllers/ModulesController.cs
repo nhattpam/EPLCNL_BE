@@ -19,11 +19,14 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<ModuleResponse>>> GetAllModules()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ModuleResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ModuleResponse>>> GetAll()
         {
             try
             {
-                var rs = await _moduleService.GetModules();
+                var rs = await _moduleService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -33,12 +36,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<ModuleResponse>> Create([FromBody] ModuleRequest request)
         {
             try
             {
                 var result = await _moduleService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

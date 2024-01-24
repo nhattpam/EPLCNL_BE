@@ -5,7 +5,7 @@ namespace Service.LessonMaterialsService
 {
     public interface ILessonMaterialService
     {
-        public Task<List<LessonMaterialResponse>> GetLessonMaterials();
+        public Task<List<LessonMaterialResponse>> GetAll();
 
         public Task<LessonMaterialResponse> Create(LessonMaterialRequest request);
 

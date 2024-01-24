@@ -23,7 +23,7 @@ namespace Service.CertificateCoursesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<CertificateCourseResponse>> GetCertificateCourses()
+        public async Task<List<CertificateCourseResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<CertificateCourse>().GetAll()

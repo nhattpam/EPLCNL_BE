@@ -20,11 +20,14 @@ namespace EPLCNL_API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<RefundResponse>>> GetAllRefundRequests()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RefundResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<RefundResponse>>> GetAll()
         {
             try
             {
-                var rs = await _refundRequestService.GetRefundRequests();
+                var rs = await _refundRequestService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -34,12 +37,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<RefundResponse>> Create([FromBody] ViewModel.RequestModel.RefundRequest request)
         {
             try
             {
                 var result = await _refundRequestService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {

@@ -23,7 +23,7 @@ namespace Service.CoursesService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<CourseResponse>> GetCourses()
+        public async Task<List<CourseResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Course>().GetAll()

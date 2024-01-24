@@ -25,7 +25,7 @@ namespace Service
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<RoleResponse>> GetRoles()
+        public async Task<List<RoleResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Role>().GetAll()

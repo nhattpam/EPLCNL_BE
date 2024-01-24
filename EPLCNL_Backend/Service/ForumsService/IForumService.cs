@@ -10,7 +10,7 @@ namespace Service.ForumsService
 {
     public interface IForumService
     {
-        public Task<List<ForumResponse>> GetForums();
+        public Task<List<ForumResponse>> GetAll();
 
         public Task<ForumResponse> Create(ForumRequest request);
 

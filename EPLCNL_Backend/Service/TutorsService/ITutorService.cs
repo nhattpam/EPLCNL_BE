@@ -5,7 +5,7 @@ namespace Service.TutorService
 {
     public interface ITutorService
     {
-        Task<List<TutorResponse>> GetTutors();
+        Task<List<TutorResponse>> GetAll();
         Task<TutorResponse> Create(TutorRequest request);
         Task<TutorResponse> Update(Guid id, TutorRequest request);
         Task<TutorResponse> Delete(Guid id);

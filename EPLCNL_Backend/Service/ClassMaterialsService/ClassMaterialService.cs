@@ -23,7 +23,7 @@ namespace Service.ClassMaterialsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<ClassMaterialResponse>> GetClassMaterials()
+        public async Task<List<ClassMaterialResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<ClassMaterial>().GetAll()

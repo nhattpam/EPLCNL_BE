@@ -9,7 +9,7 @@ namespace Service.RefundRequestsService
 {
     public interface IRefundRequestService
     {
-        public Task<List<RefundResponse>> GetRefundRequests();
+        public Task<List<RefundResponse>> GetAll();
 
         public Task<RefundResponse> Create(ViewModel.RequestModel.RefundRequest request);
 

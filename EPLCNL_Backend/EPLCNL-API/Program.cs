@@ -44,6 +44,10 @@ using Service.SurveysService;
 using Service.TutorService;
 using Service.TransactionsService;
 using Service.WalletsService;
+using ViewModel;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -102,21 +106,89 @@ builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IWalletService, WalletService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
-builder.Services.AddMvc().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
-builder.Services.AddSwaggerGen();
-builder.Services.AddCors(option =>
-{
-    option.AddDefaultPolicy(p =>
-            p.AllowAnyOrigin()
-                .AllowAnyHeader()
-                .AllowAnyMethod());
-});
-builder.Services.AddEndpointsApiExplorer();
 
-// Config JWT for swagger
-builder.Services.ConfigureSwaggerGen(c =>
+//khai app AppSettings
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+
+builder.Services.AddSwaggerGen();
+
+//JWT
+var secretKey = builder.Configuration["AppSettings:SecretKey"];
+var secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(option =>
+    {
+        option.TokenValidationParameters = new TokenValidationParameters
+        {
+            //tu cap token
+            ValidateIssuer = false,
+            ValidateAudience = false,
+
+            //ky vao token
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(secretKeyBytes),
+
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+builder.Services.AddSwaggerGen(c =>
 {
-    // ... your existing swagger configuration
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "EPLCNL API",
+        Description = "EPLCNL Management API",
+        TermsOfService = new Uri("https://EPLCNL.com"),
+        Contact = new OpenApiContact
+        {
+            Name = "EPLCNL Company",
+            Email = "EPLCNL@gmail.com",
+            Url = new Uri("https://twitter.com/EPLCNL"),
+        },
+        License = new OpenApiLicense
+        {
+            Name = "EPLCNL Open License",
+            Url = new Uri("https://EPLCNL.com"),
+        }
+    });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter JWT Token with Bearer format"
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+{
+    {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference
+            {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+            }
+        },
+        new string[]{ }
+    }
+});
+
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "AllowOrigin",
+        builder =>
+        {
+            builder.WithOrigins("*")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
 });
 
 var app = builder.Build();
@@ -128,12 +200,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Authentication & Authorization
-app.UseRouting();
 app.UseHttpsRedirection();
-app.UseCors();
+
+//khai bao
 app.UseAuthentication();
+
 app.UseAuthorization();
+
 app.MapControllers();
+
+// Shows UseCors with CorsPolicyBuilder.
+// with a named pocili
+app.UseCors("AllowOrigin");
 
 app.Run();

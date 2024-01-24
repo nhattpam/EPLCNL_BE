@@ -10,7 +10,7 @@ namespace Service.ClassMaterialsService
 {
     public interface IClassMaterialService
     {
-        public Task<List<ClassMaterialResponse>> GetClassMaterials();
+        public Task<List<ClassMaterialResponse>> GetAll();
 
         public Task<ClassMaterialResponse> Create(ClassMaterialRequest request);
 

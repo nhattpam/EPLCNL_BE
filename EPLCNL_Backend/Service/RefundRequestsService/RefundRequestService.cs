@@ -23,7 +23,7 @@ namespace Service.RefundRequestsService
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<RefundResponse>> GetRefundRequests()
+        public async Task<List<RefundResponse>> GetAll()
         {
 
             var list = await _unitOfWork.Repository<Data.Models.RefundRequest>().GetAll()

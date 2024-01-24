@@ -17,13 +17,15 @@ namespace EPLCNL_API.Controllers
             _paymentMethodService = paymentMethodService;
         }
 
-
         [HttpGet]
-        public async Task<ActionResult<List<PaymentMethodResponse>>> GetAllPaymentMethods()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PaymentMethodResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<PaymentMethodResponse>>> GetAll()
         {
             try
             {
-                var rs = await _paymentMethodService.GetPaymentMethods();
+                var rs = await _paymentMethodService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -33,12 +35,14 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PaymentMethodResponse>> Create([FromBody] PaymentMethodRequest request)
         {
             try
             {
                 var result = await _paymentMethodService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {
