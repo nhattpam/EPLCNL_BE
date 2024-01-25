@@ -18,6 +18,8 @@ namespace ViewModel.ResponseModel
         public Guid? StaffId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public virtual AccountResponse? Account { get; set; }
+
         public virtual StaffResponse? Staff { get; set; }
 
 
