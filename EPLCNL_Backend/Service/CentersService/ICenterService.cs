@@ -12,6 +12,7 @@ namespace Service.CentersService
     {
         public Task<List<CenterResponse>> GetAll();
         public Task<CenterResponse> Get(Guid id);
+        public Task<List<TutorResponse>> GetAllTutorsByCenter(Guid id);
 
         public Task<CenterResponse> Create(CenterRequest request);
 

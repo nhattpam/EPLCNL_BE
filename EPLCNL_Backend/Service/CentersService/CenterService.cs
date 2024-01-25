@@ -60,6 +60,26 @@ namespace Service.CentersService
             }
         }
 
+        public async Task<List<TutorResponse>> GetAllTutorsByCenter(Guid id)
+        {
+            var center = await _unitOfWork.Repository<Center>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (center == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var tutors = _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(t => t.CenterId == id)
+                .ProjectTo<TutorResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return tutors;
+        }
+
 
         public async Task<CenterResponse> Create(CenterRequest request)
         {
