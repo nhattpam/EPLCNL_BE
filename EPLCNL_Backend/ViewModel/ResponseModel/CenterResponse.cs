@@ -16,7 +16,11 @@ namespace ViewModel.ResponseModel
         public string? Email { get; set; }
         public bool? IsActive { get; set; }
         public Guid? StaffId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public virtual StaffResponse? Staff { get; set; }
+        public virtual AccountResponse? Account { get; set; }
+
 
     }
 }

@@ -18,6 +18,8 @@ namespace Data.Models
         public string? Email { get; set; }
         public bool? IsActive { get; set; }
         public Guid? StaffId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
 
         public virtual Account? Account { get; set; }
         public virtual Staff? Staff { get; set; }

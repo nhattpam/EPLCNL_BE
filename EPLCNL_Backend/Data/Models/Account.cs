@@ -7,7 +7,6 @@ namespace Data.Models
     {
         public Account()
         {
-            Centers = new HashSet<Center>();
             Feedbacks = new HashSet<Feedback>();
             Learners = new HashSet<Learner>();
             Tutors = new HashSet<Tutor>();
@@ -32,8 +31,8 @@ namespace Data.Models
         public Guid? UpdatedBy { get; set; }
 
         public virtual Role? Role { get; set; }
+        public virtual Center? Center { get; set; }
         public virtual Wallet? Wallet { get; set; }
-        public virtual ICollection<Center> Centers { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Learner> Learners { get; set; }
         public virtual ICollection<Tutor> Tutors { get; set; }

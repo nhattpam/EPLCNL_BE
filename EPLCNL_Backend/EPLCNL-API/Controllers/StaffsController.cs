@@ -6,15 +6,15 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
-    [Route("api/staffs")]
+    [Route("api/Staffs")]
     [ApiController]
     public class StaffsController : ControllerBase
     {
-        private readonly IStaffService _staffService;
+        private readonly IStaffService _StaffService;
 
-        public StaffsController(IStaffService staffService)
+        public StaffsController(IStaffService StaffService)
         {
-            _staffService = staffService;
+            _StaffService = StaffService;
         }
 
 
@@ -26,7 +26,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _staffService.GetAll();
+                var rs = await _StaffService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -42,7 +42,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var result = await _staffService.Create(request);
+                var result = await _StaffService.Create(request);
                 return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace EPLCNL_API.Controllers
         [HttpDelete]
         public async Task<ActionResult<StaffResponse>> Delete([FromQuery] Guid id)
         {
-            var rs = await _staffService.Delete(id);
+            var rs = await _StaffService.Delete(id);
             return Ok(rs);
         }
 
@@ -64,7 +64,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _staffService.Update(id, request);
+                var rs = await _StaffService.Update(id, request);
                 return Ok(rs);
             }
             catch (Exception ex)

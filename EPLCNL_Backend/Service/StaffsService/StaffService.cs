@@ -41,12 +41,12 @@ namespace Service.StaffsService
         {
             try
             {
-                var staff = _mapper.Map<StaffRequest, Staff>(request);
-                staff.Id = Guid.NewGuid();
-                await _unitOfWork.Repository<Staff>().InsertAsync(staff);
+                var Staff = _mapper.Map<StaffRequest, Staff>(request);
+                Staff.Id = Guid.NewGuid();
+                await _unitOfWork.Repository<Staff>().InsertAsync(Staff);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<Staff, StaffResponse>(staff);
+                return _mapper.Map<Staff, StaffResponse>(Staff);
             }
             catch (Exception e)
             {
@@ -58,16 +58,16 @@ namespace Service.StaffsService
         {
             try
             {
-                Staff staff = null;
-                staff = _unitOfWork.Repository<Staff>()
+                Staff Staff = null;
+                Staff = _unitOfWork.Repository<Staff>()
                     .Find(p => p.Id == id);
-                if (staff == null)
+                if (Staff == null)
                 {
                     throw new Exception("Bi trung id");
                 }
-                await _unitOfWork.Repository<Staff>().HardDeleteGuid(staff.Id);
+                await _unitOfWork.Repository<Staff>().HardDeleteGuid(Staff.Id);
                 await _unitOfWork.CommitAsync();
-                return _mapper.Map<Staff, StaffResponse>(staff);
+                return _mapper.Map<Staff, StaffResponse>(Staff);
             }
             catch (Exception ex)
             {
@@ -79,18 +79,18 @@ namespace Service.StaffsService
         {
             try
             {
-                Staff staff = _unitOfWork.Repository<Staff>()
+                Staff Staff = _unitOfWork.Repository<Staff>()
                             .Find(x => x.Id == id);
-                if (staff == null)
+                if (Staff == null)
                 {
                     throw new Exception();
                 }
-                staff = _mapper.Map(request, staff);
+                Staff = _mapper.Map(request, Staff);
 
-                await _unitOfWork.Repository<Staff>().UpdateDetached(staff);
+                await _unitOfWork.Repository<Staff>().UpdateDetached(Staff);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<Staff, StaffResponse>(staff);
+                return _mapper.Map<Staff, StaffResponse>(Staff);
             }
 
             catch (Exception ex)

@@ -11,6 +11,8 @@ namespace Data.Models
         public string? PaperWorkUrl { get; set; }
         public Guid? PaperWorkTypeId { get; set; }
         public Guid? TutorId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
 
         public virtual PaperWorkType? PaperWorkType { get; set; }
         public virtual Tutor? Tutor { get; set; }
