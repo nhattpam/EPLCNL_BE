@@ -38,6 +38,9 @@ namespace Service.AccountsService
             {
                 Account center = null;
                 center = await _unitOfWork.Repository<Account>().GetAll()
+                     .AsNoTracking()
+                        .Include(a => a.Role)
+                        .Include(a => a.Center)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

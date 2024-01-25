@@ -19,7 +19,6 @@ namespace ViewModel.ResponseModel
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public virtual StaffResponse? Staff { get; set; }
-        public virtual AccountResponse? Account { get; set; }
 
 
     }

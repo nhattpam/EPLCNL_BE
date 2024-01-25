@@ -26,7 +26,7 @@ namespace ViewModel.ResponseModel
         public Guid? UpdatedBy { get; set; }
         public virtual RoleResponse? Role { get; set; }
 
-        public virtual ICollection<CenterResponse> Centers { get; set; }
+        public virtual CenterResponse? Center { get; set; }
 
     }
 }

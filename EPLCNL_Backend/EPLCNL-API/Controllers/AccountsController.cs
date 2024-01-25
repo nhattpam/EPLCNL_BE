@@ -26,7 +26,7 @@ namespace EPLCNL_API.Controllers
             try
             {
                 var rs = await _accountService.GetAll();
-                return CreatedAtAction(nameof(Create), rs);
+                return Ok(rs);
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace EPLCNL_API.Controllers
             try
             {
                 var result = await _accountService.Create(request);
-                return Ok(result);
+                return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
             {
