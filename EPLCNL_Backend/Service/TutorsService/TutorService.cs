@@ -37,6 +37,32 @@ namespace Service.TutorService
             return list;
         }
 
+
+        public async Task<TutorResponse> Get(Guid id)
+        {
+            try
+            {
+                Tutor tutor = null;
+                tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                    .Include(x => x.Account)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (tutor == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Tutor, TutorResponse>(tutor);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+
         public async Task<TutorResponse> Create(TutorRequest request)
         {
             try

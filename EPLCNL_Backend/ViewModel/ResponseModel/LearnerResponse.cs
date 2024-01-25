@@ -10,5 +10,7 @@ namespace ViewModel.ResponseModel
     {
         public Guid Id { get; set; }
         public Guid? AccountId { get; set; }
+        public virtual AccountResponse? Account { get; set; }
+
     }
 }
