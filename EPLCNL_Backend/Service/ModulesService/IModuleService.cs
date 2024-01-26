@@ -11,6 +11,7 @@ namespace Service.ModulesService
     public interface IModuleService
     {
         public Task<List<ModuleResponse>> GetAll();
+        public Task<ModuleResponse> Get(Guid id);
 
         public Task<ModuleResponse> Create(ModuleRequest request);
 
