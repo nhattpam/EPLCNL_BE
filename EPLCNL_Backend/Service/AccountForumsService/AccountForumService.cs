@@ -35,11 +35,19 @@ namespace Service.AccountForumsService
 
         public async Task<AccountForumResponse> Create(AccountForumRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var accountforum = _mapper.Map<AccountForumRequest, AccountForum>(request);
                 accountforum.Id = Guid.NewGuid();
-                accountforum.MessagedDate = DateTime.Now;
+                accountforum.MessagedDate = localTime;
                 await _unitOfWork.Repository<AccountForum>().InsertAsync(accountforum);
                 await _unitOfWork.CommitAsync();
 

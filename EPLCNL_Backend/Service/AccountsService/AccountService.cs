@@ -60,14 +60,14 @@ namespace Service.AccountsService
 
         public async Task<AccountResponse> Create(AccountRequest request)
         {
-            // Specify the time zone you want (UTC+7 in this case)
-            TimeZoneInfo desiredTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time"); // "SE Asia Standard Time" is the IANA time zone identifier for UTC+7
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
 
             // Get the current UTC time
             DateTime utcNow = DateTime.UtcNow;
 
-            // Convert the UTC time to the desired time zone
-            DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, desiredTimeZone);
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var account = _mapper.Map<AccountRequest, Account>(request);
@@ -108,6 +108,14 @@ namespace Service.AccountsService
 
         public async Task<AccountResponse> Update(Guid id, AccountRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Account account = _unitOfWork.Repository<Account>()
@@ -117,7 +125,7 @@ namespace Service.AccountsService
                     throw new Exception();
                 }
                 account = _mapper.Map(request, account);
-                account.UpdatedDate = DateTime.Now;
+                account.UpdatedDate = localTime;
 
                 await _unitOfWork.Repository<Account>().UpdateDetached(account);
                 await _unitOfWork.CommitAsync();

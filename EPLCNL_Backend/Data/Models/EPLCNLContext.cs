@@ -32,6 +32,7 @@ namespace Data.Models
         public virtual DbSet<ClassPractice> ClassPractices { get; set; } = null!;
         public virtual DbSet<ClassTopic> ClassTopics { get; set; } = null!;
         public virtual DbSet<ClassType> ClassTypes { get; set; } = null!;
+        public virtual DbSet<CloudFone> CloudFones { get; set; } = null!;
         public virtual DbSet<Course> Courses { get; set; } = null!;
         public virtual DbSet<Enrollment> Enrollments { get; set; } = null!;
         public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
@@ -559,6 +560,39 @@ namespace Data.Models
                     .WithMany(p => p.ClassTypes)
                     .HasForeignKey(d => d.CourseId)
                     .HasConstraintName("FK__ClassType__cours__236943A5");
+            });
+
+            modelBuilder.Entity<CloudFone>(entity =>
+            {
+                entity.HasKey(e => e.ApiKey);
+
+                entity.ToTable("CloudFone");
+
+                entity.Property(e => e.ApiKey).HasMaxLength(255);
+
+                entity.Property(e => e.CallName).HasMaxLength(255);
+
+                entity.Property(e => e.CallNumber).HasMaxLength(255);
+
+                entity.Property(e => e.Data).HasMaxLength(255);
+
+                entity.Property(e => e.Direction).HasMaxLength(255);
+
+                entity.Property(e => e.Key).HasMaxLength(255);
+
+                entity.Property(e => e.KeyRinging).HasMaxLength(255);
+
+                entity.Property(e => e.Message).HasMaxLength(255);
+
+                entity.Property(e => e.NumberPbx)
+                    .HasMaxLength(255)
+                    .HasColumnName("NumberPBX");
+
+                entity.Property(e => e.QueueNumber).HasMaxLength(255);
+
+                entity.Property(e => e.ReceiptNumber).HasMaxLength(255);
+
+                entity.Property(e => e.Status).HasMaxLength(255);
             });
 
             modelBuilder.Entity<Course>(entity =>

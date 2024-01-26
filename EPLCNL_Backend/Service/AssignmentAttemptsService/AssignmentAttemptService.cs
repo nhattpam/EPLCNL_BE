@@ -35,11 +35,19 @@ namespace Service.AssignmentAttemptsService
 
         public async Task<AssignmentAttemptResponse> Create(AssignmentAttemptRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var assignmentattempt = _mapper.Map<AssignmentAttemptRequest, AssignmentAttempt>(request);
                 assignmentattempt.Id = Guid.NewGuid();
-                assignmentattempt.AttemptedDate = DateTime.Now;
+                assignmentattempt.AttemptedDate = localTime;
                 await _unitOfWork.Repository<AssignmentAttempt>().InsertAsync(assignmentattempt);
                 await _unitOfWork.CommitAsync();
 

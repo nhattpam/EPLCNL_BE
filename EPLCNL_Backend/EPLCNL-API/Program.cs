@@ -48,6 +48,7 @@ using ViewModel;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Service.CloudFoneService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -104,6 +105,7 @@ builder.Services.AddScoped<ISurveyService, SurveyService>();
 builder.Services.AddScoped<ITutorService, TutorService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IWalletService, WalletService>();
+builder.Services.AddScoped<ICloudFoneService, CloudFoneService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 
@@ -187,11 +189,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "AllowOrigin",
         builder =>
         {
-            builder.WithOrigins("*")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();
+            builder.WithOrigins("https://localhost:3000")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .AllowCredentials();  // Add this line if needed
         });
 });
+
 
 var app = builder.Build();
 
@@ -203,6 +207,9 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 }
 
 app.UseHttpsRedirection();
+// Shows UseCors with CorsPolicyBuilder.
+// with a named pocili
+app.UseCors("AllowOrigin");
 
 //khai bao
 app.UseAuthentication();
@@ -211,8 +218,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Shows UseCors with CorsPolicyBuilder.
-// with a named pocili
-app.UseCors("AllowOrigin");
+
 
 app.Run();

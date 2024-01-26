@@ -34,11 +34,19 @@ namespace Service.AssignmentsService
 
         public async Task<AssignmentResponse> Create(AssignmentRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var assignment = _mapper.Map<AssignmentRequest, Assignment>(request);
                 assignment.Id = Guid.NewGuid();
-                assignment.CreatedDate =DateTime.Now;
+                assignment.CreatedDate = localTime;
                 await _unitOfWork.Repository<Assignment>().InsertAsync(assignment);
                 await _unitOfWork.CommitAsync();
 
@@ -73,6 +81,14 @@ namespace Service.AssignmentsService
 
         public async Task<AssignmentResponse> Update(Guid id, AssignmentRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Assignment assignment = _unitOfWork.Repository<Assignment>()
@@ -82,7 +98,7 @@ namespace Service.AssignmentsService
                     throw new Exception();
                 }
                 assignment = _mapper.Map(request, assignment);
-                assignment.UpdatedDate= DateTime.Now;
+                assignment.UpdatedDate= localTime;
 
                 await _unitOfWork.Repository<Assignment>().UpdateDetached(assignment);
                 await _unitOfWork.CommitAsync();

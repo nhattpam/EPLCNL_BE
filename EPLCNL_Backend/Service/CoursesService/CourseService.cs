@@ -62,14 +62,14 @@ namespace Service.CoursesService
 
         public async Task<CourseResponse> Create(CourseRequest request)
         {
-            // Specify the time zone you want (UTC+7 in this case)
-            TimeZoneInfo desiredTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time"); // "SE Asia Standard Time" is the IANA time zone identifier for UTC+7
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
 
             // Get the current UTC time
             DateTime utcNow = DateTime.UtcNow;
 
-            // Convert the UTC time to the desired time zone
-            DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, desiredTimeZone);
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var course = _mapper.Map<CourseRequest, Course>(request);

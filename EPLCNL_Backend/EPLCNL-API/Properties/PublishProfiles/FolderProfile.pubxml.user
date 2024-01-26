@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2024-01-26T04:05:46.2683856Z;True|2024-01-26T10:59:06.1734347+07:00;True|2024-01-26T10:58:40.2896547+07:00;True|2024-01-26T10:05:36.6493527+07:00;</History>
+    <History>True|2024-01-26T09:25:39.9499923Z;True|2024-01-26T14:38:07.8516733+07:00;True|2024-01-26T14:35:18.1219396+07:00;True|2024-01-26T14:14:45.9920647+07:00;True|2024-01-26T13:53:54.7198071+07:00;True|2024-01-26T13:21:16.8552398+07:00;True|2024-01-26T11:05:46.2683856+07:00;True|2024-01-26T10:59:06.1734347+07:00;True|2024-01-26T10:58:40.2896547+07:00;True|2024-01-26T10:05:36.6493527+07:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

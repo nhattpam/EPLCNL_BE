@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,11 +35,19 @@ namespace Service.TransactionsService
 
         public async Task<TransactionResponse> Create(TransactionRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var transaction = _mapper.Map<TransactionRequest, Transaction>(request);
                 transaction.Id = Guid.NewGuid();
-                transaction.TransactionDate = DateTime.Now;
+                transaction.TransactionDate = localTime;
                 await _unitOfWork.Repository<Transaction>().InsertAsync(transaction);
                 await _unitOfWork.CommitAsync();
 
