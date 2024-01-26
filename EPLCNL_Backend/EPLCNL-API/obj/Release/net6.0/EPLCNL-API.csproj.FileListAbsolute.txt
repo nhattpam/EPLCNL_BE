@@ -79,3 +79,15 @@ C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\EPLCNL-API.pdb
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\EPLCNL-API.genruntimeconfig.cache
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\ref\EPLCNL-API.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Firebase.Auth.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\FirebaseAdmin.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Firebase.Storage.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Google.Api.Gax.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Google.Api.Gax.Rest.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Google.Apis.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Google.Apis.Auth.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Google.Apis.Core.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\System.ServiceModel.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Newtonsoft.Json.dll
