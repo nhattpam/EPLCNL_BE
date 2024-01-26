@@ -32,12 +32,50 @@ namespace Service.CoursesService
             return list;
         }
 
+        public async Task<CourseResponse> Get(Guid id)
+        {
+            try
+            {
+                Course course = null;
+                course = await _unitOfWork.Repository<Course>().GetAll()
+                     .AsNoTracking()
+                        .Include(a => a.Category)
+                    //.Include(a => a.Center)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (course == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Course, CourseResponse>(course);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+       
+
         public async Task<CourseResponse> Create(CourseRequest request)
         {
+            // Specify the time zone you want (UTC+7 in this case)
+            TimeZoneInfo desiredTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time"); // "SE Asia Standard Time" is the IANA time zone identifier for UTC+7
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to the desired time zone
+            DateTime localTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, desiredTimeZone);
             try
             {
                 var course = _mapper.Map<CourseRequest, Course>(request);
                 course.Id = Guid.NewGuid();
+                course.CreatedDate = localTime;
+                course.IsActive = false;
                 await _unitOfWork.Repository<Course>().InsertAsync(course);
                 await _unitOfWork.CommitAsync();
 

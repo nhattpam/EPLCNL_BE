@@ -20,5 +20,9 @@ namespace ViewModel.ResponseModel
         public double? Rating { get; set; }
         public Guid? CategoryId { get; set; }
         public string? Tags { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public virtual CategoryResponse? Category { get; set; }
+
     }
 }

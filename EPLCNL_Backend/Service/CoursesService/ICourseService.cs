@@ -11,6 +11,7 @@ namespace Service.CoursesService
     public interface ICourseService
     {
         public Task<List<CourseResponse>> GetAll();
+        public Task<CourseResponse> Get(Guid id);
 
         public Task<CourseResponse> Create(CourseRequest request);
 

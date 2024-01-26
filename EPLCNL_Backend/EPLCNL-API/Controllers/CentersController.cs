@@ -54,7 +54,7 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpGet("{id}/tutors")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CenterResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<List<TutorResponse>>> GetAllTutorsByCenter(Guid id)

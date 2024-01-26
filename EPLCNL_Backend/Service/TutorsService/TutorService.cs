@@ -62,6 +62,26 @@ namespace Service.TutorService
             }
         }
 
+        public async Task<List<CourseResponse>> GetAllCoursesByTutor(Guid id)
+        {
+            var tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (tutor == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var courses = _unitOfWork.Repository<Course>().GetAll()
+                .Where(t => t.TutorId == id)
+                .ProjectTo<CourseResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return courses;
+        }
+
 
         public async Task<TutorResponse> Create(TutorRequest request)
         {
