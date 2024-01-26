@@ -1,0 +1,12 @@
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\bin\Release\net6.0\ViewModel.deps.json
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\bin\Release\net6.0\ViewModel.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\bin\Release\net6.0\ViewModel.pdb
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ViewModel.AssemblyInfoInputs.cache
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ViewModel.AssemblyInfo.cs
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ViewModel.sourcelink.json
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ViewModel.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\refint\ViewModel.dll
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ViewModel.pdb
+C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Release\net6.0\ref\ViewModel.dll

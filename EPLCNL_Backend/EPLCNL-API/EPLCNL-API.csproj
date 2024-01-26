@@ -7,6 +7,10 @@
     <RootNamespace>EPLCNL_API</RootNamespace>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<EnvironmentName>Development</EnvironmentName>
+	</PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="AutoMapper\**" />
     <Content Remove="AutoMapper\**" />

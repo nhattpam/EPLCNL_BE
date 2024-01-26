@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2024-01-26T04:05:46.2683856Z;True|2024-01-26T10:59:06.1734347+07:00;True|2024-01-26T10:58:40.2896547+07:00;True|2024-01-26T10:05:36.6493527+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
