@@ -12,6 +12,8 @@ namespace Service.ForumsService
     {
         public Task<List<ForumResponse>> GetAll();
 
+        public Task<ForumResponse> Get(Guid id);
+
         public Task<ForumResponse> Create(ForumRequest request);
 
         public Task<ForumResponse> Delete(Guid id);

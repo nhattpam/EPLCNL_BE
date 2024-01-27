@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
+using RefundRequest = Data.Models.RefundRequest;
 
 namespace Service.RefundRequestsService
 {
@@ -30,6 +31,31 @@ namespace Service.RefundRequestsService
                                             .ProjectTo<RefundResponse>(_mapper.ConfigurationProvider)
                                             .ToListAsync();
             return list;
+        }
+
+        public async Task<RefundResponse> Get(Guid id)
+        {
+            try
+            {
+                RefundRequest refund = null;
+                refund = await _unitOfWork.Repository<RefundRequest>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Transaction)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (refund == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<RefundRequest, RefundResponse>(refund);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public async Task<RefundResponse> Create(ViewModel.RequestModel.RefundRequest request)

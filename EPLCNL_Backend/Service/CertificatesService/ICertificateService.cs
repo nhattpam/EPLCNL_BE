@@ -12,6 +12,8 @@ namespace Service.CertificatesService
     {
         public Task<List<CertificateResponse>> GetAll();
 
+        public Task<CertificateResponse> Get(Guid id);
+
         public Task<CertificateResponse> Create(CertificateRequest request);
 
         public Task<CertificateResponse> Delete(Guid id);

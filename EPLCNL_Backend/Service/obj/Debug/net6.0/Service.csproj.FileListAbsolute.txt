@@ -23,8 +23,6 @@ D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.cs
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\appsettings.Development.json
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\appsettings.json
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb

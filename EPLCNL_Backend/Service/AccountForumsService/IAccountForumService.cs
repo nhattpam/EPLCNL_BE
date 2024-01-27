@@ -6,6 +6,7 @@ namespace Service.AccountForumsService
     public interface IAccountForumService
     {
         Task<List<AccountForumResponse>> GetAll();
+        Task<AccountForumResponse> Get(Guid id);
         Task<AccountForumResponse> Create(AccountForumRequest request);
         Task<AccountForumResponse> Update(Guid id, AccountForumRequest request);
         Task<AccountForumResponse> Delete(Guid id);

@@ -33,6 +33,31 @@ namespace Service.ClassPracticesService
             return list;
         }
 
+        public async Task<ClassPracticeResponse> Get(Guid id)
+        {
+            try
+            {
+                ClassPractice classPractice = null;
+                classPractice = await _unitOfWork.Repository<ClassPractice>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.ClassTopic)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (classPractice == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<ClassPractice, ClassPracticeResponse>(classPractice);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ClassPracticeResponse> Create(ClassPracticeRequest request)
         {
             try

@@ -8,6 +8,8 @@ namespace Service
     {
         public  Task<List<RoleResponse>> GetAll();
 
+        public Task<RoleResponse> Get(Guid id);
+
         public Task<RoleResponse> Create(RoleRequest request);
 
         public Task<RoleResponse> Delete(Guid id);

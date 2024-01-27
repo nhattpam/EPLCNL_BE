@@ -32,6 +32,30 @@ namespace Service.SurveysService
             return list;
         }
 
+        public async Task<SurveyResponse> Get(Guid id)
+        {
+            try
+            {
+                Survey survey = null;
+                survey = await _unitOfWork.Repository<Survey>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (survey == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Survey, SurveyResponse>(survey);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<SurveyResponse> Create(SurveyRequest request)
         {
             try

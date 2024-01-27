@@ -32,6 +32,30 @@ namespace Service.FeedbacksService
             return list;
         }
 
+        public async Task<FeedbackResponse> Get(Guid id)
+        {
+            try
+            {
+                Feedback feedback = null;
+                feedback = await _unitOfWork.Repository<Feedback>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (feedback == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Feedback, FeedbackResponse>(feedback);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<FeedbackResponse> Create(FeedbackRequest request)
         {
             try

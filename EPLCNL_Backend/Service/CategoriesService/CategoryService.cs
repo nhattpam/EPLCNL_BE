@@ -32,6 +32,30 @@ namespace Service.CategoriesService
             return list;
         }
 
+        public async Task<CategoryResponse> Get(Guid id)
+        {
+            try
+            {
+                Category category = null;
+                category = await _unitOfWork.Repository<Category>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (category == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Category, CategoryResponse>(category);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<CategoryResponse> Create(CategoryRequest request)
         {
             try

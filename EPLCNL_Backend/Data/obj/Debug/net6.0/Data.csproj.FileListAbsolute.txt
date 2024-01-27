@@ -12,8 +12,6 @@ C:\Users\meoca\source\repos\EPLCNL_Backend\Data\obj\Debug\net6.0\refint\Data.dll
 C:\Users\meoca\source\repos\EPLCNL_Backend\Data\obj\Debug\net6.0\Data.pdb
 C:\Users\meoca\source\repos\EPLCNL_Backend\Data\obj\Debug\net6.0\Data.genruntimeconfig.cache
 C:\Users\meoca\source\repos\EPLCNL_Backend\Data\obj\Debug\net6.0\ref\Data.dll
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Data\bin\Debug\net6.0\appsettings.Development.json
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Data\bin\Debug\net6.0\appsettings.json
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Data\bin\Debug\net6.0\Data.deps.json
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Data\bin\Debug\net6.0\Data.runtimeconfig.json
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Data\bin\Debug\net6.0\Data.dll

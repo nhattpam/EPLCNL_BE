@@ -12,6 +12,8 @@ namespace Service.StaffsService
     {
         public Task<List<StaffResponse>> GetAll();
 
+        public Task<StaffResponse> Get(Guid id);
+
         public Task<StaffResponse> Create(StaffRequest request);
 
         public Task<StaffResponse> Delete(Guid id);

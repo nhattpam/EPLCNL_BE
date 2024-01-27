@@ -37,6 +37,7 @@ namespace Service.CentersService
             return list;
         }
 
+
         public async Task<CenterResponse> Get(Guid id)
         {
             try

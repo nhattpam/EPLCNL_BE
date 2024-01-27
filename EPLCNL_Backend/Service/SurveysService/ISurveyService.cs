@@ -12,6 +12,8 @@ namespace Service.SurveysService
     {
         public Task<List<SurveyResponse>> GetAll();
 
+        public Task<SurveyResponse> Get(Guid id);
+
         public Task<SurveyResponse> Create(SurveyRequest request);
 
         public Task<SurveyResponse> Delete(Guid id);

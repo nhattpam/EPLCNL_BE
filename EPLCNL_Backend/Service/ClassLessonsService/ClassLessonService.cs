@@ -32,6 +32,31 @@ namespace Service.ClassLessonsService
             return list;
         }
 
+        public async Task<ClassLessonResponse> Get(Guid id)
+        {
+            try
+            {
+                ClassLesson classLesson = null;
+                classLesson = await _unitOfWork.Repository<ClassLesson>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.ClassModule)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (classLesson == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<ClassLesson, ClassLessonResponse>(classLesson);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ClassLessonResponse> Create(ClassLessonRequest request)
         {
             try

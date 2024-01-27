@@ -32,6 +32,31 @@ namespace Service.LearnersService
             return list;
         }
 
+        public async Task<LearnerResponse> Get(Guid id)
+        {
+            try
+            {
+                Learner learner = null;
+                learner = await _unitOfWork.Repository<Learner>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Account)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (learner == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Learner, LearnerResponse>(learner);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<LearnerResponse> Create(LearnerRequest request)
         {
             try

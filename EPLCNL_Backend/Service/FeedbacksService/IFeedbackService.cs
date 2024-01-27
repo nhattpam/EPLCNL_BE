@@ -12,6 +12,8 @@ namespace Service.FeedbacksService
     {
         public Task<List<FeedbackResponse>> GetAll();
 
+        public Task<FeedbackResponse> Get(Guid id);
+
         public Task<FeedbackResponse> Create(FeedbackRequest request);
 
         public Task<FeedbackResponse> Delete(Guid id);

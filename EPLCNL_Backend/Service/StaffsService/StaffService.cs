@@ -36,6 +36,30 @@ namespace Service.StaffsService
             return list;
         }
 
+        public async Task<StaffResponse> Get(Guid id)
+        {
+            try
+            {
+                Staff staff = null;
+                staff = await _unitOfWork.Repository<Staff>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Account)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (staff == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Staff, StaffResponse>(staff);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
 
         public async Task<StaffResponse> Create(StaffRequest request)
         {

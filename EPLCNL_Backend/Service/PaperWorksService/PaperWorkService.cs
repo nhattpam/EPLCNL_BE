@@ -32,6 +32,30 @@ namespace Service.PaperWorksService
             return list;
         }
 
+        public async Task<PaperWorkResponse> Get(Guid id)
+        {
+            try
+            {
+                PaperWork paperWork = null;
+                paperWork = await _unitOfWork.Repository<PaperWork>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (paperWork == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<PaperWork, PaperWorkResponse>(paperWork);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<PaperWorkResponse> Create(PaperWorkRequest request)
         {
             try

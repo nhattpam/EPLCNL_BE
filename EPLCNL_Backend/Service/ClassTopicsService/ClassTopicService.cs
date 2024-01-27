@@ -32,6 +32,31 @@ namespace Service.ClassTopicsService
             return list;
         }
 
+        public async Task<ClassTopicResponse> Get(Guid id)
+        {
+            try
+            {
+                ClassTopic classTopic = null;
+                classTopic = await _unitOfWork.Repository<ClassTopic>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.ClassLesson)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (classTopic == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<ClassTopic, ClassTopicResponse>(classTopic);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ClassTopicResponse> Create(ClassTopicRequest request)
         {
             try

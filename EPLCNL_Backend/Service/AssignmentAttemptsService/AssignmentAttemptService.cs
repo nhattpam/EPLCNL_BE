@@ -32,7 +32,29 @@ namespace Service.AssignmentAttemptsService
                                             .ToListAsync();
             return list;
         }
+        public async Task<AssignmentAttemptResponse> Get(Guid id)
+        {
+            try
+            {
+                AssignmentAttempt assignmentAttempt = null;
+                assignmentAttempt = await _unitOfWork.Repository<AssignmentAttempt>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
 
+                if (assignmentAttempt == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<AssignmentAttempt, AssignmentAttemptResponse>(assignmentAttempt);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
         public async Task<AssignmentAttemptResponse> Create(AssignmentAttemptRequest request)
         {
             // Set the UTC offset for UTC+7

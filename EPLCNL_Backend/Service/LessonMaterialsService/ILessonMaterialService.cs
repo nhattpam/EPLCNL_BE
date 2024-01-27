@@ -7,6 +7,8 @@ namespace Service.LessonMaterialsService
     {
         public Task<List<LessonMaterialResponse>> GetAll();
 
+        public Task<LessonMaterialResponse> Get(Guid id);
+
         public Task<LessonMaterialResponse> Create(LessonMaterialRequest request);
 
         public Task<LessonMaterialResponse> Delete(Guid id);

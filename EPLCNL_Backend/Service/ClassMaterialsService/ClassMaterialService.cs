@@ -32,6 +32,31 @@ namespace Service.ClassMaterialsService
             return list;
         }
 
+        public async Task<ClassMaterialResponse> Get(Guid id)
+        {
+            try
+            {
+                ClassMaterial classMaterial = null;
+                classMaterial = await _unitOfWork.Repository<ClassMaterial>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.ClassTopic)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (classMaterial == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<ClassMaterial, ClassMaterialResponse>(classMaterial);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ClassMaterialResponse> Create(ClassMaterialRequest request)
         {
             try
