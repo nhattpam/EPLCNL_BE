@@ -13,8 +13,6 @@ namespace Service.ModulesService
         public Task<List<ModuleResponse>> GetAll();
         public Task<ModuleResponse> Get(Guid id);
 
-        public Task<ModuleResponse> Get(Guid id);
-
         public Task<ModuleResponse> Create(ModuleRequest request);
 
         public Task<ModuleResponse> Delete(Guid id);

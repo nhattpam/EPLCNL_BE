@@ -6,7 +6,7 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
-    [Route("api/Staffs")]
+    [Route("api/staffs")]
     [ApiController]
     public class StaffsController : ControllerBase
     {

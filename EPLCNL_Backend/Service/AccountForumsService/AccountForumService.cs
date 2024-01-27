@@ -74,7 +74,7 @@ namespace Service.AccountForumsService
                 await _unitOfWork.Repository<AccountForum>().InsertAsync(accountforum);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<AccountForum, AccountForumResponse>(accountForum);
+                return _mapper.Map<AccountForum, AccountForumResponse>(accountforum);
             }
             catch (Exception e)
             {

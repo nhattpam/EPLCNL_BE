@@ -57,6 +57,27 @@ namespace Service.ClassLessonsService
             }
         }
 
+        public async Task<List<ClassTopicResponse>> GetAllClassTopicsByClassLesson(Guid id)
+        {
+            var classLesson = await _unitOfWork.Repository<ClassLesson>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (classLesson == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var classTopics = _unitOfWork.Repository<ClassTopic>().GetAll()
+                .Where(t => t.ClassLessonId == id)
+                .ProjectTo<ClassTopicResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return classTopics;
+        }
+
+
         public async Task<ClassLessonResponse> Create(ClassLessonRequest request)
         {
             try
