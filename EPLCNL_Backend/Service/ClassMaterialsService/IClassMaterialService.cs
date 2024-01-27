@@ -12,6 +12,8 @@ namespace Service.ClassMaterialsService
     {
         public Task<List<ClassMaterialResponse>> GetAll();
 
+        public Task<ClassMaterialResponse> Get(Guid id);
+
         public Task<ClassMaterialResponse> Create(ClassMaterialRequest request);
 
         public Task<ClassMaterialResponse> Delete(Guid id);

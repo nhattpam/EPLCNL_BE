@@ -32,6 +32,30 @@ namespace Service.PaperWorkTypesService
             return list;
         }
 
+        public async Task<PaperWorkTypeResponse> Get(Guid id)
+        {
+            try
+            {
+                PaperWorkType paperWorkType = null;
+                paperWorkType = await _unitOfWork.Repository<PaperWorkType>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (paperWorkType == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<PaperWorkType, PaperWorkTypeResponse>(paperWorkType);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<PaperWorkTypeResponse> Create(PaperWorkTypeRequest request)
         {
             try

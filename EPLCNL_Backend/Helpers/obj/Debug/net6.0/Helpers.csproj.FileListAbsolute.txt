@@ -15,8 +15,6 @@ C:\Users\meoca\source\repos\EPLCNL_Backend\Helpers\bin\Debug\net6.0\Data.pdb
 C:\Users\meoca\source\repos\EPLCNL_Backend\Helpers\bin\Debug\net6.0\ViewModel.pdb
 C:\Users\meoca\source\repos\EPLCNL_Backend\Helpers\obj\Debug\net6.0\Helpers.csproj.AssemblyReference.cache
 C:\Users\meoca\source\repos\EPLCNL_Backend\Helpers\obj\Debug\net6.0\Helpers.csproj.CopyComplete
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Helpers\bin\Debug\net6.0\appsettings.Development.json
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Helpers\bin\Debug\net6.0\appsettings.json
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Helpers\bin\Debug\net6.0\Helpers.deps.json
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Helpers\bin\Debug\net6.0\Helpers.dll
 D:\capstone project\eplcnl-be\EPLCNL_Backend\Helpers\bin\Debug\net6.0\Helpers.pdb

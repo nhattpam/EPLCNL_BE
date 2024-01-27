@@ -32,6 +32,31 @@ namespace Service.ModulesService
             return list;
         }
 
+        public async Task<ModuleResponse> Get(Guid id)
+        {
+            try
+            {
+                Module module = null;
+                module = await _unitOfWork.Repository<Module>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Course)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (module == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Module, ModuleResponse>(module);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ModuleResponse> Create(ModuleRequest request)
         {
             try

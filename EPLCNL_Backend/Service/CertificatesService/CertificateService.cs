@@ -32,6 +32,30 @@ namespace Service.CertificatesService
             return list;
         }
 
+        public async Task<CertificateResponse> Get(Guid id)
+        {
+            try
+            {
+                Certificate certificate = null;
+                certificate = await _unitOfWork.Repository<Certificate>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (certificate == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Certificate, CertificateResponse>(certificate);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<CertificateResponse> Create(CertificateRequest request)
         {
             try

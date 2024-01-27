@@ -12,6 +12,8 @@ namespace Service.LessonsService
     {
         public Task<List<LessonResponse>> GetAll();
 
+        public Task<LessonResponse> Get(Guid id);
+
         public Task<LessonResponse> Create(LessonRequest request);
 
         public Task<LessonResponse> Delete(Guid id);

@@ -32,6 +32,31 @@ namespace Service.QuestionAnswersService
             return list;
         }
 
+        public async Task<QuestionAnswerResponse> Get(Guid id)
+        {
+            try
+            {
+                QuestionAnswer questionAnswer = null;
+                questionAnswer = await _unitOfWork.Repository<QuestionAnswer>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Question)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (questionAnswer == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<QuestionAnswer, QuestionAnswerResponse>(questionAnswer);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<QuestionAnswerResponse> Create(QuestionAnswerRequest request)
         {
             try

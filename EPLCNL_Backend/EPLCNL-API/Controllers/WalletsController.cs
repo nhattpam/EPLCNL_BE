@@ -34,6 +34,22 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(WalletResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<WalletResponse>> Get(Guid id)
+        {
+            try
+            {
+                var rs = await _walletService.Get(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]

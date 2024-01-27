@@ -34,6 +34,30 @@ namespace Service
             return list;
         }
 
+        public async Task<RoleResponse> Get(Guid id)
+        {
+            try
+            {
+                Role role = null;
+                role = await _unitOfWork.Repository<Role>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (role == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Role, RoleResponse>(role);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<RoleResponse> Create(RoleRequest request)
         {
             try

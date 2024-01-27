@@ -32,6 +32,31 @@ namespace Service.ForumsService
             return list;
         }
 
+        public async Task<ForumResponse> Get(Guid id)
+        {
+            try
+            {
+                Forum forum = null;
+                forum = await _unitOfWork.Repository<Forum>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Course)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (forum == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Forum, ForumResponse>(forum);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ForumResponse> Create(ForumRequest request)
         {
             try

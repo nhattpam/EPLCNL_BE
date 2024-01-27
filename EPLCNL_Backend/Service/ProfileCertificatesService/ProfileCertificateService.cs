@@ -32,6 +32,30 @@ namespace Service.ProfileCertificatesService
             return list;
         }
 
+        public async Task<ProfileCertificateResponse> Get(Guid id)
+        {
+            try
+            {
+                ProfileCertificate profileCertificate = null;
+                profileCertificate = await _unitOfWork.Repository<ProfileCertificate>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (profileCertificate == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<ProfileCertificate, ProfileCertificateResponse>(profileCertificate);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ProfileCertificateResponse> Create(ProfileCertificateRequest request)
         {
             try

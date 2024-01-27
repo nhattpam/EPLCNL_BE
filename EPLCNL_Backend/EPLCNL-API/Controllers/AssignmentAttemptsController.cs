@@ -36,6 +36,23 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentAttemptResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<AssignmentAttemptResponse>> Get(Guid id)
+        {
+            try
+            {
+                var rs = await _assignmentattemptService.Get(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
         [HttpPost]
         public async Task<ActionResult<AssignmentAttemptResponse>> Create([FromBody] AssignmentAttemptRequest request)
         {

@@ -12,6 +12,8 @@ namespace Service.ClassPraticesService
     {
         public Task<List<ClassPracticeResponse>> GetAll();
 
+        public Task<ClassPracticeResponse> Get(Guid id);
+
         public Task<ClassPracticeResponse> Create(ClassPracticeRequest request);
 
         public Task<ClassPracticeResponse> Delete(Guid id);

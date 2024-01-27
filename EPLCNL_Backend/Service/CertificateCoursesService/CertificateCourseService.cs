@@ -32,6 +32,30 @@ namespace Service.CertificateCoursesService
             return list;
         }
 
+        public async Task<CertificateCourseResponse> Get(Guid id)
+        {
+            try
+            {
+                CertificateCourse certificateCourse = null;
+                certificateCourse = await _unitOfWork.Repository<CertificateCourse>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (certificateCourse == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<CertificateCourse, CertificateCourseResponse>(certificateCourse);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<CertificateCourseResponse> Create(CertificateCourseRequest request)
         {
             try

@@ -31,17 +31,40 @@ namespace Service.AccountSurveysService
                                             .ToListAsync();
             return list;
         }
+        public async Task<AccountSurveyResponse> Get(Guid id)
+        {
+            try
+            {
+                AccountSurvey accountSurvey = null;
+                accountSurvey = await _unitOfWork.Repository<AccountSurvey>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (accountSurvey == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<AccountSurvey, AccountSurveyResponse>(accountSurvey);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
 
         public async Task<AccountSurveyResponse> Create(AccountSurveyRequest request)
         {
             try
             {
-                var accountsurvey = _mapper.Map<AccountSurveyRequest, AccountSurvey>(request);
-                accountsurvey.Id = Guid.NewGuid();
-                await _unitOfWork.Repository<AccountSurvey>().InsertAsync(accountsurvey);
+                var accountSurvey = _mapper.Map<AccountSurveyRequest, AccountSurvey>(request);
+                accountSurvey.Id = Guid.NewGuid();
+                await _unitOfWork.Repository<AccountSurvey>().InsertAsync(accountSurvey);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<AccountSurvey, AccountSurveyResponse>(accountsurvey);
+                return _mapper.Map<AccountSurvey, AccountSurveyResponse>(accountSurvey);
             }
             catch (Exception e)
             {
@@ -53,16 +76,16 @@ namespace Service.AccountSurveysService
         {
             try
             {
-                AccountSurvey accountsurvey = null;
-                accountsurvey = _unitOfWork.Repository<AccountSurvey>()
+                AccountSurvey accountSurvey = null;
+                accountSurvey = _unitOfWork.Repository<AccountSurvey>()
                     .Find(p => p.Id == id);
-                if (accountsurvey == null)
+                if (accountSurvey == null)
                 {
                     throw new Exception("Bi trung id");
                 }
-                await _unitOfWork.Repository<AccountSurvey>().HardDeleteGuid(accountsurvey.Id);
+                await _unitOfWork.Repository<AccountSurvey>().HardDeleteGuid(accountSurvey.Id);
                 await _unitOfWork.CommitAsync();
-                return _mapper.Map<AccountSurvey, AccountSurveyResponse>(accountsurvey);
+                return _mapper.Map<AccountSurvey, AccountSurveyResponse>(accountSurvey);
             }
             catch (Exception ex)
             {
@@ -74,18 +97,18 @@ namespace Service.AccountSurveysService
         {
             try
             {
-                AccountSurvey accountsurvey = _unitOfWork.Repository<AccountSurvey>()
+                AccountSurvey accountSurvey = _unitOfWork.Repository<AccountSurvey>()
                             .Find(x => x.Id == id);
-                if (accountsurvey == null)
+                if (accountSurvey == null)
                 {
                     throw new Exception();
                 }
-                accountsurvey = _mapper.Map(request, accountsurvey);
+                accountSurvey = _mapper.Map(request, accountSurvey);
 
-                await _unitOfWork.Repository<AccountSurvey>().UpdateDetached(accountsurvey);
+                await _unitOfWork.Repository<AccountSurvey>().UpdateDetached(accountSurvey);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<AccountSurvey, AccountSurveyResponse>(accountsurvey);
+                return _mapper.Map<AccountSurvey, AccountSurveyResponse>(accountSurvey);
             }
 
             catch (Exception ex)

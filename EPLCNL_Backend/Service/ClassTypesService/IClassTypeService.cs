@@ -12,6 +12,8 @@ namespace Service.ClassTypesService
     {
         public Task<List<ClassTypeResponse>> GetAll();
 
+        public Task<ClassTypeResponse> Get(Guid id);
+
         public Task<ClassTypeResponse> Create(ClassTypeRequest request);
 
         public Task<ClassTypeResponse> Delete(Guid id);

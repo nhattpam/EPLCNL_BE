@@ -12,6 +12,8 @@ namespace Service.EnrollmentsService
     {
         public Task<List<EnrollmentResponse>> GetAll();
 
+        public Task<EnrollmentResponse> Get(Guid id);
+
         public Task<EnrollmentResponse> Create(EnrollmentRequest request);
 
         public Task<EnrollmentResponse> Delete(Guid id);

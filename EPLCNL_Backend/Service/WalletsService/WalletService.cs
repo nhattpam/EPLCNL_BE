@@ -31,6 +31,30 @@ namespace Service.WalletsService
                                             .ToListAsync();
             return list;
         }
+        public async Task<WalletResponse> Get(Guid id)
+        {
+            try
+            {
+                Wallet wallet = null;
+                wallet = await _unitOfWork.Repository<Wallet>().GetAll()
+                     .AsNoTracking()
+                     .Include(x=>x.Account)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (wallet == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Wallet, WalletResponse>(wallet);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
 
         public async Task<WalletResponse> Create(WalletRequest request)
         {

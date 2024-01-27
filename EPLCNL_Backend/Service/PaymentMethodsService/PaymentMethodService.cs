@@ -32,6 +32,30 @@ namespace Service.PaymentMethodsService
             return list;
         }
 
+        public async Task<PaymentMethodResponse> Get(Guid id)
+        {
+            try
+            {
+                PaymentMethod paymentMethod = null;
+                paymentMethod = await _unitOfWork.Repository<PaymentMethod>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (paymentMethod == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<PaymentMethod, PaymentMethodResponse>(paymentMethod);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<PaymentMethodResponse> Create(PaymentMethodRequest request)
         {
             try

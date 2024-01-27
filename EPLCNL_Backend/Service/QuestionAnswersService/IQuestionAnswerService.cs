@@ -12,6 +12,8 @@ namespace Service.QuestionAnswersService
     {
         public Task<List<QuestionAnswerResponse>> GetAll();
 
+        public Task<QuestionAnswerResponse> Get(Guid id);
+
         public Task<QuestionAnswerResponse> Create(QuestionAnswerRequest request);
 
         public Task<QuestionAnswerResponse> Delete(Guid id);

@@ -32,18 +32,41 @@ namespace Service.AccountForumsService
                                             .ToListAsync();
             return list;
         }
+        public async Task<AccountForumResponse> Get(Guid id)
+        {
+            try
+            {
+                AccountForum accountForum = null;
+                accountForum = await _unitOfWork.Repository<AccountForum>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (accountForum == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<AccountForum, AccountForumResponse>(accountForum);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
 
         public async Task<AccountForumResponse> Create(AccountForumRequest request)
         {
             try
             {
-                var accountforum = _mapper.Map<AccountForumRequest, AccountForum>(request);
-                accountforum.Id = Guid.NewGuid();
-                accountforum.MessagedDate = DateTime.Now;
-                await _unitOfWork.Repository<AccountForum>().InsertAsync(accountforum);
+                var accountForum = _mapper.Map<AccountForumRequest, AccountForum>(request);
+                accountForum.Id = Guid.NewGuid();
+                accountForum.MessagedDate = DateTime.Now;
+                await _unitOfWork.Repository<AccountForum>().InsertAsync(accountForum);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<AccountForum, AccountForumResponse>(accountforum);
+                return _mapper.Map<AccountForum, AccountForumResponse>(accountForum);
             }
             catch (Exception e)
             {
@@ -55,16 +78,16 @@ namespace Service.AccountForumsService
         {
             try
             {
-                AccountForum accountforum = null;
-                accountforum = _unitOfWork.Repository<AccountForum>()
+                AccountForum accountForum = null;
+                accountForum = _unitOfWork.Repository<AccountForum>()
                     .Find(p => p.Id == id);
-                if (accountforum == null)
+                if (accountForum == null)
                 {
                     throw new Exception("Bi trung id");
                 }
-                await _unitOfWork.Repository<AccountForum>().HardDeleteGuid(accountforum.Id);
+                await _unitOfWork.Repository<AccountForum>().HardDeleteGuid(accountForum.Id);
                 await _unitOfWork.CommitAsync();
-                return _mapper.Map<AccountForum, AccountForumResponse>(accountforum);
+                return _mapper.Map<AccountForum, AccountForumResponse>(accountForum);
             }
             catch (Exception ex)
             {
@@ -76,18 +99,18 @@ namespace Service.AccountForumsService
         {
             try
             {
-                AccountForum accountforum = _unitOfWork.Repository<AccountForum>()
+                AccountForum accountForum = _unitOfWork.Repository<AccountForum>()
                             .Find(x => x.Id == id);
-                if (accountforum == null)
+                if (accountForum == null)
                 {
                     throw new Exception();
                 }
-                accountforum = _mapper.Map(request, accountforum);
+                accountForum = _mapper.Map(request, accountForum);
 
-                await _unitOfWork.Repository<AccountForum>().UpdateDetached(accountforum);
+                await _unitOfWork.Repository<AccountForum>().UpdateDetached(accountForum);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<AccountForum, AccountForumResponse>(accountforum);
+                return _mapper.Map<AccountForum, AccountForumResponse>(accountForum);
             }
 
             catch (Exception ex)

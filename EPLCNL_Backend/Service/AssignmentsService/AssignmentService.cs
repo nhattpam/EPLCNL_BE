@@ -32,6 +32,31 @@ namespace Service.AssignmentsService
             return list;
         }
 
+        public async Task<AssignmentResponse> Get(Guid id)
+        {
+            try
+            {
+                Assignment assignment = null;
+                assignment = await _unitOfWork.Repository<Assignment>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Module)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (assignment == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Assignment, AssignmentResponse>(assignment);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<AssignmentResponse> Create(AssignmentRequest request)
         {
             try

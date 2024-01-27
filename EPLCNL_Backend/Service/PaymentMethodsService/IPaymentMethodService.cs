@@ -12,6 +12,8 @@ namespace Service.PaymentMethodsService
     {
         public Task<List<PaymentMethodResponse>> GetAll();
 
+        public Task<PaymentMethodResponse> Get(Guid id);
+
         public Task<PaymentMethodResponse> Create(PaymentMethodRequest request);
 
         public Task<PaymentMethodResponse> Delete(Guid id);

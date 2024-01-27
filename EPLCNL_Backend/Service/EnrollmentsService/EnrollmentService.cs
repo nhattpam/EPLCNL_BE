@@ -32,6 +32,30 @@ namespace Service.EnrollmentsService
             return list;
         }
 
+        public async Task<EnrollmentResponse> Get(Guid id)
+        {
+            try
+            {
+                Enrollment enrollment = null;
+                enrollment = await _unitOfWork.Repository<Enrollment>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (enrollment == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Enrollment, EnrollmentResponse>(enrollment);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<EnrollmentResponse> Create(EnrollmentRequest request)
         {
             try

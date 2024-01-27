@@ -12,6 +12,8 @@ namespace Service.PaperWorkTypesService
     {
         public Task<List<PaperWorkTypeResponse>> GetAll();
 
+        public Task<PaperWorkTypeResponse> Get(Guid id);
+
         public Task<PaperWorkTypeResponse> Create(PaperWorkTypeRequest request);
 
         public Task<PaperWorkTypeResponse> Delete(Guid id);

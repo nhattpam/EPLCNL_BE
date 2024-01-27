@@ -32,6 +32,30 @@ namespace Service.QuizAttemptsService
             return list;
         }
 
+        public async Task<QuizAttemptResponse> Get(Guid id)
+        {
+            try
+            {
+                QuizAttempt quizAttempt = null;
+                quizAttempt = await _unitOfWork.Repository<QuizAttempt>().GetAll()
+                     .AsNoTracking()
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (quizAttempt == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<QuizAttempt, QuizAttemptResponse>(quizAttempt);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<QuizAttemptResponse> Create(QuizAttemptRequest request)
         {
             try

@@ -12,6 +12,8 @@ namespace Service.ProfileCertificatesService
     {
         public Task<List<ProfileCertificateResponse>> GetAll();
 
+        public Task<ProfileCertificateResponse> Get(Guid id);
+
         public Task<ProfileCertificateResponse> Create(ProfileCertificateRequest request);
 
         public Task<ProfileCertificateResponse> Delete(Guid id);

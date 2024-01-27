@@ -32,6 +32,31 @@ namespace Service.ClassTypesService
             return list;
         }
 
+        public async Task<ClassTypeResponse> Get(Guid id)
+        {
+            try
+            {
+                ClassType classType = null;
+                classType = await _unitOfWork.Repository<ClassType>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Course)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (classType == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<ClassType, ClassTypeResponse>(classType);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<ClassTypeResponse> Create(ClassTypeRequest request)
         {
             try

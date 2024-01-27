@@ -32,6 +32,31 @@ namespace Service.TransactionsService
             return list;
         }
 
+        public async Task<TransactionResponse> Get(Guid id)
+        {
+            try
+            {
+                Transaction transaction = null;
+                transaction = await _unitOfWork.Repository<Transaction>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.PaymentMethod)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (transaction == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<Transaction, TransactionResponse>(transaction);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<TransactionResponse> Create(TransactionRequest request)
         {
             try
