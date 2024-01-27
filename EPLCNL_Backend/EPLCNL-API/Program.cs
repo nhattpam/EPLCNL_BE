@@ -189,10 +189,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "AllowOrigin",
         builder =>
         {
-            builder.WithOrigins("https://localhost:3000")
-                   .AllowAnyHeader()
-                   .AllowAnyMethod()
-                   .AllowCredentials();  // Add this line if needed
+            builder.WithOrigins("*")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
         });
 });
 
@@ -206,10 +205,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 // Shows UseCors with CorsPolicyBuilder.
-// with a named pocili
-app.UseCors("AllowOrigin");
 
 //khai bao
 app.UseAuthentication();
@@ -217,7 +213,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+// with a named pocili
+app.UseCors("AllowOrigin");
 
 
 app.Run();
