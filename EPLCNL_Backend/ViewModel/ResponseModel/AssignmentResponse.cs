@@ -13,8 +13,9 @@ namespace ViewModel.ResponseModel
         public TimeSpan? OpenTime { get; set; }
         public TimeSpan? CloseTime { get; set; }
         public Guid? ModuleId { get; set; }
-        public TimeSpan? Deadline { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+
+        public virtual ModuleResponse? Module { get; set; }
     }
 }

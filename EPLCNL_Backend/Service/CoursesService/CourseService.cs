@@ -40,7 +40,8 @@ namespace Service.CoursesService
                 course = await _unitOfWork.Repository<Course>().GetAll()
                      .AsNoTracking()
                         .Include(a => a.Category)
-                    //.Include(a => a.Center)
+                        .Include(a => a.Modules)
+                        .Include(a => a.Enrollments)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -110,6 +111,14 @@ namespace Service.CoursesService
 
         public async Task<CourseResponse> Update(Guid id, CourseRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Course course = _unitOfWork.Repository<Course>()
@@ -119,6 +128,7 @@ namespace Service.CoursesService
                     throw new Exception();
                 }
                 course = _mapper.Map(request, course);
+                course.UpdatedDate = localTime;
 
                 await _unitOfWork.Repository<Course>().UpdateDetached(course);
                 await _unitOfWork.CommitAsync();
