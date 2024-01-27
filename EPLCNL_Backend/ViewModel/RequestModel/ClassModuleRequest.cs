@@ -9,7 +9,6 @@ namespace ViewModel.RequestModel
     public class ClassModuleRequest
     {
         public DateTime? StartDate { get; set; }
-        public Guid? ClassTypeId { get; set; }
-
+        public Guid? CourseId { get; set; }
     }
 }

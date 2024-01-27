@@ -36,27 +36,28 @@ namespace Service.ModulesService
         {
             try
             {
-                Module module = null;
-                module = await _unitOfWork.Repository<Module>().GetAll()
-                        .Include(a => a.Assignments)
-                        .Include(a => a.Quizzes)
-                        .Include(a => a.Lessons)
+                Module module = await _unitOfWork.Repository<Module>()
+                    .GetAll()
+                    .Include(a => a.Lessons)
+                    .Include(a => a.Quizzes)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
                 if (module == null)
                 {
-                    throw new Exception("khong tim thay");
+                    throw new Exception("Module not found");
                 }
+
+                // Additional checks or processing as needed
 
                 return _mapper.Map<Module, ModuleResponse>(module);
             }
-
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                throw new Exception($"Error retrieving module: {e.Message}");
             }
         }
+
 
         public async Task<ModuleResponse> Create(ModuleRequest request)
         {

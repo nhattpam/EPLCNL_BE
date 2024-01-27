@@ -34,8 +34,6 @@ namespace Helper
             CreateMap<ClassPractice, ClassPracticeResponse>().ReverseMap();
             CreateMap<ClassTopic, ClassTopicRequest>().ReverseMap();
             CreateMap<ClassTopic, ClassTopicResponse>().ReverseMap();
-            CreateMap<ClassType, ClassTypeRequest>().ReverseMap();
-            CreateMap<ClassType, ClassTypeResponse>().ReverseMap();
             CreateMap<Course, CourseRequest>().ReverseMap();
             CreateMap<Course, CourseResponse>().ReverseMap();
             CreateMap<Account, AccountRequest>().ReverseMap();
