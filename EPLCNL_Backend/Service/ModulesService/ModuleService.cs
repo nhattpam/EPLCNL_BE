@@ -38,6 +38,9 @@ namespace Service.ModulesService
             {
                 Module module = null;
                 module = await _unitOfWork.Repository<Module>().GetAll()
+                        .Include(a => a.Assignments)
+                        .Include(a => a.Quizzes)
+                        .Include(a => a.Lessons)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
