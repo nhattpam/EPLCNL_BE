@@ -58,10 +58,19 @@ namespace Service.PaperWorksService
 
         public async Task<PaperWorkResponse> Create(PaperWorkRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var paperWork = _mapper.Map<PaperWorkRequest, PaperWork>(request);
                 paperWork.Id = Guid.NewGuid();
+                paperWork.CreatedDate = localTime;
                 await _unitOfWork.Repository<PaperWork>().InsertAsync(paperWork);
                 await _unitOfWork.CommitAsync();
 
@@ -96,6 +105,14 @@ namespace Service.PaperWorksService
 
         public async Task<PaperWorkResponse> Update(Guid id, PaperWorkRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 PaperWork paperWork = _unitOfWork.Repository<PaperWork>()
@@ -105,6 +122,7 @@ namespace Service.PaperWorksService
                     throw new Exception();
                 }
                 paperWork = _mapper.Map(request, paperWork);
+                paperWork.UpdatedDate = localTime;
 
                 await _unitOfWork.Repository<PaperWork>().UpdateDetached(paperWork);
                 await _unitOfWork.CommitAsync();

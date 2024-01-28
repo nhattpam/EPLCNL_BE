@@ -59,10 +59,19 @@ namespace Service.ClassTopicsService
 
         public async Task<ClassTopicResponse> Create(ClassTopicRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var classTopic = _mapper.Map<ClassTopicRequest, ClassTopic>(request);
                 classTopic.Id = Guid.NewGuid();
+                classTopic.CreatedDate = localTime;
                 await _unitOfWork.Repository<ClassTopic>().InsertAsync(classTopic);
                 await _unitOfWork.CommitAsync();
 
@@ -97,6 +106,14 @@ namespace Service.ClassTopicsService
 
         public async Task<ClassTopicResponse> Update(Guid id, ClassTopicRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 ClassTopic classTopic = _unitOfWork.Repository<ClassTopic>()
@@ -106,6 +123,7 @@ namespace Service.ClassTopicsService
                     throw new Exception();
                 }
                 classTopic = _mapper.Map(request, classTopic);
+                classTopic.UpdatedDate = localTime;
 
                 await _unitOfWork.Repository<ClassTopic>().UpdateDetached(classTopic);
                 await _unitOfWork.CommitAsync();

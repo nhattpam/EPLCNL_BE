@@ -83,6 +83,26 @@ namespace Service.TutorService
         }
 
 
+        public async Task<List<PaperWorkResponse>> GetAllPaperWorksByTutor(Guid id)
+        {
+            var tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (tutor == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var paperWorks = _unitOfWork.Repository<PaperWork>().GetAll()
+                .Where(t => t.TutorId == id)
+                .ProjectTo<PaperWorkResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return paperWorks;
+        }
+
         public async Task<TutorResponse> Create(TutorRequest request)
         {
             try

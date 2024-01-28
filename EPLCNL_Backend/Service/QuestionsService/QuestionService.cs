@@ -59,10 +59,19 @@ namespace Service.QuestionsService
 
         public async Task<QuestionResponse> Create(QuestionRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var question = _mapper.Map<QuestionRequest, Question>(request);
                 question.Id = Guid.NewGuid();
+                question.CreatedDate = localTime;
                 await _unitOfWork.Repository<Question>().InsertAsync(question);
                 await _unitOfWork.CommitAsync();
 
@@ -97,6 +106,14 @@ namespace Service.QuestionsService
 
         public async Task<QuestionResponse> Update(Guid id, QuestionRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Question question = _unitOfWork.Repository<Question>()
@@ -106,6 +123,7 @@ namespace Service.QuestionsService
                     throw new Exception();
                 }
                 question = _mapper.Map(request, question);
+                question.UpdatedDate = localTime;
 
                 await _unitOfWork.Repository<Question>().UpdateDetached(question);
                 await _unitOfWork.CommitAsync();

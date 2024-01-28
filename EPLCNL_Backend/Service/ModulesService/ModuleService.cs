@@ -61,10 +61,19 @@ namespace Service.ModulesService
 
         public async Task<ModuleResponse> Create(ModuleRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var module = _mapper.Map<ModuleRequest, Module>(request);
                 module.Id = Guid.NewGuid();
+                module.CreatedDate = localTime;
                 await _unitOfWork.Repository<Module>().InsertAsync(module);
                 await _unitOfWork.CommitAsync();
 
@@ -99,6 +108,14 @@ namespace Service.ModulesService
 
         public async Task<ModuleResponse> Update(Guid id, ModuleRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Module module = _unitOfWork.Repository<Module>()
@@ -108,6 +125,7 @@ namespace Service.ModulesService
                     throw new Exception();
                 }
                 module = _mapper.Map(request, module);
+                module.UpdatedDate = localTime;
 
                 await _unitOfWork.Repository<Module>().UpdateDetached(module);
                 await _unitOfWork.CommitAsync();

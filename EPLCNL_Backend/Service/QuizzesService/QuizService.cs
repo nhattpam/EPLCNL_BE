@@ -57,10 +57,19 @@ namespace Service.QuizzesService
         }
         public async Task<QuizResponse> Create(QuizRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var quiz = _mapper.Map<QuizRequest, Quiz>(request);
                 quiz.Id = Guid.NewGuid();
+                quiz.CreatedDate = localTime;
                 await _unitOfWork.Repository<Quiz>().InsertAsync(quiz);
                 await _unitOfWork.CommitAsync();
 
@@ -95,6 +104,14 @@ namespace Service.QuizzesService
 
         public async Task<QuizResponse> Update(Guid id, QuizRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Quiz quiz = _unitOfWork.Repository<Quiz>()
@@ -104,7 +121,7 @@ namespace Service.QuizzesService
                     throw new Exception();
                 }
                 quiz = _mapper.Map(request, quiz);
-
+                quiz.UpdatedDate = localTime;
                 await _unitOfWork.Repository<Quiz>().UpdateDetached(quiz);
                 await _unitOfWork.CommitAsync();
 

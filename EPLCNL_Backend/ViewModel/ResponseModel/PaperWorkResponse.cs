@@ -14,5 +14,8 @@ namespace ViewModel.ResponseModel
         public string? PaperWorkUrl { get; set; }
         public Guid? PaperWorkTypeId { get; set; }
         public Guid? TutorId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public virtual PaperWorkTypeResponse? PaperWorkType { get; set; }
     }
 }
