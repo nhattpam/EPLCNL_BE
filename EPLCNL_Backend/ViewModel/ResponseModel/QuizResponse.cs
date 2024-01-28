@@ -8,7 +8,6 @@ namespace ViewModel.ResponseModel
 {
     public class QuizResponse
     {
-        public Guid Id { get; set; }
         public Guid? ModuleId { get; set; }
         public Guid? ClassTopicId { get; set; }
         public Guid? ClassPracticeId { get; set; }
@@ -17,5 +16,9 @@ namespace ViewModel.ResponseModel
         public TimeSpan? Deadline { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+
+        public virtual ClassPracticeResponse? ClassPractice { get; set; }
+        public virtual ClassTopicResponse? ClassTopic { get; set; }
+        public virtual ModuleResponse? Module { get; set; }
     }
 }

@@ -40,6 +40,7 @@ namespace Service.ModulesService
                     .GetAll()
                     .Include(a => a.Lessons)
                     .Include(a => a.Quizzes)
+                    .Include(a => a.Course)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

@@ -8,7 +8,6 @@ namespace ViewModel.RequestModel
 {
     public class QuizRequest
     {
-        public Guid Id { get; set; }
         public Guid? ModuleId { get; set; }
         public Guid? ClassTopicId { get; set; }
         public Guid? ClassPracticeId { get; set; }

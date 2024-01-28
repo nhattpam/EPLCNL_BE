@@ -59,10 +59,19 @@ namespace Service.LessonsService
 
         public async Task<LessonResponse> Create(LessonRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var lesson = _mapper.Map<LessonRequest, Lesson>(request);
                 lesson.Id = Guid.NewGuid();
+                lesson.CreatedDate = localTime;
                 await _unitOfWork.Repository<Lesson>().InsertAsync(lesson);
                 await _unitOfWork.CommitAsync();
 
@@ -97,6 +106,14 @@ namespace Service.LessonsService
 
         public async Task<LessonResponse> Update(Guid id, LessonRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Lesson lesson = _unitOfWork.Repository<Lesson>()
@@ -106,6 +123,7 @@ namespace Service.LessonsService
                     throw new Exception();
                 }
                 lesson = _mapper.Map(request, lesson);
+                lesson.UpdatedDate = localTime;
 
                 await _unitOfWork.Repository<Lesson>().UpdateDetached(lesson);
                 await _unitOfWork.CommitAsync();

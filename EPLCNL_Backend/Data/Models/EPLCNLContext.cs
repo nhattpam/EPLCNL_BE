@@ -208,15 +208,13 @@ public partial class EPLCNLContext : DbContext
                 .ValueGeneratedNever()
                 .HasColumnName("id");
 
-            entity.Property(e => e.CloseTime).HasColumnName("close_time");
-
             entity.Property(e => e.CreatedDate)
                 .HasColumnType("datetime")
                 .HasColumnName("created_date");
 
-            entity.Property(e => e.ModuleId).HasColumnName("module_id");
+            entity.Property(e => e.Deadline).HasColumnName("deadline");
 
-            entity.Property(e => e.OpenTime).HasColumnName("open_time");
+            entity.Property(e => e.ModuleId).HasColumnName("module_id");
 
             entity.Property(e => e.QuestionText)
                 .HasColumnType("text")
@@ -229,7 +227,7 @@ public partial class EPLCNLContext : DbContext
             entity.HasOne(d => d.Module)
                 .WithMany(p => p.Assignments)
                 .HasForeignKey(d => d.ModuleId)
-                .HasConstraintName("FK__Assignmen__modul__36470DEF");
+                .HasConstraintName("FK__Assignmen__modul__049AA3C2");
         });
 
         modelBuilder.Entity<AssignmentAttempt>(entity =>
@@ -971,51 +969,51 @@ public partial class EPLCNLContext : DbContext
         });
 
         modelBuilder.Entity<Quiz>(entity =>
-            {
-                entity.ToTable("Quiz");
+        {
+            entity.ToTable("Quiz");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
 
-                entity.Property(e => e.ClassPracticeId).HasColumnName("class_practice_id");
+            entity.Property(e => e.ClassPracticeId).HasColumnName("class_practice_id");
 
-                entity.Property(e => e.ClassTopicId).HasColumnName("class_topic_id");
+            entity.Property(e => e.ClassTopicId).HasColumnName("class_topic_id");
 
-                entity.Property(e => e.CreatedDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("created_date");
+            entity.Property(e => e.CreatedDate)
+                .HasColumnType("datetime")
+                .HasColumnName("created_date");
 
-                entity.Property(e => e.Deadline).HasColumnName("deadline");
+            entity.Property(e => e.Deadline).HasColumnName("deadline");
 
-                entity.Property(e => e.GradeToPass).HasColumnName("grade_to_pass");
+            entity.Property(e => e.GradeToPass).HasColumnName("grade_to_pass");
 
-                entity.Property(e => e.ModuleId).HasColumnName("module_id");
+            entity.Property(e => e.ModuleId).HasColumnName("module_id");
 
-                entity.Property(e => e.Name)
-                    .HasMaxLength(255)
-                    .IsUnicode(false)
-                    .HasColumnName("name");
+            entity.Property(e => e.Name)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("name");
 
-                entity.Property(e => e.UpdatedDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("updated_date");
+            entity.Property(e => e.UpdatedDate)
+                .HasColumnType("datetime")
+                .HasColumnName("updated_date");
 
-                entity.HasOne(d => d.ClassPractice)
-                    .WithMany(p => p.Quizzes)
-                    .HasForeignKey(d => d.ClassPracticeId)
-                    .HasConstraintName("FK__Quiz__class_prac__253C7D7E");
+            entity.HasOne(d => d.ClassPractice)
+                .WithMany(p => p.Quizzes)
+                .HasForeignKey(d => d.ClassPracticeId)
+                .HasConstraintName("FK__Quiz__class_prac__1A89E4E1");
 
-                entity.HasOne(d => d.ClassTopic)
-                    .WithMany(p => p.Quizzes)
-                    .HasForeignKey(d => d.ClassTopicId)
-                    .HasConstraintName("FK__Quiz__class_topi__0E591826");
+            entity.HasOne(d => d.ClassTopic)
+                .WithMany(p => p.Quizzes)
+                .HasForeignKey(d => d.ClassTopicId)
+                .HasConstraintName("FK__Quiz__class_topi__03A67F89");
 
-                entity.HasOne(d => d.Module)
-                    .WithMany(p => p.Quizzes)
-                    .HasForeignKey(d => d.ModuleId)
-                    .HasConstraintName("FK__Quiz__module_id__0D64F3ED");
-            });
+            entity.HasOne(d => d.Module)
+                .WithMany(p => p.Quizzes)
+                .HasForeignKey(d => d.ModuleId)
+                .HasConstraintName("FK__Quiz__module_id__02B25B50");
+        });
 
         modelBuilder.Entity<QuizAttempt>(entity =>
         {

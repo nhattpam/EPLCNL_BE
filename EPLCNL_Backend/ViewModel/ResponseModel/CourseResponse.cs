@@ -25,7 +25,7 @@ namespace ViewModel.ResponseModel
         public virtual CategoryResponse? Category { get; set; }
         public virtual ICollection<EnrollmentResponse> Enrollments { get; set; }
         public virtual ICollection<FeedbackResponse> Feedbacks { get; set; }
-        public virtual ICollection<ModuleResponse> Modules { get; set; }
+        //public virtual ICollection<ModuleResponse> Modules { get; set; }
         public virtual ICollection<ClassModuleResponse> ClassModules { get; set; }
 
     }

@@ -9,10 +9,8 @@ namespace ViewModel.RequestModel
     public class AssignmentRequest
     {
         public string? QuestionText { get; set; }
-        public TimeSpan? OpenTime { get; set; }
-        public TimeSpan? CloseTime { get; set; }
-        public Guid? ModuleId { get; set; }
         public TimeSpan? Deadline { get; set; }
+        public Guid? ModuleId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 
