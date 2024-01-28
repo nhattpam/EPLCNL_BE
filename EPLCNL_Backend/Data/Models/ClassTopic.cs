@@ -7,8 +7,8 @@ namespace Data.Models
     {
         public ClassTopic()
         {
-            ClassMaterials = new HashSet<ClassMaterial>();
-            ClassPractices = new HashSet<ClassPractice>();
+            LessonMaterials = new HashSet<LessonMaterial>();
+            Quizzes = new HashSet<Quiz>();
         }
 
         public Guid Id { get; set; }
@@ -20,7 +20,7 @@ namespace Data.Models
         public Guid? ClassLessonId { get; set; }
 
         public virtual ClassLesson? ClassLesson { get; set; }
-        public virtual ICollection<ClassMaterial> ClassMaterials { get; set; }
-        public virtual ICollection<ClassPractice> ClassPractices { get; set; }
+        public virtual ICollection<LessonMaterial> LessonMaterials { get; set; }
+        public virtual ICollection<Quiz> Quizzes { get; set; }
     }
 }
