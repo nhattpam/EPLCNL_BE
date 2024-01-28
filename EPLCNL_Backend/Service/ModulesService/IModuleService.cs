@@ -12,6 +12,10 @@ namespace Service.ModulesService
     {
         public Task<List<ModuleResponse>> GetAll();
         public Task<ModuleResponse> Get(Guid id);
+        public Task<List<LessonResponse>> GetAllLessonsByModule(Guid id);
+        public Task<List<AssignmentResponse>> GetAllAssignmentsByModule(Guid id);
+        public Task<List<QuizResponse>> GetAllQuizzesByModule(Guid id);
+
 
         public Task<ModuleResponse> Create(ModuleRequest request);
 

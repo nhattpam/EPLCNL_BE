@@ -138,5 +138,65 @@ namespace Service.ModulesService
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<List<LessonResponse>> GetAllLessonsByModule(Guid id)
+        {
+            var module = await _unitOfWork.Repository<Module>().GetAll()
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
+
+            if (module == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var lessons = _unitOfWork.Repository<Lesson>().GetAll()
+                .Where(t => t.ModuleId == id)
+                .ProjectTo<LessonResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return lessons;
+        }
+
+        public async Task<List<AssignmentResponse>> GetAllAssignmentsByModule(Guid id)
+        {
+            var module = await _unitOfWork.Repository<Module>().GetAll()
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
+
+            if (module == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var assignments = _unitOfWork.Repository<Assignment>().GetAll()
+                .Where(t => t.ModuleId == id)
+                .ProjectTo<AssignmentResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return assignments;
+        }
+
+        public async Task<List<QuizResponse>> GetAllQuizzesByModule(Guid id)
+        {
+            var module = await _unitOfWork.Repository<Module>().GetAll()
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
+
+            if (module == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var quizzes = _unitOfWork.Repository<Quiz>().GetAll()
+                .Where(t => t.ModuleId == id)
+                .ProjectTo<QuizResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return quizzes;
+        }
     }
 }

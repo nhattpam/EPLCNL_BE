@@ -42,6 +42,7 @@ namespace Service.CoursesService
                         .Include(a => a.Category)
                         .Include(a => a.Modules)
                         .Include(a => a.Enrollments)
+                        .Include(a => a.ClassModules)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

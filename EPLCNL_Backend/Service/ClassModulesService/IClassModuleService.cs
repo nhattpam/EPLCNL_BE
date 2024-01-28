@@ -14,6 +14,9 @@ namespace Service.ClassModulesService
 
         public Task<ClassModuleResponse> Get(Guid id);
 
+        public Task<List<ClassLessonResponse>> GetAllClassLessonsByModule(Guid id);
+
+
         public Task<ClassModuleResponse> Create(ClassModuleRequest request);
 
         public Task<ClassModuleResponse> Delete(Guid id);

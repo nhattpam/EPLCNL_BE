@@ -11,8 +11,6 @@ namespace ViewModel.ResponseModel
         public Guid Id { get; set; }
         public DateTime? StartDate { get; set; }
         public Guid? CourseId { get; set; }
-
-        public virtual CourseResponse? Course { get; set; }
         public virtual ICollection<ClassLessonResponse> ClassLessons { get; set; }
 
     }
