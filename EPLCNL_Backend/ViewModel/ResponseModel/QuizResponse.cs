@@ -13,7 +13,7 @@ namespace ViewModel.ResponseModel
         public Guid? ClassPracticeId { get; set; }
         public string? Name { get; set; }
         public double? GradeToPass { get; set; }
-        public TimeSpan? Deadline { get; set; }
+        public int? Deadline { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 

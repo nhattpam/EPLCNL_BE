@@ -12,7 +12,7 @@ namespace Data.Models
 
         public Guid Id { get; set; }
         public string? QuestionText { get; set; }
-        public TimeSpan? Deadline { get; set; }
+        public int? Deadline { get; set; }
         public Guid? ModuleId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
