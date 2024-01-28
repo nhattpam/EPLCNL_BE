@@ -142,5 +142,45 @@ namespace Service.CoursesService
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<List<ModuleResponse>> GetAllModulesByCourse(Guid id)
+        {
+            var course = await _unitOfWork.Repository<Course>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (course == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var modules = _unitOfWork.Repository<Module>().GetAll()
+                .Where(t => t.CourseId == id)
+                .ProjectTo<ModuleResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return modules;
+        }
+
+        public async Task<List<ClassModuleResponse>> GetAllClassModulesByCourse(Guid id)
+        {
+            var course = await _unitOfWork.Repository<Course>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (course == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var modules = _unitOfWork.Repository<ClassModule>().GetAll()
+                .Where(t => t.CourseId == id)
+                .ProjectTo<ClassModuleResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return modules;
+        }
     }
 }

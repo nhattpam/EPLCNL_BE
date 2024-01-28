@@ -12,6 +12,9 @@ namespace Service.CoursesService
     {
         public Task<List<CourseResponse>> GetAll();
         public Task<CourseResponse> Get(Guid id);
+        Task<List<ModuleResponse>> GetAllModulesByCourse(Guid id);
+        Task<List<ClassModuleResponse>> GetAllClassModulesByCourse(Guid id);
+
         public Task<CourseResponse> Create(CourseRequest request);
 
         public Task<CourseResponse> Delete(Guid id);

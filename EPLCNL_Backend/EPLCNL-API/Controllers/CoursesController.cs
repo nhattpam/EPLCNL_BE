@@ -55,6 +55,40 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        [HttpGet("{id}/modules")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ModuleResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ModuleResponse>>> GetAllModulesByCourse(Guid id)
+        {
+            try
+            {
+                var rs = await _courseService.GetAllModulesByCourse(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpGet("{id}/class-modules")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClassModuleResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ClassModuleResponse>>> GetAllClassModulesByCourse(Guid id)
+        {
+            try
+            {
+                var rs = await _courseService.GetAllClassModulesByCourse(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
