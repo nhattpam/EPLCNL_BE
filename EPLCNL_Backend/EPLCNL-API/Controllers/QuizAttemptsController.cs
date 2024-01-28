@@ -68,16 +68,16 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<QuizAttemptResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<QuizAttemptResponse>> Delete(Guid id)
         {
             var rs = await _quizAttemptService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<QuizAttemptResponse>> Update([FromQuery] Guid id, [FromBody] QuizAttemptRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<QuizAttemptResponse>> Update(Guid id, [FromBody] QuizAttemptRequest request)
         {
             try
             {

@@ -44,6 +44,7 @@ namespace Service.CentersService
             {
                 Center center = null;
                 center = await _unitOfWork.Repository<Center>().GetAll()
+                    .Include(a => a.Account)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -84,6 +85,14 @@ namespace Service.CentersService
 
         public async Task<CenterResponse> Create(CenterRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 AccountResponse account = await _accountService.Create(new AccountRequest()
@@ -98,6 +107,7 @@ namespace Service.CentersService
                 center.Id = Guid.NewGuid();
                 center.AccountId = account.Id;
                 center.IsActive = false;
+                center.CreatedDate = localTime;
                 await _unitOfWork.Repository<Center>().InsertAsync(center);
                 await _unitOfWork.CommitAsync();
 
@@ -132,6 +142,14 @@ namespace Service.CentersService
 
         public async Task<CenterResponse> Update(Guid id, CenterRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Center center = _unitOfWork.Repository<Center>()
@@ -141,6 +159,9 @@ namespace Service.CentersService
                     throw new Exception();
                 }
                 center = _mapper.Map(request, center);
+                center.UpdatedDate = localTime;
+
+                
 
                 await _unitOfWork.Repository<Center>().UpdateDetached(center);
                 await _unitOfWork.CommitAsync();

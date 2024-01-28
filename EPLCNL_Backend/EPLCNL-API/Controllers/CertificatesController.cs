@@ -68,16 +68,16 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<CertificateResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<CertificateResponse>> Delete(Guid id)
         {
             var rs = await _certificateService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<CertificateResponse>> Update([FromQuery] Guid id, [FromBody] CertificateRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<CertificateResponse>> Update(Guid id, [FromBody] CertificateRequest request)
         {
             try
             {

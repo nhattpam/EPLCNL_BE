@@ -19,6 +19,9 @@ namespace EPLCNL_API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AccountSurveyResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<List<AccountSurveyResponse>>> GetAll()
         {
             try
@@ -64,16 +67,16 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<AccountSurveyResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<AccountSurveyResponse>> Delete(Guid id)
         {
             var rs = await _accountsurveyService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<AccountSurveyResponse>> Update([FromQuery] Guid id, [FromBody] AccountSurveyRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<AccountSurveyResponse>> Update(Guid id, [FromBody] AccountSurveyRequest request)
         {
             try
             {

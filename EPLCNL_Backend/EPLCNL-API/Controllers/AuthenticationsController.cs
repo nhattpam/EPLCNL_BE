@@ -23,9 +23,6 @@ namespace EPLCNL_API.Controllers
         private readonly IConfiguration _configuration;
         private readonly AppSettings _appSettings;
 
-
-       
-
         public AuthenticationsController(IAccountService accountService, IConfiguration configuration,
             IOptionsMonitor<AppSettings> optionsMonitor)
         {

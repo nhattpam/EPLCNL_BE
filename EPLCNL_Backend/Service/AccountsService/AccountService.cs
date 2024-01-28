@@ -32,24 +32,24 @@ namespace Service.AccountsService
             return list;
         }
 
-        public async Task<AccountResponse> Get(Guid id)
+        public async Task<AccountResponse> Get(Guid? id)
         {
             try
             {
-                Account center = null;
-                center = await _unitOfWork.Repository<Account>().GetAll()
+                Account account = null;
+                account = await _unitOfWork.Repository<Account>().GetAll()
                      .AsNoTracking()
                         .Include(a => a.Role)
                         //.Include(a => a.Center)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
-                if (center == null)
+                if (account == null)
                 {
                     throw new Exception("khong tim thay");
                 }
 
-                return _mapper.Map<Account, AccountResponse>(center);
+                return _mapper.Map<Account, AccountResponse>(account);
             }
 
             catch (Exception e)

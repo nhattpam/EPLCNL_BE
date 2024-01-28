@@ -69,16 +69,16 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<AccountForumResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<AccountForumResponse>> Delete(Guid id)
         {
             var rs = await _accountforumService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<AccountForumResponse>> Update([FromQuery] Guid id, [FromBody] AccountForumRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<AccountForumResponse>> Update(Guid id, [FromBody] AccountForumRequest request)
         {
             try
             {

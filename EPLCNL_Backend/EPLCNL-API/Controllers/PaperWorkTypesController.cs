@@ -68,16 +68,16 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<PaperWorkTypeResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<PaperWorkTypeResponse>> Delete( Guid id)
         {
             var rs = await _paperWorkTypeService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<PaperWorkTypeResponse>> Update([FromQuery] Guid id, [FromBody] PaperWorkTypeRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<PaperWorkTypeResponse>> Update(Guid id, [FromBody] PaperWorkTypeRequest request)
         {
             try
             {

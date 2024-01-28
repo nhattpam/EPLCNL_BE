@@ -67,16 +67,16 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<PaymentMethodResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<PaymentMethodResponse>> Delete(Guid id)
         {
             var rs = await _paymentMethodService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<PaymentMethodResponse>> Update([FromQuery] Guid id, [FromBody] PaymentMethodRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<PaymentMethodResponse>> Update(Guid id, [FromBody] PaymentMethodRequest request)
         {
             try
             {

@@ -68,16 +68,16 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<ProfileCertificateResponse>> Delete([FromQuery] Guid id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ProfileCertificateResponse>> Delete(Guid id)
         {
             var rs = await _profileCertificateService.Delete(id);
             return Ok(rs);
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<ProfileCertificateResponse>> Update([FromQuery] Guid id, [FromBody] ProfileCertificateRequest request)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ProfileCertificateResponse>> Update(Guid id, [FromBody] ProfileCertificateRequest request)
         {
             try
             {
