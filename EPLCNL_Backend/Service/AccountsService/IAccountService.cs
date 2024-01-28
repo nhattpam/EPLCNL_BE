@@ -7,7 +7,7 @@ namespace Service.AccountsService
     {
         Task<AccountResponse> Login(LoginMem loginMem);
         Task<List<AccountResponse>> GetAll();
-        public Task<AccountResponse> Get(Guid? id);
+        Task<AccountResponse> Get(Guid? id);
 
         Task<AccountResponse> Create(AccountRequest request);
         Task<AccountResponse> Update(Guid id, AccountRequest request);

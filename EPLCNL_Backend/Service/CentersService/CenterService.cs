@@ -161,7 +161,47 @@ namespace Service.CentersService
                 center = _mapper.Map(request, center);
                 center.UpdatedDate = localTime;
 
-                
+                AccountResponse account = await _accountService.Get(center.AccountId);
+
+                AccountRequest accountRequest = new AccountRequest();
+                if(center.IsActive == true)
+                {
+                    accountRequest.IsActive = true;
+                    accountRequest.UpdatedDate = localTime;
+                    accountRequest.Email = account.Email;
+                    accountRequest.Password = account.Password;
+                    accountRequest.FullName = account.FullName;
+                    accountRequest.PhoneNumber = account.PhoneNumber;
+                    accountRequest.ImageUrl = account.ImageUrl;
+                    accountRequest.DateOfBirth = account.DateOfBirth;
+                    accountRequest.Gender = account.Gender;
+                    accountRequest.Address = account.Address;
+                    accountRequest.IsDeleted = account.IsDeleted;
+                    accountRequest.RoleId = account.RoleId;
+                    accountRequest.CreatedDate = account.CreatedDate;
+                    accountRequest.CreatedBy = account.CreatedBy;
+                    accountRequest.UpdatedBy = account.UpdatedBy;
+                }
+                else
+                {
+                    accountRequest.IsActive = false;
+                    accountRequest.UpdatedDate = localTime;
+                    accountRequest.Email = account.Email;
+                    accountRequest.Password = account.Password;
+                    accountRequest.FullName = account.FullName;
+                    accountRequest.PhoneNumber = account.PhoneNumber;
+                    accountRequest.ImageUrl = account.ImageUrl;
+                    accountRequest.DateOfBirth = account.DateOfBirth;
+                    accountRequest.Gender = account.Gender;
+                    accountRequest.Address = account.Address;
+                    accountRequest.IsDeleted = account.IsDeleted;
+                    accountRequest.RoleId = account.RoleId;
+                    accountRequest.CreatedDate = account.CreatedDate;
+                    accountRequest.CreatedBy = account.CreatedBy;
+                    accountRequest.UpdatedBy = account.UpdatedBy;
+                }
+
+                await _accountService.Update(account.Id, accountRequest);   
 
                 await _unitOfWork.Repository<Center>().UpdateDetached(center);
                 await _unitOfWork.CommitAsync();

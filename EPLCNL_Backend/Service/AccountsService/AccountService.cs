@@ -141,16 +141,34 @@ namespace Service.AccountsService
 
         public async Task<AccountResponse> Login(LoginMem accc)
         {
-            { 
-                Account account = _unitOfWork.Repository<Account>()
-                           .Find(x => x.Email.Equals(accc.Email) && x.Password.Equals(accc.Password));
-                if(account == null)
-                {
-                    return null;
-                }
-                return _mapper.Map<Account, AccountResponse>(account);
+            // Validate input parameters
+            if (accc == null || string.IsNullOrEmpty(accc.Email) || string.IsNullOrEmpty(accc.Password))
+            {
+                // Handle invalid input, e.g., log an error or return a meaningful response
+                return null;
             }
 
+            // Retrieve the account based on email and password
+            Account account = _unitOfWork.Repository<Account>()
+                .Find(x => x.Email == accc.Email && x.Password == accc.Password);
+
+            // Check if the account is null
+            if (account == null)
+            {
+                // Handle the case where no account is found, e.g., log an error or return a meaningful response
+                return null;
+            }
+
+            // Check if Email or Password is null, and handle the case appropriately
+            if (string.IsNullOrEmpty(account.Email) || string.IsNullOrEmpty(account.Password))
+            {
+                // Handle the case where Email or Password is null, e.g., log an error or return a meaningful response
+                return null;
+            }
+
+            // Map the account to the response object
+            return _mapper.Map<Account, AccountResponse>(account);
         }
+
     }
 }
