@@ -392,6 +392,9 @@ public partial class EPLCNLContext : DbContext
         {
             entity.ToTable("ClassLesson");
 
+            entity.HasIndex(e => e.ClassModuleId, "UQ__ClassLes__C6F5C3FB22092A97")
+                .IsUnique();
+
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
@@ -416,10 +419,11 @@ public partial class EPLCNLContext : DbContext
                 .HasColumnName("updated_date");
 
             entity.HasOne(d => d.ClassModule)
-                .WithMany(p => p.ClassLessons)
-                .HasForeignKey(d => d.ClassModuleId)
-                .HasConstraintName("FK__ClassLess__class__477199F1");
+                .WithOne(p => p.ClassLesson)
+                .HasForeignKey<ClassLesson>(d => d.ClassModuleId)
+                .HasConstraintName("FK__ClassLess__class__2EFAF1E2");
         });
+
 
         modelBuilder.Entity<ClassMaterial>(entity =>
         {
@@ -471,7 +475,7 @@ public partial class EPLCNLContext : DbContext
             entity.HasOne(d => d.Course)
                 .WithMany(p => p.ClassModules)
                 .HasForeignKey(d => d.CourseId)
-                .HasConstraintName("FK__ClassModu__cours__44952D46");
+                .HasConstraintName("FK__ClassModu__cours__2C1E8537");
         });
 
         modelBuilder.Entity<ClassPractice>(entity =>
