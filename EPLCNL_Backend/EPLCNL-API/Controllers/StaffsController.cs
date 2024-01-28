@@ -10,11 +10,11 @@ namespace EPLCNL_API.Controllers
     [ApiController]
     public class StaffsController : ControllerBase
     {
-        private readonly IStaffService _StaffService;
+        private readonly IStaffService _staffService;
 
         public StaffsController(IStaffService StaffService)
         {
-            _StaffService = StaffService;
+            _staffService = StaffService;
         }
 
 
@@ -26,7 +26,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _StaffService.GetAll();
+                var rs = await _staffService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -43,7 +43,24 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _StaffService.Get(id);
+                var rs = await _staffService.Get(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpGet("{id}/tutors")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<TutorResponse>>> GetAllTutorsByStaff(Guid id)
+        {
+            try
+            {
+                var rs = await _staffService.GetAllTutorsByStaff(id);
                 return Ok(rs);
             }
             catch
@@ -59,7 +76,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var result = await _StaffService.Create(request);
+                var result = await _staffService.Create(request);
                 return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
@@ -71,7 +88,7 @@ namespace EPLCNL_API.Controllers
         [HttpDelete]
         public async Task<ActionResult<StaffResponse>> Delete([FromQuery] Guid id)
         {
-            var rs = await _StaffService.Delete(id);
+            var rs = await _staffService.Delete(id);
             return Ok(rs);
         }
 
@@ -81,7 +98,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _StaffService.Update(id, request);
+                var rs = await _staffService.Update(id, request);
                 return Ok(rs);
             }
             catch (Exception ex)
