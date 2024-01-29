@@ -56,6 +56,27 @@ namespace Service.CategoriesService
             }
         }
 
+
+        public async Task<List<CourseResponse>> GetAllCoursesByCategory(Guid id)
+        {
+            var category = await _unitOfWork.Repository<Category>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (category == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var courses = _unitOfWork.Repository<Course>().GetAll()
+                .Where(t => t.CategoryId == id)
+                .ProjectTo<CourseResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return courses;
+        }
+
         public async Task<CategoryResponse> Create(CategoryRequest request)
         {
             try

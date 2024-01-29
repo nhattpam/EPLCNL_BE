@@ -38,7 +38,6 @@ namespace Service.ClassModulesService
             {
                 ClassModule classModule = null;
                 classModule = await _unitOfWork.Repository<ClassModule>().GetAll()
-                     .AsNoTracking()
                         .Include(a => a.Course)
                         .Include(a => a.ClassLesson)
                     .Where(x => x.Id == id)

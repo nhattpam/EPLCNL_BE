@@ -14,6 +14,9 @@ namespace Service.CategoriesService
 
         public Task<CategoryResponse> Get(Guid id);
 
+        public Task<List<CourseResponse>> GetAllCoursesByCategory(Guid id);
+
+
         public Task<CategoryResponse> Create(CategoryRequest request);
 
         public Task<CategoryResponse> Delete(Guid id);
