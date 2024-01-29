@@ -15,6 +15,6 @@ namespace ViewModel.ResponseModel
         public Guid? ModuleId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public virtual ICollection<LessonMaterialResponse> LessonMaterials { get; set; }
+        public virtual ModuleResponse? Module { get; set; }
     }
 }

@@ -15,8 +15,5 @@ namespace ViewModel.ResponseModel
         public DateTime? UpdatedDate { get; set; }
         public virtual CourseResponse? Course { get; set; }
 
-        public virtual ICollection<AssignmentResponse> Assignments { get; set; }
-        public virtual ICollection<LessonResponse> Lessons { get; set; }
-        public virtual ICollection<QuizResponse> Quizzes { get; set; }
     }
 }

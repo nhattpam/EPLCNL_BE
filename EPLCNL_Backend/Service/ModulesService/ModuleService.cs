@@ -38,8 +38,8 @@ namespace Service.ModulesService
             {
                 Module module = await _unitOfWork.Repository<Module>()
                     .GetAll()
-                    .Include(a => a.Lessons)
-                    .Include(a => a.Quizzes)
+                    //.Include(a => a.Lessons)
+                    //.Include(a => a.Quizzes)
                     .Include(a => a.Course)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
