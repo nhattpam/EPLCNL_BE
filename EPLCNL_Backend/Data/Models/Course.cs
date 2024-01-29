@@ -40,5 +40,4 @@ namespace Data.Models
         public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
-
 }

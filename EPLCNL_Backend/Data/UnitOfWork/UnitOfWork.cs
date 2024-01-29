@@ -12,9 +12,9 @@ namespace BusinessObject.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly EPLCNLContext _context;
+        private readonly nhatpmseContext _context;
 
-        public UnitOfWork(EPLCNLContext context)
+        public UnitOfWork(nhatpmseContext context)
         {
             _context = context;
         }

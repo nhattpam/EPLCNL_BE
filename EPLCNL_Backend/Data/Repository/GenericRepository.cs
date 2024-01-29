@@ -13,10 +13,10 @@ namespace Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private static EPLCNLContext Context;
+        private static nhatpmseContext Context;
         private static DbSet<T> Table { get; set; }
 
-        public GenericRepository(EPLCNLContext context)
+        public GenericRepository(nhatpmseContext context)
         {
             Context = context;
             Table = Context.Set<T>();

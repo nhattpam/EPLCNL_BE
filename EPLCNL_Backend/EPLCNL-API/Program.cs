@@ -46,7 +46,6 @@ using ViewModel;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Service.CloudFoneService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -58,7 +57,7 @@ builder.Services.AddControllers();
 string connectionString = configuration.GetConnectionString("MyCnn");
 
 // Add DbContext using the connection string
-builder.Services.AddDbContext<EPLCNLContext>(options =>
+builder.Services.AddDbContext<nhatpmseContext>(options =>
 {
     options.UseSqlServer(connectionString);
 });
@@ -101,7 +100,6 @@ builder.Services.AddScoped<ISurveyService, SurveyService>();
 builder.Services.AddScoped<ITutorService, TutorService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IWalletService, WalletService>();
-builder.Services.AddScoped<ICloudFoneService, CloudFoneService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 

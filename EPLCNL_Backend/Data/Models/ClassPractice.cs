@@ -12,9 +12,7 @@ namespace Data.Models
 
         public Guid Id { get; set; }
         public string? Name { get; set; }
-        public Guid? ClassTopicId { get; set; }
 
-        public virtual ClassTopic? ClassTopic { get; set; }
         public virtual ICollection<Quiz> Quizzes { get; set; }
     }
 }

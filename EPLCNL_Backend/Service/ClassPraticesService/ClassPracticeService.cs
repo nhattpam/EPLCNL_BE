@@ -40,7 +40,6 @@ namespace Service.ClassPracticesService
                 ClassPractice classPractice = null;
                 classPractice = await _unitOfWork.Repository<ClassPractice>().GetAll()
                      .AsNoTracking()
-                     .Include(x => x.ClassTopic)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
