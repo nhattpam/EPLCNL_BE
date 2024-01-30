@@ -81,6 +81,26 @@ namespace Service.StaffsService
             return tutors;
         }
 
+        public async Task<List<CenterResponse>> GetAllCentersByStaff(Guid id)
+        {
+            var staff = await _unitOfWork.Repository<Staff>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (staff == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var centers = _unitOfWork.Repository<Center>().GetAll()
+                .Where(t => t.StaffId == id)
+                .ProjectTo<CenterResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return centers;
+        }
+
         public async Task<StaffResponse> Create(StaffRequest request)
         {
             try

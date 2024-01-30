@@ -69,6 +69,23 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        [HttpGet("{id}/centers")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CenterResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<CenterResponse>>> GetAllCentersByStaff(Guid id)
+        {
+            try
+            {
+                var rs = await _staffService.GetAllCentersByStaff(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
