@@ -13,5 +13,7 @@ namespace ViewModel.ResponseModel
         public string? AnswerText { get; set; }
         public int? Position { get; set; }
         public bool? IsAnswer { get; set; }
+        public virtual QuestionResponse? Question { get; set; }
+
     }
 }

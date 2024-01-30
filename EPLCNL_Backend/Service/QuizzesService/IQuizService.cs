@@ -14,6 +14,9 @@ namespace Service.QuizzesService
 
         public Task<QuizResponse> Get(Guid id);
 
+        public Task<List<QuestionResponse>> GetAllQuestionsByQuiz(Guid id);
+
+
         public Task<QuizResponse> Create(QuizRequest request);
 
         public Task<QuizResponse> Delete(Guid id);

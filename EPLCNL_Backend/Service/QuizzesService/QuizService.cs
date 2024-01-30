@@ -56,6 +56,28 @@ namespace Service.QuizzesService
                 throw new Exception(e.Message);
             }
         }
+
+        public async Task<List<QuestionResponse>> GetAllQuestionsByQuiz(Guid id)
+        {
+            var quiz = await _unitOfWork.Repository<Quiz>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (quiz == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var questions = _unitOfWork.Repository<Question>().GetAll()
+                .Where(t => t.QuizId == id)
+                .ProjectTo<QuestionResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return questions;
+        }
+
+
         public async Task<QuizResponse> Create(QuizRequest request)
         {
             // Set the UTC offset for UTC+7

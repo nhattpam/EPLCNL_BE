@@ -16,5 +16,7 @@ namespace ViewModel.ResponseModel
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid? QuizId { get; set; }
+        public virtual QuizResponse? Quiz { get; set; }
+
     }
 }
