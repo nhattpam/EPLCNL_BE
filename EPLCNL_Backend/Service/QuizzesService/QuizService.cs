@@ -39,6 +39,7 @@ namespace Service.QuizzesService
                 Quiz quiz = null;
                 quiz = await _unitOfWork.Repository<Quiz>().GetAll()
                      .AsNoTracking()
+                     .Include(a => a.Module)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
