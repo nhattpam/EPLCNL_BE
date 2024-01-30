@@ -57,6 +57,26 @@ namespace Service.ClassTopicsService
             }
         }
 
+        public async Task<List<LessonMaterialResponse>> GetAllMaterialsByClassTopic(Guid id)
+        {
+            var classTopic = await _unitOfWork.Repository<ClassTopic>().GetAll()
+                 .Where(x => x.Id == id)
+                 .FirstOrDefaultAsync();
+
+            if (classTopic == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var materials = _unitOfWork.Repository<LessonMaterial>().GetAll()
+                .Where(t => t.ClassTopicId == id)
+                .ProjectTo<LessonMaterialResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return materials;
+        }
+
         public async Task<ClassTopicResponse> Create(ClassTopicRequest request)
         {
             // Set the UTC offset for UTC+7
@@ -136,5 +156,7 @@ namespace Service.ClassTopicsService
                 throw new Exception(ex.Message);
             }
         }
+
+       
     }
 }

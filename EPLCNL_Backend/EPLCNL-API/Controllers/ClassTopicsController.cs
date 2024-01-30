@@ -52,6 +52,23 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        [HttpGet("{id}/lesson-materials")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LessonMaterialResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<LessonMaterialResponse>>> GetAllMaterialsByClassTopic(Guid id)
+        {
+            try
+            {
+                var rs = await _classTopicService.GetAllMaterialsByClassTopic(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -14,6 +14,9 @@ namespace Service.ClassTopicsService
 
         public Task<ClassTopicResponse> Get(Guid id);
 
+        public Task<List<LessonMaterialResponse>> GetAllMaterialsByClassTopic(Guid id);
+
+
         public Task<ClassTopicResponse> Create(ClassTopicRequest request);
 
         public Task<ClassTopicResponse> Delete(Guid id);
