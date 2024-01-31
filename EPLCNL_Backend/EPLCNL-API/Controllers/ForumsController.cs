@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing forums.
+    /// </summary>
     [Route("api/forums")]
     [ApiController]
     public class ForumsController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _forumService = forumService;
         }
 
-
+        /// <summary>
+        /// Get a list of all forums.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ForumResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get forum by forum id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ForumResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new forum.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete forum by forum id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<ForumResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update forum by forum id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<ForumResponse>> Update(Guid id, [FromBody] ForumRequest request)
         {

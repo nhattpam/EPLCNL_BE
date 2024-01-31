@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing wallets.
+    /// </summary>
     [Route("api/wallets")]
     [ApiController]
     public class WalletsController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _walletService = walletService;
         }
 
-
+        /// <summary>
+        /// Get a list of all wallets.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<WalletResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -34,6 +39,10 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get wallet by wallet id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(WalletResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -51,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new wallet.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -67,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete wallet by wallet id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<WalletResponse>> Delete(Guid id)
         {
@@ -74,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update wallet by wallet id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<WalletResponse>> Update(Guid id, [FromBody] WalletRequest request)
         {

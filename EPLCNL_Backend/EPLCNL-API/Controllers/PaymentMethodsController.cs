@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing payment methods.
+    /// </summary>
     [Route("api/payment-methods")]
     [ApiController]
     public class PaymentMethodsController : ControllerBase
@@ -17,6 +20,9 @@ namespace EPLCNL_API.Controllers
             _paymentMethodService = paymentMethodService;
         }
 
+        /// <summary>
+        /// Get a list of all payment-methods.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PaymentMethodResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -34,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get payment-method by payment-method id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaymentMethodResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -51,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new payment-method.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -67,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete payment-method by payment-method id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<PaymentMethodResponse>> Delete(Guid id)
         {
@@ -74,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update payment-method by payment-method id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<PaymentMethodResponse>> Update(Guid id, [FromBody] PaymentMethodRequest request)
         {

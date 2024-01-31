@@ -23,7 +23,7 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Get a list of all tattoo stickers.
+        /// Get a list of all account-forums.
         /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AccountForumResponse>))]
@@ -41,7 +41,9 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Get account-forum by account-forum id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AccountForumResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -58,7 +60,9 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
-
+        /// <summary>
+        /// Create new account-forum.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -74,7 +78,9 @@ namespace EPLCNL_API.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Delete account-forum by account-forum id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<AccountForumResponse>> Delete(Guid id)
         {
@@ -82,7 +88,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update account-forum by account-forum id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<AccountForumResponse>> Update(Guid id, [FromBody] AccountForumRequest request)
         {

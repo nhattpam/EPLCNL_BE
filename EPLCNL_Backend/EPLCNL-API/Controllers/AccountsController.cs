@@ -9,6 +9,9 @@ using System.Diagnostics;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing accounts.
+    /// </summary>
     [Route("api/accounts")]
     [ApiController]
     public class AccountsController : ControllerBase
@@ -19,7 +22,9 @@ namespace EPLCNL_API.Controllers
         {
             _accountService = accountService;
         }
-
+        /// <summary>
+        /// Get a list of all accounts.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AccountResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,7 +41,9 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Get account by account id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AccountResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -53,7 +60,9 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
-
+        /// <summary>
+        /// Create new account.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,7 +78,9 @@ namespace EPLCNL_API.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Upload image account.
+        /// </summary>
         [HttpPost("image")]
         public async Task<string> Upload(IFormFile file)
         {
@@ -109,7 +120,9 @@ namespace EPLCNL_API.Controllers
             }
             return link;
         }
-
+        /// <summary>
+        /// Delete account by account id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<AccountResponse>> Delete(Guid id)
         {
@@ -117,7 +130,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update account by account id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<AccountResponse>> Update(Guid id, [FromBody] AccountRequest request)
         {

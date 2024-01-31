@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing enrollments.
+    /// </summary>
     [Route("api/enrollments")]
     [ApiController]
     public class EnrollmentsController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _centerService = centerService;
         }
 
-
+        /// <summary>
+        /// Get a list of all enrollments.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<EnrollmentResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get enrollment by enrollment id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EnrollmentResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new enrollment.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete enrollment by enrollment id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<EnrollmentResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update enrollment by enrollment id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<EnrollmentResponse>> Update(Guid id, [FromBody] EnrollmentRequest request)
         {

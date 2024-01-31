@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing class modules.
+    /// </summary>
     [Route("api/class-modules")]
     [ApiController]
     public class ClassModulesController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _classModuleService = classModuleService;
         }
 
-
+        /// <summary>
+        /// Get a list of all class-modules.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ClassModuleResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get class-module by class-module id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClassModuleResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,7 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Create new class-module.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete class-module by class-module id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<ClassModuleResponse>> Delete(Guid id)
         {
@@ -76,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update class-module by class-module id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<ClassModuleResponse>> Update(Guid id, [FromBody] ClassModuleRequest request)
         {

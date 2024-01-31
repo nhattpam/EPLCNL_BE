@@ -7,6 +7,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing tutors.
+    /// </summary>
     [Route("api/tutors")]
     [ApiController]
     public class TutorsController : ControllerBase
@@ -19,7 +22,9 @@ namespace EPLCNL_API.Controllers
         }
 
 
-
+        /// <summary>
+        /// Get a list of all tutors.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TutorResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -37,6 +42,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get tutor by tutor id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -54,6 +62,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of courses by tutor id.
+        /// </summary>
         [HttpGet("{id}/courses")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CourseResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -71,6 +82,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of paper-works by tutor id.
+        /// </summary>
         [HttpGet("{id}/paper-works")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaperWorkResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -88,6 +102,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new tutor.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -104,6 +121,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete tutor by tutor id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<TutorResponse>> Delete(Guid id)
         {
@@ -111,7 +131,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update tutor by tutor id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<TutorResponse>> Update(Guid id, [FromBody] TutorRequest request)
         {

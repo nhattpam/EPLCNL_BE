@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing paper work types.
+    /// </summary>
     [Route("api/paper-work-types")]
     [ApiController]
     public class PaperWorkTypesController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _paperWorkTypeService = paperWorkTypeService;
         }
 
-
+        /// <summary>
+        /// Get a list of all paper-work-types.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PaperWorkTypeResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get paper-work-type by paper-work-type id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaperWorkTypeResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new paper-work-type.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete paper-work-type by paper-work-type id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<PaperWorkTypeResponse>> Delete( Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update paper-work-type by paper-work-type id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<PaperWorkTypeResponse>> Update(Guid id, [FromBody] PaperWorkTypeRequest request)
         {

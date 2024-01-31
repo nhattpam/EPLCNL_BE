@@ -9,6 +9,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing questions.
+    /// </summary>
     [Route("api/questions")]
     [ApiController]
     public class QuestionsController : ControllerBase
@@ -20,7 +23,9 @@ namespace EPLCNL_API.Controllers
             _questionService = questionService;
         }
 
-
+        /// <summary>
+        /// Get a list of all questions.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<QuestionResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -38,6 +43,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get question by question id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuestionResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -55,6 +63,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of question-answers by question id.
+        /// </summary>
         [HttpGet("{id}/question-answers")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuestionAnswerResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -72,6 +83,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new question.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -88,6 +102,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete question by question id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<QuestionResponse>> Delete(Guid id)
         {
@@ -95,7 +112,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update question by question id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<QuestionResponse>> Update(Guid id, [FromBody] QuestionRequest request)
         {
@@ -110,6 +129,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Upload image of question.
+        /// </summary>
         [HttpPost("image")]
         public async Task<string> UploadImage(IFormFile file)
         {
@@ -150,6 +172,9 @@ namespace EPLCNL_API.Controllers
             return link;
         }
 
+        /// <summary>
+        /// Upload audio of question.
+        /// </summary>
         [HttpPost("audio")]
         public async Task<string> UploadAudio(IFormFile file)
         {

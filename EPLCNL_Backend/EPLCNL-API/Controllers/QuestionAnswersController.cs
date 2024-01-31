@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing question answers.
+    /// </summary>
     [Route("api/question-answers")]
     [ApiController]
     public class QuestionAnswersController : ControllerBase
@@ -18,7 +21,9 @@ namespace EPLCNL_API.Controllers
         }
 
 
-
+        /// <summary>
+        /// Get a list of all question-answers.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<QuestionAnswerResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,6 +41,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get question-answer by question-answer id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuestionAnswerResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -53,6 +61,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new question-answer.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete question-answer by question-answer id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<QuestionAnswerResponse>> Delete(Guid id)
         {
@@ -76,7 +90,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update question-answer by question-answer id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<QuestionAnswerResponse>> Update(Guid id, [FromBody] QuestionAnswerRequest request)
         {

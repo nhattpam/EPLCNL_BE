@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing learners.
+    /// </summary>
     [Route("api/learners")]
     [ApiController]
     public class LearnersController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _learnerService = learnerService;
         }
 
-
+        /// <summary>
+        /// Get a list of all learners.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<LearnerResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get learner by learner id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LearnerResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new learner.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete learner by learner id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<LearnerResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update learner by learner id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<LearnerResponse>> Update(Guid id, [FromBody] LearnerRequest request)
         {

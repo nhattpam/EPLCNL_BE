@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing feedbacks.
+    /// </summary>
     [Route("api/feedbacks")]
     [ApiController]
     public class FeedbacksController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _feedbackService = feedbackService;
         }
 
-
+        /// <summary>
+        /// Get a list of all feedbacks.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<FeedbackResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get feedback by feedback id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(FeedbackResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new feedback.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete feedback by feedback id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<FeedbackResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update feedback by feedback id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<FeedbackResponse>> Update(Guid id, [FromBody] FeedbackRequest request)
         {

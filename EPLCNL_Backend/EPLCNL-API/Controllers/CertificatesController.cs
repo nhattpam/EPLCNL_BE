@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing certificates.
+    /// </summary>
     [Route("api/certificates")]
     [ApiController]
     public class CertificatesController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _certificateService = certificateService;
         }
 
-
+        /// <summary>
+        /// Get a list of all certificates.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<CertificateResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get certificate by certificate id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CertificateResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new certificate.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete certificate by certificate id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<CertificateResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update certificate by certificate id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<CertificateResponse>> Update(Guid id, [FromBody] CertificateRequest request)
         {

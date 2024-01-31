@@ -9,6 +9,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing quizzes.
+    /// </summary>
     [Route("api/quizzes")]
     [ApiController]
     public class QuizzesController : ControllerBase
@@ -20,7 +23,9 @@ namespace EPLCNL_API.Controllers
             _quizService = quizService;
         }
 
-
+        /// <summary>
+        /// Get a list of all quizzes.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<QuizResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -38,6 +43,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get quiz by quiz id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuizResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -55,6 +63,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get list of questions by quiz id.
+        /// </summary>
         [HttpGet("{id}/questions")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuestionResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -72,6 +83,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new quiz.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -88,6 +102,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Upload image of quiz.
+        /// </summary>
         [HttpPost("image")]
         public async Task<string> Upload(IFormFile file)
         {
@@ -128,6 +145,9 @@ namespace EPLCNL_API.Controllers
             return link;
         }
 
+        /// <summary>
+        /// Delete quiz by quiz id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<QuizResponse>> Delete(Guid id)
         {
@@ -135,7 +155,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update quiz by quiz id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<QuizResponse>> Update(Guid id, [FromBody] QuizRequest request)
         {

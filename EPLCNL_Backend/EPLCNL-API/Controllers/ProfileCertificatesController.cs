@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing profile certificates.
+    /// </summary>
     [Route("api/profile-certificates")]
     [ApiController]
     public class ProfileCertificatesController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _profileCertificateService = profileCertificateService;
         }
 
-
+        /// <summary>
+        /// Get a list of all profile-certificates.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProfileCertificateResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get profile-certificate by profile-certificate id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProfileCertificateResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new profile-certificate.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete profile-certificate by profile-certificate id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<ProfileCertificateResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update profile-certificate by profile-certificate id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<ProfileCertificateResponse>> Update(Guid id, [FromBody] ProfileCertificateRequest request)
         {

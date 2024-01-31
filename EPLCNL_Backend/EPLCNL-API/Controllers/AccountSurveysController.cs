@@ -7,6 +7,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing account surveys.
+    /// </summary>
     [Route("api/account-surveys")]
     [ApiController]
     public class AccountSurveysController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
         {
             _accountsurveyService = accountsurveyService;
         }
-
+        /// <summary>
+        /// Get a list of all account-surveys.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AccountSurveyResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -34,6 +39,9 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /// <summary>
+        /// Get account-survey by account-survey id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AccountSurveyResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -50,7 +58,9 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
-
+        /// <summary>
+        /// Create new account-survey.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -66,7 +76,9 @@ namespace EPLCNL_API.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Delete account-survey by account-survey id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<AccountSurveyResponse>> Delete(Guid id)
         {
@@ -74,7 +86,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update account-survey by account-survey id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<AccountSurveyResponse>> Update(Guid id, [FromBody] AccountSurveyRequest request)
         {

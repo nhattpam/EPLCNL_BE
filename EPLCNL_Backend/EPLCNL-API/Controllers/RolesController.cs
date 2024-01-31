@@ -8,6 +8,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing roles.
+    /// </summary>
     [Route("api/roles")]
     [ApiController]
     public class RolesController : ControllerBase
@@ -19,7 +22,9 @@ namespace EPLCNL_API.Controllers
             _roleService = roleService;
         }
 
-
+        /// <summary>
+        /// Get a list of all roles.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RoleResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -37,6 +42,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get role by role id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RoleResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -54,6 +62,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new role.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -70,6 +81,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete role by role id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<RoleResponse>> Delete(Guid id)
         {
@@ -77,7 +91,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update role by role id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<RoleResponse>> Update(Guid id, [FromBody] RoleRequest request)
         {

@@ -7,6 +7,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing assignment attempts.
+    /// </summary>
     [Route("api/assignment-attempts")]
     [ApiController]
     public class AssignmentAttemptsController : ControllerBase
@@ -18,7 +21,9 @@ namespace EPLCNL_API.Controllers
             _assignmentattemptService = assignmentattemptService;
         }
 
-
+        /// <summary>
+        /// Get a list of all assignment-attempts.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AssignmentAttemptResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,7 +40,9 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Get assignment-attempt by assignment-attempt id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentAttemptResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,7 +59,9 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
-
+        /// <summary>
+        /// Create new assignment-attempt.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<AssignmentAttemptResponse>> Create([FromBody] AssignmentAttemptRequest request)
         {
@@ -66,7 +75,9 @@ namespace EPLCNL_API.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Delete assignment-attempt by assignment-attempt id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<AssignmentAttemptResponse>> Delete(Guid id)
         {
@@ -75,7 +86,9 @@ namespace EPLCNL_API.Controllers
         }
 
 
-
+        /// <summary>
+        /// Update assignment-attempt by assignment-attempt id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<AssignmentAttemptResponse>> Update(Guid id, [FromBody] AssignmentAttemptRequest request)
         {

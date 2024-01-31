@@ -7,6 +7,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing certificate courses.
+    /// </summary>
     [Route("api/certificate-courses")]
     [ApiController]
     public class CertificateCoursesController : ControllerBase
@@ -18,7 +21,9 @@ namespace EPLCNL_API.Controllers
             _certificateCourseService = certificateCourseService;
         }
 
-
+        /// <summary>
+        /// Get a list of certificate-courses.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<CertificateCourseResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,6 +41,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get certificate-course by certificate-course id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(WalletResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -53,6 +61,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new certificate-course.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete certificate-course by certificate-course id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<CertificateCourseResponse>> Delete(Guid id)
         {
@@ -76,7 +90,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update certificate-course by certificate-course id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<CertificateCourseResponse>> Update(Guid id, [FromBody] CertificateCourseRequest request)
         {

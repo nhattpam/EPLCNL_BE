@@ -180,3 +180,5 @@ D:\capstone project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-
 D:\capstone project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\ref\EPLCNL-API.dll
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Debug\net6.0\EPLCNL-API.xml
 C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-API.xml
+D:\capstone project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Debug\net6.0\EPLCNL-API.xml
+D:\capstone project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-API.xml

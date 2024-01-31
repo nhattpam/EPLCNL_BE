@@ -9,6 +9,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing courses.
+    /// </summary>
     [Route("api/courses")]
     [ApiController]
     public class CoursesController : ControllerBase
@@ -20,7 +23,9 @@ namespace EPLCNL_API.Controllers
             _courseService = courseService;
         }
 
-
+        /// <summary>
+        /// Get a list of all courses.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<CourseResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -38,6 +43,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get course by course id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CourseResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -55,6 +63,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of modules by course id.
+        /// </summary>
         [HttpGet("{id}/modules")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ModuleResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -72,6 +83,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of class-modules by course id.
+        /// </summary>
         [HttpGet("{id}/class-modules")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClassModuleResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -89,6 +103,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new course.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -105,6 +122,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Upload image of course.
+        /// </summary>
         [HttpPost("image")]
         public async Task<string> Upload(IFormFile file)
         {
@@ -145,6 +165,9 @@ namespace EPLCNL_API.Controllers
             return link;
         }
 
+        /// <summary>
+        /// Delete course by course id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<CourseResponse>> Delete(Guid id)
         {
@@ -152,7 +175,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update course by course id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<CourseResponse>> Update(Guid id, [FromBody] CourseRequest request)
         {

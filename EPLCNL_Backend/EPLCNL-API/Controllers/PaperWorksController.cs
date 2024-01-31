@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing paper works.
+    /// </summary>
     [Route("api/paper-works")]
     [ApiController]
     public class PaperWorksController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _paperWorkService = paperWorkService;
         }
 
-
+        /// <summary>
+        /// Get a list of all paper-works.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<PaperWorkResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get paper-work by paper-work id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaperWorkResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new paper-work.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete paper-work by paper-work id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<PaperWorkResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update paper-work by paper-work id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<PaperWorkResponse>> Update(Guid id, [FromBody] PaperWorkRequest request)
         {

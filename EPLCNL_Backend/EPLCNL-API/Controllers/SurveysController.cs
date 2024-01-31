@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing surveys.
+    /// </summary>
     [Route("api/surveys")]
     [ApiController]
     public class SurveysController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _surveyService = surveyService;
         }
 
-
+        /// <summary>
+        /// Get a list of all surveys.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<SurveyResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get survey by survey id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SurveyResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new survey.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete survey by survey id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<SurveyResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update survey by survey id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<SurveyResponse>> Update(Guid id, [FromBody] SurveyRequest request)
         {

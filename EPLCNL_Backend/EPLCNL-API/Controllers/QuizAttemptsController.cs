@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing quiz attempts.
+    /// </summary>
     [Route("api/quiz-attempts")]
     [ApiController]
     public class QuizAttemptsController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _quizAttemptService = quizAttemptService;
         }
 
-
+        // <summary>
+        /// Get a list of all quiz-attempts.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<QuizAttemptResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        // <summary>
+        /// Get quiz-attempt by quiz-attempt id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuizAttemptResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        // <summary>
+        /// Create new quiz-attempt.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +79,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        // <summary>
+        /// Delete quiz-attempt by quiz-attempt id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<QuizAttemptResponse>> Delete(Guid id)
         {
@@ -75,7 +89,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        // <summary>
+        /// Update quiz-attempt by quiz-attempt id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<QuizAttemptResponse>> Update(Guid id, [FromBody] QuizAttemptRequest request)
         {

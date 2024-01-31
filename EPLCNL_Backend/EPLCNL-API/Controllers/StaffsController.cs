@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing staffs.
+    /// </summary>
     [Route("api/staffs")]
     [ApiController]
     public class StaffsController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _staffService = StaffService;
         }
 
-
+        /// <summary>
+        /// Get a list of all staffs.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<StaffResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get staff by staff id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(StaffResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of tutors by staff id.
+        /// </summary>
         [HttpGet("{id}/tutors")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of centers by staff id.
+        /// </summary>
         [HttpGet("{id}/centers")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CenterResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -86,6 +100,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new staff.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -102,6 +119,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete staff by staff id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<StaffResponse>> Delete(Guid id)
         {
@@ -109,7 +129,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update staff by staff id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<StaffResponse>> Update(Guid id, [FromBody] StaffRequest request)
         {

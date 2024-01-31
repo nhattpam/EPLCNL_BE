@@ -9,6 +9,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing lesson materials.
+    /// </summary>
     [Route("api/lesson-materials")]
     [ApiController]
     public class LessonMaterialsController : ControllerBase
@@ -20,7 +23,9 @@ namespace EPLCNL_API.Controllers
             _lessonMaterialService = lessonMaterialService;
         }
 
-
+        /// <summary>
+        /// Get a list of all lesson-materials.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<LessonMaterialResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -38,6 +43,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get lesson-material by lesson-material id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LessonMaterialResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -55,6 +63,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new lesson-material.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -71,6 +82,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete lesson-material by lesson-material id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<LessonMaterialResponse>> Delete(Guid id)
         {
@@ -78,7 +92,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update lesson-material by lesson-material id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<LessonMaterialResponse>> Update(Guid id, [FromBody] LessonMaterialRequest request)
         {
@@ -93,6 +109,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Upload file of material.
+        /// </summary>
         [HttpPost("material")]
         public async Task<string> UploadMaterial(IFormFile file)
         {

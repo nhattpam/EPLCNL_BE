@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing modules.
+    /// </summary>
     [Route("api/modules")]
     [ApiController]
     public class ModulesController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _moduleService = moduleService;
         }
 
-
+        /// <summary>
+        /// Get a list of all modules.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ModuleResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get module by module id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ModuleResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of assignments by module id.
+        /// </summary>
         [HttpGet("{id}/assignments")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -69,7 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Get a list of lessons by module id.
+        /// </summary>
         [HttpGet("{id}/lessons")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LessonResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -88,7 +101,9 @@ namespace EPLCNL_API.Controllers
         }
 
 
-
+        /// <summary>
+        /// Get a list of quizzes by module id.
+        /// </summary>
         [HttpGet("{id}/quizzes")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuizResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -107,7 +122,9 @@ namespace EPLCNL_API.Controllers
         }
 
 
-
+        /// <summary>
+        /// Create new module.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -124,6 +141,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete module by module id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<ModuleResponse>> Delete(Guid id)
         {
@@ -131,7 +151,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update module by module id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<ModuleResponse>> Update(Guid id, [FromBody] ModuleRequest request)
         {

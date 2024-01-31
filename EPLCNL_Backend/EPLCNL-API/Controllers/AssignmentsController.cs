@@ -7,6 +7,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing assignments.
+    /// </summary>
     [Route("api/assignments")]
     [ApiController]
     public class AssignmentsController : ControllerBase
@@ -18,7 +21,9 @@ namespace EPLCNL_API.Controllers
             _assignmentService = assignmentService;
         }
 
-
+        /// <summary>
+        /// Get a list of all assignments.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AssignmentResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,6 +41,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get assignment by assignment id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -53,6 +61,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new assignment.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete assignment by assignment id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<AssignmentResponse>> Delete(Guid id)
         {
@@ -76,7 +90,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update assignment by assignment id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<AssignmentResponse>> Update(Guid id, [FromBody] AssignmentRequest request)
         {

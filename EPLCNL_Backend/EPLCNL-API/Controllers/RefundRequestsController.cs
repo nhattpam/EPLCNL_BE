@@ -7,6 +7,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing refund requests.
+    /// </summary>
     [Route("api/refund-requests")]
     [ApiController]
     public class RefundRequestsController : ControllerBase
@@ -18,7 +21,9 @@ namespace EPLCNL_API.Controllers
             _refundRequestService = refundRequestService;
         }
 
-
+        /// <summary>
+        /// Get a list of all refund-requests.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RefundResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,6 +41,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get refund-request by refund-request id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RefundResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -53,6 +61,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new refund-request.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete refund-request by refund-request id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<RefundResponse>> Delete(Guid id)
         {
@@ -76,7 +90,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update refund-request by refund-request id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<RefundResponse>> Update(Guid id, [FromBody] ViewModel.RequestModel.RefundRequest request)
         {

@@ -7,6 +7,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing class practices.
+    /// </summary>
     [Route("api/class-practices")]
     [ApiController]
     public class ClassPracticesController : ControllerBase
@@ -18,7 +21,9 @@ namespace EPLCNL_API.Controllers
             _classPracticeService = classPracticeService;
         }
 
-
+        /// <summary>
+        /// Get a list of all class-practices.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ClassPracticeResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,6 +41,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get class-practice by class-practice id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClassPracticeResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -53,6 +61,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new class-practice.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete class-practice by class-practice id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<ClassPracticeResponse>> Delete(Guid id)
         {
@@ -76,7 +90,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update class-practice by class-practice id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<ClassPracticeResponse>> Update(Guid id, [FromBody] ClassPracticeRequest request)
         {

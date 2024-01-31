@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing class topics.
+    /// </summary>
     [Route("api/class-topics")]
     [ApiController]
     public class ClassTopicsController : ControllerBase
@@ -17,7 +20,9 @@ namespace EPLCNL_API.Controllers
             _classTopicService = classTopicService;
         }
 
-
+        /// <summary>
+        /// Get a list of all class-topics.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ClassTopicResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -35,6 +40,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get class-topic by class-topic id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClassTopicResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,6 +60,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of lesson-materials by class-topic id.
+        /// </summary>
         [HttpGet("{id}/lesson-materials")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LessonMaterialResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new class-topic.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -85,6 +99,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete class-topic by class-topic id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<ClassTopicResponse>> Delete(Guid id)
         {
@@ -92,7 +109,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update class-topic by class-topic id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<ClassTopicResponse>> Update(Guid id, [FromBody] ClassTopicRequest request)
         {

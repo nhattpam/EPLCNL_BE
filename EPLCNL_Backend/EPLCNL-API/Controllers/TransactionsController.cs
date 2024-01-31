@@ -6,6 +6,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing transactions.
+    /// </summary>
     [Route("api/transactions")]
     [ApiController]
     public class TransactionsController : ControllerBase
@@ -18,7 +21,9 @@ namespace EPLCNL_API.Controllers
         }
 
 
-
+        /// <summary>
+        /// Get a list of all transactions.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TransactionResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,6 +41,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get transaction by transaction id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TransactionResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -53,6 +61,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create new transaction.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -69,6 +80,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete transaction by transaction id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<TransactionResponse>> Delete(Guid id)
         {
@@ -76,7 +90,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update transaction by transaction id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<TransactionResponse>> Update(Guid id, [FromBody] TransactionRequest request)
         {

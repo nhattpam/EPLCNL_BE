@@ -15,6 +15,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing authentications.
+    /// </summary>
     [Route("api/authentications")]
     [ApiController]
     public class AuthenticationsController : ControllerBase
@@ -31,6 +34,9 @@ namespace EPLCNL_API.Controllers
             _appSettings = optionsMonitor.CurrentValue;
         }
 
+        /// <summary>
+        /// Login an account by email and password.
+        /// </summary>
         [HttpPost("login")]
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<ActionResult<AccountResponse>> LoginMember(LoginMem logMem)

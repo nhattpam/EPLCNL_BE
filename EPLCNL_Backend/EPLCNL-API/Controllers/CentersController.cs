@@ -10,6 +10,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing centers.
+    /// </summary>
     [Route("api/centers")]
     [ApiController]
     public class CentersController : ControllerBase
@@ -21,7 +24,9 @@ namespace EPLCNL_API.Controllers
             _centerService = centerService;
         }
 
-
+        /// <summary>
+        /// Get a list of all centers.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<CenterResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -39,6 +44,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get center by center id.
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CenterResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -56,6 +64,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get a list of tutors by center id.
+        /// </summary>
         [HttpGet("{id}/tutors")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -73,7 +84,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Create new center.
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -90,6 +103,9 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete center by center id.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<CenterResponse>> Delete( Guid id)
         {
@@ -97,7 +113,9 @@ namespace EPLCNL_API.Controllers
             return Ok(rs);
         }
 
-
+        /// <summary>
+        /// Update center by center id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<ActionResult<CenterResponse>> Update(Guid id, [FromBody] CenterRequest request)
         {
@@ -111,8 +129,9 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
-
-        //send mail for approving new Centers
+        /// <summary>
+        /// Send mail for approving new centers.
+        /// </summary>
         [HttpPost("{id}/mail")]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
