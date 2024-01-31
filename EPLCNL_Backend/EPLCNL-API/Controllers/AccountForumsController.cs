@@ -8,6 +8,9 @@ using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
+    /// <summary>
+    /// Controller for managing account forums
+    /// </summary>
     [Route("api/account-forums")]
     [ApiController]
     public class AccountForumsController : ControllerBase
@@ -19,7 +22,9 @@ namespace EPLCNL_API.Controllers
             _accountforumService = accountforumService;
         }
 
- 
+        /// <summary>
+        /// Get a list of all tattoo stickers.
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<AccountForumResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -36,6 +41,7 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AccountForumResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

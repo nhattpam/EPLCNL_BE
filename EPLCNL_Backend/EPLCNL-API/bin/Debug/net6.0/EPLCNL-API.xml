@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EPLCNL-API</name>
+    </assembly>
+    <members>
+        <member name="T:EPLCNL_API.Controllers.AccountForumsController">
+            <summary>
+            Controller for managing account forums
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountForumsController.GetAll">
+            <summary>
+            Get a list of all tattoo stickers.
+            </summary>
+        </member>
+    </members>
+</doc>
