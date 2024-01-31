@@ -113,7 +113,7 @@ namespace EPLCNL_API.Controllers
         }
 
         //send mail for approving new Centers
-        [HttpPost("send-mail")]
+        [HttpPost("{id}/send-mail")]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
