@@ -93,7 +93,7 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpPost("upload-materials")]
+        [HttpPost("material")]
         public async Task<string> UploadMaterial(IFormFile file)
         {
             string link = "";

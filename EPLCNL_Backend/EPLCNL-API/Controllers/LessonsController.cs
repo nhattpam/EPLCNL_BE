@@ -109,7 +109,7 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpPost("upload-videos")]
+        [HttpPost("video")]
         public async Task<string> UploadVideo(IFormFile file)
         {
             string link = "";

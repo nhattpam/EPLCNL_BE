@@ -88,7 +88,7 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpPost("upload-images")]
+        [HttpPost("image")]
         public async Task<string> Upload(IFormFile file)
         {
             string link = "";

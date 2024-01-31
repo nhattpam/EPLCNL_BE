@@ -110,7 +110,7 @@ namespace EPLCNL_API.Controllers
             }
         }
 
-        [HttpPost("upload-images")]
+        [HttpPost("image")]
         public async Task<string> UploadImage(IFormFile file)
         {
             string link = "";
@@ -150,7 +150,7 @@ namespace EPLCNL_API.Controllers
             return link;
         }
 
-        [HttpPost("upload-audios")]
+        [HttpPost("audio")]
         public async Task<string> UploadAudio(IFormFile file)
         {
             string link = "";

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\capstone project\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {}
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {}
   },
   "projects": {
-    "D:\\capstone project\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\capstone project\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "D:\\capstone project\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
-        "packagesPath": "C:\\Users\\haph1\\.nuget\\packages\\",
-        "outputPath": "D:\\capstone project\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
+        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\haph1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -60,7 +55,12 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }
