@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EPLCNL_API.VNPay;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.TransactionsService;
 using ViewModel.RequestModel;
@@ -14,10 +15,12 @@ namespace EPLCNL_API.Controllers
     public class TransactionsController : ControllerBase
     {
         private readonly ITransactionService _transactionService;
+        private readonly IVnPayService _vnPayService;
 
-        public TransactionsController(ITransactionService transactionService)
+        public TransactionsController(ITransactionService transactionService, IVnPayService vnPayService)
         {
             _transactionService = transactionService;
+            _vnPayService = vnPayService;
         }
 
 
@@ -106,5 +109,22 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /// <summary>
+        /// Update transaction by transaction id.
+        /// </summary>
+        [HttpPost("/pay")]
+        public async Task<ActionResult<string>> Pay()
+        {
+             var vnPayModel = new VnPaymentRequestModel
+            {
+                Amount= 1000,
+                CreatedDate = DateTime.UtcNow,
+                Description = "thanh toan don hang",
+                FullName = "nhat",
+                OrderId = new Random().Next(1000, 100000)
+            };
+            return _vnPayService.CreatePaymentUrl(HttpContext, vnPayModel);
+        }
+
     }
 }

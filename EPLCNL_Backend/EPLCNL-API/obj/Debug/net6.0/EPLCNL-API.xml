@@ -169,6 +169,11 @@
             Login an account by email and password.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AuthenticationsController.ActiveAccount(System.String)">
+            <summary>
+            Active an account by email
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.CategoriesController">
             <summary>
             Controller for managing categories.
@@ -1120,6 +1125,11 @@
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.TransactionsController.Update(System.Guid,ViewModel.RequestModel.TransactionRequest)">
+            <summary>
+            Update transaction by transaction id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.Pay(ViewModel.RequestModel.VnPaymentRequestModel)">
             <summary>
             Update transaction by transaction id.
             </summary>

@@ -12,5 +12,6 @@ namespace Service.AccountsService
         Task<AccountResponse> Create(AccountRequest request);
         Task<AccountResponse> Update(Guid id, AccountRequest request);
         Task<AccountResponse> Delete(Guid id);
+
     }
 }

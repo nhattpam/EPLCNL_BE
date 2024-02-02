@@ -121,5 +121,40 @@ namespace EPLCNL_API.Controllers
 
             return jwtTokenHandler.WriteToken(token);
         }
+
+        /// <summary>
+        /// Active an account by email
+        /// </summary>
+        [HttpPost("{email}/activation")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        public async Task<ActionResult<string>> ActiveAccount(string email)
+        {
+            var accounts = await _accountService.GetAll();
+            AccountRequest accountRequest = new AccountRequest();
+            foreach (var account in accounts)
+            {
+                if (account.Email!.Equals(email)){
+                    accountRequest.IsActive = true;
+                    accountRequest.UpdatedDate = account.UpdatedDate;
+                    accountRequest.Email = account.Email;
+                    accountRequest.Password = account.Password;
+                    accountRequest.FullName = account.FullName;
+                    accountRequest.PhoneNumber = account.PhoneNumber;
+                    accountRequest.ImageUrl = account.ImageUrl;
+                    accountRequest.DateOfBirth = account.DateOfBirth;
+                    accountRequest.Gender = account.Gender;
+                    accountRequest.Address = account.Address;
+                    accountRequest.IsDeleted = account.IsDeleted;
+                    accountRequest.RoleId = account.RoleId;
+                    accountRequest.CreatedDate = account.CreatedDate;
+                    accountRequest.CreatedBy = account.CreatedBy;
+                    accountRequest.UpdatedBy = account.UpdatedBy;
+                    await _accountService.Update(account.Id, accountRequest);
+                  
+                    return Ok("Active Account Successfully");
+                }
+            }
+            return NotFound();
+        }
     }
 }

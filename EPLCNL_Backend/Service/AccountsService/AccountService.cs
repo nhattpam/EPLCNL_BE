@@ -17,6 +17,7 @@ namespace Service.AccountsService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
+
         public AccountService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _mapper = mapper;
@@ -170,5 +171,7 @@ namespace Service.AccountsService
             return _mapper.Map<Account, AccountResponse>(account);
         }
 
+
+        
     }
 }
