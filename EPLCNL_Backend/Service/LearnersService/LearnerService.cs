@@ -32,7 +32,7 @@ namespace Service.LearnersService
             return list;
         }
 
-        public async Task<LearnerResponse> Get(Guid id)
+        public async Task<LearnerResponse> Get(Guid? id)
         {
             try
             {

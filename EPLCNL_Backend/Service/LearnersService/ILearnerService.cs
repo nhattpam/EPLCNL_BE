@@ -12,7 +12,7 @@ namespace Service.LearnersService
     {
         public Task<List<LearnerResponse>> GetAll();
 
-        public Task<LearnerResponse> Get(Guid id);
+        public Task<LearnerResponse> Get(Guid? id);
 
         public Task<LearnerResponse> Create(LearnerRequest request);
 

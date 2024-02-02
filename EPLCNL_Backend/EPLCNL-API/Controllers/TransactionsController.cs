@@ -1,6 +1,7 @@
 ﻿using EPLCNL_API.VNPay;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Service.LearnersService;
 using Service.TransactionsService;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
@@ -16,11 +17,14 @@ namespace EPLCNL_API.Controllers
     {
         private readonly ITransactionService _transactionService;
         private readonly IVnPayService _vnPayService;
+        private readonly ILearnerService _learnerService;
 
-        public TransactionsController(ITransactionService transactionService, IVnPayService vnPayService)
+        public TransactionsController(ITransactionService transactionService, IVnPayService vnPayService
+            , ILearnerService learnerService)
         {
             _transactionService = transactionService;
             _vnPayService = vnPayService;
+            _learnerService = learnerService;
         }
 
 
@@ -109,21 +113,53 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         /// <summary>
-        /// Update transaction by transaction id.
+        /// Pay through VnPay by transaction id.
         /// </summary>
-        [HttpPost("/pay")]
-        public async Task<ActionResult<string>> Pay()
+        [HttpPost("{id}/pay")]
+        public async Task<ActionResult<string>> Pay(Guid id)
         {
-             var vnPayModel = new VnPaymentRequestModel
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
+
+            var transaction = await _transactionService.Get(id);
+            if(transaction == null)
             {
-                Amount= 1000,
-                CreatedDate = DateTime.UtcNow,
-                Description = "thanh toan don hang",
-                FullName = "nhat",
-                OrderId = new Random().Next(1000, 100000)
-            };
-            return _vnPayService.CreatePaymentUrl(HttpContext, vnPayModel);
+                return NotFound();
+            }
+            else
+            {
+                var learner = await _learnerService.Get(transaction.LearnerId);
+                var vnPayModel = new VnPaymentRequestModel
+                {
+                    Amount = transaction.Amount,
+                    CreatedDate = localTime,
+                    Description = "thanh toan don hang",
+                    FullName = learner.Account.FullName,
+                    OrderId = id
+                };
+                return _vnPayService.CreatePaymentUrl(HttpContext, vnPayModel);
+            }
+           
+        }
+
+
+        /// <summary>
+        /// Payment redirect
+        /// </summary>
+        [HttpGet("payment-callback")]
+        public async Task<ActionResult<string>> PaymentCallBack(double vnp_Amount, string vnp_BankCode, 
+            string vnp_BankTranNo, string vnp_CardType, string vnp_OrderInfo, string vnp_PayDate, string vnp_ResponseCode,
+            string vnp_TmnCode, string vnp_TransactionNo, string vnp_TransactionStatus, string vnp_TxnRef, string vnp_SecureHash)
+        {
+            return vnp_TmnCode;
         }
 
     }

@@ -11,6 +11,7 @@ namespace ViewModel.RequestModel
         public Guid? PaymentMethodId { get; set; }
         public decimal? Amount { get; set; }
         public string? Status { get; set; }
+        public DateTime? TransactionDate { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? CourseId { get; set; }
         public bool? RefundStatus { get; set; }
