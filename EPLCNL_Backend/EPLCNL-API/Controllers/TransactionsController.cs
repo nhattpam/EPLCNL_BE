@@ -141,25 +141,13 @@ namespace EPLCNL_API.Controllers
                 {
                     Amount = transaction.Amount,
                     CreatedDate = localTime,
-                    Description = "thanh toan don hang",
+                    Description = "Payment-For-Order:",
                     FullName = learner.Account.FullName,
                     OrderId = id
                 };
                 return _vnPayService.CreatePaymentUrl(HttpContext, vnPayModel);
             }
            
-        }
-
-
-        /// <summary>
-        /// Payment redirect
-        /// </summary>
-        [HttpGet("payment-callback")]
-        public async Task<ActionResult<string>> PaymentCallBack(double vnp_Amount, string vnp_BankCode, 
-            string vnp_BankTranNo, string vnp_CardType, string vnp_OrderInfo, string vnp_PayDate, string vnp_ResponseCode,
-            string vnp_TmnCode, string vnp_TransactionNo, string vnp_TransactionStatus, string vnp_TxnRef, string vnp_SecureHash)
-        {
-            return vnp_TmnCode;
         }
 
     }
