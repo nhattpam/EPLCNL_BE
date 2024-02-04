@@ -69,6 +69,11 @@
             Update account by account id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetLearnerByAccount(System.Guid)">
+            <summary>
+            Get learner by account id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AccountSurveysController">
             <summary>
             Controller for managing account surveys.

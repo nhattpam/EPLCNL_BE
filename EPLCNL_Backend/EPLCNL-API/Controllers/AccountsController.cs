@@ -146,5 +146,26 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get learner by account id.
+        /// </summary>
+        [HttpGet("{id}/learners")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LearnerResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<LearnerResponse>> GetLearnerByAccount(Guid id)
+        {
+
+            try
+            {
+                var rs = await _accountService.GetLearnerByAccount(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

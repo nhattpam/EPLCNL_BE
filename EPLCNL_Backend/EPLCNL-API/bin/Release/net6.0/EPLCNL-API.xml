@@ -69,6 +69,11 @@
             Update account by account id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetLearnerByAccount(System.Guid)">
+            <summary>
+            Get learner by account id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AccountSurveysController">
             <summary>
             Controller for managing account surveys.
@@ -1127,6 +1132,11 @@
         <member name="M:EPLCNL_API.Controllers.TransactionsController.Update(System.Guid,ViewModel.RequestModel.TransactionRequest)">
             <summary>
             Update transaction by transaction id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.Pay(System.Guid)">
+            <summary>
+            Pay through VnPay by transaction id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.TutorsController">
