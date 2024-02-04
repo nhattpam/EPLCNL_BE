@@ -1,8 +1,12 @@
 ﻿using EPLCNL_API.VNPay;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Service.AccountsService;
 using Service.LearnersService;
 using Service.TransactionsService;
+using System.Net.Mail;
+using System.Net.Mime;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
 
@@ -18,13 +22,15 @@ namespace EPLCNL_API.Controllers
         private readonly ITransactionService _transactionService;
         private readonly IVnPayService _vnPayService;
         private readonly ILearnerService _learnerService;
+        private readonly IAccountService _accountService;
 
         public TransactionsController(ITransactionService transactionService, IVnPayService vnPayService
-            , ILearnerService learnerService)
+            , ILearnerService learnerService, IAccountService accountService)
         {
             _transactionService = transactionService;
             _vnPayService = vnPayService;
             _learnerService = learnerService;
+            _accountService = accountService;
         }
 
 
@@ -149,6 +155,9 @@ namespace EPLCNL_API.Controllers
             }
            
         }
+
+
+        
 
     }
 }

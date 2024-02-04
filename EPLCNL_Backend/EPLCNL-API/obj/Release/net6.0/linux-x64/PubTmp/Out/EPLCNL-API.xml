@@ -74,6 +74,11 @@
             Get learner by account id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.SendMail(System.Guid,ViewModel.RequestModel.MailRequestModel)">
+            <summary>
+            Send mail for successful payment.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AccountSurveysController">
             <summary>
             Controller for managing account surveys.
