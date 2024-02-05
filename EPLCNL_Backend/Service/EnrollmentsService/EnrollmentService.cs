@@ -117,5 +117,30 @@ namespace Service.EnrollmentsService
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<EnrollmentResponse> GetEnrollmentByLearnerAndCourseId(Guid learnerId, Guid courseId)
+        {
+            try
+            {
+                Enrollment enrollment = await _unitOfWork.Repository<Enrollment>()
+                    .GetAll()
+                    .AsNoTracking()
+                    .Where(x => x.LearnerId == learnerId && x.CourseId == courseId)
+                    .FirstOrDefaultAsync();
+
+                if (enrollment == null)
+                {
+                    // Handle case where enrollment is not found
+                    throw new Exception("Enrollment not found for the specified learner and course.");
+                }
+
+                return _mapper.Map<Enrollment, EnrollmentResponse>(enrollment);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions appropriately
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

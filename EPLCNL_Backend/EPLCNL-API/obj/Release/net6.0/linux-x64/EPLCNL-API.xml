@@ -524,6 +524,11 @@
             Update enrollment by enrollment id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.GetEnrollmentByLearnerAndCourseId(System.Guid,System.Guid)">
+            <summary>
+            Get enrollment by learner and course id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.FeedbacksController">
             <summary>
             Controller for managing feedbacks.

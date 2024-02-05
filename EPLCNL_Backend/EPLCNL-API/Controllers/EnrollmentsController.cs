@@ -105,5 +105,26 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get enrollment by learner and course id.
+        /// </summary>
+        [HttpGet("learner-course")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EnrollmentResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<EnrollmentResponse>> GetEnrollmentByLearnerAndCourseId([FromQuery] Guid learnerId, [FromQuery] Guid courseId)
+        {
+            try
+            {
+                var rs = await _centerService.GetEnrollmentByLearnerAndCourseId(learnerId, courseId);
+                return Ok(rs);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
     }
 }

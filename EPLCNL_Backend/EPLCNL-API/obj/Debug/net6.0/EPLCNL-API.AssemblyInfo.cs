@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EPLCNL-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ab3b1e8394ad55f60ef4a22b95ab2910171667b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5918e06e3adb7ff58fb5f8aa3b69970ed301bab")]
 [assembly: System.Reflection.AssemblyProductAttribute("EPLCNL-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EPLCNL-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
