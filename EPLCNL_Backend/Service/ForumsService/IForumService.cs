@@ -19,5 +19,7 @@ namespace Service.ForumsService
         public Task<ForumResponse> Delete(Guid id);
 
         public Task<ForumResponse> Update(Guid id, ForumRequest request);
+
+        public Task<List<AccountForumResponse>> GetAllAccountForumsByForum(Guid id);
     }
 }

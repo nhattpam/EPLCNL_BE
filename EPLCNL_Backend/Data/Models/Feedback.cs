@@ -13,6 +13,6 @@ namespace Data.Models
         public Guid? CourseId { get; set; }
 
         public virtual Course? Course { get; set; }
-        public virtual Account? Learner { get; set; }
+        public virtual Learner? Learner { get; set; }
     }
 }

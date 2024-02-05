@@ -147,5 +147,26 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        
+        /// <summary>
+        /// Get a list of forums by tutor id.
+        /// </summary>
+        [HttpGet("{id}/forums")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ForumResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ForumResponse>>> GetAllForumsByTutor(Guid id)
+        {
+            try
+            {
+                var rs = await _tutorService.GetAllForumsByTutor(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

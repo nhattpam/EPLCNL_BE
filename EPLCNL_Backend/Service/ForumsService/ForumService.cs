@@ -38,10 +38,12 @@ namespace Service.ForumsService
             {
                 Forum forum = null;
                 forum = await _unitOfWork.Repository<Forum>().GetAll()
-                     .AsNoTracking()
-                     .Include(x => x.Course)
-                    .Where(x => x.Id == id)
-                    .FirstOrDefaultAsync();
+    .AsNoTracking()
+    .Include(x => x.Course)
+        .ThenInclude(c => c.Tutor)  // Include Tutor in the query
+    .Where(x => x.Id == id)
+    .FirstOrDefaultAsync();
+
 
                 if (forum == null)
                 {
@@ -117,6 +119,26 @@ namespace Service.ForumsService
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public async Task<List<AccountForumResponse>> GetAllAccountForumsByForum(Guid id)
+        {
+            var forum = await _unitOfWork.Repository<Forum>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (forum == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var accountForums = _unitOfWork.Repository<AccountForum>().GetAll()
+                .Where(t => t.ForumId == id)
+                .ProjectTo<AccountForumResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return accountForums;
         }
     }
 }

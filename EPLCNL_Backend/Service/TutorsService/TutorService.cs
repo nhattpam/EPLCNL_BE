@@ -15,7 +15,7 @@ using ViewModel.ResponseModel;
 
 namespace Service.TutorService
 {
-    public class TutorService: ITutorService
+    public class TutorService : ITutorService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
@@ -101,6 +101,26 @@ namespace Service.TutorService
                 .ToList();
 
             return paperWorks;
+        }
+
+        public async Task<List<ForumResponse>> GetAllForumsByTutor(Guid id)
+        {
+            var tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (tutor == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var forums = _unitOfWork.Repository<Forum>().GetAll()
+                .Where(t => t.Course.TutorId == id)
+                .ProjectTo<ForumResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return forums;
         }
 
         public async Task<TutorResponse> Create(TutorRequest request)

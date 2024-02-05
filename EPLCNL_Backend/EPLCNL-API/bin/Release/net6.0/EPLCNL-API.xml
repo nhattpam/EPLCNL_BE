@@ -584,6 +584,11 @@
             Update forum by forum id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.ForumsController.GetAllAccountForumsByForum(System.Guid)">
+            <summary>
+            Get a list of account forums by forum id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.LearnersController">
             <summary>
             Controller for managing learners.
@@ -1182,6 +1187,11 @@
         <member name="M:EPLCNL_API.Controllers.TutorsController.Update(System.Guid,ViewModel.RequestModel.TutorRequest)">
             <summary>
             Update tutor by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllForumsByTutor(System.Guid)">
+            <summary>
+            Get a list of forums by tutor id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.WalletsController">
