@@ -14,5 +14,9 @@ namespace ViewModel.ResponseModel
         public Guid? ForumId { get; set; }
         public string? Message { get; set; }
         public DateTime? MessagedDate { get; set; }
+
+        public virtual ForumResponse? Forum { get; set; }
+        public virtual LearnerResponse? Learner { get; set; }
+        public virtual TutorResponse? Tutor { get; set; }
     }
 }
