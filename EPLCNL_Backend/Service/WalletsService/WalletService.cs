@@ -58,19 +58,10 @@ namespace Service.WalletsService
 
         public async Task<WalletResponse> Create(WalletRequest request)
         {
-            // Set the UTC offset for UTC+7
-            TimeSpan utcOffset = TimeSpan.FromHours(7);
-
-            // Get the current UTC time
-            DateTime utcNow = DateTime.UtcNow;
-
-            // Convert the UTC time to UTC+7
-            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var wallet = _mapper.Map<WalletRequest, Wallet>(request);
                 wallet.Id = Guid.NewGuid();
-                wallet.TransactionDate = localTime;
                 await _unitOfWork.Repository<Wallet>().InsertAsync(wallet);
                 await _unitOfWork.CommitAsync();
 

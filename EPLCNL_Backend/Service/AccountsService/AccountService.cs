@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.WalletsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,13 @@ namespace Service.AccountsService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
+        private IWalletService _walletService;
 
-        public AccountService(IUnitOfWork unitOfWork, IMapper mapper)
+        public AccountService(IUnitOfWork unitOfWork, IMapper mapper, IWalletService walletService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _walletService = walletService;
         }
 
         public async Task<List<AccountResponse>> GetAll()
@@ -71,14 +74,23 @@ namespace Service.AccountsService
             DateTime localTime = utcNow + utcOffset;
             try
             {
+               
                 var account = _mapper.Map<AccountRequest, Account>(request);
                 account.Id = Guid.NewGuid();
                 account.CreatedDate = localTime;
                 account.IsDeleted = false;
+
+
+
                 await _unitOfWork.Repository<Account>().InsertAsync(account);
                 await _unitOfWork.CommitAsync();
-
+                WalletResponse wallet = await _walletService.Create(new WalletRequest()
+                {
+                    AccountId = account.Id,
+                    Balance = 0
+                });
                 return _mapper.Map<Account, AccountResponse>(account);
+
             }
             catch (Exception e)
             {
