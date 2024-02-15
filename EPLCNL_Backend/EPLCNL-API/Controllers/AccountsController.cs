@@ -170,6 +170,27 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+        
+        /// <summary>
+        /// Get tutor by account id.
+        /// </summary>
+        [HttpGet("{id}/tutors")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<TutorResponse>> GetTutorByAccount(Guid id)
+        {
+
+            try
+            {
+                var rs = await _accountService.GetTutorByAccount(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
 
         /// <summary>
         /// Send mail for successful payment.

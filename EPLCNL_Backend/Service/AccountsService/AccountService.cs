@@ -202,6 +202,25 @@ namespace Service.AccountsService
 
             return learner;
         }
+        public async Task<TutorResponse> GetTutorByAccount(Guid id)
+        {
+            var account = await _unitOfWork.Repository<Account>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (account == null)
+            {
+                // Handle the case where the account with the specified id is not found
+                return null;
+            }
+
+            var tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(t => t.AccountId == id)
+                .ProjectTo<TutorResponse>(_mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync();
+
+            return tutor;
+        }
 
     }
 }
