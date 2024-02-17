@@ -48,6 +48,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using EPLCNL_API.VNPay;
+using Service.ReportsService;
+using Service.ViolationsService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -103,6 +105,8 @@ builder.Services.AddScoped<ITutorService, TutorService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IWalletService, WalletService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
+builder.Services.AddScoped<IReportService, ReportService>();
+builder.Services.AddScoped<IViolationService, ViolationService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 
