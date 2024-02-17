@@ -145,5 +145,25 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get a list of reports by staff id.
+        /// </summary>
+        [HttpGet("{id}/reports")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ReportResponse>>> GetAllReportsByStaff(Guid id)
+        {
+            try
+            {
+                var rs = await _staffService.GetAllReportsByStaff(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

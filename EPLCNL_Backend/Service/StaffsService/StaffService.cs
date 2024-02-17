@@ -101,6 +101,49 @@ namespace Service.StaffsService
             return centers;
         }
 
+        public async Task<List<ReportResponse>> GetAllReportsByStaff(Guid id)
+        {
+            try
+            {
+                // Retrieve tutors associated with the staff
+                var tutors = await GetAllTutorsByStaff(id);
+
+                // Extract tutor Ids
+                var tutorIds = tutors.Select(t => t.Id).ToList();
+
+                // Retrieve reports associated with the tutors
+                var tutorReports = await _unitOfWork.Repository<Report>()
+                    .GetAll()
+                    .Where(r => tutorIds.Contains(r.Course.TutorId.Value))
+                    .ProjectTo<ReportResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                // Retrieve centers associated with the staff
+                var centers = await GetAllCentersByStaff(id);
+
+                // Extract center Ids
+                var centerIds = centers.Select(c => c.Id).ToList();
+
+                // Retrieve reports associated with the centers
+                var centerReports = await _unitOfWork.Repository<Report>()
+                    .GetAll()
+                    .Where(r => centerIds.Contains(r.Course.Tutor.CenterId.Value))
+                    .ProjectTo<ReportResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                // Merge reports from both cases
+                var allReports = tutorReports.Concat(centerReports).ToList();
+
+                return allReports;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error retrieving reports for the staff", ex);
+            }
+        }
+
+
+
         public async Task<StaffResponse> Create(StaffRequest request)
         {
             try
