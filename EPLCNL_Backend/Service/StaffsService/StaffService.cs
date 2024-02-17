@@ -143,6 +143,46 @@ namespace Service.StaffsService
         }
 
 
+        public async Task<List<CourseResponse>> GetAllCoursesByStaff(Guid id)
+        {
+            try
+            {
+                // Retrieve tutors associated with the staff
+                var tutors = await GetAllTutorsByStaff(id);
+
+                // Extract tutor Ids
+                var tutorIds = tutors.Select(t => t.Id).ToList();
+
+                // Retrieve courses associated with the tutors
+                var tutorCourses = await _unitOfWork.Repository<Course>()
+                    .GetAll()
+                    .Where(c => tutorIds.Contains(c.TutorId.Value))
+                    .ProjectTo<CourseResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                // Retrieve centers associated with the staff
+                var centers = await GetAllCentersByStaff(id);
+
+                // Extract center Ids
+                var centerIds = centers.Select(c => c.Id).ToList();
+
+                // Retrieve courses associated with the centers
+                var centerCourses = await _unitOfWork.Repository<Course>()
+                    .GetAll()
+                    .Where(c => centerIds.Contains(c.Tutor.CenterId.Value))
+                    .ProjectTo<CourseResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                // Merge courses from both cases
+                var allCourses = tutorCourses.Concat(centerCourses).ToList();
+
+                return allCourses;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error retrieving courses for the staff", ex);
+            }
+        }
 
         public async Task<StaffResponse> Create(StaffRequest request)
         {

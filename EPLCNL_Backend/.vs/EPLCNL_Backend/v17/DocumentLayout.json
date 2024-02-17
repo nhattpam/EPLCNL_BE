@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\staffscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\service\\staffsservice\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\staffsservice\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\service\\staffsservice\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\staffsservice\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\quizzescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\quizzescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,8 +26,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StaffService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\StaffsService\\StaffService.cs",
+              "RelativeDocumentMoniker": "Service\\StaffsService\\StaffService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\StaffsService\\StaffService.cs",
+              "RelativeToolTip": "Service\\StaffsService\\StaffService.cs",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAIwJ4AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T23:01:40.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IStaffService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\StaffsService\\IStaffService.cs",
+              "RelativeDocumentMoniker": "Service\\StaffsService\\IStaffService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\StaffsService\\IStaffService.cs",
+              "RelativeToolTip": "Service\\StaffsService\\IStaffService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T23:01:16.268Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,14 +62,14 @@
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\StaffsController.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\StaffsController.cs",
               "RelativeToolTip": "EPLCNL-API\\Controllers\\StaffsController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAmwKsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-17T22:57:52.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "QuizzesController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\QuizzesController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\QuizzesController.cs",

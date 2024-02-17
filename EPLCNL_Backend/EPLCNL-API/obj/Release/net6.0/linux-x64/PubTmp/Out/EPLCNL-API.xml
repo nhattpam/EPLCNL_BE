@@ -1094,6 +1094,11 @@
             Get a list of reports by staff id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.GetAllCoursesByStaff(System.Guid)">
+            <summary>
+            Get a list of courses by staff id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.SurveysController">
             <summary>
             Controller for managing surveys.

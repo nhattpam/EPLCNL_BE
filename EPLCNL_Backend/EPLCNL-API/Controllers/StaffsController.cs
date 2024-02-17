@@ -150,7 +150,7 @@ namespace EPLCNL_API.Controllers
         /// Get a list of reports by staff id.
         /// </summary>
         [HttpGet("{id}/reports")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TutorResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReportResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<List<ReportResponse>>> GetAllReportsByStaff(Guid id)
@@ -158,6 +158,26 @@ namespace EPLCNL_API.Controllers
             try
             {
                 var rs = await _staffService.GetAllReportsByStaff(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
+        /// <summary>
+        /// Get a list of courses by staff id.
+        /// </summary>
+        [HttpGet("{id}/courses")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CourseResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<CourseResponse>>> GetAllCoursesByStaff(Guid id)
+        {
+            try
+            {
+                var rs = await _staffService.GetAllCoursesByStaff(id);
                 return Ok(rs);
             }
             catch
