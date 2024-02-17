@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {}
+    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\obj\\",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -81,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -90,17 +95,17 @@
         }
       }
     },
-    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
         "projectName": "EPLCNL-API",
-        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
-        "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\obj\\publish\\linux-x64\\",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+        "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\obj\\publish\\linux-x64\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -114,17 +119,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj"
               },
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj"
               },
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -133,6 +138,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -188,7 +198,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.27, 6.0.27]"
             }
           ],
           "frameworkReferences": {
@@ -199,7 +209,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -208,17 +218,17 @@
         }
       }
     },
-    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
         "projectName": "Helpers",
-        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
-        "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\obj\\",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
+        "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -232,11 +242,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -245,6 +255,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -272,7 +287,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -281,17 +296,17 @@
         }
       }
     },
-    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\obj\\",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -305,11 +320,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -318,6 +333,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -345,7 +365,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -354,17 +374,17 @@
         }
       }
     },
-    "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
-        "packagesPath": "C:\\Users\\meoca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\meoca\\Documents\\College\\Semester-9\\Capstone\\EPLCNL_Workspace\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\meoca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -384,6 +404,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -405,7 +430,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

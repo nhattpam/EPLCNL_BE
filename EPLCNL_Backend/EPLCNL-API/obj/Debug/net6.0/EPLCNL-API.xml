@@ -389,36 +389,6 @@
             Update class-module by class-module id.
             </summary>
         </member>
-        <member name="T:EPLCNL_API.Controllers.ClassPracticesController">
-            <summary>
-            Controller for managing class practices.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.GetAll">
-            <summary>
-            Get a list of all class-practices.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Get(System.Guid)">
-            <summary>
-            Get class-practice by class-practice id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Create(ViewModel.RequestModel.ClassPracticeRequest)">
-            <summary>
-            Create new class-practice.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Delete(System.Guid)">
-            <summary>
-            Delete class-practice by class-practice id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Update(System.Guid,ViewModel.RequestModel.ClassPracticeRequest)">
-            <summary>
-            Update class-practice by class-practice id.
-            </summary>
-        </member>
         <member name="T:EPLCNL_API.Controllers.ClassTopicsController">
             <summary>
             Controller for managing class topics.

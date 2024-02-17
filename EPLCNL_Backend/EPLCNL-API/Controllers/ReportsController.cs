@@ -1,6 +1,4 @@
-﻿using Firebase.Auth;
-using Firebase.Storage;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service.ReportsService;
 using System.Diagnostics;

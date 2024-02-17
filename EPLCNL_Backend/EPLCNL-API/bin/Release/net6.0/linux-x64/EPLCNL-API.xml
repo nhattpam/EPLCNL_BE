@@ -74,6 +74,11 @@
             Get learner by account id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetTutorByAccount(System.Guid)">
+            <summary>
+            Get tutor by account id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.AccountsController.SendMail(System.Guid,ViewModel.RequestModel.MailRequestModel)">
             <summary>
             Send mail for successful payment.
@@ -382,36 +387,6 @@
         <member name="M:EPLCNL_API.Controllers.ClassModulesController.Update(System.Guid,ViewModel.RequestModel.ClassModuleRequest)">
             <summary>
             Update class-module by class-module id.
-            </summary>
-        </member>
-        <member name="T:EPLCNL_API.Controllers.ClassPracticesController">
-            <summary>
-            Controller for managing class practices.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.GetAll">
-            <summary>
-            Get a list of all class-practices.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Get(System.Guid)">
-            <summary>
-            Get class-practice by class-practice id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Create(ViewModel.RequestModel.ClassPracticeRequest)">
-            <summary>
-            Create new class-practice.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Delete(System.Guid)">
-            <summary>
-            Delete class-practice by class-practice id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassPracticesController.Update(System.Guid,ViewModel.RequestModel.ClassPracticeRequest)">
-            <summary>
-            Update class-practice by class-practice id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.ClassTopicsController">
@@ -1019,6 +994,31 @@
             Update refund-request by refund-request id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.GetAll">
+            <summary>
+            Get a list of all reports.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Get(System.Guid)">
+            <summary>
+            Get report by report id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Create(ViewModel.RequestModel.ReportRequest)">
+            <summary>
+            Create new report.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Delete(System.Guid)">
+            <summary>
+            Delete report by report id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Update(System.Guid,ViewModel.RequestModel.ReportRequest)">
+            <summary>
+            Update report by report id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.RolesController">
             <summary>
             Controller for managing roles.
@@ -1197,6 +1197,31 @@
         <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllForumsByTutor(System.Guid)">
             <summary>
             Get a list of forums by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ViolationsController.GetAll">
+            <summary>
+            Get a list of all violations.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ViolationsController.Get(System.Guid)">
+            <summary>
+            Get violation by violation id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ViolationsController.Create(ViewModel.RequestModel.ViolationRequest)">
+            <summary>
+            Create new violation.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ViolationsController.Delete(System.Guid)">
+            <summary>
+            Delete violation by violation id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ViolationsController.Update(System.Guid,ViewModel.RequestModel.ViolationRequest)">
+            <summary>
+            Update violation by violation id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.WalletsController">

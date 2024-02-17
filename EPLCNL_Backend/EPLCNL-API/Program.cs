@@ -11,8 +11,6 @@ using Service.CertificateCoursesService;
 using Service.CertificatesService;
 using Service.ClassLessonsService;
 using Service.ClassModulesService;
-using Service.ClassPracticesService;
-using Service.ClassPraticesService;
 using Service.ClassTopicsService;
 using Service.CoursesService;
 using Service.AccountForumsService;
@@ -75,7 +73,6 @@ builder.Services.AddScoped<ICertificateCourseService, CertificateCourseService>(
 builder.Services.AddScoped<ICertificateService, CertificateService>();
 builder.Services.AddScoped<IClassLessonService, ClassLessonService>();
 builder.Services.AddScoped<IClassModuleService, ClassModuleService>();
-builder.Services.AddScoped<IClassPracticeService, ClassPracticeService>();
 builder.Services.AddScoped<IClassTopicService, ClassTopicService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IAccountService, AccountService>();

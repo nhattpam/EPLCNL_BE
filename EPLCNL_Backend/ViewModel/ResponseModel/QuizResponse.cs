@@ -11,7 +11,6 @@ namespace ViewModel.ResponseModel
         public Guid Id { get; set; }
         public Guid? ModuleId { get; set; }
         public Guid? ClassTopicId { get; set; }
-        public Guid? ClassPracticeId { get; set; }
         public string? Name { get; set; }
         public double? GradeToPass { get; set; }
         public int? Deadline { get; set; }
