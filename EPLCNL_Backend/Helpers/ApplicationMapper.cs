@@ -97,6 +97,10 @@ namespace Helper
             CreateMap<Transaction,TransactionResponse>().ReverseMap();
             CreateMap<Wallet,WalletRequest>().ReverseMap();
             CreateMap<Wallet,WalletResponse>().ReverseMap();
+            CreateMap<Report,ReportRequest>().ReverseMap();
+            CreateMap<Report,ReportResponse>().ReverseMap();
+            CreateMap<Violation,ViolationRequest>().ReverseMap();
+            CreateMap<Violation,ViolationResponse>().ReverseMap();
         }
     }
 }
