@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\service\\centersservice\\centerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\centersservice\\centerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\centerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\centerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\data\\models\\nhatpmsecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|solutionrelative:data\\models\\nhatpmsecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\data\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|solutionrelative:data\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\data\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|solutionrelative:data\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code-space\\eplcnl-be\\eplcnl_backend\\data\\models\\accountsurvey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|solutionrelative:data\\models\\accountsurvey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CenterService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\CentersService\\CenterService.cs",
+              "RelativeDocumentMoniker": "Service\\CentersService\\CenterService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\CentersService\\CenterService.cs",
+              "RelativeToolTip": "Service\\CentersService\\CenterService.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAowGYAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T16:43:37.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CentersController.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CentersController.cs",
+              "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\CentersController.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CentersController.cs",
+              "RelativeToolTip": "EPLCNL-API\\Controllers\\CentersController.cs",
+              "ViewState": "AQIAAKkAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T16:43:25.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountSurvey.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\AccountSurvey.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\AccountSurvey.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\AccountSurvey.cs",
+              "RelativeToolTip": "Data\\Models\\AccountSurvey.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T16:34:39.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Repository\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repository\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Repository\\GenericRepository.cs",
+              "RelativeToolTip": "Data\\Repository\\GenericRepository.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAIAwwA8AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T16:36:04.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Staff.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\Staff.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Staff.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\Staff.cs",
+              "RelativeToolTip": "Data\\Models\\Staff.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T16:35:33.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "nhatpmseContext.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\nhatpmseContext.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\nhatpmseContext.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\nhatpmseContext.cs",
+              "RelativeToolTip": "Data\\Models\\nhatpmseContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T16:35:15.891Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

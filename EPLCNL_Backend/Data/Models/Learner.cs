@@ -14,6 +14,7 @@ namespace Data.Models
             Feedbacks = new HashSet<Feedback>();
             ProfileCertificates = new HashSet<ProfileCertificate>();
             QuizAttempts = new HashSet<QuizAttempt>();
+            Reports = new HashSet<Report>();
             Transactions = new HashSet<Transaction>();
         }
 
@@ -28,6 +29,7 @@ namespace Data.Models
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<ProfileCertificate> ProfileCertificates { get; set; }
         public virtual ICollection<QuizAttempt> QuizAttempts { get; set; }
+        public virtual ICollection<Report> Reports { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

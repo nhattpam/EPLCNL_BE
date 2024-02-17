@@ -12,7 +12,9 @@ namespace Data.Models
             Enrollments = new HashSet<Enrollment>();
             Feedbacks = new HashSet<Feedback>();
             Modules = new HashSet<Module>();
+            Reports = new HashSet<Report>();
             Transactions = new HashSet<Transaction>();
+            Violations = new HashSet<Violation>();
         }
 
         public Guid Id { get; set; }
@@ -38,6 +40,8 @@ namespace Data.Models
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Module> Modules { get; set; }
+        public virtual ICollection<Report> Reports { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
+        public virtual ICollection<Violation> Violations { get; set; }
     }
 }
