@@ -71,8 +71,8 @@ namespace Helper
             CreateMap<QuestionAnswer, QuestionAnswerResponse>().ReverseMap();
             CreateMap<Quiz, QuizRequest>().ReverseMap();
             CreateMap<Quiz, QuizResponse>().ReverseMap();
-            CreateMap<QuizAttempt, QuizRequest>().ReverseMap();
-            CreateMap<QuizAttempt, QuizResponse>().ReverseMap();
+            CreateMap<QuizAttempt, QuizAttemptRequest>().ReverseMap();
+            CreateMap<QuizAttempt, QuizAttemptResponse>().ReverseMap();
             CreateMap<Data.Models.RefundRequest, ViewModel.RequestModel.RefundRequest>().ReverseMap();
             CreateMap<Data.Models.RefundRequest, RefundResponse>().ReverseMap();
             CreateMap<Staff, StaffRequest>().ReverseMap();

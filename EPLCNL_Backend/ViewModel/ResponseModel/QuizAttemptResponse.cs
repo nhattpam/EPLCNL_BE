@@ -12,8 +12,6 @@ namespace ViewModel.ResponseModel
         public Guid? QuizId { get; set; }
         public Guid? LearnerId { get; set; }
         public DateTime? AttemptedDate { get; set; }
-        public TimeSpan? OpenTime { get; set; }
-        public TimeSpan? CloseTime { get; set; }
         public double? TotalGrade { get; set; }
     }
 }

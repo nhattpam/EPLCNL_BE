@@ -58,10 +58,19 @@ namespace Service.QuizAttemptsService
 
         public async Task<QuizAttemptResponse> Create(QuizAttemptRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var quizAttempt = _mapper.Map<QuizAttemptRequest, QuizAttempt>(request);
                 quizAttempt.Id = Guid.NewGuid();
+                quizAttempt.AttemptedDate = localTime;
                 await _unitOfWork.Repository<QuizAttempt>().InsertAsync(quizAttempt);
                 await _unitOfWork.CommitAsync();
 
