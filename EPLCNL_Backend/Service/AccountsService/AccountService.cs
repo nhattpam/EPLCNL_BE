@@ -221,6 +221,25 @@ namespace Service.AccountsService
 
             return tutor;
         }
+        public async Task<StaffResponse> GetStaffByAccount(Guid id)
+        {
+            var account = await _unitOfWork.Repository<Account>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (account == null)
+            {
+                // Handle the case where the account with the specified id is not found
+                return null;
+            }
+
+            var staff = await _unitOfWork.Repository<Staff>().GetAll()
+                .Where(t => t.AccountId == id)
+                .ProjectTo<StaffResponse>(_mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync();
+
+            return staff;
+        }
 
     }
 }

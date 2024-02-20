@@ -8,13 +8,12 @@ namespace Service.AccountsService
         Task<AccountResponse> Login(LoginMem loginMem);
         Task<List<AccountResponse>> GetAll();
         Task<AccountResponse> Get(Guid? id);
-
         Task<AccountResponse> Create(AccountRequest request);
         Task<AccountResponse> Update(Guid id, AccountRequest request);
         Task<AccountResponse> Delete(Guid id);
         Task<LearnerResponse> GetLearnerByAccount(Guid id);
         Task<TutorResponse> GetTutorByAccount(Guid id);
-
+        Task<StaffResponse> GetStaffByAccount(Guid id);
 
     }
 }

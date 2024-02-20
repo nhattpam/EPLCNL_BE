@@ -191,6 +191,26 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+        /// <summary>
+        /// Get staff by account id.
+        /// </summary>
+        [HttpGet("{id}/staffs")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(StaffResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<StaffResponse>> GetStaffByAccount(Guid id)
+        {
+
+            try
+            {
+                var rs = await _accountService.GetStaffByAccount(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
 
         /// <summary>
         /// Send mail for successful payment.
