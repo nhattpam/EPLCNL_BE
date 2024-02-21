@@ -39,6 +39,7 @@ namespace Service.EnrollmentsService
                 Enrollment enrollment = null;
                 enrollment = await _unitOfWork.Repository<Enrollment>().GetAll()
                      .AsNoTracking()
+                     .Include(x => x.Course)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

@@ -79,6 +79,11 @@
             Get tutor by account id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetStaffByAccount(System.Guid)">
+            <summary>
+            Get staff by account id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.AccountsController.SendMail(System.Guid,ViewModel.RequestModel.MailRequestModel)">
             <summary>
             Send mail for successful payment.

@@ -14,5 +14,8 @@ namespace ViewModel.ResponseModel
         public DateTime? EnrolledDate { get; set; }
         public string? Status { get; set; }
         public double? TotalGrade { get; set; }
+
+        public virtual CourseResponse? Course { get; set; }
+
     }
 }

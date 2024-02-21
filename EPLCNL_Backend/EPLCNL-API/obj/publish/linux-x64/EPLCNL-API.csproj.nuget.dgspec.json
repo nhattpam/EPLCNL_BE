@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {}
+    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\obj\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,14 +95,14 @@
         }
       }
     },
-    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
         "projectName": "EPLCNL-API",
-        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
         "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\obj\\publish\\linux-x64\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\obj\\publish\\linux-x64\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -119,17 +119,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj"
               },
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj"
               },
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -218,14 +218,14 @@
         }
       }
     },
-    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
         "projectName": "Helpers",
-        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\Helpers.csproj",
         "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\obj\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -242,11 +242,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -296,14 +296,14 @@
         }
       }
     },
-    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Service\\obj\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -320,11 +320,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Data.csproj"
               },
-              "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
-                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
+              "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+                "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj"
               }
             }
           }
@@ -374,14 +374,14 @@
         }
       }
     },
-    "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
         "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code-Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
