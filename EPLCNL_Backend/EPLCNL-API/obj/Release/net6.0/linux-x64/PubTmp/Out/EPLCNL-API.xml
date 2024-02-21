@@ -1214,6 +1214,11 @@
             Get a list of forums by tutor id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllAssignmentAttemptsByTutor(System.Guid)">
+            <summary>
+            Get a list of assignment-attempts by tutor id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.ViolationsController.GetAll">
             <summary>
             Get a list of all violations.

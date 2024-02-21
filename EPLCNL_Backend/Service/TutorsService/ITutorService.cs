@@ -11,6 +11,8 @@ namespace Service.TutorService
         Task<List<PaperWorkResponse>> GetAllPaperWorksByTutor(Guid id);
         Task<List<ForumResponse>> GetAllForumsByTutor(Guid id);
 
+        Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByTutor(Guid tutorId);
+
         Task<TutorResponse> Create(TutorRequest request);
         Task<TutorResponse> Update(Guid id, TutorRequest request);
         Task<TutorResponse> Delete(Guid id);

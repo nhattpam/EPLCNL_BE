@@ -123,6 +123,28 @@ namespace Service.TutorService
             return forums;
         }
 
+        public async Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByTutor(Guid tutorId)
+        {
+            var tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(x => x.Id == tutorId)
+                .FirstOrDefaultAsync();
+
+            if (tutor == null)
+            {
+                // Handle the case where the tutor with the specified id is not found
+                return null;
+            }
+
+            var assignmentAttempts = _unitOfWork.Repository<AssignmentAttempt>().GetAll()
+                .Where(a => a.Assignment.Module.Course.TutorId == tutorId)
+                .ProjectTo<AssignmentAttemptResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return assignmentAttempts;
+        }
+
+
+
         public async Task<TutorResponse> Create(TutorRequest request)
         {
             try

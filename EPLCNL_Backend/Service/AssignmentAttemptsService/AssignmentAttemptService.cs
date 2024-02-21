@@ -39,6 +39,8 @@ namespace Service.AssignmentAttemptsService
                 AssignmentAttempt assignmentAttempt = null;
                 assignmentAttempt = await _unitOfWork.Repository<AssignmentAttempt>().GetAll()
                      .AsNoTracking()
+                     .Include(x => x.Learner)
+                     .Include(x => x.Assignment)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

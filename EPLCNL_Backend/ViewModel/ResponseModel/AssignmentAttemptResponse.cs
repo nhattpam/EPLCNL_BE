@@ -14,5 +14,8 @@ namespace ViewModel.ResponseModel
         public string? AnswerText { get; set; }
         public DateTime? AttemptedDate { get; set; }
         public double? TotalGrade { get; set; }
+
+        public virtual AssignmentResponse? Assignment { get; set; }
+        public virtual LearnerResponse? Learner { get; set; }
     }
 }
