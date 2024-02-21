@@ -79,8 +79,9 @@ namespace Service.AccountsService
                 account.Id = Guid.NewGuid();
                 account.CreatedDate = localTime;
                 account.IsDeleted = false;
-
-
+                account.ImageUrl = "https://firebasestorage.googleapis.com/v0/b/meowlish-3f184.appspot.com/o/vecteezy_icon-image-not-found-vector_.jpg?alt=media&token=015edb0d-484f-4531-979f-5bc1a823da82";
+                account.Gender = false;
+                account.Address = "";
 
                 await _unitOfWork.Repository<Account>().InsertAsync(account);
                 await _unitOfWork.CommitAsync();

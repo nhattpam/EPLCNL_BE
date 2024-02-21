@@ -79,6 +79,7 @@ namespace Service.CoursesService
                 course.Id = Guid.NewGuid();
                 course.CreatedDate = localTime;
                 course.IsActive = false;
+                course.Rating = 0;
                 await _unitOfWork.Repository<Course>().InsertAsync(course);
                 await _unitOfWork.CommitAsync();
 
