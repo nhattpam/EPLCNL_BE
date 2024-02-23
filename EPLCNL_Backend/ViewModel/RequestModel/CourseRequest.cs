@@ -21,5 +21,7 @@ namespace ViewModel.RequestModel
         public string? Tags { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public string? Note { get; set; }
+
     }
 }

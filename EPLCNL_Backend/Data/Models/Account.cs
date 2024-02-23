@@ -29,6 +29,7 @@ namespace Data.Models
         public Guid? CreatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid? UpdatedBy { get; set; }
+        public string? Note { get; set; }
 
         public virtual Role? Role { get; set; }
         public virtual Wallet? Wallet { get; set; }

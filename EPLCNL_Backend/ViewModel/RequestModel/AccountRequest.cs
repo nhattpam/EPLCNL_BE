@@ -23,6 +23,9 @@ namespace ViewModel.RequestModel
         public Guid? CreatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid? UpdatedBy { get; set; }
+        public string? Note { get; set; }
+
+
     }
 
     public class LoginMem

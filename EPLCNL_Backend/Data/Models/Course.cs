@@ -31,6 +31,7 @@ namespace Data.Models
         public string? Tags { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public string? Note { get; set; }
 
         public virtual Category? Category { get; set; }
         public virtual Tutor? Tutor { get; set; }
