@@ -24,10 +24,8 @@ namespace ViewModel.ResponseModel
         public DateTime? UpdatedDate { get; set; }
         public virtual CategoryResponse? Category { get; set; }
 		public virtual TutorResponse? Tutor { get; set; }
-        //public virtual ICollection<EnrollmentResponse> Enrollments { get; set; }
-        //public virtual ICollection<FeedbackResponse> Feedbacks { get; set; }
-        //public virtual ICollection<ModuleResponse> Modules { get; set; }
-        //public virtual ICollection<ClassModuleResponse> ClassModules { get; set; }
+        public string? Note { get; set; }
+
 
     }
 }

@@ -125,5 +125,27 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        /// <summary>
+        /// Get a list of quizzes by classTopic id.
+        /// </summary>
+        [HttpGet("{id}/quizzes")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuizResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<QuizResponse>>> GetAllQuizzesByClassTopic(Guid id)
+        {
+            try
+            {
+                var rs = await _classTopicService.GetAllQuizzesByClassTopic(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
     }
 }

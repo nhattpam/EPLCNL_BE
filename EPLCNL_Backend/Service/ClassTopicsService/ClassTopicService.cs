@@ -157,6 +157,24 @@ namespace Service.ClassTopicsService
             }
         }
 
-       
+        public async Task<List<QuizResponse>> GetAllQuizzesByClassTopic(Guid id)
+        {
+            var classTopic = await _unitOfWork.Repository<ClassTopic>().GetAll()
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
+
+            if (classTopic == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var quizzes = _unitOfWork.Repository<Quiz>().GetAll()
+                .Where(t => t.ClassTopicId == id)
+                .ProjectTo<QuizResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return quizzes;
+        }
     }
 }

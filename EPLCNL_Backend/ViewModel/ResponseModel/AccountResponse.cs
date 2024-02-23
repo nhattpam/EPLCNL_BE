@@ -26,6 +26,7 @@ namespace ViewModel.ResponseModel
         public Guid? UpdatedBy { get; set; }
         public virtual RoleResponse? Role { get; set; }
 
+        public string? Note { get; set; }
 
     }
 }

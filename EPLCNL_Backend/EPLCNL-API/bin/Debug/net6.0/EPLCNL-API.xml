@@ -429,6 +429,11 @@
             Update class-topic by class-topic id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.GetAllQuizzesByClassTopic(System.Guid)">
+            <summary>
+            Get a list of quizzes by classTopic id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.CoursesController">
             <summary>
             Controller for managing courses.
