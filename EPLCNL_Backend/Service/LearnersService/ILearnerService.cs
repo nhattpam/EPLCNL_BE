@@ -19,5 +19,8 @@ namespace Service.LearnersService
         public Task<LearnerResponse> Delete(Guid id);
 
         public Task<LearnerResponse> Update(Guid id, LearnerRequest request);
+
+        public Task<List<ForumResponse>> GetAllForumsByLearner(Guid id);
+        public Task<List<EnrollmentResponse>> GetAllEnrollmentsByLearner(Guid id);
     }
 }

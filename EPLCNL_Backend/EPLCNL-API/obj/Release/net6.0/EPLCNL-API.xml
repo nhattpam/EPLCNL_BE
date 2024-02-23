@@ -604,6 +604,16 @@
             Update learner by learner id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllForumsByLearner(System.Guid)">
+            <summary>
+            Get a list of forums by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllEnrollmentsByLearner(System.Guid)">
+            <summary>
+            Get a list of enrollments by learner id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.LessonMaterialsController">
             <summary>
             Controller for managing lesson materials.

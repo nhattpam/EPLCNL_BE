@@ -105,5 +105,46 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get a list of forums by learner id.
+        /// </summary>
+        [HttpGet("{id}/forums")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ForumResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ForumResponse>>> GetAllForumsByLearner(Guid id)
+        {
+            try
+            {
+                var rs = await _learnerService.GetAllForumsByLearner(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
+
+        /// <summary>
+        /// Get a list of enrollments by learner id.
+        /// </summary>
+        [HttpGet("{id}/enrollments")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EnrollmentResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<EnrollmentResponse>>> GetAllEnrollmentsByLearner(Guid id)
+        {
+            try
+            {
+                var rs = await _learnerService.GetAllEnrollmentsByLearner(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

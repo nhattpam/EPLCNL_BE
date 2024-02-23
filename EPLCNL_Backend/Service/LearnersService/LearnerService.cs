@@ -118,5 +118,62 @@ namespace Service.LearnersService
                 throw new Exception(ex.Message);
             }
         }
+
+
+        public async Task<List<ForumResponse>> GetAllForumsByLearner(Guid id)
+        {
+            // Retrieve the learner
+            var learner = await _unitOfWork.Repository<Learner>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (learner == null)
+            {
+                // Handle the case where the learner with the specified id is not found
+                return null;
+            }
+
+            // Retrieve enrollments for the learner
+            var enrollments = _unitOfWork.Repository<Enrollment>().GetAll()
+                .Where(t => t.LearnerId == id)
+                .ToList();
+
+            // Retrieve forums related to the learner's enrollments
+            var forumResponses = new List<ForumResponse>();
+            foreach (var enrollment in enrollments)
+            {
+                var forums = _unitOfWork.Repository<Forum>().GetAll()
+                    .Where(forum => forum.CourseId == enrollment.CourseId)
+                    .ProjectTo<ForumResponse>(_mapper.ConfigurationProvider)
+                    .ToList();
+
+                forumResponses.AddRange(forums);
+            }
+
+            return forumResponses;
+        }
+
+
+        public async Task<List<EnrollmentResponse>> GetAllEnrollmentsByLearner(Guid id)
+        {
+            // Retrieve the learner
+            var learner = await _unitOfWork.Repository<Learner>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (learner == null)
+            {
+                // Handle the case where the learner with the specified id is not found
+                return null;
+            }
+
+            // Retrieve enrollments for the learner
+            var enrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
+                .Where(t => t.LearnerId == id)
+                .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
+                                            .ToListAsync();
+
+            return enrollments;
+        }
     }
 }
