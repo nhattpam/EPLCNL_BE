@@ -203,5 +203,24 @@ namespace Service.CoursesService
 
             return reports;
         }
+        public async Task<List<FeedbackResponse>> GetAllFeedbacksByCourse(Guid id)
+        {
+            var course = await _unitOfWork.Repository<Course>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (course == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var feedbacks = _unitOfWork.Repository<Report>().GetAll()
+                .Where(t => t.CourseId == id)
+                .ProjectTo<FeedbackResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return feedbacks;
+        }
     }
 }

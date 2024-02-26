@@ -122,6 +122,26 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+        
+        /// <summary>
+        /// Get a list of feedbacks by course id.
+        /// </summary>
+        [HttpGet("{id}/feedbacks")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(FeedbackResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<FeedbackResponse>>> GetAllFeedbacksByCourse(Guid id)
+        {
+            try
+            {
+                var rs = await _courseService.GetAllFeedbacksByCourse(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
 
         /// <summary>
         /// Create new course.

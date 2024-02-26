@@ -15,6 +15,7 @@ namespace Service.CoursesService
         Task<List<ModuleResponse>> GetAllModulesByCourse(Guid id);
         Task<List<ClassModuleResponse>> GetAllClassModulesByCourse(Guid id);
         Task<List<ReportResponse>> GetAllReportsByCourse(Guid id);
+        Task<List<FeedbackResponse>> GetAllFeedbacksByCourse(Guid id);
 
         public Task<CourseResponse> Create(CourseRequest request);
 
