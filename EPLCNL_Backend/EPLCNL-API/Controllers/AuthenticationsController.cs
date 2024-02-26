@@ -45,26 +45,26 @@ namespace EPLCNL_API.Controllers
 
             if (memberModel == null)
             {
-                if (logMem.Email!.Equals(_configuration["Admin:Email"], StringComparison.OrdinalIgnoreCase)
-                    && logMem.Password!.Equals(_configuration["Admin:Password"]))
-                {
-                    var adminModel = new AccountResponse
-                    {
-                        Email = _configuration["Admin:Email"],
-                        Password = _configuration["Admin:Password"],
-                        RoleId = new Guid("5F9A0E31-E7B2-417B-917D-111468A18A53")
-                    };
-                    var token = GenerateToken(adminModel);
+                //if (logMem.Email!.Equals(_configuration["Admin:Email"], StringComparison.OrdinalIgnoreCase)
+                //    && logMem.Password!.Equals(_configuration["Admin:Password"]))
+                //{
+                //    var adminModel = new AccountResponse
+                //    {
+                //        Email = _configuration["Admin:Email"],
+                //        Password = _configuration["Admin:Password"],
+                //        RoleId = new Guid("5F9A0E31-E7B2-417B-917D-111468A18A53")
+                //    };
+                //    var token = GenerateToken(adminModel);
 
-                    var response = new ApiResponse
-                    {
-                        Success = true,
-                        Message = "Authentication Successful",
-                        Data = token
-                    };
-                    return Ok(response);
+                //    var response = new ApiResponse
+                //    {
+                //        Success = true,
+                //        Message = "Authentication Successful",
+                //        Data = token
+                //    };
+                //    return Ok(response);
 
-                }
+                //}
 
                 return NotFound(
                         new ApiResponse
