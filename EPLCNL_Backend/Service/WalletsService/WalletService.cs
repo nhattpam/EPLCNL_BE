@@ -55,30 +55,7 @@ namespace Service.WalletsService
                 throw new Exception(e.Message);
             }
         }
-        public async Task<WalletResponse> GetWalletByAcount(Guid id)
-        {
-            try
-            {
-                Wallet wallet = null;
-                wallet = await _unitOfWork.Repository<Wallet>().GetAll()
-                     .AsNoTracking()
-                     .Include(x=>x.Account)
-                    .Where(x => x.AccountId == id)
-                    .FirstOrDefaultAsync();
-
-                if (wallet == null)
-                {
-                    throw new Exception("khong tim thay");
-                }
-
-                return _mapper.Map<Wallet, WalletResponse>(wallet);
-            }
-
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
+        
 
         public async Task<WalletResponse> Create(WalletRequest request)
         {

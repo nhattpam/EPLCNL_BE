@@ -13,8 +13,10 @@ namespace ViewModel.ResponseModel
         public Guid? CourseId { get; set; }
         public string? Reason { get; set; }
         public DateTime? ReportedDate { get; set; }
+        public string? ImageUrl { get; set; }
 
         public virtual CourseResponse? Course { get; set; }
         public virtual LearnerResponse? Learner { get; set; }
+
     }
 }

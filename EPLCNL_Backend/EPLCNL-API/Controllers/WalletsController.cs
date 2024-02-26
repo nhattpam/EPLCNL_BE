@@ -59,25 +59,7 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
-        /// <summary>
-        /// Get wallet by account id.
-        /// </summary>
-        [HttpGet("accounts/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(WalletResponse))]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<WalletResponse>> GetWalletByAccount(Guid id)
-        {
-            try
-            {
-                var rs = await _walletService.GetWalletByAcount(id);
-                return Ok(rs);
-            }
-            catch
-            {
-                return NotFound();
-            }
-        }
+       
 
         /// <summary>
         /// Create new wallet.

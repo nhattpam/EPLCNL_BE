@@ -9,6 +9,7 @@ using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
 using System.Net.Mime;
+using Service.WalletsService;
 
 namespace EPLCNL_API.Controllers
 {
@@ -285,6 +286,26 @@ namespace EPLCNL_API.Controllers
 
             }
             return Ok(account);
+        }
+
+        /// <summary>
+        /// Get wallet by account id.
+        /// </summary>
+        [HttpGet("{id}/wallets")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(WalletResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<WalletResponse>> GetWalletByAccount(Guid id)
+        {
+            try
+            {
+                var rs = await _accountService.GetWalletByAcount(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
         }
     }
 }

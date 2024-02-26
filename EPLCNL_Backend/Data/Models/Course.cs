@@ -14,7 +14,6 @@ namespace Data.Models
             Modules = new HashSet<Module>();
             Reports = new HashSet<Report>();
             Transactions = new HashSet<Transaction>();
-            Violations = new HashSet<Violation>();
         }
 
         public Guid Id { get; set; }
@@ -43,6 +42,5 @@ namespace Data.Models
         public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<Report> Reports { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
-        public virtual ICollection<Violation> Violations { get; set; }
     }
 }

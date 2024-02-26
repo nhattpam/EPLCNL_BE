@@ -10,6 +10,7 @@ namespace Data.Models
         public Guid? CourseId { get; set; }
         public string? Reason { get; set; }
         public DateTime? ReportedDate { get; set; }
+        public string? ImageUrl { get; set; }
 
         public virtual Course? Course { get; set; }
         public virtual Learner? Learner { get; set; }

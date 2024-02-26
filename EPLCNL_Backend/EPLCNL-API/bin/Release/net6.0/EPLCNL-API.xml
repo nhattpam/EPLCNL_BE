@@ -89,6 +89,11 @@
             Send mail for successful payment.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetWalletByAccount(System.Guid)">
+            <summary>
+            Get wallet by account id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AccountSurveysController">
             <summary>
             Controller for managing account surveys.
@@ -1039,6 +1044,11 @@
             Update report by report id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Upload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image account.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.RolesController">
             <summary>
             Controller for managing roles.
@@ -1164,6 +1174,11 @@
             Get transaction by transaction id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.GetTransactionsByLearner(System.Guid)">
+            <summary>
+            Get list of transactions by learner id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.TransactionsController.Create(ViewModel.RequestModel.TransactionRequest)">
             <summary>
             Create new transaction.
@@ -1232,31 +1247,6 @@
         <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllAssignmentAttemptsByTutor(System.Guid)">
             <summary>
             Get a list of assignment-attempts by tutor id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ViolationsController.GetAll">
-            <summary>
-            Get a list of all violations.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ViolationsController.Get(System.Guid)">
-            <summary>
-            Get violation by violation id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ViolationsController.Create(ViewModel.RequestModel.ViolationRequest)">
-            <summary>
-            Create new violation.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ViolationsController.Delete(System.Guid)">
-            <summary>
-            Delete violation by violation id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ViolationsController.Update(System.Guid,ViewModel.RequestModel.ViolationRequest)">
-            <summary>
-            Update violation by violation id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.WalletsController">

@@ -12,5 +12,7 @@ namespace ViewModel.RequestModel
         public Guid? CourseId { get; set; }
         public string? Reason { get; set; }
         public DateTime? ReportedDate { get; set; }
+        public string? ImageUrl { get; set; }
+
     }
 }
