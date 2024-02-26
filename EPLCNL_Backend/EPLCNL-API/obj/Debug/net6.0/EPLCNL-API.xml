@@ -464,6 +464,11 @@
             Get a list of class-modules by course id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetAllReportsByCourse(System.Guid)">
+            <summary>
+            Get a list of reports by course id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.CoursesController.Create(ViewModel.RequestModel.CourseRequest)">
             <summary>
             Create new course.
