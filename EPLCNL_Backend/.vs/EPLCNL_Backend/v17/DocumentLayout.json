@@ -3,24 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\data\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|solutionrelative:data\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\walletsservice\\walletservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\walletsservice\\walletservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\viewmodel\\responsemodel\\reportresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|solutionrelative:viewmodel\\responsemodel\\reportresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\feedbacksservice\\feedbackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\feedbacksservice\\feedbackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\viewmodel\\responsemodel\\feedbackresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|solutionrelative:viewmodel\\responsemodel\\feedbackresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\viewmodel\\requestmodel\\feedbackrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|solutionrelative:viewmodel\\requestmodel\\feedbackrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\data\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|solutionrelative:data\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\coursesservice\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\coursesservice\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\accountsservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\accountsservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\walletsservice\\walletservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\walletsservice\\walletservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\coursesservice\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\coursesservice\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\data\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8382A29-F5DE-4354-83A4-C7DD8F86CCA6}|Data\\Data.csproj|solutionrelative:data\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\viewmodel\\responsemodel\\reportresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E926E1C-5179-4EF0-95C9-2DBF1FD4F656}|ViewModel\\ViewModel.csproj|solutionrelative:viewmodel\\responsemodel\\reportresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,24 +58,141 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "EPLCNL-API\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAuwHAAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:49:11.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountsService\\AccountService.cs",
+              "RelativeDocumentMoniker": "Service\\AccountsService\\AccountService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountsService\\AccountService.cs",
+              "RelativeToolTip": "Service\\AccountsService\\AccountService.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAAAIMAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:15:18.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FeedbackRequest.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\RequestModel\\FeedbackRequest.cs",
+              "RelativeDocumentMoniker": "ViewModel\\RequestModel\\FeedbackRequest.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\RequestModel\\FeedbackRequest.cs",
+              "RelativeToolTip": "ViewModel\\RequestModel\\FeedbackRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:56:50.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FeedbackResponse.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ResponseModel\\FeedbackResponse.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ResponseModel\\FeedbackResponse.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ResponseModel\\FeedbackResponse.cs",
+              "RelativeToolTip": "ViewModel\\ResponseModel\\FeedbackResponse.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:57:03.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FeedbackService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\FeedbacksService\\FeedbackService.cs",
+              "RelativeDocumentMoniker": "Service\\FeedbacksService\\FeedbackService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\FeedbacksService\\FeedbackService.cs",
+              "RelativeToolTip": "Service\\FeedbacksService\\FeedbackService.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwCsAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:57:36.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "WalletService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\WalletsService\\WalletService.cs",
+              "RelativeDocumentMoniker": "Service\\WalletsService\\WalletService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\WalletsService\\WalletService.cs",
+              "RelativeToolTip": "Service\\WalletsService\\WalletService.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAkwDkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:15:32.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ICourseService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\CoursesService\\ICourseService.cs",
+              "RelativeDocumentMoniker": "Service\\CoursesService\\ICourseService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\CoursesService\\ICourseService.cs",
+              "RelativeToolTip": "Service\\CoursesService\\ICourseService.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowBAAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:50:32.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\Feedback.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Feedback.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\Feedback.cs",
+              "RelativeToolTip": "Data\\Models\\Feedback.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T08:04:58.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\CoursesService\\CourseService.cs",
+              "RelativeDocumentMoniker": "Service\\CoursesService\\CourseService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\CoursesService\\CourseService.cs",
+              "RelativeToolTip": "Service\\CoursesService\\CourseService.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAgwMsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T07:50:54.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Course.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\Course.cs",
               "RelativeDocumentMoniker": "Data\\Models\\Course.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Data\\Models\\Course.cs",
               "RelativeToolTip": "Data\\Models\\Course.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAA1wA8AAAA2AAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowA8AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-26T07:21:22.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "ReportResponse.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ResponseModel\\ReportResponse.cs",
               "RelativeDocumentMoniker": "ViewModel\\ResponseModel\\ReportResponse.cs",
@@ -55,45 +200,20 @@
               "RelativeToolTip": "ViewModel\\ResponseModel\\ReportResponse.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAxwBAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T07:20:42.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T07:20:42.757Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "AccountsController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\AccountsController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\AccountsController.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\AccountsController.cs",
               "RelativeToolTip": "EPLCNL-API\\Controllers\\AccountsController.cs",
-              "ViewState": "AQIAABwBAAAAAAAAAAAuwC0BAAAuAAAA",
+              "ViewState": "AQIAAB8BAAAAAAAAAAAuwC0BAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-26T07:16:07.13Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "WalletService.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\WalletsService\\WalletService.cs",
-              "RelativeDocumentMoniker": "Service\\WalletsService\\WalletService.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\WalletsService\\WalletService.cs",
-              "RelativeToolTip": "Service\\WalletsService\\WalletService.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAYwDkAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T07:15:32.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountsService\\AccountService.cs",
-              "RelativeDocumentMoniker": "Service\\AccountsService\\AccountService.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountsService\\AccountService.cs",
-              "RelativeToolTip": "Service\\AccountsService\\AccountService.cs",
-              "ViewState": "AQIAAPUAAAAAAAAAAAAowAsBAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T07:15:18.137Z"
             }
           ]
         }

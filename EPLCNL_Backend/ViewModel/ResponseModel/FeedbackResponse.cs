@@ -10,9 +10,11 @@ namespace ViewModel.ResponseModel
     {
         public Guid Id { get; set; }
         public string? FeedbackContent { get; set; }
-        public string? ImageUrl { get; set; }
         public DateTime? CreatedDate { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? CourseId { get; set; }
+
+        public virtual CourseResponse? Course { get; set; }
+        public virtual LearnerResponse? Learner { get; set; }
     }
 }

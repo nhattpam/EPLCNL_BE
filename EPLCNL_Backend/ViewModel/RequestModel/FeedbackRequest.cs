@@ -9,7 +9,6 @@ namespace ViewModel.RequestModel
     public class FeedbackRequest
     {
         public string? FeedbackContent { get; set; }
-        public string? ImageUrl { get; set; }
         public DateTime? CreatedDate { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? CourseId { get; set; }

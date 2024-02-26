@@ -39,6 +39,9 @@ namespace Service.FeedbacksService
                 Feedback feedback = null;
                 feedback = await _unitOfWork.Repository<Feedback>().GetAll()
                      .AsNoTracking()
+                     .Include(x => x.Course)
+                     .Include(x => x.Learner)
+                     .ThenInclude(x => x.Account)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -58,10 +61,19 @@ namespace Service.FeedbacksService
 
         public async Task<FeedbackResponse> Create(FeedbackRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var feedback = _mapper.Map<FeedbackRequest, Feedback>(request);
                 feedback.Id = Guid.NewGuid();
+                feedback.CreatedDate = localTime;
                 await _unitOfWork.Repository<Feedback>().InsertAsync(feedback);
                 await _unitOfWork.CommitAsync();
 

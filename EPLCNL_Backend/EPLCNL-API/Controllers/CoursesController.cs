@@ -104,17 +104,17 @@ namespace EPLCNL_API.Controllers
         }
         
         /// <summary>
-        /// Get a list of reports by course id.
+        /// Get a list of feedbacks by course id.
         /// </summary>
-        [HttpGet("{id}/reports")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReportResponse))]
+        [HttpGet("{id}/feedbacks")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(FeedbackResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<List<ReportResponse>>> GetAllReportsByCourse(Guid id)
+        public async Task<ActionResult<List<FeedbackResponse>>> GetAllFeedbacksByCourse(Guid id)
         {
             try
             {
-                var rs = await _courseService.GetAllReportsByCourse(id);
+                var rs = await _courseService.GetAllFeedbacksByCourse(id);
                 return Ok(rs);
             }
             catch

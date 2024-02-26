@@ -184,7 +184,7 @@ namespace Service.CoursesService
 
             return modules;
         }
-        public async Task<List<ReportResponse>> GetAllReportsByCourse(Guid id)
+        public async Task<List<FeedbackResponse>> GetAllFeedbacksByCourse(Guid id)
         {
             var course = await _unitOfWork.Repository<Course>().GetAll()
                 .Where(x => x.Id == id)
@@ -196,12 +196,12 @@ namespace Service.CoursesService
                 return null;
             }
 
-            var reports = _unitOfWork.Repository<Report>().GetAll()
+            var feedbacks = _unitOfWork.Repository<Feedback>().GetAll()
                 .Where(t => t.CourseId == id)
-                .ProjectTo<ReportResponse>(_mapper.ConfigurationProvider)
+                .ProjectTo<FeedbackResponse>(_mapper.ConfigurationProvider)
                 .ToList();
 
-            return reports;
+            return feedbacks;
         }
     }
 }
