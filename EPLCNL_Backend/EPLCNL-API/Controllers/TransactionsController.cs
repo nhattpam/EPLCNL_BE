@@ -61,11 +61,30 @@ namespace EPLCNL_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TransactionResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<TransactionResponse>> Get(Guid id)
+        public async Task<ActionResult<List<TransactionResponse>>> Get(Guid id)
         {
             try
             {
                 var rs = await _transactionService.Get(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+        /// <summary>
+        /// Get transactions by learner id.
+        /// </summary>
+        [HttpGet("learner-id/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TransactionResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<TransactionResponse>> GetTransactionsByLearner(Guid id)
+        {
+            try
+            {
+                var rs = await _transactionService.GetTransactionsByLearner(id);
                 return Ok(rs);
             }
             catch

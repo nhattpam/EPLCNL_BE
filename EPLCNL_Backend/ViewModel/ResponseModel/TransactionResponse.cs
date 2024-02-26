@@ -17,6 +17,7 @@ namespace ViewModel.ResponseModel
         public Guid? CourseId { get; set; }
         public bool? RefundStatus { get; set; }
         public virtual CourseResponse? Course { get; set; }
+        public virtual LearnerResponse? Learner { get; set; }
         public virtual PaymentMethodResponse? PaymentMethod { get; set; }
     }
 }

@@ -1164,6 +1164,11 @@
             Get transaction by transaction id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.GetTransactionsByLearner(System.Guid)">
+            <summary>
+            Get transactions by learner id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.TransactionsController.Create(ViewModel.RequestModel.TransactionRequest)">
             <summary>
             Create new transaction.
