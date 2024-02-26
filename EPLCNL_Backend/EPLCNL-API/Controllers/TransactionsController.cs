@@ -74,9 +74,9 @@ namespace EPLCNL_API.Controllers
             }
         }
         /// <summary>
-        /// Get transactions by learner id.
+        /// Get list of transactions by learner id.
         /// </summary>
-        [HttpGet("learner-id/{id}")]
+        [HttpGet("learners/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TransactionResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

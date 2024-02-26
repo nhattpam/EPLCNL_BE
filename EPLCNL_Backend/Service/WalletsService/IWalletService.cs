@@ -7,6 +7,7 @@ namespace Service.WalletsService
     {
         Task<List<WalletResponse>> GetAll();
         Task<WalletResponse> Get(Guid id);
+        Task<WalletResponse> GetWalletByAcount(Guid id);
         Task<WalletResponse> Create(WalletRequest request);
         Task<WalletResponse> Update(Guid id, WalletRequest request);
         Task<WalletResponse> Delete(Guid id);
