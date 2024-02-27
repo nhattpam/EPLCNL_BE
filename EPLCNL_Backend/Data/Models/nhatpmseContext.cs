@@ -603,6 +603,8 @@ namespace Data.Models
                     .HasColumnName("feedback_content");
 
                 entity.Property(e => e.LearnerId).HasColumnName("learner_id");
+                entity.Property(e => e.Rating).HasColumnName("rating");
+
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Feedbacks)

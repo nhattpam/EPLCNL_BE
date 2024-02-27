@@ -41,6 +41,7 @@ namespace Service.CoursesService
                      .AsNoTracking()
                         .Include(a => a.Category)
                         .Include(a => a.Tutor)
+                        .ThenInclude(a => a.Account)
                     //.Include(a => a.Modules)
                     //.Include(a => a.Enrollments)
                     //.Include(a => a.ClassModules)
@@ -203,5 +204,6 @@ namespace Service.CoursesService
 
             return feedbacks;
         }
+        
     }
 }

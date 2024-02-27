@@ -10,6 +10,7 @@ namespace Data.Models
         public DateTime? CreatedDate { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? CourseId { get; set; }
+        public double? Rating { get; set; }
 
         public virtual Course? Course { get; set; }
         public virtual Learner? Learner { get; set; }

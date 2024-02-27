@@ -12,5 +12,7 @@ namespace ViewModel.RequestModel
         public DateTime? CreatedDate { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? CourseId { get; set; }
+        public double? Rating { get; set; }
+
     }
 }

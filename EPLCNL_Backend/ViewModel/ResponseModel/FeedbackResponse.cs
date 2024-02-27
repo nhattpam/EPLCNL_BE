@@ -13,6 +13,7 @@ namespace ViewModel.ResponseModel
         public DateTime? CreatedDate { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? CourseId { get; set; }
+        public double? Rating { get; set; }
 
         public virtual CourseResponse? Course { get; set; }
         public virtual LearnerResponse? Learner { get; set; }

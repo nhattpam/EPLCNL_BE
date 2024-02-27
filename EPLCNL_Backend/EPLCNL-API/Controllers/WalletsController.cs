@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Service.AccountsService;
 using Service.WalletsService;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
@@ -14,10 +15,12 @@ namespace EPLCNL_API.Controllers
     public class WalletsController : ControllerBase
     {
         private readonly IWalletService _walletService;
+        private readonly IAccountService _accountService;
 
-        public WalletsController(IWalletService walletService)
+        public WalletsController(IWalletService walletService, IAccountService accountService)
         {
             _walletService = walletService;
+            _accountService = accountService;
         }
 
         /// <summary>
@@ -106,5 +109,40 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        ///// <summary>
+        ///// Transfer money through VnPay by wallet of accountId.
+        ///// </summary>
+        //[HttpPost("{id}/pay")]
+        //public async Task<ActionResult<string>> Pay(Guid id)
+        //{
+        //    // Set the UTC offset for UTC+7
+        //    TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+        //    // Get the current UTC time
+        //    DateTime utcNow = DateTime.UtcNow;
+
+        //    // Convert the UTC time to UTC+7
+        //    DateTime localTime = utcNow + utcOffset;
+
+        //    var accountWallet = await _accountService.GetWalletByAcount(id);
+        //    if (accountWallet == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    else
+        //    {
+        //        var vnPayModel = new VnPaymentRequestModel
+        //        {
+        //            Amount = accountWallet.Amount,
+        //            CreatedDate = localTime,
+        //            Description = "Payment-For-Order:",
+        //            FullName = learner.Account.FullName,
+        //            OrderId = id
+        //        };
+        //        return _vnPayService.CreatePaymentUrl(HttpContext, vnPayModel);
+        //    }
+
+        //}
     }
 }
