@@ -109,11 +109,11 @@ namespace EPLCNL_API.Controllers
         /// <summary>
         /// Get enrollment by learner and course id.
         /// </summary>
-        [HttpGet("learner-course")]
+        [HttpGet("learners/{learnerId}/courses/{courseId}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EnrollmentResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<EnrollmentResponse>> GetEnrollmentByLearnerAndCourseId([FromQuery] Guid learnerId, [FromQuery] Guid courseId)
+        public async Task<ActionResult<EnrollmentResponse>> GetEnrollmentByLearnerAndCourseId(Guid learnerId, Guid courseId)
         {
             try
             {

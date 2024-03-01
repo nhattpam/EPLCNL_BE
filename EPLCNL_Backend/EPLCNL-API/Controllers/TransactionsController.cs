@@ -73,25 +73,7 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
-        /// <summary>
-        /// Get list of transactions by learner id.
-        /// </summary>
-        [HttpGet("learners/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TransactionResponse))]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<TransactionResponse>> GetTransactionsByLearner(Guid id)
-        {
-            try
-            {
-                var rs = await _transactionService.GetTransactionsByLearner(id);
-                return Ok(rs);
-            }
-            catch
-            {
-                return NotFound();
-            }
-        }
+        
 
         /// <summary>
         /// Create new transaction.

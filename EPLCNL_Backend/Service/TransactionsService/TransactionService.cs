@@ -60,33 +60,7 @@ namespace Service.TransactionsService
                 throw new Exception(e.Message);
             }
         }
-        public async Task<List<TransactionResponse>> GetTransactionsByLearner(Guid lid)
-        {
-            try
-            {
-                var transactions = await _unitOfWork.Repository<Transaction>().GetAll()
-                     .AsNoTracking()
-                     .Include(x => x.PaymentMethod)
-                     .Include(x => x.Learner)
-                     .ThenInclude(x => x.Account)
-                     .Include(x => x.Course)
-                    .Where(x => x.LearnerId == lid)
-                    .ProjectTo<TransactionResponse>(_mapper.ConfigurationProvider)
-                    .ToListAsync();
-
-                if (transactions.Count == 0)
-                {
-                    throw new Exception("khong tim thay");
-                }
-
-                return transactions;
-            }
-
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
+       
         public async Task<TransactionResponse> Create(TransactionRequest request)
         {
             // Set the UTC offset for UTC+7

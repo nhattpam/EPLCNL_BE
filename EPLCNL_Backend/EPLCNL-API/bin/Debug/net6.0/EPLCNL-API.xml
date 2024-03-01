@@ -629,6 +629,11 @@
             Get a list of enrollments by learner id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllTransactionsByLearner(System.Guid)">
+            <summary>
+            Get list of transactions by learner id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.LessonMaterialsController">
             <summary>
             Controller for managing lesson materials.
@@ -1177,11 +1182,6 @@
         <member name="M:EPLCNL_API.Controllers.TransactionsController.Get(System.Guid)">
             <summary>
             Get transaction by transaction id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.TransactionsController.GetTransactionsByLearner(System.Guid)">
-            <summary>
-            Get list of transactions by learner id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.TransactionsController.Create(ViewModel.RequestModel.TransactionRequest)">

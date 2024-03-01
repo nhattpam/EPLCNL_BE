@@ -175,5 +175,33 @@ namespace Service.LearnersService
 
             return enrollments;
         }
+
+        public async Task<List<TransactionResponse>> GetAllTransactionsByLearner(Guid id)
+        {
+            try
+            {
+                var transactions = await _unitOfWork.Repository<Transaction>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.PaymentMethod)
+                     .Include(x => x.Learner)
+                     .ThenInclude(x => x.Account)
+                     .Include(x => x.Course)
+                    .Where(x => x.LearnerId == id)
+                    .ProjectTo<TransactionResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                if (transactions.Count == 0)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return transactions;
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
