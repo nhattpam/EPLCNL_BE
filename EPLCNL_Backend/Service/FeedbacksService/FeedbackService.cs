@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.CoursesService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,12 @@ namespace Service.FeedbacksService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public FeedbackService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly ICourseService _courseService;
+        public FeedbackService(IUnitOfWork unitOfWork, IMapper mapper, ICourseService courseService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _courseService = courseService;
         }
 
         public async Task<List<FeedbackResponse>> GetAll()
@@ -69,13 +72,44 @@ namespace Service.FeedbacksService
 
             // Convert the UTC time to UTC+7
             DateTime localTime = utcNow + utcOffset;
+
             try
             {
                 var feedback = _mapper.Map<FeedbackRequest, Feedback>(request);
                 feedback.Id = Guid.NewGuid();
                 feedback.CreatedDate = localTime;
+
+                // Insert the feedback
                 await _unitOfWork.Repository<Feedback>().InsertAsync(feedback);
-                await _unitOfWork.CommitAsync();
+
+                // Update the course rating
+                var courseResponse = await _courseService.Get(feedback.CourseId ?? Guid.Empty);
+                var course = _mapper.Map<CourseResponse, Course>(courseResponse);
+                if (course != null)
+                {
+                    var feedbacksForCourse = _unitOfWork.Repository<Feedback>()
+                        .GetAll()
+                        .Where(f => f.CourseId == feedback.CourseId);
+
+                    // Calculate total rating for the course
+                    double totalRating = feedbacksForCourse.Sum(f => f.Rating ?? 0);
+
+                    // Update the course rating if there are feedbacks
+                    if (feedbacksForCourse.Any())
+                    {
+                        // Update the course rating
+                        course.Rating = (totalRating + (feedback.Rating ?? 0)) / (feedbacksForCourse.Count() + 1);
+                    }
+                    else
+                    {
+                        // If there are no previous feedbacks, set rating to the new feedback's rating
+                        course.Rating = feedback.Rating ?? 0;
+                    }
+
+                    // Update the course rating in the database
+                    await _unitOfWork.Repository<Course>().UpdateDetached(course);
+                    await _unitOfWork.CommitAsync();
+                }
 
                 return _mapper.Map<Feedback, FeedbackResponse>(feedback);
             }
@@ -84,6 +118,8 @@ namespace Service.FeedbacksService
                 throw new Exception(e.Message);
             }
         }
+
+
 
         public async Task<FeedbackResponse> Delete(Guid id)
         {

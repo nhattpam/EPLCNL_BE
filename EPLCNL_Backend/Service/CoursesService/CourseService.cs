@@ -204,6 +204,29 @@ namespace Service.CoursesService
 
             return feedbacks;
         }
-        
+
+
+        public async Task<List<EnrollmentResponse>> GetAllEnrollmentsByCourse(Guid id)
+        {
+            // Retrieve the course
+            var course = await _unitOfWork.Repository<Course>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (course == null)
+            {
+                // Handle the case where the course with the specified id is not found
+                return null;
+            }
+
+            // Retrieve enrollments for the course
+            var enrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
+                .Where(t => t.CourseId == id)
+                .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
+                                            .ToListAsync();
+
+            return enrollments;
+        }
+
     }
 }

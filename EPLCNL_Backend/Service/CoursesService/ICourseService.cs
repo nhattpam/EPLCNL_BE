@@ -21,5 +21,7 @@ namespace Service.CoursesService
         public Task<CourseResponse> Delete(Guid id);
 
         public Task<CourseResponse> Update(Guid id, CourseRequest request);
+        public Task<List<EnrollmentResponse>> GetAllEnrollmentsByCourse(Guid id);
+
     }
 }

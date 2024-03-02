@@ -212,5 +212,25 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get a list of enrollments by course id.
+        /// </summary>
+        [HttpGet("{id}/enrollments")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EnrollmentResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<EnrollmentResponse>>> GetAllEnrollmentsByCourse(Guid id)
+        {
+            try
+            {
+                var rs = await _courseService.GetAllEnrollmentsByCourse(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }
