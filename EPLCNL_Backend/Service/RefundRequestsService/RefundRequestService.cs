@@ -60,10 +60,20 @@ namespace Service.RefundRequestsService
 
         public async Task<RefundResponse> Create(ViewModel.RequestModel.RefundRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var refund = _mapper.Map<ViewModel.RequestModel.RefundRequest, Data.Models.RefundRequest>(request);
                 refund.Id = Guid.NewGuid();
+                refund.RequestedDate = localTime;
+                refund.Status = "PROCESSING";
                 await _unitOfWork.Repository<Data.Models.RefundRequest>().InsertAsync(refund);
                 await _unitOfWork.CommitAsync();
 
@@ -98,6 +108,14 @@ namespace Service.RefundRequestsService
 
         public async Task<RefundResponse> Update(Guid id, ViewModel.RequestModel.RefundRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Data.Models.RefundRequest refund = _unitOfWork.Repository<Data.Models.RefundRequest>()
@@ -105,6 +123,14 @@ namespace Service.RefundRequestsService
                 if (refund == null)
                 {
                     throw new Exception();
+                }
+                if(refund.Status == "APPROVED")
+                {
+                    refund.ApprovedDate = localTime;
+                }
+                if(refund.Status == "DISAPPROVED")
+                {
+                    refund.ApprovedDate = null;
                 }
                 refund = _mapper.Map(request, refund);
 

@@ -489,6 +489,11 @@
             Update course by course id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetAllEnrollmentsByCourse(System.Guid)">
+            <summary>
+            Get a list of enrollments by course id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.EnrollmentsController">
             <summary>
             Controller for managing enrollments.
