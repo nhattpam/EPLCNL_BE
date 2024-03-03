@@ -38,7 +38,6 @@ namespace Service.WalletsService
                 Wallet wallet = null;
                 wallet = await _unitOfWork.Repository<Wallet>().GetAll()
                      .AsNoTracking()
-                     .Include(x=>x.Account)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -97,6 +96,14 @@ namespace Service.WalletsService
 
         public async Task<WalletResponse> Update(Guid id, WalletRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Wallet wallet = _unitOfWork.Repository<Wallet>()
@@ -105,6 +112,7 @@ namespace Service.WalletsService
                 {
                     throw new Exception();
                 }
+                wallet.TransactionDate = localTime;
                 wallet = _mapper.Map(request, wallet);
 
                 await _unitOfWork.Repository<Wallet>().UpdateDetached(wallet);

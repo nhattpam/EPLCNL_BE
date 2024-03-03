@@ -27,6 +27,8 @@ namespace ViewModel.ResponseModel
         public virtual RoleResponse? Role { get; set; }
 
         public string? Note { get; set; }
+        public virtual WalletResponse? Wallet { get; set; }
+
 
     }
 }

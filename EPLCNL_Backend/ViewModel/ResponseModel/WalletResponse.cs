@@ -13,6 +13,5 @@ namespace ViewModel.ResponseModel
         public DateTime? TransactionDate { get; set; }
         public Guid? AccountId { get; set; }
 
-        public virtual AccountResponse? Account { get; set; }
     }
 }

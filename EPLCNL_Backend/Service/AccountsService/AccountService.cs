@@ -44,7 +44,7 @@ namespace Service.AccountsService
                 account = await _unitOfWork.Repository<Account>().GetAll()
                      .AsNoTracking()
                         .Include(a => a.Role)
-                        //.Include(a => a.Center)
+                        .Include(a => a.Wallet)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
