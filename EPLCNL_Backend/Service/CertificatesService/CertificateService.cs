@@ -58,10 +58,19 @@ namespace Service.CertificatesService
 
         public async Task<CertificateResponse> Create(CertificateRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 var certificate = _mapper.Map<CertificateRequest, Certificate>(request);
                 certificate.Id = Guid.NewGuid();
+                certificate.CreatedDate = localTime;
                 await _unitOfWork.Repository<Certificate>().InsertAsync(certificate);
                 await _unitOfWork.CommitAsync();
 
@@ -96,6 +105,14 @@ namespace Service.CertificatesService
 
         public async Task<CertificateResponse> Update(Guid id, CertificateRequest request)
         {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
             try
             {
                 Certificate certificate = _unitOfWork.Repository<Certificate>()
@@ -104,6 +121,7 @@ namespace Service.CertificatesService
                 {
                     throw new Exception();
                 }
+                certificate.UpdatedDate = localTime;
                 certificate = _mapper.Map(request, certificate);
 
                 await _unitOfWork.Repository<Certificate>().UpdateDetached(certificate);
