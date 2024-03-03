@@ -23,6 +23,8 @@ namespace Service.LearnersService
         public Task<List<ForumResponse>> GetAllForumsByLearner(Guid id);
         public Task<List<EnrollmentResponse>> GetAllEnrollmentsByLearner(Guid id);
         public Task<List<TransactionResponse>> GetAllTransactionsByLearner(Guid lid);
+        public Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByLearner(Guid learnerId);
+        public Task<List<QuizAttemptResponse>> GetAllQuizAttemptsByLearner(Guid learnerId);
 
     }
 }

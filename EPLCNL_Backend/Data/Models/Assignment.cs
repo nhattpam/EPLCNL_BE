@@ -14,6 +14,7 @@ namespace Data.Models
         public string? QuestionText { get; set; }
         public int? Deadline { get; set; }
         public Guid? ModuleId { get; set; }
+        public double? GradeToPass { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 

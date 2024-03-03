@@ -101,7 +101,8 @@ namespace Service.CentersService
                     Password = request.Email,
                     FullName = request.Name,
                     RoleId = new Guid("14191B0A-2EC2-48E3-9EDE-C34D5DE0BA32"),
-                    IsActive = false
+                    IsActive = false,
+                    PhoneNumber = request.PhoneNumber,
                 });
                 var center = _mapper.Map<CenterRequest, Center>(request);
                 center.Id = Guid.NewGuid();

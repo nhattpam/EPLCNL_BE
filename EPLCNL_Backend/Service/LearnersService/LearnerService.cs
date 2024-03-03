@@ -203,5 +203,45 @@ namespace Service.LearnersService
                 throw new Exception(e.Message);
             }
         }
+
+        public async Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByLearner(Guid learnerId)
+        {
+            var learner = await _unitOfWork.Repository<Learner>().GetAll()
+                .Where(x => x.Id == learnerId)
+                .FirstOrDefaultAsync();
+
+            if (learner == null)
+            {
+                // Handle the case where the tutor with the specified id is not found
+                return null;
+            }
+
+            var assignmentAttempts = _unitOfWork.Repository<AssignmentAttempt>().GetAll()
+                .Where(a => a.LearnerId == learnerId)
+                .ProjectTo<AssignmentAttemptResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return assignmentAttempts;
+        }
+
+        public async Task<List<QuizAttemptResponse>> GetAllQuizAttemptsByLearner(Guid learnerId)
+        {
+            var learner = await _unitOfWork.Repository<Learner>().GetAll()
+                .Where(x => x.Id == learnerId)
+                .FirstOrDefaultAsync();
+
+            if (learner == null)
+            {
+                // Handle the case where the tutor with the specified id is not found
+                return null;
+            }
+
+            var quizAttempts = _unitOfWork.Repository<QuizAttempt>().GetAll()
+                .Where(a => a.LearnerId == learnerId)
+                .ProjectTo<QuizAttemptResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return quizAttempts;
+        }
     }
 }

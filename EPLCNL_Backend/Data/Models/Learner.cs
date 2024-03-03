@@ -8,7 +8,6 @@ namespace Data.Models
         public Learner()
         {
             AccountForums = new HashSet<AccountForum>();
-            AccountSurveys = new HashSet<AccountSurvey>();
             AssignmentAttempts = new HashSet<AssignmentAttempt>();
             Enrollments = new HashSet<Enrollment>();
             Feedbacks = new HashSet<Feedback>();
@@ -23,7 +22,6 @@ namespace Data.Models
 
         public virtual Account? Account { get; set; }
         public virtual ICollection<AccountForum> AccountForums { get; set; }
-        public virtual ICollection<AccountSurvey> AccountSurveys { get; set; }
         public virtual ICollection<AssignmentAttempt> AssignmentAttempts { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }

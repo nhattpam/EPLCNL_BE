@@ -94,36 +94,6 @@
             Get wallet by account id.
             </summary>
         </member>
-        <member name="T:EPLCNL_API.Controllers.AccountSurveysController">
-            <summary>
-            Controller for managing account surveys.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.AccountSurveysController.GetAll">
-            <summary>
-            Get a list of all account-surveys.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.AccountSurveysController.Get(System.Guid)">
-            <summary>
-            Get account-survey by account-survey id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.AccountSurveysController.Create(ViewModel.RequestModel.AccountSurveyRequest)">
-            <summary>
-            Create new account-survey.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.AccountSurveysController.Delete(System.Guid)">
-            <summary>
-            Delete account-survey by account-survey id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.AccountSurveysController.Update(System.Guid,ViewModel.RequestModel.AccountSurveyRequest)">
-            <summary>
-            Update account-survey by account-survey id.
-            </summary>
-        </member>
         <member name="T:EPLCNL_API.Controllers.AssignmentAttemptsController">
             <summary>
             Controller for managing assignment attempts.
@@ -639,6 +609,16 @@
             Get list of transactions by learner id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllAssignmentAttemptsByLearner(System.Guid)">
+            <summary>
+            Get a list of assignment-attempts by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllQuizAttemptsByLearner(System.Guid)">
+            <summary>
+            Get a list of quiz-attempts by learner id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.LessonMaterialsController">
             <summary>
             Controller for managing lesson materials.
@@ -1142,36 +1122,6 @@
         <member name="M:EPLCNL_API.Controllers.StaffsController.GetAllCoursesByStaff(System.Guid)">
             <summary>
             Get a list of courses by staff id.
-            </summary>
-        </member>
-        <member name="T:EPLCNL_API.Controllers.SurveysController">
-            <summary>
-            Controller for managing surveys.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.SurveysController.GetAll">
-            <summary>
-            Get a list of all surveys.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.SurveysController.Get(System.Guid)">
-            <summary>
-            Get survey by survey id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.SurveysController.Create(ViewModel.RequestModel.SurveyRequest)">
-            <summary>
-            Create new survey.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.SurveysController.Delete(System.Guid)">
-            <summary>
-            Delete survey by survey id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.SurveysController.Update(System.Guid,ViewModel.RequestModel.SurveyRequest)">
-            <summary>
-            Update survey by survey id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.TransactionsController">
