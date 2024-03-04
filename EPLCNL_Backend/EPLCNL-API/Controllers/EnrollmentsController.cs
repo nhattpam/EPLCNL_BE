@@ -13,11 +13,11 @@ namespace EPLCNL_API.Controllers
     [ApiController]
     public class EnrollmentsController : ControllerBase
     {
-        private readonly IEnrollmentService _centerService;
+        private readonly IEnrollmentService _enrollmentService;
 
-        public EnrollmentsController(IEnrollmentService centerService)
+        public EnrollmentsController(IEnrollmentService enrollmentService)
         {
-            _centerService = centerService;
+            _enrollmentService = enrollmentService;
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _centerService.GetAll();
+                var rs = await _enrollmentService.GetAll();
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _centerService.Get(id);
+                var rs = await _enrollmentService.Get(id);
                 return Ok(rs);
             }
             catch
@@ -70,7 +70,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var result = await _centerService.Create(request);
+                var result = await _enrollmentService.Create(request);
                 return CreatedAtAction(nameof(Create), result);
             }
             catch (Exception ex)
@@ -85,7 +85,7 @@ namespace EPLCNL_API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<EnrollmentResponse>> Delete(Guid id)
         {
-            var rs = await _centerService.Delete(id);
+            var rs = await _enrollmentService.Delete(id);
             return Ok(rs);
         }
 
@@ -97,7 +97,7 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _centerService.Update(id, request);
+                var rs = await _enrollmentService.Update(id, request);
                 return Ok(rs);
             }
             catch (Exception ex)
@@ -117,7 +117,27 @@ namespace EPLCNL_API.Controllers
         {
             try
             {
-                var rs = await _centerService.GetEnrollmentByLearnerAndCourseId(learnerId, courseId);
+                var rs = await _enrollmentService.GetEnrollmentByLearnerAndCourseId(learnerId, courseId);
+                return Ok(rs);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Delete enrollment by learner and course id.
+        /// </summary>
+        [HttpDelete("learners/{learnerId}/courses/{courseId}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EnrollmentResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<EnrollmentResponse>> DeleteEnrollmentByLearnerAndCourseId(Guid learnerId, Guid courseId)
+        {
+            try
+            {
+                var rs = await _enrollmentService.DeleteEnrollmentByLearnerAndCourseId(learnerId, courseId);
                 return Ok(rs);
             }
             catch (Exception ex)

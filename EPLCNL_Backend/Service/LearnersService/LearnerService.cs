@@ -40,6 +40,7 @@ namespace Service.LearnersService
                 learner = await _unitOfWork.Repository<Learner>().GetAll()
                      .AsNoTracking()
                      .Include(x => x.Account)
+                     .ThenInclude(x => x.Wallet)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

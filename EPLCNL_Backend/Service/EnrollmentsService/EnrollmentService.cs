@@ -143,5 +143,33 @@ namespace Service.EnrollmentsService
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<EnrollmentResponse> DeleteEnrollmentByLearnerAndCourseId(Guid learnerId, Guid courseId)
+        {
+            try
+            {
+                Enrollment enrollment = await _unitOfWork.Repository<Enrollment>()
+                    .GetAll()
+                    .AsNoTracking()
+                    .Where(x => x.LearnerId == learnerId && x.CourseId == courseId)
+                    .FirstOrDefaultAsync();
+
+                if (enrollment == null)
+                {
+                    // Handle case where enrollment is not found
+                    throw new Exception("Enrollment not found for the specified learner and course.");
+                }
+
+                await _unitOfWork.Repository<Enrollment>().HardDeleteGuid(enrollment.Id);
+                await _unitOfWork.CommitAsync();
+
+                return _mapper.Map<Enrollment, EnrollmentResponse>(enrollment);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions appropriately
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

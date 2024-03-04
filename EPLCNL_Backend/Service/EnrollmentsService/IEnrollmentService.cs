@@ -21,6 +21,7 @@ namespace Service.EnrollmentsService
         public Task<EnrollmentResponse> Update(Guid id, EnrollmentRequest request);
 
         public Task<EnrollmentResponse> GetEnrollmentByLearnerAndCourseId(Guid learnerId, Guid courseId);
+        public Task<EnrollmentResponse> DeleteEnrollmentByLearnerAndCourseId(Guid learnerId, Guid courseId);
 
     }
 }
