@@ -206,5 +206,24 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+        /// <summary>
+        /// Get a list of refund requests by learner id.
+        /// </summary>
+        [HttpGet("{id}/refund-requests")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuizAttemptResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<RefundResponse>>> GetAllRefundRequestsByLearner(Guid id)
+        {
+            try
+            {
+                var rs = await _learnerService.GetAllRefundsByLearner(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

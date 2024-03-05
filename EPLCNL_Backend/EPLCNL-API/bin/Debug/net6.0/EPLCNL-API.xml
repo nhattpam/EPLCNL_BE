@@ -624,6 +624,11 @@
             Get a list of quiz-attempts by learner id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllRefundRequestsByLearner(System.Guid)">
+            <summary>
+            Get a list of refund requests by learner id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.LessonMaterialsController">
             <summary>
             Controller for managing lesson materials.

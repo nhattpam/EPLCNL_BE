@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
+using RefundRequest = Data.Models.RefundRequest;
 
 namespace Service.LearnersService
 {
@@ -243,6 +244,31 @@ namespace Service.LearnersService
                 .ToList();
 
             return quizAttempts;
+        }
+        public async Task<List<RefundResponse>> GetAllRefundsByLearner(Guid id)
+        {
+            try
+            {
+                var refunds = await _unitOfWork.Repository<RefundRequest>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Transaction)
+                     .ThenInclude(x => x.Learner)
+                    .Where(x => x.Transaction.LearnerId == id)
+                    .ProjectTo<RefundResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                if (refunds.Count == 0)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return refunds;
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }
