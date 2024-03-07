@@ -40,7 +40,7 @@ namespace Service.RefundRequestsService
                 RefundRequest refund = null;
                 refund = await _unitOfWork.Repository<RefundRequest>().GetAll()
                      .AsNoTracking()
-                     .Include(x => x.Transaction)
+                     .Include(x => x.Enrollment)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

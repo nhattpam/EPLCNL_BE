@@ -221,7 +221,7 @@ namespace Service.CoursesService
 
             // Retrieve enrollments for the course
             var enrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
-                .Where(t => t.CourseId == id)
+                .Where(t => t.Transaction.CourseId == id)
                 .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
                                             .ToListAsync();
 

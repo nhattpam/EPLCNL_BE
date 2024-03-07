@@ -14,6 +14,5 @@ namespace ViewModel.RequestModel
         public DateTime? TransactionDate { get; set; }
         public Guid? LearnerId { get; set; }
         public Guid? CourseId { get; set; }
-        public bool? RefundStatus { get; set; }
     }
 }

@@ -7,9 +7,8 @@ namespace Data.Models
     {
         public Course()
         {
-            CertificateCourses = new HashSet<CertificateCourse>();
+            Certificates = new HashSet<Certificate>();
             ClassModules = new HashSet<ClassModule>();
-            Enrollments = new HashSet<Enrollment>();
             Feedbacks = new HashSet<Feedback>();
             Modules = new HashSet<Module>();
             Reports = new HashSet<Report>();
@@ -35,9 +34,8 @@ namespace Data.Models
         public virtual Category? Category { get; set; }
         public virtual Tutor? Tutor { get; set; }
         public virtual Forum? Forum { get; set; }
-        public virtual ICollection<CertificateCourse> CertificateCourses { get; set; }
+        public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual ICollection<ClassModule> ClassModules { get; set; }
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<Report> Reports { get; set; }

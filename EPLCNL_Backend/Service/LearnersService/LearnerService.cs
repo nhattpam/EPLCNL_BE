@@ -124,36 +124,42 @@ namespace Service.LearnersService
 
         public async Task<List<ForumResponse>> GetAllForumsByLearner(Guid id)
         {
-            // Retrieve the learner
-            var learner = await _unitOfWork.Repository<Learner>().GetAll()
-                .Where(x => x.Id == id)
-                .FirstOrDefaultAsync();
+            var learner = await _unitOfWork.Repository<Learner>()
+                .GetAll()
+                .FirstOrDefaultAsync(x => x.Id == id);
 
             if (learner == null)
             {
-                // Handle the case where the learner with the specified id is not found
-                return null;
+                throw new Exception($"Learner with id {id} not found.");
             }
 
-            // Retrieve enrollments for the learner
-            var enrollments = _unitOfWork.Repository<Enrollment>().GetAll()
-                .Where(t => t.LearnerId == id)
-                .ToList();
-
-            // Retrieve forums related to the learner's enrollments
-            var forumResponses = new List<ForumResponse>();
-            foreach (var enrollment in enrollments)
+            var enrollments = await _unitOfWork.Repository<Enrollment>()
+                .GetAll()
+                .Where(t => t.Transaction.LearnerId == id)
+                .Include(x => x.Transaction)
+                .ToListAsync();
+            if(enrollments.Count > 0)
             {
-                var forums = _unitOfWork.Repository<Forum>().GetAll()
-                    .Where(forum => forum.CourseId == enrollment.CourseId)
-                    .ProjectTo<ForumResponse>(_mapper.ConfigurationProvider)
-                    .ToList();
+                var forumResponses = new List<ForumResponse>();
 
-                forumResponses.AddRange(forums);
+                foreach (var enrollment in enrollments)
+                {
+                    var forums = await _unitOfWork.Repository<Forum>()
+                        .GetAll()
+                        .Where(forum => forum.CourseId == enrollment.Transaction.CourseId)
+                        .ProjectTo<ForumResponse>(_mapper.ConfigurationProvider)
+                        .ToListAsync();
+
+                    forumResponses.AddRange(forums);
+                    return forumResponses;
+
+                }
             }
+            return null;
+          
 
-            return forumResponses;
         }
+
 
 
         public async Task<List<EnrollmentResponse>> GetAllEnrollmentsByLearner(Guid id)
@@ -171,7 +177,8 @@ namespace Service.LearnersService
 
             // Retrieve enrollments for the learner
             var enrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
-                .Where(t => t.LearnerId == id)
+                .Where(t => t.Transaction.LearnerId == id)
+                 .Include(x => x.Transaction)
                 .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
                                             .ToListAsync();
 
@@ -251,9 +258,9 @@ namespace Service.LearnersService
             {
                 var refunds = await _unitOfWork.Repository<RefundRequest>().GetAll()
                      .AsNoTracking()
-                     .Include(x => x.Transaction)
-                     .ThenInclude(x => x.Learner)
-                    .Where(x => x.Transaction.LearnerId == id)
+                     .Include(x => x.Enrollment)
+                     .ThenInclude(x => x.Transaction.Learner)
+                    .Where(x => x.Enrollment.Transaction.LearnerId == id)
                     .ProjectTo<RefundResponse>(_mapper.ConfigurationProvider)
                     .ToListAsync();
 

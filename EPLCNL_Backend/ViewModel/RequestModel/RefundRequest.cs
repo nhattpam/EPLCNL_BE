@@ -8,7 +8,7 @@ namespace ViewModel.RequestModel
 {
     public class RefundRequest
     {
-        public Guid? TransactionId { get; set; }
+        public Guid? EnrollmentId { get; set; }
         public DateTime? RequestedDate { get; set; }
         public DateTime? ApprovedDate { get; set; }
         public string? Status { get; set; }

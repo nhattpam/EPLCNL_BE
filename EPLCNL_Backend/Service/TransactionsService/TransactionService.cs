@@ -77,7 +77,6 @@ namespace Service.TransactionsService
                 transaction.Id = Guid.NewGuid();
                 transaction.TransactionDate = localTime;
                 transaction.Status = "PROCESSING";
-                transaction.RefundStatus = false;
                 await _unitOfWork.Repository<Transaction>().InsertAsync(transaction);
                 await _unitOfWork.CommitAsync();
 

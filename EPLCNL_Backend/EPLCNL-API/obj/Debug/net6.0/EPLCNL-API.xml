@@ -244,36 +244,6 @@
             Send mail for approving new centers.
             </summary>
         </member>
-        <member name="T:EPLCNL_API.Controllers.CertificateCoursesController">
-            <summary>
-            Controller for managing certificate courses.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.CertificateCoursesController.GetAll">
-            <summary>
-            Get a list of certificate-courses.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.CertificateCoursesController.Get(System.Guid)">
-            <summary>
-            Get certificate-course by certificate-course id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.CertificateCoursesController.Create(ViewModel.RequestModel.CertificateCourseRequest)">
-            <summary>
-            Create new certificate-course.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.CertificateCoursesController.Delete(System.Guid)">
-            <summary>
-            Delete certificate-course by certificate-course id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.CertificateCoursesController.Update(System.Guid,ViewModel.RequestModel.CertificateCourseRequest)">
-            <summary>
-            Update certificate-course by certificate-course id.
-            </summary>
-        </member>
         <member name="T:EPLCNL_API.Controllers.CertificatesController">
             <summary>
             Controller for managing certificates.

@@ -9,13 +9,13 @@ namespace ViewModel.ResponseModel
     public class EnrollmentResponse
     {
         public Guid Id { get; set; }
-        public Guid? LearnerId { get; set; }
-        public Guid? CourseId { get; set; }
+        public Guid? TransactionId { get; set; }
         public DateTime? EnrolledDate { get; set; }
         public string? Status { get; set; }
         public double? TotalGrade { get; set; }
 
-        public virtual CourseResponse? Course { get; set; }
+        public virtual TransactionResponse? Transaction { get; set; }
+
 
     }
 }

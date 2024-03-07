@@ -27,6 +27,7 @@ namespace Service.EnrollmentsService
         {
 
             var list = await _unitOfWork.Repository<Enrollment>().GetAll()
+                                            .Include(x => x.Transaction)
                                             .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
                                             .ToListAsync();
             return list;
@@ -39,7 +40,7 @@ namespace Service.EnrollmentsService
                 Enrollment enrollment = null;
                 enrollment = await _unitOfWork.Repository<Enrollment>().GetAll()
                      .AsNoTracking()
-                     .Include(x => x.Course)
+                    .Include(x => x.Transaction)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -126,7 +127,8 @@ namespace Service.EnrollmentsService
                 Enrollment enrollment = await _unitOfWork.Repository<Enrollment>()
                     .GetAll()
                     .AsNoTracking()
-                    .Where(x => x.LearnerId == learnerId && x.CourseId == courseId)
+                    .Include(x => x.Transaction)
+                    .Where(x => x.Transaction.LearnerId == learnerId && x.Transaction.CourseId == courseId)
                     .FirstOrDefaultAsync();
 
                 if (enrollment == null)
@@ -151,7 +153,7 @@ namespace Service.EnrollmentsService
                 Enrollment enrollment = await _unitOfWork.Repository<Enrollment>()
                     .GetAll()
                     .AsNoTracking()
-                    .Where(x => x.LearnerId == learnerId && x.CourseId == courseId)
+                    .Where(x => x.Transaction.LearnerId == learnerId && x.Transaction.CourseId == courseId)
                     .FirstOrDefaultAsync();
 
                 if (enrollment == null)
