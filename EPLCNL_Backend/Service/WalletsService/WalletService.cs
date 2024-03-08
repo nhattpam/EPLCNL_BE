@@ -117,5 +117,29 @@ namespace Service.WalletsService
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<WalletHistoryResponse> GetWalletHistoryByWallet(Guid id)
+        {
+            try
+            {
+                WalletHistory walletHistory = null;
+                walletHistory = await _unitOfWork.Repository<WalletHistory>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.Wallet)
+                    .Where(x => x.WalletId == id)
+                    .FirstOrDefaultAsync();
+
+                if (walletHistory == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<WalletHistory, WalletHistoryResponse>(walletHistory);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

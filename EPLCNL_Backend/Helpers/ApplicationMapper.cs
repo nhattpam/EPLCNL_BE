@@ -71,6 +71,8 @@ namespace Helper
             CreateMap<QuizAttempt, QuizAttemptResponse>().ReverseMap();
             CreateMap<Data.Models.RefundRequest, ViewModel.RequestModel.RefundRequest>().ReverseMap();
             CreateMap<Data.Models.RefundRequest, RefundResponse>().ReverseMap();
+            CreateMap<RefundHistory, RefundHistoryRequest>().ReverseMap();
+            CreateMap<RefundHistory, RefundHistoryResponse>().ReverseMap();
             CreateMap<Staff, StaffRequest>().ReverseMap();
             CreateMap<Staff, StaffResponse>().ReverseMap();
             CreateMap<Account,AccountRequest>().ReverseMap();
@@ -87,6 +89,8 @@ namespace Helper
             CreateMap<Transaction,TransactionResponse>().ReverseMap();
             CreateMap<Wallet,WalletRequest>().ReverseMap();
             CreateMap<Wallet,WalletResponse>().ReverseMap();
+            CreateMap<WalletHistory,WalletHistoryRequest>().ReverseMap();
+            CreateMap<WalletHistory,WalletHistoryResponse>().ReverseMap();
             CreateMap<Report,ReportRequest>().ReverseMap();
             CreateMap<Report,ReportResponse>().ReverseMap();
         }

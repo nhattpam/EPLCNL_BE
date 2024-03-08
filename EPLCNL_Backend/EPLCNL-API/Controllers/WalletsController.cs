@@ -144,5 +144,25 @@ namespace EPLCNL_API.Controllers
         //    }
 
         //}
+        /// <summary>
+        /// Get wallet-history by wallet id.
+        /// </summary>
+        [HttpGet("{id}/wallet-histories")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(WalletHistoryResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<WalletHistoryResponse>> GetWalletHistoryByWallet(Guid id)
+        {
+
+            try
+            {
+                var rs = await _walletService.GetWalletHistoryByWallet(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

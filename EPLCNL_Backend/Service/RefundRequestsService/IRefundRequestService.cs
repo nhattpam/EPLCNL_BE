@@ -13,6 +13,8 @@ namespace Service.RefundRequestsService
 
         public Task<RefundResponse> Get(Guid id);
 
+        public Task<RefundHistoryResponse> GetRefundHistoryByRefundRequest(Guid id);
+
         public Task<RefundResponse> Create(ViewModel.RequestModel.RefundRequest request);
 
         public Task<RefundResponse> Delete(Guid id);

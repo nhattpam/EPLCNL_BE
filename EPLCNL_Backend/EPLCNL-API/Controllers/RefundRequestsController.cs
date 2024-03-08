@@ -106,5 +106,26 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get refund-history by refund-request id.
+        /// </summary>
+        [HttpGet("{id}/refund-histories")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RefundHistoryResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<RefundHistoryResponse>> GetRefundHistoryByRefundRequest(Guid id)
+        {
+
+            try
+            {
+                var rs = await _refundRequestService.GetRefundHistoryByRefundRequest(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

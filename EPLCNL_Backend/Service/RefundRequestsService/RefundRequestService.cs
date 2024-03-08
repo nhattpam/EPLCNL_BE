@@ -147,7 +147,30 @@ namespace Service.RefundRequestsService
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<RefundHistoryResponse> GetRefundHistoryByRefundRequest(Guid id)
+        {
+            try
+            {
+                RefundHistory refundHistory = null;
+                refundHistory = await _unitOfWork.Repository<RefundHistory>().GetAll()
+                     .AsNoTracking()
+                     .Include(x => x.RefundRequest)
+                    .Where(x => x.RefundRequestId == id)
+                    .FirstOrDefaultAsync();
 
-       
+                if (refundHistory == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return _mapper.Map<RefundHistory, RefundHistoryResponse>(refundHistory);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
     }
 }

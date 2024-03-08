@@ -44,6 +44,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using EPLCNL_API.VNPay;
 using Service.ReportsService;
+using Service.RefundHistoriesService;
+using Service.WalletHistoriesService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -90,10 +92,12 @@ builder.Services.AddScoped<IQuestionAnswerService, QuestionAnswerService>();
 builder.Services.AddScoped<IQuizService, QuizService>();
 builder.Services.AddScoped<IQuizAttemptService, QuizAttemptService>();
 builder.Services.AddScoped<IRefundRequestService, RefundRequestService>();
+builder.Services.AddScoped<IRefundHistoryService, RefundHistoryService>();
 builder.Services.AddScoped<IStaffService, StaffService>();
 builder.Services.AddScoped<ITutorService, TutorService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IWalletService, WalletService>();
+builder.Services.AddScoped<IWalletHistoryService, WalletHistoryService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IReportService, ReportService>();
 
