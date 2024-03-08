@@ -228,5 +228,27 @@ namespace Service.CoursesService
             return enrollments;
         }
 
+        public async Task<CertificateResponse> GetCertificateCourse(Guid id)
+        {
+            // Retrieve the course
+            var course = await _unitOfWork.Repository<Course>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (course == null)
+            {
+                // Handle the case where the course with the specified id is not found
+                return null;
+            }
+
+            // Retrieve certificate for the course
+            var certificate = await _unitOfWork.Repository<Certificate>().GetAll()
+                .Where(t => t.CourseId == id)
+                .ProjectTo<CertificateResponse>(_mapper.ConfigurationProvider)
+                                            .FirstOrDefaultAsync();
+
+            return certificate;
+        }
+
     }
 }

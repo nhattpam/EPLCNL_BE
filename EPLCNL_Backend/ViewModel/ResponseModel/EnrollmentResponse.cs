@@ -13,6 +13,8 @@ namespace ViewModel.ResponseModel
         public DateTime? EnrolledDate { get; set; }
         public string? Status { get; set; }
         public double? TotalGrade { get; set; }
+        public bool? RefundStatus { get; set; }
+
 
         public virtual TransactionResponse? Transaction { get; set; }
 

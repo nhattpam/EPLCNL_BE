@@ -232,5 +232,25 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+
+        /// <summary>
+        /// Get certificate by course id.
+        /// </summary>
+        [HttpGet("{id}/certificates")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CertificateResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<CertificateResponse>> GetCertificateByCourse(Guid id)
+        {
+            try
+            {
+                var rs = await _courseService.GetCertificateCourse(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

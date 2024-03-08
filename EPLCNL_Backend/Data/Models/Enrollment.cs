@@ -15,6 +15,7 @@ namespace Data.Models
         public DateTime? EnrolledDate { get; set; }
         public string? Status { get; set; }
         public double? TotalGrade { get; set; }
+        public bool? RefundStatus { get; set; }
 
         public virtual Transaction? Transaction { get; set; }
         public virtual ICollection<RefundRequest> RefundRequests { get; set; }

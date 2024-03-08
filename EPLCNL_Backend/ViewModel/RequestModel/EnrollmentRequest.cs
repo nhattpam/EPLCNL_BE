@@ -12,5 +12,7 @@ namespace ViewModel.RequestModel
         public DateTime? EnrolledDate { get; set; }
         public string? Status { get; set; }
         public double? TotalGrade { get; set; }
+        public bool? RefundStatus { get; set; }
+
     }
 }

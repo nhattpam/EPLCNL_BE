@@ -41,6 +41,7 @@ namespace Service.EnrollmentsService
                 enrollment = await _unitOfWork.Repository<Enrollment>().GetAll()
                      .AsNoTracking()
                     .Include(x => x.Transaction)
+                    .ThenInclude(x => x.Course)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -64,6 +65,7 @@ namespace Service.EnrollmentsService
             {
                 var enrollment = _mapper.Map<EnrollmentRequest, Enrollment>(request);
                 enrollment.Id = Guid.NewGuid();
+                enrollment.RefundStatus = false;
                 await _unitOfWork.Repository<Enrollment>().InsertAsync(enrollment);
                 await _unitOfWork.CommitAsync();
 

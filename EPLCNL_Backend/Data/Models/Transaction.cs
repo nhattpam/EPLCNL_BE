@@ -17,6 +17,5 @@ namespace Data.Models
         public virtual Learner? Learner { get; set; }
         public virtual PaymentMethod? PaymentMethod { get; set; }
         public virtual Enrollment? Enrollment { get; set; }
-
     }
 }

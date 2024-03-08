@@ -23,5 +23,7 @@ namespace Service.CoursesService
         public Task<CourseResponse> Update(Guid id, CourseRequest request);
         public Task<List<EnrollmentResponse>> GetAllEnrollmentsByCourse(Guid id);
 
+        public Task<CertificateResponse> GetCertificateCourse(Guid id);
+
     }
 }
