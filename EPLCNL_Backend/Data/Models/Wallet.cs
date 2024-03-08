@@ -5,12 +5,16 @@ namespace Data.Models
 {
     public partial class Wallet
     {
+        public Wallet()
+        {
+            WalletHistories = new HashSet<WalletHistory>();
+        }
+
         public Guid Id { get; set; }
         public decimal? Balance { get; set; }
-        public DateTime? TransactionDate { get; set; }
         public Guid? AccountId { get; set; }
-        public string? Note { get; set; }
 
         public virtual Account? Account { get; set; }
+        public virtual ICollection<WalletHistory> WalletHistories { get; set; }
     }
 }

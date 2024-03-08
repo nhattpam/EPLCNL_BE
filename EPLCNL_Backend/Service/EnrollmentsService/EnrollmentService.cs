@@ -130,7 +130,7 @@ namespace Service.EnrollmentsService
                     .GetAll()
                     .AsNoTracking()
                     .Include(x => x.Transaction)
-                    .Where(x => x.Transaction.LearnerId == learnerId && x.Transaction.CourseId == courseId)
+                    .Where(x => x.Transaction.LearnerId == learnerId && x.Transaction.CourseId == courseId && x.RefundStatus == false)
                     .FirstOrDefaultAsync();
 
                 if (enrollment == null)

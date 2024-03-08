@@ -135,7 +135,7 @@ namespace Service.LearnersService
 
             var enrollments = await _unitOfWork.Repository<Enrollment>()
                 .GetAll()
-                .Where(t => t.Transaction.LearnerId == id)
+                .Where(t => t.Transaction.LearnerId == id && t.RefundStatus == false)
                 .Include(x => x.Transaction)
                 .ToListAsync();
             if(enrollments.Count > 0)
@@ -177,7 +177,7 @@ namespace Service.LearnersService
 
             // Retrieve enrollments for the learner
             var enrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
-                .Where(t => t.Transaction.LearnerId == id)
+                .Where(t => t.Transaction.LearnerId == id && t.RefundStatus == false)
                  .Include(x => x.Transaction)
                 .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
                                             .ToListAsync();

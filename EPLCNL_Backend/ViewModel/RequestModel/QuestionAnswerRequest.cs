@@ -10,7 +10,6 @@ namespace ViewModel.RequestModel
     {
         public Guid? QuestionId { get; set; }
         public string? AnswerText { get; set; }
-        public int? Position { get; set; }
         public bool? IsAnswer { get; set; }
     }
 }
