@@ -9,8 +9,6 @@ namespace ViewModel.RequestModel
     public class WalletRequest
     {
         public decimal? Balance { get; set; }
-        public DateTime? TransactionDate { get; set; }
         public Guid? AccountId { get; set; }
-        public string? Note { get; set; }
     }
 }
