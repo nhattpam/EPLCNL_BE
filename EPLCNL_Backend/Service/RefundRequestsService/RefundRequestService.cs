@@ -41,6 +41,8 @@ namespace Service.RefundRequestsService
                 refund = await _unitOfWork.Repository<RefundRequest>().GetAll()
                      .AsNoTracking()
                      .Include(x => x.Enrollment)
+                     .ThenInclude(x => x.Transaction)
+                     .ThenInclude(x => x.Course)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
