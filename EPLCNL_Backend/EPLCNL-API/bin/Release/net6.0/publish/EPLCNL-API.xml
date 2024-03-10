@@ -969,6 +969,31 @@
             Update quiz by quiz id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.GetAll">
+            <summary>
+            Get a list of all refund-histories.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Get(System.Guid)">
+            <summary>
+            Get refund History by refund-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Create(ViewModel.RequestModel.RefundHistoryRequest)">
+            <summary>
+            Create new refund-history.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Delete(System.Guid)">
+            <summary>
+            Delete refund history by refund-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Update(System.Guid,ViewModel.RequestModel.RefundHistoryRequest)">
+            <summary>
+            Update refund-history by refund-history id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.RefundRequestsController">
             <summary>
             Controller for managing refund requests.
@@ -997,6 +1022,11 @@
         <member name="M:EPLCNL_API.Controllers.RefundRequestsController.Update(System.Guid,ViewModel.RequestModel.RefundRequest)">
             <summary>
             Update refund-request by refund-request id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundRequestsController.GetRefundHistoryByRefundRequest(System.Guid)">
+            <summary>
+            Get refund-history by refund-request id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.ReportsController.GetAll">
@@ -1194,6 +1224,31 @@
             Get a list of assignment-attempts by tutor id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.GetAll">
+            <summary>
+            Get a list of all wallet-histories.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Get(System.Guid)">
+            <summary>
+            Get wallet-history by wallet-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Create(ViewModel.RequestModel.WalletHistoryRequest)">
+            <summary>
+            Create new wallet-history.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Delete(System.Guid)">
+            <summary>
+            Delete wallet-history by wallet-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Update(System.Guid,ViewModel.RequestModel.WalletHistoryRequest)">
+            <summary>
+            Update wallet-history by wallet-history id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.WalletsController">
             <summary>
             Controller for managing wallets.
@@ -1222,6 +1277,11 @@
         <member name="M:EPLCNL_API.Controllers.WalletsController.Update(System.Guid,ViewModel.RequestModel.WalletRequest)">
             <summary>
             Update wallet by wallet id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletsController.GetWalletHistoryByWallet(System.Guid)">
+            <summary>
+            Get wallet-history by wallet id.
             </summary>
         </member>
     </members>

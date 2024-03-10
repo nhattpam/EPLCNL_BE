@@ -37,14 +37,19 @@ namespace Service.RefundRequestsService
         {
             try
             {
-                RefundRequest refund = null;
-                refund = await _unitOfWork.Repository<RefundRequest>().GetAll()
-                     .AsNoTracking()
-                     .Include(x => x.Enrollment)
-                     .ThenInclude(x => x.Transaction)
-                     .ThenInclude(x => x.Course)
-                    .Where(x => x.Id == id)
-                    .FirstOrDefaultAsync();
+                RefundRequest refund = await _unitOfWork.Repository<RefundRequest>()
+                .GetAll()
+                .AsNoTracking()
+                .Include(x => x.Enrollment)
+                    .ThenInclude(x => x.Transaction)
+                        .ThenInclude(x => x.Course)
+                .Include(x => x.Enrollment)
+                    .ThenInclude(x => x.Transaction)
+                        .ThenInclude(x => x.Learner)
+                            .ThenInclude(x => x.Account)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
 
                 if (refund == null)
                 {
@@ -126,15 +131,14 @@ namespace Service.RefundRequestsService
                 {
                     throw new Exception();
                 }
-                if(refund.Status == "APPROVED")
-                {
-                    refund.ApprovedDate = localTime;
-                }
-                if(refund.Status == "DISAPPROVED")
-                {
-                    refund.ApprovedDate = null;
-                }
+                // Update the refund request based on the incoming request
                 refund = _mapper.Map(request, refund);
+
+                // Update ApprovedDate based on Status
+                if (refund.Status == "APPROVED" || refund.Status == "DISAPPROVED")
+                {
+                    refund.ApprovedDate = refund.Status == "APPROVED" ? localTime : null;
+                }
 
                 await _unitOfWork.Repository<Data.Models.RefundRequest>().UpdateDetached(refund);
                 await _unitOfWork.CommitAsync();
