@@ -151,23 +151,22 @@ namespace Service.RefundRequestsService
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<RefundHistoryResponse> GetRefundHistoryByRefundRequest(Guid id)
+        public async Task<List<RefundHistoryResponse>> GetRefundHistoryByRefundRequest(Guid id)
         {
             try
             {
-                RefundHistory refundHistory = null;
-                refundHistory = await _unitOfWork.Repository<RefundHistory>().GetAll()
-                     .AsNoTracking()
+                var refundHistories = await _unitOfWork.Repository<RefundHistory>().GetAll()
                      .Include(x => x.RefundRequest)
                     .Where(x => x.RefundRequestId == id)
-                    .FirstOrDefaultAsync();
+                    .ProjectTo<RefundHistoryResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
 
-                if (refundHistory == null)
+                if (refundHistories == null)
                 {
                     throw new Exception("khong tim thay");
                 }
 
-                return _mapper.Map<RefundHistory, RefundHistoryResponse>(refundHistory);
+                return refundHistories;
             }
 
             catch (Exception e)

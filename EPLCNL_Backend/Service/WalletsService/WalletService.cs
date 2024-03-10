@@ -117,23 +117,22 @@ namespace Service.WalletsService
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<WalletHistoryResponse> GetWalletHistoryByWallet(Guid id)
+        public async Task<List<WalletHistoryResponse>> GetWalletHistoryByWallet(Guid id)
         {
             try
             {
-                WalletHistory walletHistory = null;
-                walletHistory = await _unitOfWork.Repository<WalletHistory>().GetAll()
-                     .AsNoTracking()
-                     .Include(x => x.Wallet)
+                var walletHistories = await _unitOfWork.Repository<WalletHistory>().GetAll()
+                    .Include(x => x.Wallet)
                     .Where(x => x.WalletId == id)
-                    .FirstOrDefaultAsync();
+                    .ProjectTo<WalletHistoryResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
 
-                if (walletHistory == null)
+                if (walletHistories == null)
                 {
                     throw new Exception("khong tim thay");
                 }
 
-                return _mapper.Map<WalletHistory, WalletHistoryResponse>(walletHistory);
+                return walletHistories;
             }
 
             catch (Exception e)

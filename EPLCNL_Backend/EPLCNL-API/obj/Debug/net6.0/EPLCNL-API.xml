@@ -1026,7 +1026,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.RefundRequestsController.GetRefundHistoryByRefundRequest(System.Guid)">
             <summary>
-            Get refund-history by refund-request id.
+            Get a list of refund-histories by refund-request id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.ReportsController.GetAll">
@@ -1281,7 +1281,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.WalletsController.GetWalletHistoryByWallet(System.Guid)">
             <summary>
-            Get wallet-history by wallet id.
+            Get a list of wallet-histories by wallet id.
             </summary>
         </member>
     </members>

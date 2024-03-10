@@ -108,13 +108,13 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Get refund-history by refund-request id.
+        /// Get a list of refund-histories by refund-request id.
         /// </summary>
         [HttpGet("{id}/refund-histories")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RefundHistoryResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RefundHistoryResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<RefundHistoryResponse>> GetRefundHistoryByRefundRequest(Guid id)
+        public async Task<ActionResult<List<RefundHistoryResponse>>> GetRefundHistoryByRefundRequest(Guid id)
         {
 
             try
