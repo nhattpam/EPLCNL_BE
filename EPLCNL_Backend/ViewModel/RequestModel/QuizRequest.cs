@@ -9,7 +9,7 @@ namespace ViewModel.RequestModel
     public class QuizRequest
     {
         public Guid? ModuleId { get; set; }
-        public Guid? ClassTopicId { get; set; }
+        public Guid? TopicId { get; set; }
         public string? Name { get; set; }
         public double? GradeToPass { get; set; }
         public int? Deadline { get; set; }

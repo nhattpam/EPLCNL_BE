@@ -10,7 +10,7 @@ namespace ViewModel.ResponseModel
     {
         public Guid Id { get; set; }
         public Guid? ModuleId { get; set; }
-        public Guid? ClassTopicId { get; set; }
+        public Guid? TopicId { get; set; }
         public string? Name { get; set; }
         public double? GradeToPass { get; set; }
         public int? Deadline { get; set; }
@@ -18,7 +18,7 @@ namespace ViewModel.ResponseModel
         public DateTime? UpdatedDate { get; set; }
 
         public virtual ModuleResponse? Module { get; set; }
-        public virtual TopicResponse? ClassTopic { get; set; }
+        public virtual TopicResponse? Topic { get; set; }
 
     }
 }

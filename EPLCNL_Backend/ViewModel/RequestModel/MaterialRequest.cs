@@ -11,7 +11,7 @@ namespace ViewModel.RequestModel
         public string? Name { get; set; }
         public string? MaterialUrl { get; set; }
         public Guid? LessonId { get; set; }
-        public Guid? ClassTopicId { get; set; }
+        public Guid? TopicId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
     }
