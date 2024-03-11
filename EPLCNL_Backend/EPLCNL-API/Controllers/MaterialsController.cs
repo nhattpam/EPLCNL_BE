@@ -2,7 +2,7 @@
 using Firebase.Storage;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Service.LessonMaterialsService;
+using Service.MaterialsService;
 using System.Diagnostics;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
@@ -10,27 +10,27 @@ using ViewModel.ResponseModel;
 namespace EPLCNL_API.Controllers
 {
     /// <summary>
-    /// Controller for managing lesson materials.
+    /// Controller for managing materials.
     /// </summary>
-    [Route("api/lesson-materials")]
+    [Route("api/materials")]
     [ApiController]
-    public class LessonMaterialsController : ControllerBase
+    public class MaterialsController : ControllerBase
     {
-        private readonly ILessonMaterialService _lessonMaterialService;
+        private readonly IMaterialService _lessonMaterialService;
 
-        public LessonMaterialsController(ILessonMaterialService lessonMaterialService)
+        public MaterialsController(IMaterialService lessonMaterialService)
         {
             _lessonMaterialService = lessonMaterialService;
         }
 
         /// <summary>
-        /// Get a list of all lesson-materials.
+        /// Get a list of all materials.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<LessonMaterialResponse>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<MaterialResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<List<LessonMaterialResponse>>> GetAll()
+        public async Task<ActionResult<List<MaterialResponse>>> GetAll()
         {
             try
             {
@@ -44,13 +44,13 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Get lesson-material by lesson-material id.
+        /// Get material by material id.
         /// </summary>
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LessonMaterialResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MaterialResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<LessonMaterialResponse>> Get(Guid id)
+        public async Task<ActionResult<MaterialResponse>> Get(Guid id)
         {
             try
             {
@@ -64,12 +64,12 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Create new lesson-material.
+        /// Create new material.
         /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<LessonMaterialResponse>> Create([FromBody] LessonMaterialRequest request)
+        public async Task<ActionResult<MaterialResponse>> Create([FromBody] MaterialRequest request)
         {
             try
             {
@@ -83,20 +83,20 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Delete lesson-material by lesson-material id.
+        /// Delete material by material id.
         /// </summary>
         [HttpDelete("{id}")]
-        public async Task<ActionResult<LessonMaterialResponse>> Delete(Guid id)
+        public async Task<ActionResult<MaterialResponse>> Delete(Guid id)
         {
             var rs = await _lessonMaterialService.Delete(id);
             return Ok(rs);
         }
 
         /// <summary>
-        /// Update lesson-material by lesson-material id.
+        /// Update material by material id.
         /// </summary>
         [HttpPut("{id}")]
-        public async Task<ActionResult<LessonMaterialResponse>> Update(Guid id, [FromBody] LessonMaterialRequest request)
+        public async Task<ActionResult<MaterialResponse>> Update(Guid id, [FromBody] MaterialRequest request)
         {
             try
             {

@@ -11,44 +11,44 @@ using System.Threading.Tasks;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
 
-namespace Service.LessonMaterialsService
+namespace Service.MaterialsService
 {
-    public class LessonMaterialService : ILessonMaterialService
+    public class MaterialService : IMaterialService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public LessonMaterialService(IUnitOfWork unitOfWork, IMapper mapper)
+        public MaterialService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<LessonMaterialResponse>> GetAll()
+        public async Task<List<MaterialResponse>> GetAll()
         {
 
-            var list = await _unitOfWork.Repository<LessonMaterial>().GetAll()
-                                            .ProjectTo<LessonMaterialResponse>(_mapper.ConfigurationProvider)
+            var list = await _unitOfWork.Repository<Material>().GetAll()
+                                            .ProjectTo<MaterialResponse>(_mapper.ConfigurationProvider)
                                             .ToListAsync();
             return list;
         }
 
-        public async Task<LessonMaterialResponse> Get(Guid id)
+        public async Task<MaterialResponse> Get(Guid id)
         {
             try
             {
-                LessonMaterial lessonMaterial = null;
-                lessonMaterial = await _unitOfWork.Repository<LessonMaterial>().GetAll()
+                Material material = null;
+                material = await _unitOfWork.Repository<Material>().GetAll()
                      .AsNoTracking()
                      .Include(x => x.Lesson)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
-                if (lessonMaterial == null)
+                if (material == null)
                 {
                     throw new Exception("khong tim thay");
                 }
 
-                return _mapper.Map<LessonMaterial, LessonMaterialResponse>(lessonMaterial);
+                return _mapper.Map<Material, MaterialResponse>(material);
             }
 
             catch (Exception e)
@@ -57,7 +57,7 @@ namespace Service.LessonMaterialsService
             }
         }
 
-        public async Task<LessonMaterialResponse> Create(LessonMaterialRequest request)
+        public async Task<MaterialResponse> Create(MaterialRequest request)
         {
             // Set the UTC offset for UTC+7
             TimeSpan utcOffset = TimeSpan.FromHours(7);
@@ -69,13 +69,13 @@ namespace Service.LessonMaterialsService
             DateTime localTime = utcNow + utcOffset;
             try
             {
-                var lessonMaterial = _mapper.Map<LessonMaterialRequest, LessonMaterial>(request);
-                lessonMaterial.Id = Guid.NewGuid();
-                lessonMaterial.CreatedDate = localTime;
-                await _unitOfWork.Repository<LessonMaterial>().InsertAsync(lessonMaterial);
+                var material = _mapper.Map<MaterialRequest, Material>(request);
+                material.Id = Guid.NewGuid();
+                material.CreatedDate = localTime;
+                await _unitOfWork.Repository<Material>().InsertAsync(material);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<LessonMaterial, LessonMaterialResponse>(lessonMaterial);
+                return _mapper.Map<Material, MaterialResponse>(material);
             }
             catch (Exception e)
             {
@@ -83,20 +83,20 @@ namespace Service.LessonMaterialsService
             }
         }
 
-        public async Task<LessonMaterialResponse> Delete(Guid id)
+        public async Task<MaterialResponse> Delete(Guid id)
         {
             try
             {
-                LessonMaterial lessonMaterial = null;
-                lessonMaterial = _unitOfWork.Repository<LessonMaterial>()
+                Material material = null;
+                material = _unitOfWork.Repository<Material>()
                     .Find(p => p.Id == id);
-                if (lessonMaterial == null)
+                if (material == null)
                 {
                     throw new Exception("Bi trung id");
                 }
-                await _unitOfWork.Repository<LessonMaterial>().HardDeleteGuid(lessonMaterial.Id);
+                await _unitOfWork.Repository<Material>().HardDeleteGuid(material.Id);
                 await _unitOfWork.CommitAsync();
-                return _mapper.Map<LessonMaterial, LessonMaterialResponse>(lessonMaterial);
+                return _mapper.Map<Material, MaterialResponse>(material);
             }
             catch (Exception ex)
             {
@@ -104,7 +104,7 @@ namespace Service.LessonMaterialsService
             }
         }
 
-        public async Task<LessonMaterialResponse> Update(Guid id, LessonMaterialRequest request)
+        public async Task<MaterialResponse> Update(Guid id, MaterialRequest request)
         {
             // Set the UTC offset for UTC+7
             TimeSpan utcOffset = TimeSpan.FromHours(7);
@@ -116,19 +116,19 @@ namespace Service.LessonMaterialsService
             DateTime localTime = utcNow + utcOffset;
             try
             {
-                LessonMaterial lessonMaterial = _unitOfWork.Repository<LessonMaterial>()
+                Material material = _unitOfWork.Repository<Material>()
                             .Find(x => x.Id == id);
-                if (lessonMaterial == null)
+                if (material == null)
                 {
                     throw new Exception();
                 }
-                lessonMaterial = _mapper.Map(request, lessonMaterial);
-                lessonMaterial.UpdatedDate = localTime;
+                material = _mapper.Map(request, material);
+                material.UpdatedDate = localTime;
 
-                await _unitOfWork.Repository<LessonMaterial>().UpdateDetached(lessonMaterial);
+                await _unitOfWork.Repository<Material>().UpdateDetached(material);
                 await _unitOfWork.CommitAsync();
 
-                return _mapper.Map<LessonMaterial, LessonMaterialResponse>(lessonMaterial);
+                return _mapper.Map<Material, MaterialResponse>(material);
             }
 
             catch (Exception ex)

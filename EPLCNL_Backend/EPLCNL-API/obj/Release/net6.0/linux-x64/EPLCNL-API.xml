@@ -356,7 +356,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.ClassTopicsController.GetAllMaterialsByClassTopic(System.Guid)">
             <summary>
-            Get a list of lesson-materials by class-topic id.
+            Get a list of materials by class-topic id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.ClassTopicsController.Create(ViewModel.RequestModel.ClassTopicRequest)">
@@ -604,41 +604,6 @@
             Get a list of refund requests by learner id.
             </summary>
         </member>
-        <member name="T:EPLCNL_API.Controllers.LessonMaterialsController">
-            <summary>
-            Controller for managing lesson materials.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.LessonMaterialsController.GetAll">
-            <summary>
-            Get a list of all lesson-materials.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.LessonMaterialsController.Get(System.Guid)">
-            <summary>
-            Get lesson-material by lesson-material id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.LessonMaterialsController.Create(ViewModel.RequestModel.LessonMaterialRequest)">
-            <summary>
-            Create new lesson-material.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.LessonMaterialsController.Delete(System.Guid)">
-            <summary>
-            Delete lesson-material by lesson-material id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.LessonMaterialsController.Update(System.Guid,ViewModel.RequestModel.LessonMaterialRequest)">
-            <summary>
-            Update lesson-material by lesson-material id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.LessonMaterialsController.UploadMaterial(Microsoft.AspNetCore.Http.IFormFile)">
-            <summary>
-            Upload file of material.
-            </summary>
-        </member>
         <member name="T:EPLCNL_API.Controllers.LessonsController">
             <summary>
             Controller for managing lessons.
@@ -656,7 +621,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.LessonsController.GetAllMaterialsByLesson(System.Guid)">
             <summary>
-            Get a list of lesson-materials by lesson id.
+            Get a list of materials by lesson id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.LessonsController.Create(ViewModel.RequestModel.LessonRequest)">
@@ -677,6 +642,41 @@
         <member name="M:EPLCNL_API.Controllers.LessonsController.UploadVideo(Microsoft.AspNetCore.Http.IFormFile)">
             <summary>
             Upload video of lesson.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.MaterialsController">
+            <summary>
+            Controller for managing materials.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.GetAll">
+            <summary>
+            Get a list of all materials.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Get(System.Guid)">
+            <summary>
+            Get material by material id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Create(ViewModel.RequestModel.MaterialRequest)">
+            <summary>
+            Create new material.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Delete(System.Guid)">
+            <summary>
+            Delete material by material id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Update(System.Guid,ViewModel.RequestModel.MaterialRequest)">
+            <summary>
+            Update material by material id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.UploadMaterial(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload file of material.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.ModulesController">
@@ -1026,7 +1026,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.RefundRequestsController.GetRefundHistoryByRefundRequest(System.Guid)">
             <summary>
-            Get refund-history by refund-request id.
+            Get a list of refund-histories by refund-request id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.ReportsController.GetAll">
@@ -1281,7 +1281,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.WalletsController.GetWalletHistoryByWallet(System.Guid)">
             <summary>
-            Get wallet-history by wallet id.
+            Get a list of wallet-histories by wallet id.
             </summary>
         </member>
     </members>

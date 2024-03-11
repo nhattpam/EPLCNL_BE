@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ViewModel.ResponseModel
 {
-    public class LessonMaterialResponse
+    public class MaterialResponse
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }

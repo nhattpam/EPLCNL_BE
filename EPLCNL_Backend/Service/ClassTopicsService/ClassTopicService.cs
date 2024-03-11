@@ -57,7 +57,7 @@ namespace Service.ClassTopicsService
             }
         }
 
-        public async Task<List<LessonMaterialResponse>> GetAllMaterialsByClassTopic(Guid id)
+        public async Task<List<MaterialResponse>> GetAllMaterialsByClassTopic(Guid id)
         {
             var classTopic = await _unitOfWork.Repository<ClassTopic>().GetAll()
                  .Where(x => x.Id == id)
@@ -69,9 +69,9 @@ namespace Service.ClassTopicsService
                 return null;
             }
 
-            var materials = _unitOfWork.Repository<LessonMaterial>().GetAll()
+            var materials = _unitOfWork.Repository<Material>().GetAll()
                 .Where(t => t.ClassTopicId == id)
-                .ProjectTo<LessonMaterialResponse>(_mapper.ConfigurationProvider)
+                .ProjectTo<MaterialResponse>(_mapper.ConfigurationProvider)
                 .ToList();
 
             return materials;

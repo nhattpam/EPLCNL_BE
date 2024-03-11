@@ -13,7 +13,7 @@ namespace Service.LessonsService
         public Task<List<LessonResponse>> GetAll();
 
         public Task<LessonResponse> Get(Guid id);
-        public Task<List<LessonMaterialResponse>> GetAllMaterialsByLesson(Guid id);
+        public Task<List<MaterialResponse>> GetAllMaterialsByLesson(Guid id);
         public Task<LessonResponse> Create(LessonRequest request);
 
         public Task<LessonResponse> Delete(Guid id);

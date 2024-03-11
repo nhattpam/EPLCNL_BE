@@ -2194,7 +2194,7 @@
   {
     "ContainingType": "EPLCNL_API.Controllers.ClassTopicsController",
     "Method": "GetAllMaterialsByClassTopic",
-    "RelativePath": "api/class-topics/{id}/lesson-materials",
+    "RelativePath": "api/class-topics/{id}/materials",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -2207,7 +2207,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ViewModel.ResponseModel.LessonMaterialResponse",
+        "Type": "ViewModel.ResponseModel.MaterialResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -3802,206 +3802,6 @@
     ]
   },
   {
-    "ContainingType": "EPLCNL_API.Controllers.LessonMaterialsController",
-    "Method": "GetAll",
-    "RelativePath": "api/lesson-materials",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ViewModel.ResponseModel.LessonMaterialResponse, ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 401
-      }
-    ]
-  },
-  {
-    "ContainingType": "EPLCNL_API.Controllers.LessonMaterialsController",
-    "Method": "Create",
-    "RelativePath": "api/lesson-materials",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "ViewModel.RequestModel.LessonMaterialRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ViewModel.ResponseModel.LessonMaterialResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 201
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      }
-    ]
-  },
-  {
-    "ContainingType": "EPLCNL_API.Controllers.LessonMaterialsController",
-    "Method": "Get",
-    "RelativePath": "api/lesson-materials/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ViewModel.ResponseModel.LessonMaterialResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 401
-      }
-    ]
-  },
-  {
-    "ContainingType": "EPLCNL_API.Controllers.LessonMaterialsController",
-    "Method": "Delete",
-    "RelativePath": "api/lesson-materials/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ViewModel.ResponseModel.LessonMaterialResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "EPLCNL_API.Controllers.LessonMaterialsController",
-    "Method": "Update",
-    "RelativePath": "api/lesson-materials/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "request",
-        "Type": "ViewModel.RequestModel.LessonMaterialRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ViewModel.ResponseModel.LessonMaterialResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "EPLCNL_API.Controllers.LessonMaterialsController",
-    "Method": "UploadMaterial",
-    "RelativePath": "api/lesson-materials/material",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "file",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "EPLCNL_API.Controllers.LessonsController",
     "Method": "GetAll",
     "RelativePath": "api/lessons",
@@ -4178,7 +3978,7 @@
   {
     "ContainingType": "EPLCNL_API.Controllers.LessonsController",
     "Method": "GetAllMaterialsByLesson",
-    "RelativePath": "api/lessons/{id}/lesson-materials",
+    "RelativePath": "api/lessons/{id}/materials",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -4191,7 +3991,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ViewModel.ResponseModel.LessonMaterialResponse",
+        "Type": "ViewModel.ResponseModel.MaterialResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -4223,6 +4023,206 @@
     "ContainingType": "EPLCNL_API.Controllers.LessonsController",
     "Method": "UploadVideo",
     "RelativePath": "api/lessons/video",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EPLCNL_API.Controllers.MaterialsController",
+    "Method": "GetAll",
+    "RelativePath": "api/materials",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ViewModel.ResponseModel.MaterialResponse, ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "EPLCNL_API.Controllers.MaterialsController",
+    "Method": "Create",
+    "RelativePath": "api/materials",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ViewModel.RequestModel.MaterialRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ViewModel.ResponseModel.MaterialResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "EPLCNL_API.Controllers.MaterialsController",
+    "Method": "Get",
+    "RelativePath": "api/materials/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ViewModel.ResponseModel.MaterialResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "EPLCNL_API.Controllers.MaterialsController",
+    "Method": "Delete",
+    "RelativePath": "api/materials/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ViewModel.ResponseModel.MaterialResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EPLCNL_API.Controllers.MaterialsController",
+    "Method": "Update",
+    "RelativePath": "api/materials/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ViewModel.RequestModel.MaterialRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ViewModel.ResponseModel.MaterialResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EPLCNL_API.Controllers.MaterialsController",
+    "Method": "UploadMaterial",
+    "RelativePath": "api/materials/material",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -6473,7 +6473,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ViewModel.ResponseModel.RefundHistoryResponse",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ViewModel.ResponseModel.RefundHistoryResponse, ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -8139,7 +8139,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ViewModel.ResponseModel.WalletHistoryResponse",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ViewModel.ResponseModel.WalletHistoryResponse, ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

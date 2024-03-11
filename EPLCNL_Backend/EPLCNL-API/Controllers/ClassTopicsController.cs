@@ -61,13 +61,13 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Get a list of lesson-materials by class-topic id.
+        /// Get a list of materials by class-topic id.
         /// </summary>
-        [HttpGet("{id}/lesson-materials")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LessonMaterialResponse))]
+        [HttpGet("{id}/materials")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MaterialResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<List<LessonMaterialResponse>>> GetAllMaterialsByClassTopic(Guid id)
+        public async Task<ActionResult<List<MaterialResponse>>> GetAllMaterialsByClassTopic(Guid id)
         {
             try
             {

@@ -7,7 +7,7 @@ namespace Data.Models
     {
         public Lesson()
         {
-            LessonMaterials = new HashSet<LessonMaterial>();
+            Materials = new HashSet<Material>();
         }
 
         public Guid Id { get; set; }
@@ -19,6 +19,6 @@ namespace Data.Models
         public DateTime? UpdatedDate { get; set; }
 
         public virtual Module? Module { get; set; }
-        public virtual ICollection<LessonMaterial> LessonMaterials { get; set; }
+        public virtual ICollection<Material> Materials { get; set; }
     }
 }
