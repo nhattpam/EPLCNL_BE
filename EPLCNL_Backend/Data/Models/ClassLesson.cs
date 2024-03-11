@@ -7,7 +7,7 @@ namespace Data.Models
     {
         public ClassLesson()
         {
-            ClassTopics = new HashSet<ClassTopic>();
+            Topics = new HashSet<Topic>();
         }
 
         public Guid Id { get; set; }
@@ -18,6 +18,6 @@ namespace Data.Models
         public DateTime? UpdatedDate { get; set; }
 
         public virtual ClassModule? ClassModule { get; set; }
-        public virtual ICollection<ClassTopic> ClassTopics { get; set; }
+        public virtual ICollection<Topic> Topics { get; set; }
     }
 }

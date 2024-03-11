@@ -177,7 +177,6 @@ namespace Service.CentersService
                     accountRequest.DateOfBirth = account.DateOfBirth;
                     accountRequest.Gender = account.Gender;
                     accountRequest.Address = account.Address;
-                    accountRequest.IsDeleted = account.IsDeleted;
                     accountRequest.RoleId = account.RoleId;
                     accountRequest.CreatedDate = account.CreatedDate;
                     accountRequest.CreatedBy = account.CreatedBy;
@@ -195,7 +194,6 @@ namespace Service.CentersService
                     accountRequest.DateOfBirth = account.DateOfBirth;
                     accountRequest.Gender = account.Gender;
                     accountRequest.Address = account.Address;
-                    accountRequest.IsDeleted = account.IsDeleted;
                     accountRequest.RoleId = account.RoleId;
                     accountRequest.CreatedDate = account.CreatedDate;
                     accountRequest.CreatedBy = account.CreatedBy;

@@ -1,33 +1,33 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Service.ClassTopicsService;
+using Service.TopicsService;
 using ViewModel.RequestModel;
 using ViewModel.ResponseModel;
 
 namespace EPLCNL_API.Controllers
 {
     /// <summary>
-    /// Controller for managing class topics.
+    /// Controller for managing topics.
     /// </summary>
-    [Route("api/class-topics")]
+    [Route("api/topics")]
     [ApiController]
-    public class ClassTopicsController : ControllerBase
+    public class TopicsController : ControllerBase
     {
-        private readonly IClassTopicService _classTopicService;
+        private readonly ITopicService _classTopicService;
 
-        public ClassTopicsController(IClassTopicService classTopicService)
+        public TopicsController(ITopicService classTopicService)
         {
             _classTopicService = classTopicService;
         }
 
         /// <summary>
-        /// Get a list of all class-topics.
+        /// Get a list of all topics.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ClassTopicResponse>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TopicResponse>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<List<ClassTopicResponse>>> GetAll()
+        public async Task<ActionResult<List<TopicResponse>>> GetAll()
         {
             try
             {
@@ -41,13 +41,13 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Get class-topic by class-topic id.
+        /// Get topic by topic id.
         /// </summary>
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ClassTopicResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TopicResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<ClassTopicResponse>> Get(Guid id)
+        public async Task<ActionResult<TopicResponse>> Get(Guid id)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Get a list of materials by class-topic id.
+        /// Get a list of materials by topic id.
         /// </summary>
         [HttpGet("{id}/materials")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MaterialResponse))]
@@ -81,12 +81,12 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Create new class-topic.
+        /// Create new topic.
         /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ClassTopicResponse>> Create([FromBody] ClassTopicRequest request)
+        public async Task<ActionResult<TopicResponse>> Create([FromBody] TopicRequest request)
         {
             try
             {
@@ -100,20 +100,20 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
-        /// Delete class-topic by class-topic id.
+        /// Delete topic by topic id.
         /// </summary>
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ClassTopicResponse>> Delete(Guid id)
+        public async Task<ActionResult<TopicResponse>> Delete(Guid id)
         {
             var rs = await _classTopicService.Delete(id);
             return Ok(rs);
         }
 
         /// <summary>
-        /// Update class-topic by class-topic id.
+        /// Update topic by topic id.
         /// </summary>
         [HttpPut("{id}")]
-        public async Task<ActionResult<ClassTopicResponse>> Update(Guid id, [FromBody] ClassTopicRequest request)
+        public async Task<ActionResult<TopicResponse>> Update(Guid id, [FromBody] TopicRequest request)
         {
             try
             {
@@ -128,7 +128,7 @@ namespace EPLCNL_API.Controllers
 
 
         /// <summary>
-        /// Get a list of quizzes by classTopic id.
+        /// Get a list of quizzes by topic id.
         /// </summary>
         [HttpGet("{id}/quizzes")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QuizResponse))]

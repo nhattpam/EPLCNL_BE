@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Data.Models
 {
-    public partial class ClassTopic
+    public partial class Topic
     {
-        public ClassTopic()
+        public Topic()
         {
             Materials = new HashSet<Material>();
             Quizzes = new HashSet<Quiz>();

@@ -291,7 +291,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.ClassLessonsController.GetAllClassTopicsByClassLesson(System.Guid)">
             <summary>
-            Get a list of class-topics by class-lesson id.
+            Get a list of topics by class-lesson id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.ClassLessonsController.Create(ViewModel.RequestModel.ClassLessonRequest)">
@@ -337,46 +337,6 @@
         <member name="M:EPLCNL_API.Controllers.ClassModulesController.Update(System.Guid,ViewModel.RequestModel.ClassModuleRequest)">
             <summary>
             Update class-module by class-module id.
-            </summary>
-        </member>
-        <member name="T:EPLCNL_API.Controllers.ClassTopicsController">
-            <summary>
-            Controller for managing class topics.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.GetAll">
-            <summary>
-            Get a list of all class-topics.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.Get(System.Guid)">
-            <summary>
-            Get class-topic by class-topic id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.GetAllMaterialsByClassTopic(System.Guid)">
-            <summary>
-            Get a list of materials by class-topic id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.Create(ViewModel.RequestModel.ClassTopicRequest)">
-            <summary>
-            Create new class-topic.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.Delete(System.Guid)">
-            <summary>
-            Delete class-topic by class-topic id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.Update(System.Guid,ViewModel.RequestModel.ClassTopicRequest)">
-            <summary>
-            Update class-topic by class-topic id.
-            </summary>
-        </member>
-        <member name="M:EPLCNL_API.Controllers.ClassTopicsController.GetAllQuizzesByClassTopic(System.Guid)">
-            <summary>
-            Get a list of quizzes by classTopic id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.CoursesController">
@@ -1137,6 +1097,46 @@
         <member name="M:EPLCNL_API.Controllers.StaffsController.GetAllCoursesByStaff(System.Guid)">
             <summary>
             Get a list of courses by staff id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.TopicsController">
+            <summary>
+            Controller for managing topics.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.GetAll">
+            <summary>
+            Get a list of all topics.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Get(System.Guid)">
+            <summary>
+            Get topic by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.GetAllMaterialsByClassTopic(System.Guid)">
+            <summary>
+            Get a list of materials by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Create(ViewModel.RequestModel.TopicRequest)">
+            <summary>
+            Create new topic.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Delete(System.Guid)">
+            <summary>
+            Delete topic by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Update(System.Guid,ViewModel.RequestModel.TopicRequest)">
+            <summary>
+            Update topic by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.GetAllQuizzesByClassTopic(System.Guid)">
+            <summary>
+            Get a list of quizzes by topic id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.TransactionsController">

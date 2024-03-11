@@ -57,7 +57,7 @@ namespace Service.ClassLessonsService
             }
         }
 
-        public async Task<List<ClassTopicResponse>> GetAllClassTopicsByClassLesson(Guid id)
+        public async Task<List<TopicResponse>> GetAllClassTopicsByClassLesson(Guid id)
         {
             var classLesson = await _unitOfWork.Repository<ClassLesson>().GetAll()
                 .Where(x => x.Id == id)
@@ -69,9 +69,9 @@ namespace Service.ClassLessonsService
                 return null;
             }
 
-            var classTopics = _unitOfWork.Repository<ClassTopic>().GetAll()
+            var classTopics = _unitOfWork.Repository<Topic>().GetAll()
                 .Where(t => t.ClassLessonId == id)
-                .ProjectTo<ClassTopicResponse>(_mapper.ConfigurationProvider)
+                .ProjectTo<TopicResponse>(_mapper.ConfigurationProvider)
                 .ToList();
 
             return classTopics;

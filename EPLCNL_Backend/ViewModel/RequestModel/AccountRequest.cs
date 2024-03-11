@@ -17,7 +17,6 @@ namespace ViewModel.RequestModel
         public bool? Gender { get; set; }
         public string? Address { get; set; }
         public bool? IsActive { get; set; }
-        public bool? IsDeleted { get; set; }
         public Guid? RoleId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public Guid? CreatedBy { get; set; }

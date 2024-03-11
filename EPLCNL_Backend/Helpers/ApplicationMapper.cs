@@ -26,8 +26,8 @@ namespace Helper
             CreateMap<ClassLesson, ClassLessonResponse>().ReverseMap();
             CreateMap<ClassModule, ClassModuleRequest>().ReverseMap();
             CreateMap<ClassModule, ClassModuleResponse>().ReverseMap();
-            CreateMap<ClassTopic, ClassTopicRequest>().ReverseMap();
-            CreateMap<ClassTopic, ClassTopicResponse>().ReverseMap();
+            CreateMap<Topic, TopicRequest>().ReverseMap();
+            CreateMap<Topic, TopicResponse>().ReverseMap();
             CreateMap<Course, CourseRequest>().ReverseMap();
             CreateMap<Course, CourseResponse>().ReverseMap();
             CreateMap<Account, AccountRequest>().ReverseMap();
