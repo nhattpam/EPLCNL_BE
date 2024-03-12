@@ -3,6 +3,11 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Service.AssignmentsService;
+using Service.CoursesService;
+using Service.ModulesService;
+using Service.QuizzesService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +22,16 @@ namespace Service.EnrollmentsService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public EnrollmentService(IUnitOfWork unitOfWork, IMapper mapper)
+        private ICourseService _courseService;
+        private IModuleService _moduleService;
+        
+        public EnrollmentService(IUnitOfWork unitOfWork, IMapper mapper,
+            ICourseService courseService, IModuleService moduleService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _courseService = courseService;
+            _moduleService = moduleService;
         }
 
         public async Task<List<EnrollmentResponse>> GetAll()
@@ -173,6 +184,73 @@ namespace Service.EnrollmentsService
             {
                 // Handle exceptions appropriately
                 throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<double?> GetCourseScore(Guid id)
+        {
+            try
+            {
+                Enrollment enrollment = null;
+                enrollment = await _unitOfWork.Repository<Enrollment>().GetAll()
+                     .AsNoTracking()
+                    .Include(x => x.Transaction)
+                    .ThenInclude(x => x.Course)
+                    .Where(x => x.Id == id)
+                    .FirstOrDefaultAsync();
+
+                if (enrollment == null)
+                {
+                    throw new Exception("Not Found");
+                }
+
+                var course = await _courseService.Get(enrollment.Transaction.CourseId ?? new Guid());
+
+                if(course == null)
+                {
+                    throw new Exception("Not Found");
+                }
+
+                var modules = await _courseService.GetAllModulesByCourse(course.Id);
+                double? score = 0;
+                foreach (var module in modules)
+                {
+                    var quizzes = await _moduleService.GetAllQuizzesByModule(module.Id);
+                    if (quizzes != null)
+                    {
+                        foreach (var quizz in quizzes)
+                        {
+                            if (quizz != null && quizz.GradeToPass.HasValue)
+                            {
+                                score += quizz.GradeToPass.Value;
+                            }
+                            // Add handling if GradeToPass is null
+                        }
+                    }
+
+                    var assignments = await _moduleService.GetAllAssignmentsByModule(module.Id);
+                    if (assignments != null)
+                    {
+                        foreach (var assignment in assignments)
+                        {
+                            if (assignment != null && assignment.GradeToPass.HasValue)
+                            {
+                                score += assignment.GradeToPass.Value;
+                            }
+                            // Add handling if GradeToPass is null
+                        }
+                    }
+                }
+
+
+
+
+                return score;
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
             }
         }
     }

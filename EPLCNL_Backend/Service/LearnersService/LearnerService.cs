@@ -138,27 +138,23 @@ namespace Service.LearnersService
                 .Where(t => t.Transaction.LearnerId == id && t.RefundStatus == false)
                 .Include(x => x.Transaction)
                 .ToListAsync();
-            if(enrollments.Count > 0)
+
+            var forumResponses = new List<ForumResponse>(); // Move this outside the loop
+
+            foreach (var enrollment in enrollments)
             {
-                var forumResponses = new List<ForumResponse>();
+                var forums = await _unitOfWork.Repository<Forum>()
+                    .GetAll()
+                    .Where(forum => forum.CourseId == enrollment.Transaction.CourseId)
+                    .ProjectTo<ForumResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
 
-                foreach (var enrollment in enrollments)
-                {
-                    var forums = await _unitOfWork.Repository<Forum>()
-                        .GetAll()
-                        .Where(forum => forum.CourseId == enrollment.Transaction.CourseId)
-                        .ProjectTo<ForumResponse>(_mapper.ConfigurationProvider)
-                        .ToListAsync();
-
-                    forumResponses.AddRange(forums);
-                    return forumResponses;
-
-                }
+                forumResponses.AddRange(forums);
             }
-            return null;
-          
 
+            return forumResponses; // Move this outside the loop
         }
+
 
 
 
