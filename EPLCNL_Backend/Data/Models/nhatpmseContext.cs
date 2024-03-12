@@ -391,9 +391,17 @@ namespace Data.Models
 
                 entity.Property(e => e.CourseId).HasColumnName("course_id");
 
+                entity.Property(e => e.CreatedDate)
+                   .HasColumnType("datetime")
+                   .HasColumnName("created_date");
+
                 entity.Property(e => e.StartDate)
                     .HasColumnType("datetime")
                     .HasColumnName("start_date");
+
+                entity.Property(e => e.UpdatedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("updated_date");
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.ClassModules)

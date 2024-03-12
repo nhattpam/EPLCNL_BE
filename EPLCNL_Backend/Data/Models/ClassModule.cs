@@ -8,6 +8,8 @@ namespace Data.Models
         public Guid Id { get; set; }
         public DateTime? StartDate { get; set; }
         public Guid? CourseId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
 
         public virtual Course? Course { get; set; }
         public virtual ClassLesson? ClassLesson { get; set; }
