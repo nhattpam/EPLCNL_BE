@@ -79,10 +79,6 @@ namespace Helper
             CreateMap<Account,AccountResponse>().ReverseMap();
             CreateMap<AccountForum,AccountForumRequest>().ReverseMap();
             CreateMap<AccountForum,AccountForumResponse>().ReverseMap();
-            CreateMap<Assignment,AssignmentRequest>().ReverseMap();
-            CreateMap<Assignment,AssignmentResponse>().ReverseMap();
-            CreateMap<AssignmentAttempt,AssignmentAttemptRequest>().ReverseMap();
-            CreateMap<AssignmentAttempt,AssignmentAttemptResponse>().ReverseMap();
             CreateMap<Tutor,TutorRequest>().ReverseMap();
             CreateMap<Tutor,TutorResponse>().ReverseMap();
             CreateMap<Transaction,TransactionRequest>().ReverseMap();

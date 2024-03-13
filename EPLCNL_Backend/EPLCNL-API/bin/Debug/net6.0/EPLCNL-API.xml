@@ -1,0 +1,1293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EPLCNL-API</name>
+    </assembly>
+    <members>
+        <member name="T:EPLCNL_API.Controllers.AccountForumsController">
+            <summary>
+            Controller for managing account forums
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountForumsController.GetAll">
+            <summary>
+            Get a list of all account-forums.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountForumsController.Get(System.Guid)">
+            <summary>
+            Get account-forum by account-forum id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountForumsController.Create(ViewModel.RequestModel.AccountForumRequest)">
+            <summary>
+            Create new account-forum.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountForumsController.Delete(System.Guid)">
+            <summary>
+            Delete account-forum by account-forum id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountForumsController.Update(System.Guid,ViewModel.RequestModel.AccountForumRequest)">
+            <summary>
+            Update account-forum by account-forum id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.AccountsController">
+            <summary>
+            Controller for managing accounts.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetAll">
+            <summary>
+            Get a list of all accounts.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.Get(System.Guid)">
+            <summary>
+            Get account by account id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.Create(ViewModel.RequestModel.AccountRequest)">
+            <summary>
+            Create new account.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.Upload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image account.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.Delete(System.Guid)">
+            <summary>
+            Delete account by account id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.Update(System.Guid,ViewModel.RequestModel.AccountRequest)">
+            <summary>
+            Update account by account id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetLearnerByAccount(System.Guid)">
+            <summary>
+            Get learner by account id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetTutorByAccount(System.Guid)">
+            <summary>
+            Get tutor by account id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetStaffByAccount(System.Guid)">
+            <summary>
+            Get staff by account id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.SendMail(System.Guid,ViewModel.RequestModel.MailRequestModel)">
+            <summary>
+            Send mail for successful payment.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetWalletByAccount(System.Guid)">
+            <summary>
+            Get wallet by account id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.AssignmentAttemptsController">
+            <summary>
+            Controller for managing assignment attempts.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.GetAll">
+            <summary>
+            Get a list of all assignment-attempts.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.Get(System.Guid)">
+            <summary>
+            Get assignment-attempt by assignment-attempt id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.Create(ViewModel.RequestModel.AssignmentAttemptRequest)">
+            <summary>
+            Create new assignment-attempt.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.Delete(System.Guid)">
+            <summary>
+            Delete assignment-attempt by assignment-attempt id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.Update(System.Guid,ViewModel.RequestModel.AssignmentAttemptRequest)">
+            <summary>
+            Update assignment-attempt by assignment-attempt id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.AssignmentsController">
+            <summary>
+            Controller for managing assignments.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentsController.GetAll">
+            <summary>
+            Get a list of all assignments.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentsController.Get(System.Guid)">
+            <summary>
+            Get assignment by assignment id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentsController.Create(ViewModel.RequestModel.AssignmentRequest)">
+            <summary>
+            Create new assignment.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentsController.Delete(System.Guid)">
+            <summary>
+            Delete assignment by assignment id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentsController.Update(System.Guid,ViewModel.RequestModel.AssignmentRequest)">
+            <summary>
+            Update assignment by assignment id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.AuthenticationsController">
+            <summary>
+            Controller for managing authentications.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AuthenticationsController.LoginMember(ViewModel.RequestModel.LoginMem)">
+            <summary>
+            Login an account by email and password.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AuthenticationsController.ActiveAccount(System.String)">
+            <summary>
+            Active an account by email
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.CategoriesController">
+            <summary>
+            Controller for managing categories.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CategoriesController.GetAll">
+            <summary>
+            Get list of all categories.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CategoriesController.Get(System.Guid)">
+            <summary>
+            Get category by category id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CategoriesController.GetAllCoursesByCategory(System.Guid)">
+            <summary>
+            Get a list of courses by category id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CategoriesController.Create(ViewModel.RequestModel.CategoryRequest)">
+            <summary>
+            Create new category.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CategoriesController.Delete(System.Guid)">
+            <summary>
+            Delete category by category id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CategoriesController.Update(System.Guid,ViewModel.RequestModel.CategoryRequest)">
+            <summary>
+            Update category by category id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.CentersController">
+            <summary>
+            Controller for managing centers.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.GetAll">
+            <summary>
+            Get a list of all centers.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.Get(System.Guid)">
+            <summary>
+            Get center by center id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.GetAllTutorsByCenter(System.Guid)">
+            <summary>
+            Get a list of tutors by center id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.Create(ViewModel.RequestModel.CenterRequest)">
+            <summary>
+            Create new center.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.Delete(System.Guid)">
+            <summary>
+            Delete center by center id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.Update(System.Guid,ViewModel.RequestModel.CenterRequest)">
+            <summary>
+            Update center by center id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.SendMail(System.Guid)">
+            <summary>
+            Send mail for approving new centers.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.CertificatesController">
+            <summary>
+            Controller for managing certificates.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CertificatesController.GetAll">
+            <summary>
+            Get a list of all certificates.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CertificatesController.Get(System.Guid)">
+            <summary>
+            Get certificate by certificate id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CertificatesController.Create(ViewModel.RequestModel.CertificateRequest)">
+            <summary>
+            Create new certificate.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CertificatesController.Delete(System.Guid)">
+            <summary>
+            Delete certificate by certificate id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CertificatesController.Update(System.Guid,ViewModel.RequestModel.CertificateRequest)">
+            <summary>
+            Update certificate by certificate id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.ClassLessonsController">
+            <summary>
+            Controller for managing class lessons.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassLessonsController.GetAll">
+            <summary>
+            Get a list of all class-lessons.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassLessonsController.Get(System.Guid)">
+            <summary>
+            Get class-lesson by class-lesson id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassLessonsController.GetAllClassTopicsByClassLesson(System.Guid)">
+            <summary>
+            Get a list of topics by class-lesson id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassLessonsController.Create(ViewModel.RequestModel.ClassLessonRequest)">
+            <summary>
+            Create new class-lesson.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassLessonsController.Delete(System.Guid)">
+            <summary>
+            Delete class-lesson by class-lesson id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassLessonsController.Update(System.Guid,ViewModel.RequestModel.ClassLessonRequest)">
+            <summary>
+            Update class-lesson by class-lesson id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.ClassModulesController">
+            <summary>
+            Controller for managing class modules.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassModulesController.GetAll">
+            <summary>
+            Get a list of all class-modules.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassModulesController.Get(System.Guid)">
+            <summary>
+            Get class-module by class-module id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassModulesController.Create(ViewModel.RequestModel.ClassModuleRequest)">
+            <summary>
+            Create new class-module.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassModulesController.Delete(System.Guid)">
+            <summary>
+            Delete class-module by class-module id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ClassModulesController.Update(System.Guid,ViewModel.RequestModel.ClassModuleRequest)">
+            <summary>
+            Update class-module by class-module id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.CoursesController">
+            <summary>
+            Controller for managing courses.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetAll">
+            <summary>
+            Get a list of all courses.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.Get(System.Guid)">
+            <summary>
+            Get course by course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetAllModulesByCourse(System.Guid)">
+            <summary>
+            Get a list of modules by course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetAllClassModulesByCourse(System.Guid)">
+            <summary>
+            Get a list of class-modules by course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetAllFeedbacksByCourse(System.Guid)">
+            <summary>
+            Get a list of feedbacks by course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.Create(ViewModel.RequestModel.CourseRequest)">
+            <summary>
+            Create new course.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.Upload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image of course.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.Delete(System.Guid)">
+            <summary>
+            Delete course by course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.Update(System.Guid,ViewModel.RequestModel.CourseRequest)">
+            <summary>
+            Update course by course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetAllEnrollmentsByCourse(System.Guid)">
+            <summary>
+            Get a list of enrollments by course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CoursesController.GetCertificateByCourse(System.Guid)">
+            <summary>
+            Get certificate by course id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.EnrollmentsController">
+            <summary>
+            Controller for managing enrollments.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.GetAll">
+            <summary>
+            Get a list of all enrollments.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.Get(System.Guid)">
+            <summary>
+            Get enrollment by enrollment id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.GetCourseScore(System.Guid)">
+            <summary>
+            Get course score by enrollment id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.Create(ViewModel.RequestModel.EnrollmentRequest)">
+            <summary>
+            Create new enrollment.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.Delete(System.Guid)">
+            <summary>
+            Delete enrollment by enrollment id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.Update(System.Guid,ViewModel.RequestModel.EnrollmentRequest)">
+            <summary>
+            Update enrollment by enrollment id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.GetEnrollmentByLearnerAndCourseId(System.Guid,System.Guid)">
+            <summary>
+            Get enrollment by learner and course id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.DeleteEnrollmentByLearnerAndCourseId(System.Guid,System.Guid)">
+            <summary>
+            Delete enrollment by learner and course id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.FeedbacksController">
+            <summary>
+            Controller for managing feedbacks.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.FeedbacksController.GetAll">
+            <summary>
+            Get a list of all feedbacks.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.FeedbacksController.Get(System.Guid)">
+            <summary>
+            Get feedback by feedback id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.FeedbacksController.Create(ViewModel.RequestModel.FeedbackRequest)">
+            <summary>
+            Create new feedback.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.FeedbacksController.Delete(System.Guid)">
+            <summary>
+            Delete feedback by feedback id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.FeedbacksController.Update(System.Guid,ViewModel.RequestModel.FeedbackRequest)">
+            <summary>
+            Update feedback by feedback id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.ForumsController">
+            <summary>
+            Controller for managing forums.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ForumsController.GetAll">
+            <summary>
+            Get a list of all forums.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ForumsController.Get(System.Guid)">
+            <summary>
+            Get forum by forum id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ForumsController.Create(ViewModel.RequestModel.ForumRequest)">
+            <summary>
+            Create new forum.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ForumsController.Delete(System.Guid)">
+            <summary>
+            Delete forum by forum id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ForumsController.Update(System.Guid,ViewModel.RequestModel.ForumRequest)">
+            <summary>
+            Update forum by forum id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ForumsController.GetAllAccountForumsByForum(System.Guid)">
+            <summary>
+            Get a list of account forums by forum id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.LearnersController">
+            <summary>
+            Controller for managing learners.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAll">
+            <summary>
+            Get a list of all learners.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.Get(System.Guid)">
+            <summary>
+            Get learner by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.Create(ViewModel.RequestModel.LearnerRequest)">
+            <summary>
+            Create new learner.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.Delete(System.Guid)">
+            <summary>
+            Delete learner by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.Update(System.Guid,ViewModel.RequestModel.LearnerRequest)">
+            <summary>
+            Update learner by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllForumsByLearner(System.Guid)">
+            <summary>
+            Get a list of forums by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllEnrollmentsByLearner(System.Guid)">
+            <summary>
+            Get a list of enrollments by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllTransactionsByLearner(System.Guid)">
+            <summary>
+            Get list of transactions by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllAssignmentAttemptsByLearner(System.Guid)">
+            <summary>
+            Get a list of assignment-attempts by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllQuizAttemptsByLearner(System.Guid)">
+            <summary>
+            Get a list of quiz-attempts by learner id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllRefundRequestsByLearner(System.Guid)">
+            <summary>
+            Get a list of refund requests by learner id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.LessonsController">
+            <summary>
+            Controller for managing lessons.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LessonsController.GetAll">
+            <summary>
+            Get a list of all lessons.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LessonsController.Get(System.Guid)">
+            <summary>
+            Get lesson by lesson id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LessonsController.GetAllMaterialsByLesson(System.Guid)">
+            <summary>
+            Get a list of materials by lesson id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LessonsController.Create(ViewModel.RequestModel.LessonRequest)">
+            <summary>
+            Create new lesson.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LessonsController.Delete(System.Guid)">
+            <summary>
+            Delete lesson by lesson id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LessonsController.Update(System.Guid,ViewModel.RequestModel.LessonRequest)">
+            <summary>
+            Update lesson by lesson id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LessonsController.UploadVideo(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload video of lesson.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.MaterialsController">
+            <summary>
+            Controller for managing materials.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.GetAll">
+            <summary>
+            Get a list of all materials.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Get(System.Guid)">
+            <summary>
+            Get material by material id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Create(ViewModel.RequestModel.MaterialRequest)">
+            <summary>
+            Create new material.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Delete(System.Guid)">
+            <summary>
+            Delete material by material id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.Update(System.Guid,ViewModel.RequestModel.MaterialRequest)">
+            <summary>
+            Update material by material id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.MaterialsController.UploadMaterial(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload file of material.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.ModulesController">
+            <summary>
+            Controller for managing modules.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.GetAll">
+            <summary>
+            Get a list of all modules.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.Get(System.Guid)">
+            <summary>
+            Get module by module id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.GetAllAssignmentsByModule(System.Guid)">
+            <summary>
+            Get a list of assignments by module id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.GetAllLessonsByModule(System.Guid)">
+            <summary>
+            Get a list of lessons by module id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.GetAllQuizzesByModule(System.Guid)">
+            <summary>
+            Get a list of quizzes by module id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.Create(ViewModel.RequestModel.ModuleRequest)">
+            <summary>
+            Create new module.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.Delete(System.Guid)">
+            <summary>
+            Delete module by module id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ModulesController.Update(System.Guid,ViewModel.RequestModel.ModuleRequest)">
+            <summary>
+            Update module by module id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.PaperWorksController">
+            <summary>
+            Controller for managing paper works.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorksController.GetAll">
+            <summary>
+            Get a list of all paper-works.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorksController.Get(System.Guid)">
+            <summary>
+            Get paper-work by paper-work id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorksController.Create(ViewModel.RequestModel.PaperWorkRequest)">
+            <summary>
+            Create new paper-work.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorksController.Delete(System.Guid)">
+            <summary>
+            Delete paper-work by paper-work id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorksController.Update(System.Guid,ViewModel.RequestModel.PaperWorkRequest)">
+            <summary>
+            Update paper-work by paper-work id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.PaperWorkTypesController">
+            <summary>
+            Controller for managing paper work types.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorkTypesController.GetAll">
+            <summary>
+            Get a list of all paper-work-types.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorkTypesController.Get(System.Guid)">
+            <summary>
+            Get paper-work-type by paper-work-type id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorkTypesController.Create(ViewModel.RequestModel.PaperWorkTypeRequest)">
+            <summary>
+            Create new paper-work-type.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorkTypesController.Delete(System.Guid)">
+            <summary>
+            Delete paper-work-type by paper-work-type id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaperWorkTypesController.Update(System.Guid,ViewModel.RequestModel.PaperWorkTypeRequest)">
+            <summary>
+            Update paper-work-type by paper-work-type id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.PaymentMethodsController">
+            <summary>
+            Controller for managing payment methods.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaymentMethodsController.GetAll">
+            <summary>
+            Get a list of all payment-methods.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaymentMethodsController.Get(System.Guid)">
+            <summary>
+            Get payment-method by payment-method id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaymentMethodsController.Create(ViewModel.RequestModel.PaymentMethodRequest)">
+            <summary>
+            Create new payment-method.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaymentMethodsController.Delete(System.Guid)">
+            <summary>
+            Delete payment-method by payment-method id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PaymentMethodsController.Update(System.Guid,ViewModel.RequestModel.PaymentMethodRequest)">
+            <summary>
+            Update payment-method by payment-method id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.ProfileCertificatesController">
+            <summary>
+            Controller for managing profile certificates.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ProfileCertificatesController.GetAll">
+            <summary>
+            Get a list of all profile-certificates.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ProfileCertificatesController.Get(System.Guid)">
+            <summary>
+            Get profile-certificate by profile-certificate id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ProfileCertificatesController.Create(ViewModel.RequestModel.ProfileCertificateRequest)">
+            <summary>
+            Create new profile-certificate.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ProfileCertificatesController.Delete(System.Guid)">
+            <summary>
+            Delete profile-certificate by profile-certificate id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ProfileCertificatesController.Update(System.Guid,ViewModel.RequestModel.ProfileCertificateRequest)">
+            <summary>
+            Update profile-certificate by profile-certificate id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.QuestionAnswersController">
+            <summary>
+            Controller for managing question answers.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionAnswersController.GetAll">
+            <summary>
+            Get a list of all question-answers.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionAnswersController.Get(System.Guid)">
+            <summary>
+            Get question-answer by question-answer id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionAnswersController.Create(ViewModel.RequestModel.QuestionAnswerRequest)">
+            <summary>
+            Create new question-answer.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionAnswersController.Delete(System.Guid)">
+            <summary>
+            Delete question-answer by question-answer id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionAnswersController.Update(System.Guid,ViewModel.RequestModel.QuestionAnswerRequest)">
+            <summary>
+            Update question-answer by question-answer id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.QuestionsController">
+            <summary>
+            Controller for managing questions.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.GetAll">
+            <summary>
+            Get a list of all questions.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.Get(System.Guid)">
+            <summary>
+            Get question by question id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.GetAllQuestionAnswersByQuestion(System.Guid)">
+            <summary>
+            Get a list of question-answers by question id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.Create(ViewModel.RequestModel.QuestionRequest)">
+            <summary>
+            Create new question.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.Delete(System.Guid)">
+            <summary>
+            Delete question by question id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.Update(System.Guid,ViewModel.RequestModel.QuestionRequest)">
+            <summary>
+            Update question by question id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.UploadImage(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image of question.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuestionsController.UploadAudio(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload audio of question.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.QuizAttemptsController">
+            <summary>
+            Controller for managing quiz attempts.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:EPLCNL_API.Controllers.QuizAttemptsController.GetAll" -->
+        <!-- Badly formed XML comment ignored for member "M:EPLCNL_API.Controllers.QuizAttemptsController.Get(System.Guid)" -->
+        <!-- Badly formed XML comment ignored for member "M:EPLCNL_API.Controllers.QuizAttemptsController.Create(ViewModel.RequestModel.QuizAttemptRequest)" -->
+        <!-- Badly formed XML comment ignored for member "M:EPLCNL_API.Controllers.QuizAttemptsController.Delete(System.Guid)" -->
+        <!-- Badly formed XML comment ignored for member "M:EPLCNL_API.Controllers.QuizAttemptsController.Update(System.Guid,ViewModel.RequestModel.QuizAttemptRequest)" -->
+        <member name="T:EPLCNL_API.Controllers.QuizzesController">
+            <summary>
+            Controller for managing quizzes.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuizzesController.GetAll">
+            <summary>
+            Get a list of all quizzes.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuizzesController.Get(System.Guid)">
+            <summary>
+            Get quiz by quiz id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuizzesController.GetAllQuestionsByQuiz(System.Guid)">
+            <summary>
+            Get list of questions by quiz id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuizzesController.Create(ViewModel.RequestModel.QuizRequest)">
+            <summary>
+            Create new quiz.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuizzesController.Upload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image of quiz.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuizzesController.Delete(System.Guid)">
+            <summary>
+            Delete quiz by quiz id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.QuizzesController.Update(System.Guid,ViewModel.RequestModel.QuizRequest)">
+            <summary>
+            Update quiz by quiz id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.GetAll">
+            <summary>
+            Get a list of all refund-histories.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Get(System.Guid)">
+            <summary>
+            Get refund History by refund-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Create(ViewModel.RequestModel.RefundHistoryRequest)">
+            <summary>
+            Create new refund-history.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Delete(System.Guid)">
+            <summary>
+            Delete refund history by refund-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundHistoriesController.Update(System.Guid,ViewModel.RequestModel.RefundHistoryRequest)">
+            <summary>
+            Update refund-history by refund-history id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.RefundRequestsController">
+            <summary>
+            Controller for managing refund requests.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundRequestsController.GetAll">
+            <summary>
+            Get a list of all refund-requests.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundRequestsController.Get(System.Guid)">
+            <summary>
+            Get refund-request by refund-request id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundRequestsController.Create(ViewModel.RequestModel.RefundRequest)">
+            <summary>
+            Create new refund-request.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundRequestsController.Delete(System.Guid)">
+            <summary>
+            Delete refund-request by refund-request id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundRequestsController.Update(System.Guid,ViewModel.RequestModel.RefundRequest)">
+            <summary>
+            Update refund-request by refund-request id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundRequestsController.GetRefundHistoryByRefundRequest(System.Guid)">
+            <summary>
+            Get a list of refund-histories by refund-request id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.GetAll">
+            <summary>
+            Get a list of all reports.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Get(System.Guid)">
+            <summary>
+            Get report by report id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Create(ViewModel.RequestModel.ReportRequest)">
+            <summary>
+            Create new report.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Delete(System.Guid)">
+            <summary>
+            Delete report by report id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Update(System.Guid,ViewModel.RequestModel.ReportRequest)">
+            <summary>
+            Update report by report id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.ReportsController.Upload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image account.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.RolesController">
+            <summary>
+            Controller for managing roles.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RolesController.GetAll">
+            <summary>
+            Get a list of all roles.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RolesController.Get(System.Guid)">
+            <summary>
+            Get role by role id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RolesController.Create(ViewModel.RequestModel.RoleRequest)">
+            <summary>
+            Create new role.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RolesController.Delete(System.Guid)">
+            <summary>
+            Delete role by role id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RolesController.Update(System.Guid,ViewModel.RequestModel.RoleRequest)">
+            <summary>
+            Update role by role id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.StaffsController">
+            <summary>
+            Controller for managing staffs.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.GetAll">
+            <summary>
+            Get a list of all staffs.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.Get(System.Guid)">
+            <summary>
+            Get staff by staff id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.GetAllTutorsByStaff(System.Guid)">
+            <summary>
+            Get a list of tutors by staff id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.GetAllCentersByStaff(System.Guid)">
+            <summary>
+            Get a list of centers by staff id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.Create(ViewModel.RequestModel.StaffRequest)">
+            <summary>
+            Create new staff.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.Delete(System.Guid)">
+            <summary>
+            Delete staff by staff id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.Update(System.Guid,ViewModel.RequestModel.StaffRequest)">
+            <summary>
+            Update staff by staff id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.GetAllReportsByStaff(System.Guid)">
+            <summary>
+            Get a list of reports by staff id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.StaffsController.GetAllCoursesByStaff(System.Guid)">
+            <summary>
+            Get a list of courses by staff id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.TopicsController">
+            <summary>
+            Controller for managing topics.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.GetAll">
+            <summary>
+            Get a list of all topics.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Get(System.Guid)">
+            <summary>
+            Get topic by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.GetAllMaterialsByClassTopic(System.Guid)">
+            <summary>
+            Get a list of materials by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Create(ViewModel.RequestModel.TopicRequest)">
+            <summary>
+            Create new topic.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Delete(System.Guid)">
+            <summary>
+            Delete topic by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.Update(System.Guid,ViewModel.RequestModel.TopicRequest)">
+            <summary>
+            Update topic by topic id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.GetAllQuizzesByClassTopic(System.Guid)">
+            <summary>
+            Get a list of quizzes by topic id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.TransactionsController">
+            <summary>
+            Controller for managing transactions.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.GetAll">
+            <summary>
+            Get a list of all transactions.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.Get(System.Guid)">
+            <summary>
+            Get transaction by transaction id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.Create(ViewModel.RequestModel.TransactionRequest)">
+            <summary>
+            Create new transaction.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.Delete(System.Guid)">
+            <summary>
+            Delete transaction by transaction id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.Update(System.Guid,ViewModel.RequestModel.TransactionRequest)">
+            <summary>
+            Update transaction by transaction id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.Pay(System.Guid)">
+            <summary>
+            Pay through VnPay by transaction id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.TutorsController">
+            <summary>
+            Controller for managing tutors.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAll">
+            <summary>
+            Get a list of all tutors.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.Get(System.Guid)">
+            <summary>
+            Get tutor by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllCoursesByTutor(System.Guid)">
+            <summary>
+            Get a list of courses by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllPaperWorksByTutor(System.Guid)">
+            <summary>
+            Get a list of paper-works by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.Create(ViewModel.RequestModel.TutorRequest)">
+            <summary>
+            Create new tutor.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.Delete(System.Guid)">
+            <summary>
+            Delete tutor by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.Update(System.Guid,ViewModel.RequestModel.TutorRequest)">
+            <summary>
+            Update tutor by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllForumsByTutor(System.Guid)">
+            <summary>
+            Get a list of forums by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllAssignmentAttemptsByTutor(System.Guid)">
+            <summary>
+            Get a list of assignment-attempts by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.GetAll">
+            <summary>
+            Get a list of all wallet-histories.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Get(System.Guid)">
+            <summary>
+            Get wallet-history by wallet-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Create(ViewModel.RequestModel.WalletHistoryRequest)">
+            <summary>
+            Create new wallet-history.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Delete(System.Guid)">
+            <summary>
+            Delete wallet-history by wallet-history id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.Update(System.Guid,ViewModel.RequestModel.WalletHistoryRequest)">
+            <summary>
+            Update wallet-history by wallet-history id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.WalletsController">
+            <summary>
+            Controller for managing wallets.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletsController.GetAll">
+            <summary>
+            Get a list of all wallets.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletsController.Get(System.Guid)">
+            <summary>
+            Get wallet by wallet id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletsController.Create(ViewModel.RequestModel.WalletRequest)">
+            <summary>
+            Create new wallet.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletsController.Delete(System.Guid)">
+            <summary>
+            Delete wallet by wallet id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletsController.Update(System.Guid,ViewModel.RequestModel.WalletRequest)">
+            <summary>
+            Update wallet by wallet id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.WalletsController.GetWalletHistoryByWallet(System.Guid)">
+            <summary>
+            Get a list of wallet-histories by wallet id.
+            </summary>
+        </member>
+    </members>
+</doc>

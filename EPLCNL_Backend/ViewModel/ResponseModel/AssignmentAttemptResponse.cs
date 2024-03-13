@@ -17,5 +17,6 @@ namespace ViewModel.ResponseModel
 
         public virtual AssignmentResponse? Assignment { get; set; }
         public virtual LearnerResponse? Learner { get; set; }
+
     }
 }
