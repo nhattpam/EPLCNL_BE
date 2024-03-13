@@ -13,5 +13,7 @@ namespace ViewModel.ResponseModel
         public Guid? LearnerId { get; set; }
         public DateTime? AttemptedDate { get; set; }
         public double? TotalGrade { get; set; }
+        public virtual LearnerResponse? Learner { get; set; }
+        public virtual QuizResponse? Quiz { get; set; }
     }
 }
