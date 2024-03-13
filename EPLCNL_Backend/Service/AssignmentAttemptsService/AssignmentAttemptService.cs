@@ -149,20 +149,27 @@ namespace Service.AssignmentAttemptsService
                 }
 
                 var certificates = await _certificateService.GetAll();
+                var profileCertificates = await _profileCertificateService.GetAll();
                 var certificate = certificates.FirstOrDefault(x => x.CourseId == assignmentAttemptNow.Assignment.Module.CourseId);
-                if (score >= courseScore)
+                if (certificate != null && score >= courseScore)
                 {
-                    var profileCertificate = new ProfileCertificate()
+                    var existingProfileCertificate = profileCertificates.FirstOrDefault(pc => pc.LearnerId == assignmentAttemptNow.LearnerId && pc.CertificateId == certificate.Id);
+
+                    if (existingProfileCertificate == null)
                     {
-                        LearnerId = assignmentAttemptNow.LearnerId,
-                        CertificateId = certificate.Id,
-                        Status = "DONE"
-                    };
+                        var profileCertificate = new ProfileCertificate()
+                        {
+                            LearnerId = assignmentAttemptNow.LearnerId,
+                            CertificateId = certificate.Id,
+                            Status = "DONE"
+                        };
 
-                    var profileCertificateRequest = _mapper.Map<ProfileCertificate, ProfileCertificateRequest>(profileCertificate);
+                        var profileCertificateRequest = _mapper.Map<ProfileCertificate, ProfileCertificateRequest>(profileCertificate);
 
-                    // Assuming _profileCertificateService.Create method accepts ProfileCertificateRequest object
-                    await _profileCertificateService.Create(profileCertificateRequest);
+                        // Assuming _profileCertificateService.Create method accepts ProfileCertificateRequest object
+                        await _profileCertificateService.Create(profileCertificateRequest);
+                    }
+
                 }
 
                 return _mapper.Map<AssignmentAttempt, AssignmentAttemptResponse>(assignmentAttempt);
@@ -267,20 +274,27 @@ namespace Service.AssignmentAttemptsService
                 }
 
                 var certificates = await _certificateService.GetAll();
+                var profileCertificates = await _profileCertificateService.GetAll();
                 var certificate = certificates.FirstOrDefault(x => x.CourseId == assignmentAttemptNow.Assignment.Module.CourseId);
-                if (score >= courseScore)
+                if (certificate != null && score >= courseScore)
                 {
-                    var profileCertificate = new ProfileCertificate()
+                    var existingProfileCertificate = profileCertificates.FirstOrDefault(pc => pc.LearnerId == assignmentAttemptNow.LearnerId && pc.CertificateId == certificate.Id);
+
+                    if (existingProfileCertificate == null)
                     {
-                        LearnerId = assignmentAttemptNow.LearnerId,
-                        CertificateId = certificate.Id,
-                        Status = "DONE"
-                    };
+                        var profileCertificate = new ProfileCertificate()
+                        {
+                            LearnerId = assignmentAttemptNow.LearnerId,
+                            CertificateId = certificate.Id,
+                            Status = "DONE"
+                        };
 
-                    var profileCertificateRequest = _mapper.Map<ProfileCertificate, ProfileCertificateRequest>(profileCertificate);
+                        var profileCertificateRequest = _mapper.Map<ProfileCertificate, ProfileCertificateRequest>(profileCertificate);
 
-                    // Assuming _profileCertificateService.Create method accepts ProfileCertificateRequest object
-                    await _profileCertificateService.Create(profileCertificateRequest);
+                        // Assuming _profileCertificateService.Create method accepts ProfileCertificateRequest object
+                        await _profileCertificateService.Create(profileCertificateRequest);
+                    }
+
                 }
                 return _mapper.Map<AssignmentAttempt, AssignmentAttemptResponse>(assignmentAttempt);
             }

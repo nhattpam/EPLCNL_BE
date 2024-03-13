@@ -155,20 +155,26 @@ namespace Service.QuizAttemptsService
                 }
 
                 var certificates = await _certificateService.GetAll();
+                var profileCertificates = await _profileCertificateService.GetAll();
                 var certificate = certificates.FirstOrDefault(x => x.CourseId == quizAttemptNow.Quiz.Module.CourseId);
-                if (score >= courseScore)
+                if (certificate != null && score >= courseScore)
                 {
-                    var profileCertificate = new ProfileCertificate()
+                    var existingProfileCertificate = profileCertificates.FirstOrDefault(pc => pc.LearnerId == quizAttemptNow.LearnerId && pc.CertificateId == certificate.Id);
+
+                    if (existingProfileCertificate == null)
                     {
-                        LearnerId = quizAttemptNow.LearnerId,
-                        CertificateId = certificate.Id,
-                        Status = "DONE"
-                    };
+                        var profileCertificate = new ProfileCertificate()
+                        {
+                            LearnerId = quizAttemptNow.LearnerId,
+                            CertificateId = certificate.Id,
+                            Status = "DONE"
+                        };
 
-                    var profileCertificateRequest = _mapper.Map<ProfileCertificate,ProfileCertificateRequest>(profileCertificate);
+                        var profileCertificateRequest = _mapper.Map<ProfileCertificate, ProfileCertificateRequest>(profileCertificate);
 
-                    // Assuming _profileCertificateService.Create method accepts ProfileCertificateRequest object
-                    await _profileCertificateService.Create(profileCertificateRequest);
+                        // Assuming _profileCertificateService.Create method accepts ProfileCertificateRequest object
+                        await _profileCertificateService.Create(profileCertificateRequest);
+                    }
 
                 }
 
