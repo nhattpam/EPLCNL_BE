@@ -25,7 +25,8 @@ namespace Service.LearnersService
         public Task<List<TransactionResponse>> GetAllTransactionsByLearner(Guid lid);
         public Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByLearner(Guid learnerId);
         public Task<List<QuizAttemptResponse>> GetAllQuizAttemptsByLearner(Guid learnerId);
-        Task<List<RefundResponse>> GetAllRefundsByLearner(Guid id);
+        public Task<List<RefundResponse>> GetAllRefundsByLearner(Guid id);
+        public Task<List<ProfileCertificateResponse>> GetAllProfileCertificatesByLearner(Guid id);
 
     }
 }

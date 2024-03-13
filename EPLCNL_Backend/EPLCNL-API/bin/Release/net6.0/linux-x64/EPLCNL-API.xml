@@ -574,6 +574,11 @@
             Get a list of refund requests by learner id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllProfileCertificatesByLearner(System.Guid)">
+            <summary>
+            Get a list of profile certificate by learner id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.LessonsController">
             <summary>
             Controller for managing lessons.

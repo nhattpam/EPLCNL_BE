@@ -12,5 +12,7 @@ namespace ViewModel.ResponseModel
         public Guid? LearnerId { get; set; }
         public Guid? CertificateId { get; set; }
         public string? Status { get; set; }
+        public virtual CertificateResponse Certificate { get; set; }
+        public virtual LearnerResponse? Learner { get; set; }
     }
 }

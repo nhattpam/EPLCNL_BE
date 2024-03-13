@@ -38,6 +38,9 @@ namespace Service.ProfileCertificatesService
             {
                 ProfileCertificate profileCertificate = null;
                 profileCertificate = await _unitOfWork.Repository<ProfileCertificate>().GetAll()
+                    .Include(x => x.Certificate)
+                         .ThenInclude(x => x.Course)
+                    .Include(x => x.Learner)
                      .AsNoTracking()
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();

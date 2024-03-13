@@ -225,5 +225,25 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+
+        /// <summary>
+        /// Get a list of profile certificate by learner id.
+        /// </summary>
+        [HttpGet("{id}/profile-certificates")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProfileCertificateResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<ProfileCertificateResponse>>> GetAllProfileCertificatesByLearner(Guid id)
+        {
+            try
+            {
+                var rs = await _learnerService.GetAllProfileCertificatesByLearner(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

@@ -273,5 +273,28 @@ namespace Service.LearnersService
                 throw new Exception(e.Message);
             }
         }
+
+        public async Task<List<ProfileCertificateResponse>> GetAllProfileCertificatesByLearner(Guid id)
+        {
+            var learner = await _unitOfWork.Repository<Learner>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (learner == null)
+            {
+                // Handle the case where the tutor with the specified id is not found
+                return null;
+            }
+
+            var profileCertificates = _unitOfWork.Repository<ProfileCertificate>().GetAll()
+                .Include(x => x.Certificate)
+                    .ThenInclude(x => x.Course)
+                .Include(x => x.Learner)
+                .Where(a => a.LearnerId == id)
+                .ProjectTo<ProfileCertificateResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return profileCertificates;
+        }
     }
 }
