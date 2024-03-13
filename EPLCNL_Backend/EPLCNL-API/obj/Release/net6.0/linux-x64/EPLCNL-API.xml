@@ -419,6 +419,11 @@
             Get course score by enrollment id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.EnrollmentsController.GetLearningScore(System.Guid)">
+            <summary>
+            Get learning score by enrollment id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.EnrollmentsController.Create(ViewModel.RequestModel.EnrollmentRequest)">
             <summary>
             Create new enrollment.

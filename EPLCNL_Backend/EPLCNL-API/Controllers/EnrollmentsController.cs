@@ -63,7 +63,7 @@ namespace EPLCNL_API.Controllers
         /// <summary>
         /// Get course score by enrollment id.
         /// </summary>
-        [HttpGet("{id}/score")]
+        [HttpGet("{id}/course-score")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<double?>> GetCourseScore(Guid id)
@@ -71,6 +71,25 @@ namespace EPLCNL_API.Controllers
             try
             {
                 var rs = await _enrollmentService.GetCourseScore(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+
+        /// <summary>
+        /// Get learning score by enrollment id.
+        /// </summary>
+        [HttpGet("{id}/learning-score")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<double?>> GetLearningScore(Guid id)
+        {
+            try
+            {
+                var rs = await _enrollmentService.GetLearningScore(id);
                 return Ok(rs);
             }
             catch
