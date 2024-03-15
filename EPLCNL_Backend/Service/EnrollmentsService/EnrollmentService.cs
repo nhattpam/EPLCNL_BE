@@ -53,7 +53,11 @@ namespace Service.EnrollmentsService
                 enrollment = await _unitOfWork.Repository<Enrollment>().GetAll()
                      .AsNoTracking()
                     .Include(x => x.Transaction)
-                    .ThenInclude(x => x.Course)
+                        .ThenInclude(x => x.Course)
+                    .Include(x => x.Transaction)
+                        .ThenInclude(x => x.Learner)
+                            .ThenInclude(x => x.Account)
+                                .ThenInclude(x => x.Wallet)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

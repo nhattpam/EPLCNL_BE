@@ -44,6 +44,7 @@ namespace Service.StaffsService
                 staff = await _unitOfWork.Repository<Staff>().GetAll()
                      .AsNoTracking()
                      .Include(x => x.Account)
+                        .ThenInclude(x => x.Wallet)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
