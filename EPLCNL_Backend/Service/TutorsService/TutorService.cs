@@ -145,7 +145,25 @@ namespace Service.TutorService
         }
 
 
+        public async Task<List<EnrollmentResponse>> GetAllEnrollmentsByTutor(Guid id)
+        {
+            var tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
 
+            if (tutor == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var enrollments = _unitOfWork.Repository<Enrollment>().GetAll()
+                .Where(t => t.Transaction.Course.TutorId == id)
+                .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return enrollments;
+        }
         public async Task<TutorResponse> Create(TutorRequest request)
         {
             try
@@ -206,6 +224,47 @@ namespace Service.TutorService
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public async Task<List<LearnerResponse>> GetAllLearnersByTutor(Guid id)
+        {
+            // Retrieve the enrollment
+            var tutor = await _unitOfWork.Repository<Tutor>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (tutor == null)
+            {
+                // Handle the case where the enrollment with the specified id is not found
+                return null;
+            }
+
+            // Declare a list to store learners
+            var learners = new List<LearnerResponse>();
+
+            // Retrieve learners for the enrollment
+            var enrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
+                .Include(x => x.Transaction)
+                    .ThenInclude(x => x.Course)
+                .Where(x => x.Transaction.Course.TutorId == id && x.RefundStatus == false)
+                .ToListAsync();
+
+            foreach (var item in enrollments)
+            {
+                var learner = await _unitOfWork.Repository<Learner>().GetAll()
+                    .Where(t => t.Id == item.Transaction.LearnerId)
+
+                    .ProjectTo<LearnerResponse>(_mapper.ConfigurationProvider)
+                    .FirstOrDefaultAsync();
+
+                if (learner != null)
+                {
+                    // Add the learner to the list
+                    learners.Add(learner);
+                }
+            }
+
+            return learners;
         }
     }
 }

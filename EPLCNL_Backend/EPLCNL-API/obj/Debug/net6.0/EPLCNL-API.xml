@@ -1274,6 +1274,16 @@
             Get a list of assignment-attempts by tutor id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllEnrollmentsByTutor(System.Guid)">
+            <summary>
+            Get a list of enrollments by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllLearnersByTutor(System.Guid)">
+            <summary>
+            Get a list of learners by tutor id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.WalletHistoriesController.GetAll">
             <summary>
             Get a list of all wallet-histories.

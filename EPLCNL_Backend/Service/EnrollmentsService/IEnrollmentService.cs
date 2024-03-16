@@ -25,5 +25,6 @@ namespace Service.EnrollmentsService
         public Task<double?> GetCourseScore(Guid id);
         public Task<double?> GetLearningScore(Guid id);
 
+
     }
 }
