@@ -175,5 +175,29 @@ namespace Service.RefundRequestsService
             }
         }
 
+        public async Task<List<RefundSurveyResponse>> GetRefundSurveyByRefundRequest(Guid id)
+        {
+            try
+            {
+                var refundSurveys = await _unitOfWork.Repository<RefundSurvey>().GetAll()
+                     .Include(x => x.RefundRequest)
+                    .Where(x => x.RefundRequestId == id)
+                    .ProjectTo<RefundSurveyResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                if (refundSurveys == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return refundSurveys;
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
     }
 }

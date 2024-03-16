@@ -127,5 +127,26 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+
+        /// <summary>
+        /// Get a list of refund-surveys by refund-request id.
+        /// </summary>
+        [HttpGet("{id}/refund-surveys")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RefundSurveyResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<RefundSurveyResponse>>> GetRefundSurveyByRefundRequest(Guid id)
+        {
+
+            try
+            {
+                var rs = await _refundRequestService.GetRefundSurveyByRefundRequest(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }
