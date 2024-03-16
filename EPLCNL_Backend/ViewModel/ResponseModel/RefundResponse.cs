@@ -13,8 +13,8 @@ namespace ViewModel.ResponseModel
         public DateTime? RequestedDate { get; set; }
         public DateTime? ApprovedDate { get; set; }
         public string? Status { get; set; }
-        public string? Reason { get; set; }
 
         public virtual EnrollmentResponse? Enrollment { get; set; }
+      
     }
 }

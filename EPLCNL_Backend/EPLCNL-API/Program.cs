@@ -46,6 +46,9 @@ using EPLCNL_API.VNPay;
 using Service.ReportsService;
 using Service.RefundHistoriesService;
 using Service.WalletHistoriesService;
+using Service.RefundSurveysService;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -100,6 +103,7 @@ builder.Services.AddScoped<IWalletService, WalletService>();
 builder.Services.AddScoped<IWalletHistoryService, WalletHistoryService>();
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IReportService, ReportService>();
+builder.Services.AddScoped<IRefundSurveyService, RefundSurveyService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 
@@ -131,6 +135,23 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ClockSkew = TimeSpan.Zero
         };
     });
+
+//Expires  token
+var tokenHandler = new JwtSecurityTokenHandler();
+var key = Encoding.ASCII.GetBytes(secretKey); // Assuming secretKey is your JWT secret key
+var tokenDescriptor = new SecurityTokenDescriptor
+{
+    Subject = new ClaimsIdentity(new Claim[]
+    {
+        // Add claims here as needed
+    }),
+    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+};
+
+var token = tokenHandler.CreateToken(tokenDescriptor);
+var jwtToken = tokenHandler.WriteToken(token);
+//Expires  token
+
 
 builder.Services.AddSwaggerGen(c =>
 {

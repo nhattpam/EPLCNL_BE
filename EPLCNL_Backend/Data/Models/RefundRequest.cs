@@ -8,6 +8,7 @@ namespace Data.Models
         public RefundRequest()
         {
             RefundHistories = new HashSet<RefundHistory>();
+            RefundSurveys = new HashSet<RefundSurvey>();
         }
 
         public Guid Id { get; set; }
@@ -15,9 +16,9 @@ namespace Data.Models
         public DateTime? RequestedDate { get; set; }
         public DateTime? ApprovedDate { get; set; }
         public string? Status { get; set; }
-        public string? Reason { get; set; }
 
         public virtual Enrollment? Enrollment { get; set; }
         public virtual ICollection<RefundHistory> RefundHistories { get; set; }
+        public virtual ICollection<RefundSurvey> RefundSurveys { get; set; }
     }
 }

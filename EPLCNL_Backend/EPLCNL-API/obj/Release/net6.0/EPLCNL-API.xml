@@ -1004,6 +1004,36 @@
             Get a list of refund-histories by refund-request id.
             </summary>
         </member>
+        <member name="T:EPLCNL_API.Controllers.RefundSurveysController">
+            <summary>
+            Controller for managing refund surveys.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundSurveysController.GetAll">
+            <summary>
+            Get a list of all refund surveys.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundSurveysController.Get(System.Guid)">
+            <summary>
+            Get refundSurvey by refund survey id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundSurveysController.Create(ViewModel.RequestModel.RefundSurveyRequest)">
+            <summary>
+            Create new refund survey.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundSurveysController.Delete(System.Guid)">
+            <summary>
+            Delete refund survey by refund survey id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.RefundSurveysController.Update(System.Guid,ViewModel.RequestModel.RefundSurveyRequest)">
+            <summary>
+            Update refund survey by refund survey id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.ReportsController.GetAll">
             <summary>
             Get a list of all reports.

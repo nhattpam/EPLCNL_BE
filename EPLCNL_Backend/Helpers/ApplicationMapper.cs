@@ -89,6 +89,8 @@ namespace Helper
             CreateMap<WalletHistory,WalletHistoryResponse>().ReverseMap();
             CreateMap<Report,ReportRequest>().ReverseMap();
             CreateMap<Report,ReportResponse>().ReverseMap();
+            CreateMap<RefundSurvey,RefundSurveyRequest>().ReverseMap();
+            CreateMap<RefundSurvey,RefundSurveyResponse>().ReverseMap();
         }
     }
 }
