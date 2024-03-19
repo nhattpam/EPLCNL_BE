@@ -159,6 +159,11 @@
             Update assignment by assignment id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentsController.GetAllAssignmentAttemptsByAssignmentGuid(System.Guid)">
+            <summary>
+            Get a list of assignment-attempts by assignment id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AuthenticationsController">
             <summary>
             Controller for managing authentications.
