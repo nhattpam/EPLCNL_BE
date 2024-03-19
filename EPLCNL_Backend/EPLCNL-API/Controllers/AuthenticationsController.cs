@@ -146,8 +146,6 @@ namespace EPLCNL_API.Controllers
                     accountRequest.Address = account.Address;
                     accountRequest.RoleId = account.RoleId;
                     accountRequest.CreatedDate = account.CreatedDate;
-                    accountRequest.CreatedBy = account.CreatedBy;
-                    accountRequest.UpdatedBy = account.UpdatedBy;
                     await _accountService.Update(account.Id, accountRequest);
                   
                     return Ok("Active Account Successfully");

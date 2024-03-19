@@ -1264,6 +1264,11 @@
             Pay through VnPay by transaction id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.TransactionsController.PayByWallet(System.Guid)">
+            <summary>
+            Pay through Wallet by transaction id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.TutorsController">
             <summary>
             Controller for managing tutors.

@@ -20,9 +20,7 @@ namespace ViewModel.ResponseModel
         public bool? IsActive { get; set; }
         public Guid? RoleId { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public Guid? CreatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public Guid? UpdatedBy { get; set; }
         public virtual RoleResponse? Role { get; set; }
 
         public string? Note { get; set; }

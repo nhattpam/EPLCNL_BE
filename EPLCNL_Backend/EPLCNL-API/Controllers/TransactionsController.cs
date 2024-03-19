@@ -158,7 +158,39 @@ namespace EPLCNL_API.Controllers
         }
 
 
-        
+        /// <summary>
+        /// Pay through Wallet by transaction id.
+        /// </summary>
+        [HttpPost("{id}/wallet-payment")]
+        public async Task<ActionResult<bool>> PayByWallet(Guid id)
+        {
+          var response = await _transactionService.PayByWallet(id);
+            if (response == true)
+            {
+                var transaction = await _transactionService.Get(id);
+                if (transaction == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    var updateTransaction = new TransactionRequest
+                    {
+                        Amount = transaction.Amount,
+                        PaymentMethodId = transaction.PaymentMethodId,
+                        Status = "DONE",
+                        TransactionDate = transaction.TransactionDate,
+                        LearnerId = transaction.LearnerId,  
+                        CourseId = transaction.CourseId,
+                    };
+
+                    await _transactionService.Update(transaction.Id, updateTransaction);
+                }
+                
+            }
+            return response;
+        }
+
 
     }
 }
