@@ -5,10 +5,12 @@ namespace Service.AssignmentAttemptsService
 {
     public interface IAssignmentAttemptService
     {
-        Task<List<AssignmentAttemptResponse>> GetAll();
-        Task<AssignmentAttemptResponse> Get(Guid id);
-        Task<AssignmentAttemptResponse> Create(AssignmentAttemptRequest request);
-        Task<AssignmentAttemptResponse> Update(Guid id, AssignmentAttemptRequest request);
-        Task<AssignmentAttemptResponse> Delete(Guid id);
+        public Task<List<AssignmentAttemptResponse>> GetAll();
+        public Task<AssignmentAttemptResponse> Get(Guid id);
+        public Task<AssignmentAttemptResponse> Create(AssignmentAttemptRequest request);
+        public Task<AssignmentAttemptResponse> Update(Guid id, AssignmentAttemptRequest request);
+        public Task<AssignmentAttemptResponse> Delete(Guid id);
+        public Task<List<PeerReviewResponse>> GetAllPeerReviewsByAssignmentAttempt(Guid id);
+
     }
 }

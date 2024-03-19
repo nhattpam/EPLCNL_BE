@@ -1,122 +1,18 @@
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
-C:\Users\meoca\source\repos\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
-D:\capstone project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.sourcelink.json
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-C:\Users\meoca\Documents\College\Semester-9\Capstone\EPLCNL_Workspace\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-D:\capstone_project\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.sourcelink.json
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.Up2Date
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code-Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.sourcelink.json
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.Up2Date
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
-C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.deps.json
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.dll
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Service.pdb
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.dll
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.dll
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\Data.pdb
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\bin\Debug\net6.0\ViewModel.pdb
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.sourcelink.json
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.csproj.Up2Date
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.dll
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\refint\Service.dll
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\Service.pdb
+C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Service\obj\Debug\net6.0\ref\Service.dll

@@ -5,6 +5,11 @@ namespace Data.Models
 {
     public partial class AssignmentAttempt
     {
+        public AssignmentAttempt()
+        {
+            PeerReviews = new HashSet<PeerReview>();
+        }
+
         public Guid Id { get; set; }
         public Guid? AssignmentId { get; set; }
         public Guid? LearnerId { get; set; }
@@ -14,5 +19,6 @@ namespace Data.Models
 
         public virtual Assignment? Assignment { get; set; }
         public virtual Learner? Learner { get; set; }
+        public virtual ICollection<PeerReview> PeerReviews { get; set; }
     }
 }

@@ -91,6 +91,8 @@ namespace Helper
             CreateMap<Report,ReportResponse>().ReverseMap();
             CreateMap<RefundSurvey,RefundSurveyRequest>().ReverseMap();
             CreateMap<RefundSurvey,RefundSurveyResponse>().ReverseMap();
+            CreateMap<PeerReview,PeerReviewRequest>().ReverseMap();
+            CreateMap<PeerReview,PeerReviewResponse>().ReverseMap();
         }
     }
 }

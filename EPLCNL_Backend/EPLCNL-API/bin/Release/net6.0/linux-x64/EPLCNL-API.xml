@@ -124,6 +124,11 @@
             Update assignment-attempt by assignment-attempt id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.GetAllPeerReviewsByAssignmentAttempt(System.Guid)">
+            <summary>
+            Get a list of peer-reviews by assignment-attempt id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AssignmentsController">
             <summary>
             Controller for managing assignments.
@@ -787,6 +792,36 @@
         <member name="M:EPLCNL_API.Controllers.PaymentMethodsController.Update(System.Guid,ViewModel.RequestModel.PaymentMethodRequest)">
             <summary>
             Update payment-method by payment-method id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.PeerReviewsController">
+            <summary>
+            Controller for managing peer-reviews.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PeerReviewsController.GetAll">
+            <summary>
+            Get list of all peer-reviews.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PeerReviewsController.Get(System.Guid)">
+            <summary>
+            Get peer-review by peer-review id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PeerReviewsController.Create(ViewModel.RequestModel.PeerReviewRequest)">
+            <summary>
+            Create new peer-review.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PeerReviewsController.Delete(System.Guid)">
+            <summary>
+            Delete peer-review by peer-review id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.PeerReviewsController.Update(System.Guid,ViewModel.RequestModel.PeerReviewRequest)">
+            <summary>
+            Update peer-review by peer-review id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.ProfileCertificatesController">

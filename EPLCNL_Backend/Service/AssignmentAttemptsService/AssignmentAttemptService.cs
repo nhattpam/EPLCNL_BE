@@ -316,5 +316,25 @@ namespace Service.AssignmentAttemptsService
                                             .ToListAsync();
             return list;
         }
+
+        public async Task<List<PeerReviewResponse>> GetAllPeerReviewsByAssignmentAttempt(Guid id)
+        {
+            var assignmentAttempt = await _unitOfWork.Repository<AssignmentAttempt>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (assignmentAttempt == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var peerReviews = _unitOfWork.Repository<PeerReview>().GetAll()
+                .Where(t => t.AssignmentAttemptId == id)
+                .ProjectTo<PeerReviewResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return peerReviews;
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace Data.Models
             AccountForums = new HashSet<AccountForum>();
             AssignmentAttempts = new HashSet<AssignmentAttempt>();
             Feedbacks = new HashSet<Feedback>();
+            PeerReviews = new HashSet<PeerReview>();
             ProfileCertificates = new HashSet<ProfileCertificate>();
             QuizAttempts = new HashSet<QuizAttempt>();
             Reports = new HashSet<Report>();
@@ -23,6 +24,7 @@ namespace Data.Models
         public virtual ICollection<AccountForum> AccountForums { get; set; }
         public virtual ICollection<AssignmentAttempt> AssignmentAttempts { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<PeerReview> PeerReviews { get; set; }
         public virtual ICollection<ProfileCertificate> ProfileCertificates { get; set; }
         public virtual ICollection<QuizAttempt> QuizAttempts { get; set; }
         public virtual ICollection<Report> Reports { get; set; }

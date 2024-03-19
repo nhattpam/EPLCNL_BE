@@ -102,5 +102,25 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get a list of peer-reviews by assignment-attempt id.
+        /// </summary>
+        [HttpGet("{id}/peer-reviews")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PeerReviewResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<PeerReviewResponse>>> GetAllPeerReviewsByAssignmentAttempt(Guid id)
+        {
+            try
+            {
+                var rs = await _assignmentattemptService.GetAllPeerReviewsByAssignmentAttempt(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

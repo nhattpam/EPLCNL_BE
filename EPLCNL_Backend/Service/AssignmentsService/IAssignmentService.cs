@@ -5,10 +5,12 @@ namespace Service.AssignmentsService
 {
     public interface IAssignmentService
     {
-        Task<List<AssignmentResponse>> GetAll();
-        Task<AssignmentResponse> Get(Guid id);
-        Task<AssignmentResponse> Create(AssignmentRequest request);
-        Task<AssignmentResponse> Update(Guid id, AssignmentRequest request);
-        Task<AssignmentResponse> Delete(Guid id);
+        public Task<List<AssignmentResponse>> GetAll();
+        public Task<AssignmentResponse> Get(Guid id);
+        public Task<AssignmentResponse> Create(AssignmentRequest request);
+        public Task<AssignmentResponse> Update(Guid id, AssignmentRequest request);
+        public Task<AssignmentResponse> Delete(Guid id);
+        public Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByAssignment(Guid id);
+
     }
 }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ViewModel
-build_property.ProjectDir = C:\Users\nhattpam\Documents\College\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\
+build_property.ProjectDir = C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

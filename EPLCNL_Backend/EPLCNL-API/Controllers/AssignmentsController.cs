@@ -106,5 +106,25 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get a list of assignment-attempts by assignment id.
+        /// </summary>
+        [HttpGet("{id}/assignment-attempts")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentAttemptResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAllAssignmentAttemptsByAssignmentGuid(Guid id)
+        {
+            try
+            {
+                var rs = await _assignmentService.GetAllAssignmentAttemptsByAssignment(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

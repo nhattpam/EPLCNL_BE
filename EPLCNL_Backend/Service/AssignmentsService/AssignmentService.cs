@@ -136,5 +136,27 @@ namespace Service.AssignmentsService
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByAssignment(Guid id)
+        {
+            var assignment = await _unitOfWork.Repository<Assignment>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (assignment == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var assignmentAttempts = _unitOfWork.Repository<AssignmentAttempt>().GetAll()
+                .Where(t => t.AssignmentId == id)
+                .ProjectTo<AssignmentAttemptResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return assignmentAttempts;
+        }
+
+       
     }
 }
