@@ -18,5 +18,6 @@ namespace Service.PeerReviewsService
         public Task<PeerReviewResponse> Delete(Guid id);
 
         public Task<PeerReviewResponse> Update(Guid id, PeerReviewRequest request);
+
     }
 }

@@ -25,14 +25,18 @@ namespace Service.AssignmentAttemptsService
         private IModuleService _moduleService;
         private ICertificateService _certificateService;
         private IProfileCertificateService _profileCertificateService;
+        private readonly IAssignmentService _assignmentService;
+
         public AssignmentAttemptService(IUnitOfWork unitOfWork, IMapper mapper,
-            IModuleService moduleService, ICertificateService certificateService, IProfileCertificateService profileCertificateService)
+            IModuleService moduleService, ICertificateService certificateService,
+            IProfileCertificateService profileCertificateService, IAssignmentService assignmentService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _moduleService = moduleService;
             _certificateService = certificateService;
             _profileCertificateService = profileCertificateService;
+            _assignmentService = assignmentService;
         }
 
         public async Task<List<AssignmentAttemptResponse>> GetAll()
@@ -336,6 +340,20 @@ namespace Service.AssignmentAttemptsService
                 .ToList();
 
             return peerReviews;
+        }
+
+        public async Task<List<AssignmentAttemptResponse>> GetAllPeerReviewsByAssignment(Guid assignmentId, Guid learnerId)
+        {
+            var attemptsByAssignment = await _assignmentService.GetAllAssignmentAttemptsByAssignment(assignmentId);
+            var attemptsByAssignmentNoLoginLearner = new List<AssignmentAttemptResponse>();
+            foreach (var attempt in attemptsByAssignment)
+            {
+                if (attempt.LearnerId != learnerId)
+                {
+                    attemptsByAssignmentNoLoginLearner.Add(attempt);
+                }
+            }
+            return attemptsByAssignmentNoLoginLearner;
         }
     }
 }

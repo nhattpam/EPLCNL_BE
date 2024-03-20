@@ -11,6 +11,8 @@ namespace Service.AssignmentAttemptsService
         public Task<AssignmentAttemptResponse> Update(Guid id, AssignmentAttemptRequest request);
         public Task<AssignmentAttemptResponse> Delete(Guid id);
         public Task<List<PeerReviewResponse>> GetAllPeerReviewsByAssignmentAttempt(Guid id);
+        public Task<List<AssignmentAttemptResponse>> GetAllPeerReviewsByAssignment(Guid assignmentId, Guid learnerId);
+
 
     }
 }

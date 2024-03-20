@@ -114,7 +114,7 @@ namespace EPLCNL_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentAttemptResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAllAssignmentAttemptsByAssignmentGuid(Guid id)
+        public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAllAssignmentAttemptsByAssignment(Guid id)
         {
             try
             {
@@ -126,5 +126,8 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+
+
+
     }
 }

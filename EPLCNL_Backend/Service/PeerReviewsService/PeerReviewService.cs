@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.AssignmentsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Service.PeerReviewsService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public PeerReviewService(IUnitOfWork unitOfWork, IMapper mapper)
+        public PeerReviewService(IUnitOfWork unitOfWork, IMapper mapper, IAssignmentService assignmentService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
@@ -121,5 +122,7 @@ namespace Service.PeerReviewsService
                 throw new Exception(ex.Message);
             }
         }
+
+        
     }
 }
