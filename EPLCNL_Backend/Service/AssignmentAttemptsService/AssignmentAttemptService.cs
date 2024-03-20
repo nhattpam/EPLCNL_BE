@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Service.AssignmentsService;
 using Service.CertificatesService;
 using Service.ModulesService;
@@ -342,7 +343,7 @@ namespace Service.AssignmentAttemptsService
             return peerReviews;
         }
 
-        public async Task<List<AssignmentAttemptResponse>> GetAllPeerReviewsByAssignment(Guid assignmentId, Guid learnerId)
+        public async Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByAssignmentNotLoggedInLearner(Guid assignmentId, Guid learnerId)
         {
             var attemptsByAssignment = await _assignmentService.GetAllAssignmentAttemptsByAssignment(assignmentId);
             var attemptsByAssignmentNoLoginLearner = new List<AssignmentAttemptResponse>();
@@ -355,5 +356,58 @@ namespace Service.AssignmentAttemptsService
             }
             return attemptsByAssignmentNoLoginLearner;
         }
+
+        public async Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByAssignmentLoggedInLearnerNotGradeYet(Guid assignmentId, Guid learnerId)
+        {
+            var attemptsByAssignment = await _assignmentService.GetAllAssignmentAttemptsByAssignment(assignmentId);
+            var attemptsByAssignmentNoLoginLearner = new List<AssignmentAttemptResponse>();
+            var attemptsByAssignmentLoginLearnerNotGradeYet = new List<AssignmentAttemptResponse>();
+
+            // Retrieve assignment and learner
+            var assignment = _unitOfWork.Repository<Assignment>().Find(p => p.Id == assignmentId);
+            var learner = _unitOfWork.Repository<Learner>().Find(p => p.Id == learnerId);
+
+            // Check if assignment or learner not found
+            if (assignment == null || learner == null)
+            {
+                throw new Exception("Assignment or learner not found.");
+            }
+
+            // Filter attempts not by the logged-in learner
+            foreach (var attempt in attemptsByAssignment)
+            {
+                if (attempt.LearnerId != learnerId)
+                {
+                    attemptsByAssignmentNoLoginLearner.Add(attempt);
+                }
+            }
+
+            // Check for peer reviews for each attempt by other learners
+            foreach (var attempt in attemptsByAssignmentNoLoginLearner)
+            {
+                var peerReviewsByAttempt = await GetAllPeerReviewsByAssignmentAttempt(attempt.Id);
+                var gradedByLearner = false;
+
+                foreach (var peerReview in peerReviewsByAttempt)
+                {
+                    if (peerReview.LearnerId == learnerId)
+                    {
+                        gradedByLearner = true;
+                        break; // Exit loop since the learner has already graded this attempt
+                    }
+                }
+
+                // If not graded by the learner, add to the list
+                if (!gradedByLearner)
+                {
+                    attemptsByAssignmentLoginLearnerNotGradeYet.Add(attempt);
+                }
+            }
+
+            return attemptsByAssignmentLoginLearnerNotGradeYet;
+        }
+
+
+
     }
 }

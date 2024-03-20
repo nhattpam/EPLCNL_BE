@@ -123,18 +123,38 @@ namespace EPLCNL_API.Controllers
             }
         }
 
+        ///// <summary>
+        ///// Get a list of assignment-attempts that do not include logged in learner by assignment id and learner id.
+        ///// </summary>
+        //[HttpGet("{assignmentId}/assignments/{learnerId}/learners")]
+        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentAttemptResponse))]
+        //[ProducesResponseType(StatusCodes.Status404NotFound)]
+        //[ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        //public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAllAssignmentAttemptsByAssignmentNotLoggedInLearner(Guid assignmentId, Guid learnerId)
+        //{
+        //    try
+        //    {
+        //        var rs = await _assignmentattemptService.GetAllAssignmentAttemptsByAssignmentNotLoggedInLearner(assignmentId, learnerId);
+        //        return Ok(rs);
+        //    }
+        //    catch
+        //    {
+        //        return NotFound();
+        //    }
+        //}
+
         /// <summary>
-        /// Get a list of assignment-attempts that do not include logged in learner by assignment id and learner id.
+        /// Get a list of assignment-attempts that logged in learner not grade yet by assignment id and learner id.
         /// </summary>
         [HttpGet("{assignmentId}/assignments/{learnerId}/learners")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssignmentAttemptResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAllPeerReviewsByAssignment(Guid assignmentId, Guid learnerId)
+        public async Task<ActionResult<List<AssignmentAttemptResponse>>> GetAllAssignmentAttemptsByAssignmentLoggedInLearnerNotGradeYet(Guid assignmentId, Guid learnerId)
         {
             try
             {
-                var rs = await _assignmentattemptService.GetAllPeerReviewsByAssignment(assignmentId, learnerId);
+                var rs = await _assignmentattemptService.GetAllAssignmentAttemptsByAssignmentLoggedInLearnerNotGradeYet(assignmentId, learnerId);
                 return Ok(rs);
             }
             catch

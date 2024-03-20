@@ -129,9 +129,9 @@
             Get a list of peer-reviews by assignment-attempt id.
             </summary>
         </member>
-        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.GetAllPeerReviewsByAssignment(System.Guid,System.Guid)">
+        <member name="M:EPLCNL_API.Controllers.AssignmentAttemptsController.GetAllAssignmentAttemptsByAssignmentLoggedInLearnerNotGradeYet(System.Guid,System.Guid)">
             <summary>
-            Get a list of assignment-attempts that do not include logged in learner by assignment id and learner id.
+            Get a list of assignment-attempts that logged in learner not grade yet by assignment id and learner id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.AssignmentsController">
