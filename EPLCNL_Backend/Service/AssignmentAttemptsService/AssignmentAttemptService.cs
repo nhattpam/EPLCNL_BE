@@ -363,16 +363,6 @@ namespace Service.AssignmentAttemptsService
             var attemptsByAssignmentNoLoginLearner = new List<AssignmentAttemptResponse>();
             var attemptsByAssignmentLoginLearnerNotGradeYet = new List<AssignmentAttemptResponse>();
 
-            // Retrieve assignment and learner
-            var assignment = _unitOfWork.Repository<Assignment>().Find(p => p.Id == assignmentId);
-            var learner = _unitOfWork.Repository<Learner>().Find(p => p.Id == learnerId);
-
-            // Check if assignment or learner not found
-            if (assignment == null || learner == null)
-            {
-                throw new Exception("Assignment or learner not found.");
-            }
-
             // Filter attempts not by the logged-in learner
             foreach (var attempt in attemptsByAssignment)
             {
