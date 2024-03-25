@@ -10,3 +10,15 @@ C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPL
 C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\refint\ViewModel.dll
 C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.pdb
 C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ref\ViewModel.dll
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\bin\Debug\net6.0\ViewModel.deps.json
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\bin\Debug\net6.0\ViewModel.dll
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\bin\Debug\net6.0\ViewModel.pdb
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.csproj.AssemblyReference.cache
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.AssemblyInfoInputs.cache
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.AssemblyInfo.cs
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.csproj.CoreCompileInputs.cache
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.dll
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\refint\ViewModel.dll
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ViewModel.pdb
+D:\capstone_project\file\eplcnl-be\EPLCNL_Backend\ViewModel\obj\Debug\net6.0\ref\ViewModel.dll

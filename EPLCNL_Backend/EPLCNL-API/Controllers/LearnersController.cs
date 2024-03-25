@@ -168,6 +168,33 @@ namespace EPLCNL_API.Controllers
         }
 
         /// <summary>
+        /// Get total amount of transactions by learner id.
+        /// </summary>
+        [HttpGet("{id}/total_amounts")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(decimal))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<decimal>> GetTotalAmountByLearner(Guid id)
+        {
+            decimal total = 0;
+            try
+            {
+                var rs = await _learnerService.GetAllEnrollmentsByLearner(id);
+                foreach (var enrollment in rs)
+                {
+                    if(enrollment.RefundStatus==false)
+                    {
+                        total += (decimal)enrollment.Transaction.Amount;
+                    }
+                }
+                return Ok(total);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+        /// <summary>
         /// Get a list of assignment-attempts by learner id.
         /// </summary>
         [HttpGet("{id}/assignment-attempts")]
