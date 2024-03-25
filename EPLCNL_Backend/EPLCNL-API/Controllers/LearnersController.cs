@@ -170,7 +170,7 @@ namespace EPLCNL_API.Controllers
         /// <summary>
         /// Get total amount of transactions by learner id.
         /// </summary>
-        [HttpGet("{id}/total_amounts")]
+        [HttpGet("{id}/total-amount")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(decimal))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

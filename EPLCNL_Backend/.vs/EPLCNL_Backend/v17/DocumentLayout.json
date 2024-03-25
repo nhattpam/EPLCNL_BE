@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\learnerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\learnerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\assignmentattemptscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\assignmentattemptscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\assignmentattemptsservice\\iassignmentattemptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\assignmentattemptsservice\\iassignmentattemptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\assignmentattemptsservice\\assignmentattemptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\assignmentattemptsservice\\assignmentattemptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\assignmentsservice\\assignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\assignmentsservice\\assignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\semester-9\\capstone\\code_space\\eplcnl-be\\eplcnl_backend\\service\\learnersservice\\learnerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\learnersservice\\learnerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,81 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\appsettings.json",
-              "RelativeDocumentMoniker": "EPLCNL-API\\appsettings.json",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\appsettings.json",
-              "RelativeToolTip": "EPLCNL-API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-24T12:37:56.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Program.cs",
-              "RelativeDocumentMoniker": "EPLCNL-API\\Program.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Program.cs",
-              "RelativeToolTip": "EPLCNL-API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "LearnerService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\LearnersService\\LearnerService.cs",
+              "RelativeDocumentMoniker": "Service\\LearnersService\\LearnerService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\LearnersService\\LearnerService.cs",
+              "RelativeToolTip": "Service\\LearnersService\\LearnerService.cs",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAAAKAAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T12:37:55.392Z",
+              "WhenOpened": "2024-03-25T12:12:13.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AssignmentService.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AssignmentsService\\AssignmentService.cs",
-              "RelativeDocumentMoniker": "Service\\AssignmentsService\\AssignmentService.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AssignmentsService\\AssignmentService.cs",
-              "RelativeToolTip": "Service\\AssignmentsService\\AssignmentService.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAkwFwAAAAnAAAA",
+              "DocumentIndex": 0,
+              "Title": "LearnersController.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\LearnersController.cs",
+              "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\LearnersController.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\LearnersController.cs",
+              "RelativeToolTip": "EPLCNL-API\\Controllers\\LearnersController.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAmwIwAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T14:24:44.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AssignmentAttemptService.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
-              "RelativeDocumentMoniker": "Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
-              "RelativeToolTip": "Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
-              "ViewState": "AQIAAGUBAAAAAAAAAAAgwG0BAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T13:56:11.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IAssignmentAttemptService.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AssignmentAttemptsService\\IAssignmentAttemptService.cs",
-              "RelativeDocumentMoniker": "Service\\AssignmentAttemptsService\\IAssignmentAttemptService.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\Service\\AssignmentAttemptsService\\IAssignmentAttemptService.cs",
-              "RelativeToolTip": "Service\\AssignmentAttemptsService\\IAssignmentAttemptService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T13:55:55.468Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AssignmentAttemptsController.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\AssignmentAttemptsController.cs",
-              "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\AssignmentAttemptsController.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\AssignmentAttemptsController.cs",
-              "RelativeToolTip": "EPLCNL-API\\Controllers\\AssignmentAttemptsController.cs",
-              "ViewState": "AQIAAJEAAAAAAAAAAAAnwKMAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T13:43:06.933Z",
+              "WhenOpened": "2024-03-25T12:03:49.485Z",
               "EditorCaption": ""
             }
           ]

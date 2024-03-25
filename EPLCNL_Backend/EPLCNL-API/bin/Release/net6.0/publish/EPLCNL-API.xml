@@ -574,6 +574,11 @@
             Get list of transactions by learner id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.LearnersController.GetTotalAmountByLearner(System.Guid)">
+            <summary>
+            Get total amount of transactions by learner id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.LearnersController.GetAllAssignmentAttemptsByLearner(System.Guid)">
             <summary>
             Get a list of assignment-attempts by learner id.
