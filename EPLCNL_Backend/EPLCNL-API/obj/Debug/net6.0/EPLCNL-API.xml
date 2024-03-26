@@ -1334,6 +1334,11 @@
             Get a list of enrollments by tutor id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetTotalAmountByTutor(System.Guid)">
+            <summary>
+            Get total amount by tutor id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllLearnersByTutor(System.Guid)">
             <summary>
             Get a list of learners by tutor id.
