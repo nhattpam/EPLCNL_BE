@@ -193,6 +193,26 @@ namespace EPLCNL_API.Controllers
             }
         }
         /// <summary>
+        /// Get center by account id.
+        /// </summary>
+        [HttpGet("{id}/centers")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CenterResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<CenterResponse>> GetCenterByAccount(Guid id)
+        {
+
+            try
+            {
+                var rs = await _accountService.GetCenterByAccount(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+        /// <summary>
         /// Get staff by account id.
         /// </summary>
         [HttpGet("{id}/staffs")]

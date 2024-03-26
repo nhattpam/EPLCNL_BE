@@ -13,6 +13,7 @@ namespace Service.AccountsService
         Task<AccountResponse> Delete(Guid id);
         Task<LearnerResponse> GetLearnerByAccount(Guid id);
         Task<TutorResponse> GetTutorByAccount(Guid id);
+        Task<CenterResponse> GetCenterByAccount(Guid id);
         Task<StaffResponse> GetStaffByAccount(Guid id);
         Task<WalletResponse> GetWalletByAcount(Guid id);
 
