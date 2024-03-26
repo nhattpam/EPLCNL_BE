@@ -217,27 +217,10 @@ namespace EPLCNL_API.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<decimal>> GetTotalAmountByTutor(Guid id)
         {
-            // Set the UTC offset for UTC+7
-            TimeSpan utcOffset = TimeSpan.FromHours(7);
-
-            // Get the current UTC time
-            DateTime utcNow = DateTime.UtcNow;
-
-            // Convert the UTC time to UTC+7
-            DateTime localTime = utcNow + utcOffset;
-            decimal total = 0;
             try
             {
-                var rs = await _tutorService.GetAllEnrollmentsByTutor(id);
-                foreach(var item in rs)
-                {
-                    if(item.RefundStatus ==false&& item.EnrolledDate.HasValue && item.EnrolledDate.Value.Month == localTime.Month)
-                    {
-                        total+= (decimal) item.Transaction.Course.StockPrice;
-                    }
-                }
-                decimal total_amount = total * 0.2m;
-                return Ok(total_amount);
+                decimal total = await _tutorService.GetTotalAmountByTutor(id);
+                return Ok(total);
             }
             catch
             {

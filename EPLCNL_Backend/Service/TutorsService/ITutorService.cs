@@ -13,6 +13,7 @@ namespace Service.TutorService
 
         Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttemptsByTutor(Guid tutorId);
         Task<List<EnrollmentResponse>> GetAllEnrollmentsByTutor(Guid id);
+        Task<decimal> GetTotalAmountByTutor(Guid id);
         Task<List<LearnerResponse>> GetAllLearnersByTutor(Guid id);
 
         Task<TutorResponse> Create(TutorRequest request);

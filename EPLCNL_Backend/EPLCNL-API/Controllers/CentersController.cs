@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Service;
 using Service.CentersService;
+using Service.TutorService;
 using System.Net.Mail;
 using System.Net.Mime;
 using ViewModel.RequestModel;
@@ -18,10 +19,12 @@ namespace EPLCNL_API.Controllers
     public class CentersController : ControllerBase
     {
         private readonly ICenterService _centerService;
+        private readonly ITutorService _tutorService;
 
-        public CentersController(ICenterService centerService)
+        public CentersController(ICenterService centerService, ITutorService tutorService)
         {
             _centerService = centerService;
+            _tutorService = tutorService;
         }
 
         /// <summary>
@@ -77,6 +80,31 @@ namespace EPLCNL_API.Controllers
             {
                 var rs = await _centerService.GetAllTutorsByCenter(id);
                 return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+        /// <summary>
+        /// Get total amount by center id.
+        /// </summary>
+        [HttpGet("{id}/total_amount")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(decimal))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<decimal>> GetTotalAmountByCenter(Guid id)
+        {
+            decimal total = 0;
+            try
+            {
+                var rs = await _centerService.GetAllTutorsByCenter(id);
+                foreach (var item in rs)
+                {
+                    decimal tutor = await _tutorService.GetTotalAmountByTutor(item.Id);
+                    total +=  tutor;
+                }
+                return Ok(total);
             }
             catch
             {

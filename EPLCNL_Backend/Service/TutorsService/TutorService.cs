@@ -164,6 +164,38 @@ namespace Service.TutorService
 
             return enrollments;
         }
+        public async Task<decimal> GetTotalAmountByTutor(Guid id)
+        {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
+            decimal total = 0;
+            try
+            {
+                var enrollments = await GetAllEnrollmentsByTutor(id);
+                if(enrollments == null)
+                {
+                    return 0;
+                }
+                foreach (var item in enrollments)
+                {
+                    if (item.RefundStatus == false && item.EnrolledDate.HasValue && item.EnrolledDate.Value.Month == localTime.Month)
+                    {
+                        total += (decimal)item.Transaction.Course.StockPrice;
+                    }
+                }
+                return total;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
         public async Task<TutorResponse> Create(TutorRequest request)
         {
             try
