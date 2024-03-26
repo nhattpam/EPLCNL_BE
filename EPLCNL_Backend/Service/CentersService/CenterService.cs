@@ -45,6 +45,7 @@ namespace Service.CentersService
                 Center center = null;
                 center = await _unitOfWork.Repository<Center>().GetAll()
                     .Include(a => a.Account)
+                        .ThenInclude(a => a.Wallet)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

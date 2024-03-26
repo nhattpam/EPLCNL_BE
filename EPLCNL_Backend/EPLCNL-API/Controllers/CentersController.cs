@@ -89,7 +89,7 @@ namespace EPLCNL_API.Controllers
         /// <summary>
         /// Get total amount by center id.
         /// </summary>
-        [HttpGet("{id}/total_amount")]
+        [HttpGet("{id}/total-amount")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(decimal))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

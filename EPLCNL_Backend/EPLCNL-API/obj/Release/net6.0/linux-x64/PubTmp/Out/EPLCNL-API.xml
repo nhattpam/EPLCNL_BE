@@ -79,6 +79,11 @@
             Get tutor by account id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetCenterByAccount(System.Guid)">
+            <summary>
+            Get center by account id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.AccountsController.GetStaffByAccount(System.Guid)">
             <summary>
             Get staff by account id.
@@ -237,6 +242,11 @@
         <member name="M:EPLCNL_API.Controllers.CentersController.GetAllTutorsByCenter(System.Guid)">
             <summary>
             Get a list of tutors by center id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.GetTotalAmountByCenter(System.Guid)">
+            <summary>
+            Get total amount by center id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.CentersController.Create(ViewModel.RequestModel.CenterRequest)">
@@ -1332,6 +1342,11 @@
         <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllEnrollmentsByTutor(System.Guid)">
             <summary>
             Get a list of enrollments by tutor id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.TutorsController.GetTotalAmountByTutor(System.Guid)">
+            <summary>
+            Get total amount by tutor id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.TutorsController.GetAllLearnersByTutor(System.Guid)">
