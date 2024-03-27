@@ -58,6 +58,7 @@ namespace Service.TransactionsService
                      .Include(x => x.PaymentMethod)
                      .Include(x => x.Learner)
                      .ThenInclude(x => x.Account)
+                        .ThenInclude(x => x.Wallet)
                      .Include(x => x.Course)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
