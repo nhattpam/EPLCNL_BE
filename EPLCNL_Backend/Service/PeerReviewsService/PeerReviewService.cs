@@ -63,8 +63,8 @@ namespace Service.PeerReviewsService
         }
 
 
-        public async Task<PeerReviewResponse> Create(PeerReviewRequest request)
-        {
+       public async Task<PeerReviewResponse> Create(PeerReviewRequest request)
+{
             try
             {
                 var peerReview = _mapper.Map<PeerReviewRequest, PeerReview>(request);
@@ -72,41 +72,36 @@ namespace Service.PeerReviewsService
                 await _unitOfWork.Repository<PeerReview>().InsertAsync(peerReview);
                 await _unitOfWork.CommitAsync();
 
-                //sum grade
-                var attemptResponse = await _assignmentAttemptService.Get(request.AssignmentAttemptId ?? Guid.Empty);
-                var attemptRequest = _mapper.Map<AssignmentAttemptResponse, AssignmentAttemptRequest>(attemptResponse);
-
-                // Now you have attemptRequest which is of type AssignmentAttemptRequest
-
                 // Calculate sum grade and number of peers
                 double? sumGrade = 0;
                 int numberOfPeers = 0;
-
                 var peerByAttempts = await _assignmentAttemptService.GetAllPeerReviewsByAssignmentAttempt(request.AssignmentAttemptId ?? Guid.Empty);
-
                 foreach (var peer in peerByAttempts)
                 {
                     sumGrade += peer.Grade;
                     numberOfPeers++;
                 }
 
-                attemptRequest.TotalGrade = sumGrade / numberOfPeers;
-
-                // Now call the Update method with the correct type
+                // Update the assignment attempt with the calculated total grade
+                var attemptResponse = await _assignmentAttemptService.Get(request.AssignmentAttemptId ?? Guid.Empty);
+                var attemptRequest = new AssignmentAttemptRequest()
+                {
+                    AnswerText = attemptResponse.AnswerText,
+                    LearnerId = attemptResponse.LearnerId,
+                    AttemptedDate = attemptResponse.AttemptedDate,
+                    AssignmentId = attemptResponse.AssignmentId,
+                    TotalGrade = numberOfPeers > 0 ? sumGrade / numberOfPeers : null,
+                };
                 await _assignmentAttemptService.Update(attemptResponse.Id, attemptRequest);
-
-
-                // Now call the Update method with the correct type
-                await _assignmentAttemptService.Update(attemptResponse.Id, attemptRequest);
-
 
                 return _mapper.Map<PeerReview, PeerReviewResponse>(peerReview);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
+    }
+    catch (Exception e)
+    {
+        throw new Exception(e.Message);
+    }
+}
+
 
         public async Task<PeerReviewResponse> Delete(Guid id)
         {

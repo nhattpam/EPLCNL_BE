@@ -12,5 +12,7 @@ namespace ViewModel.RequestModel
         public Guid? LearnerId { get; set; }
         public string? AnswerText { get; set; }
         public double? TotalGrade { get; set; }
+        public DateTime? AttemptedDate { get; set; }
+
     }
 }

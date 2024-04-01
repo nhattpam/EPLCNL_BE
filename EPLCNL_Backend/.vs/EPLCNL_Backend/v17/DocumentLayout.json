@@ -9,10 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\service\\assignmentattemptsservice\\assignmentattemptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\assignmentattemptsservice\\assignmentattemptservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F8C7B89-F239-4F5E-A49C-FCB956F8BAA8}|Helpers\\Helpers.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\helpers\\applicationmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F8C7B89-F239-4F5E-A49C-FCB956F8BAA8}|Helpers\\Helpers.csproj|solutionrelative:helpers\\applicationmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationMapper.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Helpers\\ApplicationMapper.cs",
-              "RelativeDocumentMoniker": "Helpers\\ApplicationMapper.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Helpers\\ApplicationMapper.cs",
-              "RelativeToolTip": "Helpers\\ApplicationMapper.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAkwCkAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T01:59:50.222Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -45,9 +28,9 @@
               "RelativeDocumentMoniker": "Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
               "RelativeToolTip": "Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
-              "ViewState": "AQIAABMBAAAAAAAAAAAswCkBAABWAAAA",
+              "ViewState": "AQIAAOQAAAAAAAAAAAAAAPQAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T01:54:41.748Z",
+              "WhenOpened": "2024-04-01T06:37:54.118Z",
               "EditorCaption": ""
             },
             {
@@ -58,7 +41,7 @@
               "RelativeDocumentMoniker": "Service\\PeerReviewsService\\PeerReviewService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\PeerReviewsService\\PeerReviewService.cs",
               "RelativeToolTip": "Service\\PeerReviewsService\\PeerReviewService.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAYwGAAAAAAAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAuwE4AAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T01:00:32.8Z",
               "EditorCaption": ""
