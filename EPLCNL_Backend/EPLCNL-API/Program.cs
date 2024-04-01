@@ -160,18 +160,18 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "EPLCNL API",
-        Description = "EPLCNL Management API",
+        Title = "MeowLish API",
+        Description = "MeowLish Management API",
         TermsOfService = new Uri("https://EPLCNL.com"),
         Contact = new OpenApiContact
         {
-            Name = "EPLCNL Company",
-            Email = "EPLCNL@gmail.com",
+            Name = "MeowLish Company",
+            Email = "meowlish.company@gmail.com",
             Url = new Uri("https://twitter.com/EPLCNL"),
         },
         License = new OpenApiLicense
         {
-            Name = "EPLCNL Open License",
+            Name = "MeowLish Open License",
             Url = new Uri("https://EPLCNL.com"),
         }
     });
