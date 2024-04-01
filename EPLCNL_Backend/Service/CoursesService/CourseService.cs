@@ -39,12 +39,10 @@ namespace Service.CoursesService
                 Course course = null;
                 course = await _unitOfWork.Repository<Course>().GetAll()
                      .AsNoTracking()
+                         .Include(a => a.Certificate)
                         .Include(a => a.Category)
                         .Include(a => a.Tutor)
-                        .ThenInclude(a => a.Account)
-                    //.Include(a => a.Modules)
-                    //.Include(a => a.Enrollments)
-                    //.Include(a => a.ClassModules)
+                         .ThenInclude(a => a.Account)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

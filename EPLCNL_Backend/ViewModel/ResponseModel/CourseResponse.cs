@@ -24,6 +24,7 @@ namespace ViewModel.ResponseModel
         public DateTime? UpdatedDate { get; set; }
         public virtual CategoryResponse? Category { get; set; }
 		public virtual TutorResponse? Tutor { get; set; }
+		public virtual CertificateResponse? Certificate { get; set; }
         public string? Note { get; set; }
 
 

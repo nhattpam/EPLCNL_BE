@@ -14,7 +14,6 @@ namespace ViewModel.ResponseModel
         public Guid? CourseId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public virtual CourseResponse? Course { get; set; }
 
     }
 }
