@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\vnpay\\vnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\vnpay\\vnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\vnpay\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\vnpay\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\vnpay\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\vnpay\\ivnpayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\centerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\centerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -57,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\controllers\\authenticationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\controllers\\authenticationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\eplcnl-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{06C3A985-40E4-4C93-B074-66FB18DC5201}|EPLCNL-API\\EPLCNL-API.csproj|solutionrelative:eplcnl-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,24 +82,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReportsController.cs",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\ReportsController.cs",
-              "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\ReportsController.cs",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\ReportsController.cs",
-              "RelativeToolTip": "EPLCNL-API\\Controllers\\ReportsController.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAQwHoAAABPAAAA",
+              "DocumentIndex": 1,
+              "Title": "VnPayService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\VNPay\\VnPayService.cs",
+              "RelativeDocumentMoniker": "EPLCNL-API\\VNPay\\VnPayService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\VNPay\\VnPayService.cs",
+              "RelativeToolTip": "EPLCNL-API\\VNPay\\VnPayService.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T12:49:15.856Z",
+              "WhenOpened": "2024-04-01T14:00:49.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "VnPayLibrary.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\VNPay\\VnPayLibrary.cs",
+              "RelativeDocumentMoniker": "EPLCNL-API\\VNPay\\VnPayLibrary.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\VNPay\\VnPayLibrary.cs",
+              "RelativeToolTip": "EPLCNL-API\\VNPay\\VnPayLibrary.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T14:00:48.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IVnPayService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\VNPay\\IVnPayService.cs",
+              "RelativeDocumentMoniker": "EPLCNL-API\\VNPay\\IVnPayService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\VNPay\\IVnPayService.cs",
+              "RelativeToolTip": "EPLCNL-API\\VNPay\\IVnPayService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T14:00:46.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "QuestionsController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\QuestionsController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\QuestionsController.cs",
@@ -100,33 +138,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "LessonsController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\LessonsController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\LessonsController.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\LessonsController.cs",
               "RelativeToolTip": "EPLCNL-API\\Controllers\\LessonsController.cs",
-              "ViewState": "AQIAAIcAAAAAAAAAAAAQwI0AAABPAAAA",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAzwI0AAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T12:49:09.691Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CoursesController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CoursesController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\CoursesController.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CoursesController.cs",
               "RelativeToolTip": "EPLCNL-API\\Controllers\\CoursesController.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAQwJsAAABPAAAA",
+              "ViewState": "AQIAAJUAAAAAAAAAAAAzwJsAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T12:49:08.671Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\appsettings.json",
+              "RelativeDocumentMoniker": "EPLCNL-API\\appsettings.json",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\appsettings.json",
+              "RelativeToolTip": "EPLCNL-API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-01T12:47:43.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReportsController.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\ReportsController.cs",
+              "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\ReportsController.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\ReportsController.cs",
+              "RelativeToolTip": "EPLCNL-API\\Controllers\\ReportsController.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAQwHoAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T12:49:15.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AccountsController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\AccountsController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\AccountsController.cs",
@@ -139,20 +203,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "CentersController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CentersController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\CentersController.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\CentersController.cs",
               "RelativeToolTip": "EPLCNL-API\\Controllers\\CentersController.cs",
-              "ViewState": "AQIAALkAAAAAAAAAAAAYwNgAAAApAAAA",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAowM0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T12:48:32.136Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "QuizzesController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\QuizzesController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\QuizzesController.cs",
@@ -165,20 +229,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "AccountService.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountsService\\AccountService.cs",
               "RelativeDocumentMoniker": "Service\\AccountsService\\AccountService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountsService\\AccountService.cs",
               "RelativeToolTip": "Service\\AccountsService\\AccountService.cs",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAAALEAAAAuAAAA",
+              "ViewState": "AQIAAJkAAAAAAAAAAIBQwLEAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T13:12:28.05Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "MaterialsController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\MaterialsController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\MaterialsController.cs",
@@ -191,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Program.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Program.cs",
@@ -204,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "CenterService.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\CentersService\\CenterService.cs",
               "RelativeDocumentMoniker": "Service\\CentersService\\CenterService.cs",
@@ -217,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "AccountRequest.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\RequestModel\\AccountRequest.cs",
               "RelativeDocumentMoniker": "ViewModel\\RequestModel\\AccountRequest.cs",
@@ -230,20 +294,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "CenterResponse.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ResponseModel\\CenterResponse.cs",
               "RelativeDocumentMoniker": "ViewModel\\ResponseModel\\CenterResponse.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ResponseModel\\CenterResponse.cs",
               "RelativeToolTip": "ViewModel\\ResponseModel\\CenterResponse.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA+wA8AAAAYAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA8wA8AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T12:50:11.839Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "AuthenticationsController.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Controllers\\AuthenticationsController.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Controllers\\AuthenticationsController.cs",
@@ -252,19 +316,6 @@
               "ViewState": "AQIAAJUAAAAAAAAAAAAgwH8AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T12:48:23.694Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\appsettings.json",
-              "RelativeDocumentMoniker": "EPLCNL-API\\appsettings.json",
-              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\appsettings.json",
-              "RelativeToolTip": "EPLCNL-API\\appsettings.json",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAYwA8AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-01T12:47:43.049Z",
               "EditorCaption": ""
             }
           ]
