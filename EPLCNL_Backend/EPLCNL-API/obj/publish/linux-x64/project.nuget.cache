@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fYRdBjNWjw+7X9V2FRniWWfQUx0+lFm82w3zbFzkFp17G9wJzEYqngayIXGapkIujNZOc1Hq2bdl0CuyInM/Ng==",
+  "dgSpecHash": "IdNjRiU/7UpkVTrIptCu3DfeFIaP3QCWtE3YGX16e6OAuVJn2WZNcyfnEqHc6+IY9ealOH62rG7YiglcLnMpEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nhattpam\\Documents\\College\\Semester-9\\Capstone\\Code_Space\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
+  "projectFilePath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nhattpam\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\nhattpam\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

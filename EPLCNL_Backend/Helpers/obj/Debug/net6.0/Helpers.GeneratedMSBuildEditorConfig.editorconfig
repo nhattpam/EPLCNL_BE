@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Helpers
-build_property.ProjectDir = C:\Users\nhattpam\Documents\College\Semester-9\Capstone\Code_Space\eplcnl-be\EPLCNL_Backend\Helpers\
+build_property.ProjectDir = C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\Helpers\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

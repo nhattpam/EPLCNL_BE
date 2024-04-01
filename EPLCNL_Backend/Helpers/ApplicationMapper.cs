@@ -39,6 +39,7 @@ namespace Helper
             CreateMap<Assignment, AssignmentResponse>().ReverseMap();
             CreateMap<AssignmentAttempt, AssignmentAttemptRequest>().ReverseMap();
             CreateMap<AssignmentAttempt, AssignmentAttemptResponse>().ReverseMap();
+            CreateMap<AssignmentAttemptRequest, AssignmentAttemptResponse>().ReverseMap();
             CreateMap<Enrollment, EnrollmentRequest>().ReverseMap();
             CreateMap<Enrollment, EnrollmentResponse>().ReverseMap();
             CreateMap<Feedback, FeedbackRequest>().ReverseMap();

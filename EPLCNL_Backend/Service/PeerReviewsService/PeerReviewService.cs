@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.AssignmentAttemptsService;
 using Service.AssignmentsService;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,12 @@ namespace Service.PeerReviewsService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public PeerReviewService(IUnitOfWork unitOfWork, IMapper mapper, IAssignmentService assignmentService)
+        private IAssignmentAttemptService _assignmentAttemptService;
+        public PeerReviewService(IUnitOfWork unitOfWork, IMapper mapper, IAssignmentService assignmentService, IAssignmentAttemptService assignmentAttemptService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _assignmentAttemptService = assignmentAttemptService;
         }
 
         public async Task<List<PeerReviewResponse>> GetAll()
@@ -68,6 +71,34 @@ namespace Service.PeerReviewsService
                 peerReview.Id = Guid.NewGuid();
                 await _unitOfWork.Repository<PeerReview>().InsertAsync(peerReview);
                 await _unitOfWork.CommitAsync();
+
+                //sum grade
+                var attemptResponse = await _assignmentAttemptService.Get(request.AssignmentAttemptId ?? Guid.Empty);
+                var attemptRequest = _mapper.Map<AssignmentAttemptResponse, AssignmentAttemptRequest>(attemptResponse);
+
+                // Now you have attemptRequest which is of type AssignmentAttemptRequest
+
+                // Calculate sum grade and number of peers
+                double? sumGrade = 0;
+                int numberOfPeers = 0;
+
+                var peerByAttempts = await _assignmentAttemptService.GetAllPeerReviewsByAssignmentAttempt(request.AssignmentAttemptId ?? Guid.Empty);
+
+                foreach (var peer in peerByAttempts)
+                {
+                    sumGrade += peer.Grade;
+                    numberOfPeers++;
+                }
+
+                attemptRequest.TotalGrade = sumGrade / numberOfPeers;
+
+                // Now call the Update method with the correct type
+                await _assignmentAttemptService.Update(attemptResponse.Id, attemptRequest);
+
+
+                // Now call the Update method with the correct type
+                await _assignmentAttemptService.Update(attemptResponse.Id, attemptRequest);
+
 
                 return _mapper.Map<PeerReview, PeerReviewResponse>(peerReview);
             }
