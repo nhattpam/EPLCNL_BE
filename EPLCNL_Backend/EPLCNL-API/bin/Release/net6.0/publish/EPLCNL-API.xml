@@ -94,6 +94,11 @@
             Send mail for successful payment.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.SendMailLock(System.Guid)">
+            <summary>
+            Send mail for banning account.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.AccountsController.GetWalletByAccount(System.Guid)">
             <summary>
             Get wallet by account id.

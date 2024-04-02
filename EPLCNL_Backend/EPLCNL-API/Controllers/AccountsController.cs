@@ -307,13 +307,13 @@ namespace EPLCNL_API.Controllers
             }
             return Ok(account);
         } /// <summary>
-        /// Send mail for successful payment.
+        /// Send mail for banning account.
         /// </summary>
         [HttpPost("{id}/mail-lock")]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<AccountResponse>> SendMailLock(Guid id, [FromBody] MailRequestModel request)
+        public async Task<ActionResult<AccountResponse>> SendMailLock(Guid id)
         {
             var account = await _accountService.Get(id);
             try
@@ -342,7 +342,8 @@ namespace EPLCNL_API.Controllers
     <body>
         <h1>Your Account Information</h1>
         <p>Dear {account.FullName},</p>
-        {request.Content}
+        <p>Your account has been deactived at {formattedDate}<p/>
+        <p>Contact us through meowlish.company@gmail.com if you have any issue!</p>
         <p>Dear, MeowLish.</p>
     </body>
     </html>";
