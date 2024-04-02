@@ -250,7 +250,7 @@ namespace EPLCNL_API.Controllers
                     try
                     {
                         MailMessage msg = new MailMessage();
-                        msg.From = new MailAddress("meowlish.work@gmail.com");
+                        msg.From = new MailAddress("meowlish.company@gmail.com");
                         msg.To.Add(account.Email);
                         msg.Subject = "Payment Successfully!";
                         // Set the UTC offset for UTC+7
@@ -268,6 +268,79 @@ namespace EPLCNL_API.Controllers
     <html>
     <body>
         <h1>Your Transaction Information</h1>
+        <p>Dear {account.FullName},</p>
+        {request.Content}
+        <p>Dear, MeowLish.</p>
+    </body>
+    </html>";
+
+                        msg.Body = htmlBody;
+                        msg.IsBodyHtml = true; // Specify that the body is HTML
+
+                        msg.Body = htmlBody;
+                        msg.IsBodyHtml = true; // Specify that the body is HTML
+
+                        SmtpClient smtp = new SmtpClient();
+                        smtp.Host = "smtp.gmail.com";
+                        System.Net.NetworkCredential ntcd = new System.Net.NetworkCredential();
+                        ntcd.UserName = "meowlish.company@gmail.com";
+                        ntcd.Password = "ybpy zzfk taaa glbd"; // Retrieve the password from a secure configuration
+
+                        smtp.Credentials = ntcd;
+                        smtp.EnableSsl = true;
+                        smtp.Port = 587;
+                        smtp.Send(msg);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception, e.g., log.Error(ex.Message);
+                        // You can also return a 500 Internal Server Error response if email sending fails.
+                        return StatusCode(StatusCodes.Status500InternalServerError, "Email sending failed.");
+                    }
+                }
+
+
+            }
+            catch (DbUpdateException)
+            {
+
+            }
+            return Ok(account);
+        } /// <summary>
+        /// Send mail for successful payment.
+        /// </summary>
+        [HttpPost("{id}/mail-lock")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<AccountResponse>> SendMailLock(Guid id, [FromBody] MailRequestModel request)
+        {
+            var account = await _accountService.Get(id);
+            try
+            {
+                if (account != null)
+                {
+                    try
+                    {
+                        MailMessage msg = new MailMessage();
+                        msg.From = new MailAddress("meowlish.company@gmail.com");
+                        msg.To.Add(account.Email);
+                        msg.Subject = "Your account has been banned!";
+                        // Set the UTC offset for UTC+7
+                        TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+                        // Get the current UTC time
+                        DateTime utcNow = DateTime.UtcNow;
+
+                        // Convert the UTC time to UTC+7
+                        DateTime localTime = utcNow + utcOffset;
+
+                        string formattedDate = localTime.ToString();
+
+                        string htmlBody = $@"
+    <html>
+    <body>
+        <h1>Your Account Information</h1>
         <p>Dear {account.FullName},</p>
         {request.Content}
         <p>Dear, MeowLish.</p>
