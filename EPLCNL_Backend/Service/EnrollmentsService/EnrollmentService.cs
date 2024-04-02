@@ -276,7 +276,7 @@ namespace Service.EnrollmentsService
                     throw new Exception("Not Found");
                 }
 
-                var course = await _courseService.Get(enrollment.Transaction.CourseId ?? new Guid());
+                var course = await _courseService.Get(enrollment.Transaction.CourseId ?? Guid.Empty);
 
                 if (course == null)
                 {
@@ -292,19 +292,20 @@ namespace Service.EnrollmentsService
                     // Get the assignment attempts list asynchronously
                     var assignmentAttempts = await GetAllAssignmentAttempts();
                     var filteredAssignmentAttempts = assignmentAttempts
-                       .Where(x => x.LearnerId == enrollment.Transaction.LearnerId
-                       && x.Assignment.ModuleId == module.Id).ToList();
+                       .Where(x => x.LearnerId == enrollment.Transaction?.LearnerId
+                       && x.Assignment?.ModuleId == module.Id).ToList();
 
                     // Get the quiz attempts list asynchronously
                     var quizAttempts = await GetAllQuizAttempts();
                     var filteredQuizAttempts = quizAttempts
-                        .Where(x => x.LearnerId == enrollment.Transaction.LearnerId
-                        && x.Quiz.ModuleId == module.Id).ToList();
+                        .Where(x => x.LearnerId == enrollment.Transaction?.LearnerId
+                        && x.Quiz?.ModuleId == module.Id).ToList();
 
                     // Find the quiz attempt with the highest TotalGrade
                     var highestGradeAttemptQuiz = filteredQuizAttempts.OrderByDescending(x => x.TotalGrade).FirstOrDefault();
 
-                    if (highestGradeAttemptQuiz != null && enrollment.Transaction.LearnerId == highestGradeAttemptQuiz.LearnerId)
+                    if (highestGradeAttemptQuiz != null && enrollment.Transaction?.LearnerId == highestGradeAttemptQuiz.LearnerId
+                        && highestGradeAttemptQuiz.TotalGrade >= highestGradeAttemptQuiz.Quiz?.GradeToPass)
                     {
                         score += highestGradeAttemptQuiz.TotalGrade;
                     }
@@ -312,7 +313,8 @@ namespace Service.EnrollmentsService
                     // Find the assignment attempt with the highest TotalGrade
                     var highestGradeAttemptAssignment = filteredAssignmentAttempts.OrderByDescending(x => x.TotalGrade).FirstOrDefault();
                     // Add the total grades of assignment attempts
-                    if (highestGradeAttemptAssignment != null && enrollment.Transaction.LearnerId == highestGradeAttemptAssignment.LearnerId)
+                    if (highestGradeAttemptAssignment != null && enrollment.Transaction?.LearnerId == highestGradeAttemptAssignment.LearnerId
+                        && highestGradeAttemptAssignment.TotalGrade >= highestGradeAttemptAssignment.Assignment?.GradeToPass)
                     {
                         score += highestGradeAttemptAssignment.TotalGrade;
                     }
