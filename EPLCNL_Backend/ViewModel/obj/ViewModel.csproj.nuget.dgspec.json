@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {}
+    "D:\\capstone_project\\file\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
+    "D:\\capstone_project\\file\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "projectUniqueName": "D:\\capstone_project\\file\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
         "projectName": "ViewModel",
-        "projectPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
-        "packagesPath": "C:\\Users\\nhattpam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
+        "projectPath": "D:\\capstone_project\\file\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\ViewModel.csproj",
+        "packagesPath": "C:\\Users\\haph1\\.nuget\\packages\\",
+        "outputPath": "D:\\capstone_project\\file\\eplcnl-be\\EPLCNL_Backend\\ViewModel\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\nhattpam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\haph1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -34,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,12 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

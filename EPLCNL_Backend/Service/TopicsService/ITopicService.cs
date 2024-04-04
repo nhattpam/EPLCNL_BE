@@ -16,7 +16,7 @@ namespace Service.TopicsService
 
         public Task<List<MaterialResponse>> GetAllMaterialsByClassTopic(Guid id);
         public Task<List<QuizResponse>> GetAllQuizzesByClassTopic(Guid id);
-
+        public Task<List<AssignmentResponse>> GetAllAssignmentsByClassTopic(Guid id);
 
         public Task<TopicResponse> Create(TopicRequest request);
 

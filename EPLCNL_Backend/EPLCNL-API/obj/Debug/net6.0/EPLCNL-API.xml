@@ -1319,6 +1319,11 @@
             Get a list of quizzes by topic id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.TopicsController.GetAllAssignmentsByClassTopic(System.Guid)">
+            <summary>
+            Get a list of assignments by topic id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.TransactionsController">
             <summary>
             Controller for managing transactions.

@@ -176,5 +176,24 @@ namespace Service.TopicsService
 
             return quizzes;
         }
+        public async Task<List<AssignmentResponse>> GetAllAssignmentsByClassTopic(Guid id)
+        {
+            var classTopic = await _unitOfWork.Repository<Topic>().GetAll()
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
+
+            if (classTopic == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var assignments = _unitOfWork.Repository<Assignment>().GetAll()
+                .Where(t => t.TopicId == id)
+                .ProjectTo<AssignmentResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return assignments;
+        }
     }
 }
