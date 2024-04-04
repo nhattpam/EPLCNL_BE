@@ -50,6 +50,8 @@ using Service.RefundSurveysService;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Service.PeerReviewsService;
+using Service.AttendancesService;
+using Service.LearnerAttendancesService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -106,6 +108,8 @@ builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<IRefundSurveyService, RefundSurveyService>();
 builder.Services.AddScoped<IPeerReviewService, PeerReviewService>();
+builder.Services.AddScoped<IAttendanceService, AttendanceService>();
+builder.Services.AddScoped<ILearnerAttendanceService, LearnerAttendanceService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 

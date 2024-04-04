@@ -93,6 +93,10 @@ namespace Helper
             CreateMap<RefundSurvey,RefundSurveyResponse>().ReverseMap();
             CreateMap<PeerReview,PeerReviewRequest>().ReverseMap();
             CreateMap<PeerReview,PeerReviewResponse>().ReverseMap();
+            CreateMap<Attendance,AttendanceRequest>().ReverseMap();
+            CreateMap<Attendance,AttendanceResponse>().ReverseMap();
+            CreateMap<LearnerAttendance,LearnerAttendanceRequest>().ReverseMap();
+            CreateMap<LearnerAttendance,LearnerAttendanceResponse>().ReverseMap();
         }
     }
 }
