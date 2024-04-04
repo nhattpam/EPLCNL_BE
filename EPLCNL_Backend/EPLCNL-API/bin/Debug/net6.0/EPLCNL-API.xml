@@ -596,7 +596,7 @@
         </member>
         <member name="M:EPLCNL_API.Controllers.LearnerAttendancesController.Delete(System.Guid)">
             <summary>
-            Delete learnerAttendance by learnerAttendance id.
+            Delete learnerAttendance by learner-attendance id.
             </summary>
         </member>
         <member name="M:EPLCNL_API.Controllers.LearnerAttendancesController.Update(System.Guid,ViewModel.RequestModel.LearnerAttendanceRequest)">

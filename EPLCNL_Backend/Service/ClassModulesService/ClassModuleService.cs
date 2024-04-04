@@ -3,6 +3,8 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.AssignmentAttemptsService;
+using Service.AttendancesService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +19,12 @@ namespace Service.ClassModulesService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public ClassModuleService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IAttendanceService _attendanceService;
+        public ClassModuleService(IUnitOfWork unitOfWork, IMapper mapper, IAttendanceService attendanceService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _attendanceService = attendanceService;
         }
 
         public async Task<List<ClassModuleResponse>> GetAll()
@@ -40,6 +44,7 @@ namespace Service.ClassModulesService
                 classModule = await _unitOfWork.Repository<ClassModule>().GetAll()
                         .Include(a => a.Course)
                         .Include(a => a.ClassLesson)
+                        .Include(a => a.Attendance)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
@@ -75,6 +80,13 @@ namespace Service.ClassModulesService
                 classModule.CreatedDate = localTime;
                 await _unitOfWork.Repository<ClassModule>().InsertAsync(classModule);
                 await _unitOfWork.CommitAsync();
+
+                //create attendance
+                var attendance = new AttendanceRequest()
+                {
+                    ClassModuleId = classModule.Id,
+                };
+                await _attendanceService.Create(attendance);
 
                 return _mapper.Map<ClassModule, ClassModuleResponse>(classModule);
             }

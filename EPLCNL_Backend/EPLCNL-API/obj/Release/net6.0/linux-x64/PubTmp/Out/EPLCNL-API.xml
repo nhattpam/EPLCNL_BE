@@ -179,6 +179,36 @@
             Get a list of assignment-attempts by assignment id.
             </summary>
         </member>
+        <member name="T:EPLCNL_API.Controllers.AttendancesController">
+            <summary>
+            Controller for managing attendances.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AttendancesController.GetAll">
+            <summary>
+            Get a list of all attendances.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AttendancesController.Get(System.Guid)">
+            <summary>
+            Get attendance by attendance id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AttendancesController.Create(ViewModel.RequestModel.AttendanceRequest)">
+            <summary>
+            Create new attendance.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AttendancesController.Delete(System.Guid)">
+            <summary>
+            Delete attendance by attendance id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.AttendancesController.Update(System.Guid,ViewModel.RequestModel.AttendanceRequest)">
+            <summary>
+            Update attendance by attendance id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AuthenticationsController">
             <summary>
             Controller for managing authentications.
@@ -542,6 +572,36 @@
         <member name="M:EPLCNL_API.Controllers.ForumsController.GetAllAccountForumsByForum(System.Guid)">
             <summary>
             Get a list of account forums by forum id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.LearnerAttendancesController">
+            <summary>
+            Controller for managing learner attendances.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnerAttendancesController.GetAll">
+            <summary>
+            Get a list of all learner-attendances.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnerAttendancesController.Get(System.Guid)">
+            <summary>
+            Get learnerAttendance by learner-attendance id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnerAttendancesController.Create(ViewModel.RequestModel.LearnerAttendanceRequest)">
+            <summary>
+            Create new learner-attendance.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnerAttendancesController.Delete(System.Guid)">
+            <summary>
+            Delete learnerAttendance by learner-attendance id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.LearnerAttendancesController.Update(System.Guid,ViewModel.RequestModel.LearnerAttendanceRequest)">
+            <summary>
+            Update learnerAttendance by learner-attendance id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.LearnersController">
