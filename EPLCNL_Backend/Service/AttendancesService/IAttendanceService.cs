@@ -9,6 +9,8 @@ namespace Service.AttendancesService
 
         public Task<AttendanceResponse> Get(Guid? id);
 
+        public Task<List<LearnerAttendanceResponse>> GetLearnerAttendanceByAttendance(Guid id);
+
         public Task<AttendanceResponse> Create(AttendanceRequest request);
 
         public Task<AttendanceResponse> Delete(Guid id);

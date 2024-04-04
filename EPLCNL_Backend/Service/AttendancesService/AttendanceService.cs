@@ -135,5 +135,28 @@ namespace Service.AttendancesService
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<List<LearnerAttendanceResponse>> GetLearnerAttendanceByAttendance(Guid id)
+        {
+            try
+            {
+                var learnerAttendances = await _unitOfWork.Repository<LearnerAttendance>().GetAll()
+                    .Include(x => x.Attendance)
+                    .Where(x => x.AttendanceId == id)
+                    .ProjectTo<LearnerAttendanceResponse>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
+                if (learnerAttendances == null)
+                {
+                    throw new Exception("khong tim thay");
+                }
+
+                return learnerAttendances;
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

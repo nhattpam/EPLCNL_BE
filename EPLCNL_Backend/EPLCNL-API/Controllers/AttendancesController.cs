@@ -105,5 +105,25 @@ namespace EPLCNL_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        /// <summary>
+        /// Get a list of learner-attendances by attendance id.
+        /// </summary>
+        [HttpGet("{id}/learner-attendances")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<LearnerAttendanceResponse>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<LearnerAttendanceResponse>>> GetLearnerAttendanceByAttendance(Guid id)
+        {
+
+            try
+            {
+                var rs = await _attendanceService.GetLearnerAttendanceByAttendance(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }
