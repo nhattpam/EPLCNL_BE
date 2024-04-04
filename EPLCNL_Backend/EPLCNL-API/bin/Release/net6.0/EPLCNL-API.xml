@@ -209,6 +209,11 @@
             Update attendance by attendance id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AttendancesController.GetLearnerAttendanceByAttendance(System.Guid)">
+            <summary>
+            Get a list of learner-attendances by attendance id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AuthenticationsController">
             <summary>
             Controller for managing authentications.

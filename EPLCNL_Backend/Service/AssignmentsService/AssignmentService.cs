@@ -40,6 +40,7 @@ namespace Service.AssignmentsService
                 assignment = await _unitOfWork.Repository<Assignment>().GetAll()
                      .AsNoTracking()
                      .Include(x => x.Module)
+                     .Include(x => x.Topic)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
