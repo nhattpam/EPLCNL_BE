@@ -176,7 +176,7 @@ namespace EPLCNL_API.Controllers
                     try
                     {
                         MailMessage msg = new MailMessage();
-                        msg.From = new MailAddress("meowlish.company@gmail.com");
+                        msg.From = new MailAddress("meowlish.work@gmail.com");
                         msg.To.Add(center.Email);
                         msg.Subject = "Center Registration Successfully!";
                         // Set the UTC offset for UTC+7
@@ -213,8 +213,8 @@ namespace EPLCNL_API.Controllers
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
                         System.Net.NetworkCredential ntcd = new System.Net.NetworkCredential();
-                        ntcd.UserName = "meowlish.company@gmail.com";
-                        ntcd.Password = "ybpy zzfk taaa glbd"; // Retrieve the password from a secure configuration
+                        ntcd.UserName = "meowlish.work@gmail.com";
+                        ntcd.Password = "llyu mfwz slan gkbs"; // Retrieve the password from a secure configuration
 
                         smtp.Credentials = ntcd;
                         smtp.EnableSsl = true;

@@ -138,7 +138,7 @@ namespace EPLCNL_API.Controllers
             string link = "";
             if (file != null && file.Length > 0)
             {
-                var auth = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyBik7whdOAZ3MfjE5auYwV-009tXMR2jwM"));
+                var auth = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyBurLWa3OnIQJB_3GMmOMIlmuy5pAA5qmI"));
                 var a = await auth.SignInWithEmailAndPasswordAsync("admin@gmail.com", "admin123");
 
                 var cancellation = new CancellationTokenSource();
@@ -146,7 +146,7 @@ namespace EPLCNL_API.Controllers
                 var stream = file.OpenReadStream();
 
                 var task = new FirebaseStorage(
-                    "meowlish-storage.appspot.com",
+                    "meowlish-storage-a1596.appspot.com",
                     new FirebaseStorageOptions
                     {
                         AuthTokenAsyncFactory = () => Task.FromResult(a.FirebaseToken),

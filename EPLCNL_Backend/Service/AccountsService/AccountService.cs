@@ -78,7 +78,7 @@ namespace Service.AccountsService
                 var account = _mapper.Map<AccountRequest, Account>(request);
                 account.Id = Guid.NewGuid();
                 account.CreatedDate = localTime;
-                account.ImageUrl = "https://firebasestorage.googleapis.com/v0/b/meowlish-storage.appspot.com/o/materials%2Fvecteezy_icon-image-not-found-vector_.jpg?alt=media&token=6ee7822c-be50-437b-96d5-f5be306882e7";
+                account.ImageUrl = "https://firebasestorage.googleapis.com/v0/b/meowlish-storage-a1596.appspot.com/o/vecteezy_icon-image-not-found-vector_.jpg?alt=media&token=26fb028e-df23-4605-b909-9da893ddbfe7";
                 //account.Gender = false;
                 account.Address = "";
 

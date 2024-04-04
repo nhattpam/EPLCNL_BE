@@ -12,6 +12,7 @@ namespace Data.Models
         public DateTime? UpdatedDate { get; set; }
 
         public virtual Course? Course { get; set; }
+        public virtual Attendance? Attendance { get; set; }
         public virtual ClassLesson? ClassLesson { get; set; }
     }
 }

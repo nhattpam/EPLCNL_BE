@@ -166,7 +166,7 @@ builder.Services.AddSwaggerGen(c =>
         Contact = new OpenApiContact
         {
             Name = "MeowLish Company",
-            Email = "meowlish.company@gmail.com",
+            Email = "meowlish.work@gmail.com",
             Url = new Uri("https://twitter.com/EPLCNL"),
         },
         License = new OpenApiLicense
