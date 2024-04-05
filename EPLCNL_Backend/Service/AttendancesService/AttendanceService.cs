@@ -39,7 +39,6 @@ namespace Service.AttendancesService
                 Attendance attendance = null;
                 attendance = await _unitOfWork.Repository<Attendance>().GetAll()
                      .AsNoTracking()
-                     .Include(x => x.ClassModule)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 

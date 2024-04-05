@@ -81,6 +81,7 @@ namespace Service.LearnerAttendancesService
 
                 // Insert the learnerAttendance
                 await _unitOfWork.Repository<LearnerAttendance>().InsertAsync(learnerAttendance);
+                await _unitOfWork.CommitAsync();
 
                 return _mapper.Map<LearnerAttendance, LearnerAttendanceResponse>(learnerAttendance);
             }

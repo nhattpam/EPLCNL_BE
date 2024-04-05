@@ -13,6 +13,5 @@ namespace ViewModel.ResponseModel
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 
-        public virtual ClassModuleResponse? ClassModule { get; set; }
     }
 }

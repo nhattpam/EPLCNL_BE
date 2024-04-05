@@ -16,6 +16,7 @@ namespace ViewModel.ResponseModel
         public virtual CourseResponse? Course { get; set; }
 
         public virtual ClassLessonResponse? ClassLesson { get; set; }
+        public virtual AttendanceResponse? Attendance { get; set; }
 
     }
 }
