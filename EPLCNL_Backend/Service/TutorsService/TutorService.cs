@@ -137,7 +137,7 @@ namespace Service.TutorService
             }
 
             var assignmentAttempts = _unitOfWork.Repository<AssignmentAttempt>().GetAll()
-                .Where(a => a.Assignment.Module.Course.TutorId == tutorId)
+                .Where(a => a.Assignment.Module.Course.TutorId == tutorId || a.Assignment.Topic.ClassLesson.ClassModule.Course.TutorId == tutorId)
                 .ProjectTo<AssignmentAttemptResponse>(_mapper.ConfigurationProvider)
                 .ToList();
 
