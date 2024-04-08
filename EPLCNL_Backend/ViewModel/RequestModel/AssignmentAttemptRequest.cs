@@ -11,6 +11,8 @@ namespace ViewModel.RequestModel
         public Guid? AssignmentId { get; set; }
         public Guid? LearnerId { get; set; }
         public string? AnswerText { get; set; }
+        public string? AnswerAudioUrl { get; set; }
+
         public double? TotalGrade { get; set; }
         public DateTime? AttemptedDate { get; set; }
 

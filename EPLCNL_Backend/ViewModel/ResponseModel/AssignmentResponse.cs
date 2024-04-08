@@ -10,6 +10,8 @@ namespace ViewModel.ResponseModel
     {
         public Guid Id { get; set; }
         public string? QuestionText { get; set; }
+        public string? QuestionAudioUrl { get; set; }
+
         public int? Deadline { get; set; }
         public Guid? ModuleId { get; set; }
         public Guid? TopicId { get; set; }
