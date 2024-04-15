@@ -46,6 +46,7 @@ namespace Service.TutorService
                 tutor = await _unitOfWork.Repository<Tutor>().GetAll()
                     .Include(x => x.Account)
                         .ThenInclude(x => x.Wallet)
+                    .Include(x => x.Center)
                     .Where(x => x.Id == id)
                     .FirstOrDefaultAsync();
 
