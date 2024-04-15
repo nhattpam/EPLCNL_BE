@@ -4,6 +4,7 @@ using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Service.AccountsService;
+using Service.CoursesService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,13 @@ namespace Service.CentersService
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
         private IAccountService _accountService;
-        public CenterService(IUnitOfWork unitOfWork, IMapper mapper, IAccountService accountService)
+        private ICourseService _courseService;
+        public CenterService(IUnitOfWork unitOfWork, IMapper mapper, IAccountService accountService, ICourseService courseService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _accountService = accountService;
+            _courseService = courseService;
         }
 
         public async Task<List<CenterResponse>> GetAll()
@@ -209,6 +212,27 @@ namespace Service.CentersService
             {
                 throw new Exception(ex.Message);
             }
+        }
+        public async Task<List<CourseResponse>> GetAllCoursesByCenter(Guid id)
+        {
+            // Retrieve the center
+            var center = await _unitOfWork.Repository<Center>().GetAll()
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (center == null)
+            {
+                // Handle the case where the course with the specified id is not found
+                return null;
+            }
+
+            // Retrieve courses for the course
+            var courses = await _unitOfWork.Repository<Course>().GetAll()
+                .Where(t => t.Tutor.CenterId == id)
+                .ProjectTo<CourseResponse>(_mapper.ConfigurationProvider)
+                                            .ToListAsync();
+
+            return courses;
         }
     }
 }

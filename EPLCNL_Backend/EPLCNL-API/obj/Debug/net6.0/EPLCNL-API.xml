@@ -284,6 +284,11 @@
             Get a list of tutors by center id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.GetAllCoursessByCenter(System.Guid)">
+            <summary>
+            Get a list of courses by center id.
+            </summary>
+        </member>
         <member name="M:EPLCNL_API.Controllers.CentersController.GetTotalAmountByCenter(System.Guid)">
             <summary>
             Get total amount by center id.

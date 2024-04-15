@@ -87,6 +87,25 @@ namespace EPLCNL_API.Controllers
             }
         }
         /// <summary>
+        /// Get a list of courses by center id.
+        /// </summary>
+        [HttpGet("{id}/courses")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CourseResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<CourseResponse>>> GetAllCoursessByCenter(Guid id)
+        {
+            try
+            {
+                var rs = await _centerService.GetAllCoursesByCenter(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+        /// <summary>
         /// Get total amount by center id.
         /// </summary>
         [HttpGet("{id}/total-amount")]
