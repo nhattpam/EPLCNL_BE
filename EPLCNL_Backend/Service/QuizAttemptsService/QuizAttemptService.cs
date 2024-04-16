@@ -133,7 +133,7 @@ namespace Service.QuizAttemptsService
                 var filteredQuizAttempts = quizAttempts
                     .Where(x => x.LearnerId == quizAttemptNow.LearnerId
                     && x.Quiz.ModuleId == quizAttemptNow.Quiz.ModuleId).ToList();
-                var assignmentAttempts = await _assignmentAttemptService.GetAll();
+                var assignmentAttempts = await GetAllAssignmentAttempts();
                 var filteredAssignmentAttempts = assignmentAttempts
                     .Where(x => x.LearnerId == quizAttemptNow.LearnerId
                     && x.Assignment.ModuleId == quizAttemptNow.Quiz.ModuleId).ToList();
@@ -230,6 +230,18 @@ namespace Service.QuizAttemptsService
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public async Task<List<AssignmentAttemptResponse>> GetAllAssignmentAttempts()
+        {
+
+            var list = await _unitOfWork.Repository<AssignmentAttempt>().GetAll()
+                 .Include(x => x.Assignment)
+                        .ThenInclude(x => x.Module)
+                            .ThenInclude(x => x.Course)
+                                            .ProjectTo<AssignmentAttemptResponse>(_mapper.ConfigurationProvider)
+                                            .ToListAsync();
+            return list;
         }
     }
 }

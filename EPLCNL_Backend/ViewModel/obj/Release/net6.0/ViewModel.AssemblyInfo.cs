@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ViewModel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fbf0f2bd605dec15e87f0e5982060e1181cf1f3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53ebf2eac6114dafc4d7f248ae9ebd28749f3959")]
 [assembly: System.Reflection.AssemblyProductAttribute("ViewModel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ViewModel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
