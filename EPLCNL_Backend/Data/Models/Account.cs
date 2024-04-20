@@ -9,6 +9,7 @@ namespace Data.Models
         {
             Centers = new HashSet<Center>();
             Learners = new HashSet<Learner>();
+            Salaries = new HashSet<Salary>();
             Tutors = new HashSet<Tutor>();
             Staff = new HashSet<Staff>();
         }
@@ -32,6 +33,7 @@ namespace Data.Models
         public virtual Wallet? Wallet { get; set; }
         public virtual ICollection<Center> Centers { get; set; }
         public virtual ICollection<Learner> Learners { get; set; }
+        public virtual ICollection<Salary> Salaries { get; set; }
         public virtual ICollection<Tutor> Tutors { get; set; }
         public virtual ICollection<Staff> Staff { get; set; }
     }
