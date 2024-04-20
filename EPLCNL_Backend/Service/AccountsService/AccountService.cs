@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.SalariesService;
 using Service.WalletsService;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,14 @@ namespace Service.AccountsService
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
         private IWalletService _walletService;
+        private ISalaryService _salaryService;
 
-        public AccountService(IUnitOfWork unitOfWork, IMapper mapper, IWalletService walletService)
+        public AccountService(IUnitOfWork unitOfWork, IMapper mapper, IWalletService walletService, ISalaryService salaryService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _walletService = walletService;
+            _salaryService = salaryService;
         }
 
         public async Task<List<AccountResponse>> GetAll()
@@ -283,6 +286,25 @@ namespace Service.AccountsService
             {
                 throw new Exception(e.Message);
             }
+        }
+        public async Task<List<SalaryResponse>> GetSalaryByAcount(Guid id)
+        {
+            var account = await _unitOfWork.Repository<Account>().GetAll()
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
+
+            if (account == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var salaries = _unitOfWork.Repository<Salary>().GetAll()
+                .Where(t => t.AccountId == id)
+                .ProjectTo<SalaryResponse>(_mapper.ConfigurationProvider)
+                .ToList();
+
+            return salaries;
         }
     }
 }

@@ -52,6 +52,7 @@ using System.Security.Claims;
 using Service.PeerReviewsService;
 using Service.AttendancesService;
 using Service.LearnerAttendancesService;
+using Service.SalariesService;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -110,6 +111,7 @@ builder.Services.AddScoped<IRefundSurveyService, RefundSurveyService>();
 builder.Services.AddScoped<IPeerReviewService, PeerReviewService>();
 builder.Services.AddScoped<IAttendanceService, AttendanceService>();
 builder.Services.AddScoped<ILearnerAttendanceService, LearnerAttendanceService>();
+builder.Services.AddScoped<ISalaryService, SalaryService>();
 
 builder.Services.AddAutoMapper(typeof(ApplicationMapper));
 

@@ -97,6 +97,8 @@ namespace Helper
             CreateMap<Attendance,AttendanceResponse>().ReverseMap();
             CreateMap<LearnerAttendance,LearnerAttendanceRequest>().ReverseMap();
             CreateMap<LearnerAttendance,LearnerAttendanceResponse>().ReverseMap();
+            CreateMap<Salary,SalaryRequest>().ReverseMap();
+            CreateMap<Salary,SalaryResponse>().ReverseMap();
         }
     }
 }

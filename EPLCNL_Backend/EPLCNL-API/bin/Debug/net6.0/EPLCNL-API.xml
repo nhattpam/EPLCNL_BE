@@ -104,6 +104,11 @@
             Get wallet by account id.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.AccountsController.GetSalaryByAccount(System.Guid)">
+            <summary>
+            Get salaries by account id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.AssignmentAttemptsController">
             <summary>
             Controller for managing assignment attempts.
@@ -1232,6 +1237,36 @@
         <member name="M:EPLCNL_API.Controllers.RolesController.Update(System.Guid,ViewModel.RequestModel.RoleRequest)">
             <summary>
             Update role by role id.
+            </summary>
+        </member>
+        <member name="T:EPLCNL_API.Controllers.SalariesController">
+            <summary>
+            Controller for managing salaries.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.SalariesController.GetAll">
+            <summary>
+            Get a list of all salaries.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.SalariesController.Get(System.Guid)">
+            <summary>
+            Get salary by salary id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.SalariesController.Create(ViewModel.RequestModel.SalaryRequest)">
+            <summary>
+            Create new salary.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.SalariesController.Delete(System.Guid)">
+            <summary>
+            Delete salary by salary id.
+            </summary>
+        </member>
+        <member name="M:EPLCNL_API.Controllers.SalariesController.Update(System.Guid,ViewModel.RequestModel.SalaryRequest)">
+            <summary>
+            Update salary by salary id.
             </summary>
         </member>
         <member name="T:EPLCNL_API.Controllers.StaffsController">

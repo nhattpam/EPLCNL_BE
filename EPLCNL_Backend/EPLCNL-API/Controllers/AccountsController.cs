@@ -401,5 +401,24 @@ namespace EPLCNL_API.Controllers
                 return NotFound();
             }
         }
+        /// <summary>
+        /// Get salaries by account id.
+        /// </summary>
+        [HttpGet("{id}/salaries")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SalaryResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<SalaryResponse>>> GetSalaryByAccount(Guid id)
+        {
+            try
+            {
+                var rs = await _accountService.GetSalaryByAcount(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace Service.AccountsService
         Task<CenterResponse> GetCenterByAccount(Guid id);
         Task<StaffResponse> GetStaffByAccount(Guid id);
         Task<WalletResponse> GetWalletByAcount(Guid id);
+        Task<List<SalaryResponse>> GetSalaryByAcount(Guid id);
 
     }
 }
