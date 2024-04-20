@@ -81,9 +81,17 @@ namespace Service.AccountsService
                 var account = _mapper.Map<AccountRequest, Account>(request);
                 account.Id = Guid.NewGuid();
                 account.CreatedDate = localTime;
-                account.ImageUrl = "https://firebasestorage.googleapis.com/v0/b/meowlish-storage-a1596.appspot.com/o/vecteezy_icon-image-not-found-vector_.jpg?alt=media&token=26fb028e-df23-4605-b909-9da893ddbfe7";
+                if(request.ImageUrl == null)
+                {
+                    account.ImageUrl = "https://firebasestorage.googleapis.com/v0/b/meowlish-storage-a1596.appspot.com/o/vecteezy_icon-image-not-found-vector_.jpg?alt=media&token=26fb028e-df23-4605-b909-9da893ddbfe7";
+
+                }
                 //account.Gender = false;
-                account.Address = "";
+                if (request.Address == null)
+                {
+                    account.Address = "";
+                }
+                
 
                 await _unitOfWork.Repository<Account>().InsertAsync(account);
                 await _unitOfWork.CommitAsync();
