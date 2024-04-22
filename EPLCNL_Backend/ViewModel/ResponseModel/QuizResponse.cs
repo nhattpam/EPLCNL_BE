@@ -16,7 +16,7 @@ namespace ViewModel.ResponseModel
         public int? Deadline { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
-
+        public bool? IsActive { get; set; }
         public virtual ModuleResponse? Module { get; set; }
         public virtual TopicResponse? Topic { get; set; }
 

@@ -10,6 +10,7 @@ namespace Data.Models
         public Guid? CourseId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public bool? IsActive { get; set; }
 
         public virtual Course? Course { get; set; }
         public virtual Attendance? Attendance { get; set; }

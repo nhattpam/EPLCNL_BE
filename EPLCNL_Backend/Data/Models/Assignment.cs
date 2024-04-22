@@ -19,6 +19,7 @@ namespace Data.Models
         public double? GradeToPass { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public bool? IsActive { get; set; }
 
         public virtual Module? Module { get; set; }
         public virtual Topic? Topic { get; set; }

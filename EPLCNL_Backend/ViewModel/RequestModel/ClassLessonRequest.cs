@@ -13,5 +13,6 @@ namespace ViewModel.RequestModel
         public Guid? ClassModuleId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public bool? IsActive { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace ViewModel.ResponseModel
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public virtual CourseResponse? Course { get; set; }
-
+        public bool? IsActive { get; set; }
         public virtual ClassLessonResponse? ClassLesson { get; set; }
         public virtual AttendanceResponse? Attendance { get; set; }
 

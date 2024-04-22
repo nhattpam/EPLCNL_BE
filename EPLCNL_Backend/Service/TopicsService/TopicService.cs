@@ -92,6 +92,7 @@ namespace Service.TopicsService
                 var classTopic = _mapper.Map<TopicRequest, Topic>(request);
                 classTopic.Id = Guid.NewGuid();
                 classTopic.CreatedDate = localTime;
+                classTopic.IsActive = true;
                 await _unitOfWork.Repository<Topic>().InsertAsync(classTopic);
                 await _unitOfWork.CommitAsync();
 

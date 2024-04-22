@@ -18,6 +18,7 @@ namespace Data.Models
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid? ClassLessonId { get; set; }
+        public bool? IsActive { get; set; }
 
         public virtual ClassLesson? ClassLesson { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }

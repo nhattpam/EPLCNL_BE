@@ -94,6 +94,7 @@ namespace Service.QuizzesService
                 var quiz = _mapper.Map<QuizRequest, Quiz>(request);
                 quiz.Id = Guid.NewGuid();
                 quiz.CreatedDate = localTime;
+                quiz.IsActive = true;
                 await _unitOfWork.Repository<Quiz>().InsertAsync(quiz);
                 await _unitOfWork.CommitAsync();
 

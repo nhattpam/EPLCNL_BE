@@ -12,5 +12,6 @@ namespace ViewModel.RequestModel
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid? CourseId { get; set; }
+        public bool? IsActive { get; set; }
     }
 }

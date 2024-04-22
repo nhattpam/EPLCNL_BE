@@ -71,6 +71,7 @@ namespace Data.Models
             }
         }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>(entity =>
@@ -135,7 +136,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK__Account__role_id__7DAF45BF");
+                    .HasConstraintName("FK__Account__role_id__04273924");
             });
 
             modelBuilder.Entity<AccountForum>(entity =>
@@ -163,17 +164,17 @@ namespace Data.Models
                 entity.HasOne(d => d.Forum)
                     .WithMany(p => p.AccountForums)
                     .HasForeignKey(d => d.ForumId)
-                    .HasConstraintName("FK__AccountFo__forum__03681F15");
+                    .HasConstraintName("FK__AccountFo__forum__09E0127A");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.AccountForums)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__AccountFo__learn__05506787");
+                    .HasConstraintName("FK__AccountFo__learn__0BC85AEC");
 
                 entity.HasOne(d => d.Tutor)
                     .WithMany(p => p.AccountForums)
                     .HasForeignKey(d => d.TutorId)
-                    .HasConstraintName("FK__AccountFo__tutor__045C434E");
+                    .HasConstraintName("FK__AccountFo__tutor__0AD436B3");
             });
 
             modelBuilder.Entity<Assignment>(entity =>
@@ -191,6 +192,8 @@ namespace Data.Models
                 entity.Property(e => e.Deadline).HasColumnName("deadline");
 
                 entity.Property(e => e.GradeToPass).HasColumnName("grade_to_pass");
+
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
 
                 entity.Property(e => e.ModuleId).HasColumnName("module_id");
 
@@ -211,12 +214,12 @@ namespace Data.Models
                 entity.HasOne(d => d.Module)
                     .WithMany(p => p.Assignments)
                     .HasForeignKey(d => d.ModuleId)
-                    .HasConstraintName("FK__Assignmen__modul__0CF1894F");
+                    .HasConstraintName("FK__Assignmen__modul__13697CB4");
 
                 entity.HasOne(d => d.Topic)
                     .WithMany(p => p.Assignments)
                     .HasForeignKey(d => d.TopicId)
-                    .HasConstraintName("FK__Assignmen__topic__0DE5AD88");
+                    .HasConstraintName("FK__Assignmen__topic__145DA0ED");
             });
 
             modelBuilder.Entity<AssignmentAttempt>(entity =>
@@ -248,19 +251,19 @@ namespace Data.Models
                 entity.HasOne(d => d.Assignment)
                     .WithMany(p => p.AssignmentAttempts)
                     .HasForeignKey(d => d.AssignmentId)
-                    .HasConstraintName("FK__Assignmen__assig__139E86DE");
+                    .HasConstraintName("FK__Assignmen__assig__1A167A43");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.AssignmentAttempts)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__Assignmen__learn__1492AB17");
+                    .HasConstraintName("FK__Assignmen__learn__1B0A9E7C");
             });
 
             modelBuilder.Entity<Attendance>(entity =>
             {
                 entity.ToTable("Attendance");
 
-                entity.HasIndex(e => e.ClassModuleId, "UQ__Attendan__C6F5C3FBE2EFDCF1")
+                entity.HasIndex(e => e.ClassModuleId, "UQ__Attendan__C6F5C3FB7EBEB5E8")
                     .IsUnique();
 
                 entity.Property(e => e.Id)
@@ -280,7 +283,7 @@ namespace Data.Models
                 entity.HasOne(d => d.ClassModule)
                     .WithOne(p => p.Attendance)
                     .HasForeignKey<Attendance>(d => d.ClassModuleId)
-                    .HasConstraintName("FK__Attendanc__class__2E527D1A");
+                    .HasConstraintName("FK__Attendanc__class__34CA707F");
             });
 
             modelBuilder.Entity<Category>(entity =>
@@ -356,19 +359,19 @@ namespace Data.Models
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Centers)
                     .HasForeignKey(d => d.AccountId)
-                    .HasConstraintName("FK__Center__account___017FD6A3");
+                    .HasConstraintName("FK__Center__account___07F7CA08");
 
                 entity.HasOne(d => d.Staff)
                     .WithMany(p => p.Centers)
                     .HasForeignKey(d => d.StaffId)
-                    .HasConstraintName("FK__Center__Staff_id__27A57F8B");
+                    .HasConstraintName("FK__Center__Staff_id__2E1D72F0");
             });
 
             modelBuilder.Entity<Certificate>(entity =>
             {
                 entity.ToTable("Certificate");
 
-                entity.HasIndex(e => e.CourseId, "UQ__Certific__8F1EF7AF507A3392")
+                entity.HasIndex(e => e.CourseId, "UQ__Certific__8F1EF7AF21C7B0E2")
                     .IsUnique();
 
                 entity.Property(e => e.Id)
@@ -397,14 +400,14 @@ namespace Data.Models
                 entity.HasOne(d => d.Course)
                     .WithOne(p => p.Certificate)
                     .HasForeignKey<Certificate>(d => d.CourseId)
-                    .HasConstraintName("FK__Certifica__cours__06448BC0");
+                    .HasConstraintName("FK__Certifica__cours__0CBC7F25");
             });
 
             modelBuilder.Entity<ClassLesson>(entity =>
             {
                 entity.ToTable("ClassLesson");
 
-                entity.HasIndex(e => e.ClassModuleId, "UQ__ClassLes__C6F5C3FBCA9A3AE6")
+                entity.HasIndex(e => e.ClassModuleId, "UQ__ClassLes__C6F5C3FB2E8DB525")
                     .IsUnique();
 
                 entity.Property(e => e.Id)
@@ -426,6 +429,8 @@ namespace Data.Models
                     .HasColumnType("datetime")
                     .HasColumnName("created_date");
 
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
+
                 entity.Property(e => e.UpdatedDate)
                     .HasColumnType("datetime")
                     .HasColumnName("updated_date");
@@ -433,7 +438,7 @@ namespace Data.Models
                 entity.HasOne(d => d.ClassModule)
                     .WithOne(p => p.ClassLesson)
                     .HasForeignKey<ClassLesson>(d => d.ClassModuleId)
-                    .HasConstraintName("FK__ClassLess__class__22E0CA6E");
+                    .HasConstraintName("FK__ClassLess__class__2958BDD3");
             });
 
             modelBuilder.Entity<ClassModule>(entity =>
@@ -450,6 +455,8 @@ namespace Data.Models
                     .HasColumnType("datetime")
                     .HasColumnName("created_date");
 
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
+
                 entity.Property(e => e.StartDate)
                     .HasColumnType("datetime")
                     .HasColumnName("start_date");
@@ -461,7 +468,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.ClassModules)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__ClassModu__cours__20045DC3");
+                    .HasConstraintName("FK__ClassModu__cours__267C5128");
             });
 
             modelBuilder.Entity<Course>(entity =>
@@ -524,19 +531,19 @@ namespace Data.Models
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK__Course__category__1F10398A");
+                    .HasConstraintName("FK__Course__category__25882CEF");
 
                 entity.HasOne(d => d.Tutor)
                     .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.TutorId)
-                    .HasConstraintName("FK__Course__tutor_id__008BB26A");
+                    .HasConstraintName("FK__Course__tutor_id__0703A5CF");
             });
 
             modelBuilder.Entity<Enrollment>(entity =>
             {
                 entity.ToTable("Enrollment");
 
-                entity.HasIndex(e => e.TransactionId, "UQ__Enrollme__85C600AEDBF2183F")
+                entity.HasIndex(e => e.TransactionId, "UQ__Enrollme__85C600AED492E343")
                     .IsUnique();
 
                 entity.Property(e => e.Id)
@@ -561,7 +568,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Transaction)
                     .WithOne(p => p.Enrollment)
                     .HasForeignKey<Enrollment>(d => d.TransactionId)
-                    .HasConstraintName("FK__Enrollmen__trans__7F978E31");
+                    .HasConstraintName("FK__Enrollmen__trans__060F8196");
             });
 
             modelBuilder.Entity<Feedback>(entity =>
@@ -589,19 +596,19 @@ namespace Data.Models
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__Feedback__course__1E1C1551");
+                    .HasConstraintName("FK__Feedback__course__249408B6");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.Feedbacks)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__Feedback__learne__1D27F118");
+                    .HasConstraintName("FK__Feedback__learne__239FE47D");
             });
 
             modelBuilder.Entity<Forum>(entity =>
             {
                 entity.ToTable("Forum");
 
-                entity.HasIndex(e => e.CourseId, "UQ__Forum__8F1EF7AFF68DBFF9")
+                entity.HasIndex(e => e.CourseId, "UQ__Forum__8F1EF7AF35E1BD6C")
                     .IsUnique();
 
                 entity.Property(e => e.Id)
@@ -613,7 +620,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Course)
                     .WithOne(p => p.Forum)
                     .HasForeignKey<Forum>(d => d.CourseId)
-                    .HasConstraintName("FK__Forum__course_id__0273FADC");
+                    .HasConstraintName("FK__Forum__course_id__08EBEE41");
             });
 
             modelBuilder.Entity<Learner>(entity =>
@@ -629,7 +636,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Learners)
                     .HasForeignKey(d => d.AccountId)
-                    .HasConstraintName("FK__Learner__account__25BD3719");
+                    .HasConstraintName("FK__Learner__account__2C352A7E");
             });
 
             modelBuilder.Entity<LearnerAttendance>(entity =>
@@ -657,12 +664,12 @@ namespace Data.Models
                 entity.HasOne(d => d.Attendance)
                     .WithMany(p => p.LearnerAttendances)
                     .HasForeignKey(d => d.AttendanceId)
-                    .HasConstraintName("FK__LearnerAt__atten__2F46A153");
+                    .HasConstraintName("FK__LearnerAt__atten__35BE94B8");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.LearnerAttendances)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__LearnerAt__learn__303AC58C");
+                    .HasConstraintName("FK__LearnerAt__learn__36B2B8F1");
             });
 
             modelBuilder.Entity<Lesson>(entity =>
@@ -676,6 +683,8 @@ namespace Data.Models
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasColumnName("created_date");
+
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
 
                 entity.Property(e => e.ModuleId).HasColumnName("module_id");
 
@@ -699,7 +708,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Module)
                     .WithMany(p => p.Lessons)
                     .HasForeignKey(d => d.ModuleId)
-                    .HasConstraintName("FK__Lesson__module_i__0A151CA4");
+                    .HasConstraintName("FK__Lesson__module_i__108D1009");
             });
 
             modelBuilder.Entity<Material>(entity =>
@@ -734,12 +743,12 @@ namespace Data.Models
                 entity.HasOne(d => d.Lesson)
                     .WithMany(p => p.Materials)
                     .HasForeignKey(d => d.LessonId)
-                    .HasConstraintName("FK__Material__lesson__12AA62A5");
+                    .HasConstraintName("FK__Material__lesson__1922560A");
 
                 entity.HasOne(d => d.Topic)
                     .WithMany(p => p.Materials)
                     .HasForeignKey(d => d.TopicId)
-                    .HasConstraintName("FK__Material__topic___21ECA635");
+                    .HasConstraintName("FK__Material__topic___2864999A");
             });
 
             modelBuilder.Entity<Module>(entity =>
@@ -756,6 +765,8 @@ namespace Data.Models
                     .HasColumnType("datetime")
                     .HasColumnName("created_date");
 
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
+
                 entity.Property(e => e.Name)
                     .HasMaxLength(255)
                     .IsUnicode(false)
@@ -768,7 +779,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Modules)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__Module__course_i__0ED9D1C1");
+                    .HasConstraintName("FK__Module__course_i__1551C526");
             });
 
             modelBuilder.Entity<PaperWork>(entity =>
@@ -807,12 +818,12 @@ namespace Data.Models
                 entity.HasOne(d => d.PaperWorkType)
                     .WithMany(p => p.PaperWorks)
                     .HasForeignKey(d => d.PaperWorkTypeId)
-                    .HasConstraintName("FK__PaperWork__paper__1B3FA8A6");
+                    .HasConstraintName("FK__PaperWork__paper__21B79C0B");
 
                 entity.HasOne(d => d.Tutor)
                     .WithMany(p => p.PaperWorks)
                     .HasForeignKey(d => d.TutorId)
-                    .HasConstraintName("FK__PaperWork__tutor__1C33CCDF");
+                    .HasConstraintName("FK__PaperWork__tutor__22ABC044");
             });
 
             modelBuilder.Entity<PaperWorkType>(entity =>
@@ -860,12 +871,12 @@ namespace Data.Models
                 entity.HasOne(d => d.AssignmentAttempt)
                     .WithMany(p => p.PeerReviews)
                     .HasForeignKey(d => d.AssignmentAttemptId)
-                    .HasConstraintName("FK__PeerRevie__assig__167AF389");
+                    .HasConstraintName("FK__PeerRevie__assig__1CF2E6EE");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.PeerReviews)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__PeerRevie__learn__1586CF50");
+                    .HasConstraintName("FK__PeerRevie__learn__1BFEC2B5");
             });
 
             modelBuilder.Entity<ProfileCertificate>(entity =>
@@ -888,12 +899,12 @@ namespace Data.Models
                 entity.HasOne(d => d.Certificate)
                     .WithMany(p => p.ProfileCertificates)
                     .HasForeignKey(d => d.CertificateId)
-                    .HasConstraintName("FK__ProfileCe__certi__082CD432");
+                    .HasConstraintName("FK__ProfileCe__certi__0EA4C797");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.ProfileCertificates)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__ProfileCe__learn__0738AFF9");
+                    .HasConstraintName("FK__ProfileCe__learn__0DB0A35E");
             });
 
             modelBuilder.Entity<Question>(entity =>
@@ -909,6 +920,8 @@ namespace Data.Models
                     .HasColumnName("created_date");
 
                 entity.Property(e => e.DefaultGrade).HasColumnName("default_grade");
+
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
 
                 entity.Property(e => e.QuestionAudioUrl)
                     .IsUnicode(false)
@@ -931,7 +944,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Quiz)
                     .WithMany(p => p.Questions)
                     .HasForeignKey(d => d.QuizId)
-                    .HasConstraintName("FK__Question__quiz_i__0FCDF5FA");
+                    .HasConstraintName("FK__Question__quiz_i__1645E95F");
             });
 
             modelBuilder.Entity<QuestionAnswer>(entity =>
@@ -953,7 +966,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Question)
                     .WithMany(p => p.QuestionAnswers)
                     .HasForeignKey(d => d.QuestionId)
-                    .HasConstraintName("FK__QuestionA__quest__0920F86B");
+                    .HasConstraintName("FK__QuestionA__quest__0F98EBD0");
             });
 
             modelBuilder.Entity<Quiz>(entity =>
@@ -972,6 +985,8 @@ namespace Data.Models
 
                 entity.Property(e => e.GradeToPass).HasColumnName("grade_to_pass");
 
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
+
                 entity.Property(e => e.ModuleId).HasColumnName("module_id");
 
                 entity.Property(e => e.Name)
@@ -988,12 +1003,12 @@ namespace Data.Models
                 entity.HasOne(d => d.Module)
                     .WithMany(p => p.Quizzes)
                     .HasForeignKey(d => d.ModuleId)
-                    .HasConstraintName("FK__Quiz__module_id__0B0940DD");
+                    .HasConstraintName("FK__Quiz__module_id__11813442");
 
                 entity.HasOne(d => d.Topic)
                     .WithMany(p => p.Quizzes)
                     .HasForeignKey(d => d.TopicId)
-                    .HasConstraintName("FK__Quiz__topic_id__0BFD6516");
+                    .HasConstraintName("FK__Quiz__topic_id__1275587B");
             });
 
             modelBuilder.Entity<QuizAttempt>(entity =>
@@ -1017,12 +1032,12 @@ namespace Data.Models
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.QuizAttempts)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__QuizAttem__learn__11B63E6C");
+                    .HasConstraintName("FK__QuizAttem__learn__182E31D1");
 
                 entity.HasOne(d => d.Quiz)
                     .WithMany(p => p.QuizAttempts)
                     .HasForeignKey(d => d.QuizId)
-                    .HasConstraintName("FK__QuizAttem__quiz___10C21A33");
+                    .HasConstraintName("FK__QuizAttem__quiz___173A0D98");
             });
 
             modelBuilder.Entity<RefundHistory>(entity =>
@@ -1046,7 +1061,7 @@ namespace Data.Models
                 entity.HasOne(d => d.RefundRequest)
                     .WithMany(p => p.RefundHistories)
                     .HasForeignKey(d => d.RefundRequestId)
-                    .HasConstraintName("FK__RefundHis__refun__2B76106F");
+                    .HasConstraintName("FK__RefundHis__refun__31EE03D4");
             });
 
             modelBuilder.Entity<RefundRequest>(entity =>
@@ -1075,7 +1090,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Enrollment)
                     .WithMany(p => p.RefundRequests)
                     .HasForeignKey(d => d.EnrollmentId)
-                    .HasConstraintName("FK__RefundReq__enrol__1A4B846D");
+                    .HasConstraintName("FK__RefundReq__enrol__20C377D2");
             });
 
             modelBuilder.Entity<RefundSurvey>(entity =>
@@ -1095,7 +1110,7 @@ namespace Data.Models
                 entity.HasOne(d => d.RefundRequest)
                     .WithMany(p => p.RefundSurveys)
                     .HasForeignKey(d => d.RefundRequestId)
-                    .HasConstraintName("FK__RefundSur__refun__2D5E58E1");
+                    .HasConstraintName("FK__RefundSur__refun__33D64C46");
             });
 
             modelBuilder.Entity<Report>(entity =>
@@ -1125,12 +1140,12 @@ namespace Data.Models
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Reports)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__Report__course_i__298DC7FD");
+                    .HasConstraintName("FK__Report__course_i__3005BB62");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.Reports)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__Report__learner___2A81EC36");
+                    .HasConstraintName("FK__Report__learner___30F9DF9B");
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -1176,7 +1191,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Salaries)
                     .HasForeignKey(d => d.AccountId)
-                    .HasConstraintName("FK__Salary__account___312EE9C5");
+                    .HasConstraintName("FK__Salary__account___37A6DD2A");
             });
 
             modelBuilder.Entity<Topic>(entity =>
@@ -1197,6 +1212,8 @@ namespace Data.Models
                     .IsUnicode(false)
                     .HasColumnName("description");
 
+                entity.Property(e => e.IsActive).HasColumnName("is_active");
+
                 entity.Property(e => e.Name)
                     .HasMaxLength(255)
                     .IsUnicode(false)
@@ -1209,7 +1226,7 @@ namespace Data.Models
                 entity.HasOne(d => d.ClassLesson)
                     .WithMany(p => p.Topics)
                     .HasForeignKey(d => d.ClassLessonId)
-                    .HasConstraintName("FK__Topic__class_les__20F881FC");
+                    .HasConstraintName("FK__Topic__class_les__27707561");
             });
 
             modelBuilder.Entity<Transaction>(entity =>
@@ -1242,17 +1259,17 @@ namespace Data.Models
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Transactions)
                     .HasForeignKey(d => d.CourseId)
-                    .HasConstraintName("FK__Transacti__cours__18633BFB");
+                    .HasConstraintName("FK__Transacti__cours__1EDB2F60");
 
                 entity.HasOne(d => d.Learner)
                     .WithMany(p => p.Transactions)
                     .HasForeignKey(d => d.LearnerId)
-                    .HasConstraintName("FK__Transacti__learn__176F17C2");
+                    .HasConstraintName("FK__Transacti__learn__1DE70B27");
 
                 entity.HasOne(d => d.PaymentMethod)
                     .WithMany(p => p.Transactions)
                     .HasForeignKey(d => d.PaymentMethodId)
-                    .HasConstraintName("FK__Transacti__payme__19576034");
+                    .HasConstraintName("FK__Transacti__payme__1FCF5399");
             });
 
             modelBuilder.Entity<Tutor>(entity =>
@@ -1274,24 +1291,24 @@ namespace Data.Models
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Tutors)
                     .HasForeignKey(d => d.AccountId)
-                    .HasConstraintName("FK__Tutor__account_i__23D4EEA7");
+                    .HasConstraintName("FK__Tutor__account_i__2A4CE20C");
 
                 entity.HasOne(d => d.Center)
                     .WithMany(p => p.Tutors)
                     .HasForeignKey(d => d.CenterId)
-                    .HasConstraintName("FK__Tutor__center_id__26B15B52");
+                    .HasConstraintName("FK__Tutor__center_id__2D294EB7");
 
                 entity.HasOne(d => d.Staff)
                     .WithMany(p => p.Tutors)
                     .HasForeignKey(d => d.StaffId)
-                    .HasConstraintName("FK__Tutor__Staff_id__2899A3C4");
+                    .HasConstraintName("FK__Tutor__Staff_id__2F119729");
             });
 
             modelBuilder.Entity<Wallet>(entity =>
             {
                 entity.ToTable("Wallet");
 
-                entity.HasIndex(e => e.AccountId, "UQ__Wallet__46A222CC209C2C61")
+                entity.HasIndex(e => e.AccountId, "UQ__Wallet__46A222CCE421CA36")
                     .IsUnique();
 
                 entity.Property(e => e.Id)
@@ -1307,7 +1324,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Account)
                     .WithOne(p => p.Wallet)
                     .HasForeignKey<Wallet>(d => d.AccountId)
-                    .HasConstraintName("FK__Wallet__account___7EA369F8");
+                    .HasConstraintName("FK__Wallet__account___051B5D5D");
             });
 
             modelBuilder.Entity<WalletHistory>(entity =>
@@ -1331,7 +1348,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Wallet)
                     .WithMany(p => p.WalletHistories)
                     .HasForeignKey(d => d.WalletId)
-                    .HasConstraintName("FK__WalletHis__walle__2C6A34A8");
+                    .HasConstraintName("FK__WalletHis__walle__32E2280D");
             });
 
             modelBuilder.Entity<Staff>(entity =>
@@ -1347,7 +1364,7 @@ namespace Data.Models
                 entity.HasOne(d => d.Account)
                     .WithMany(p => p.Staff)
                     .HasForeignKey(d => d.AccountId)
-                    .HasConstraintName("FK__Staff__account_i__24C912E0");
+                    .HasConstraintName("FK__Staff__account_i__2B410645");
             });
 
             OnModelCreatingPartial(modelBuilder);

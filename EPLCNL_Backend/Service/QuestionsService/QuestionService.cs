@@ -93,6 +93,7 @@ namespace Service.QuestionsService
                 var question = _mapper.Map<QuestionRequest, Question>(request);
                 question.Id = Guid.NewGuid();
                 question.CreatedDate = localTime;
+                question.IsActive = true;
                 await _unitOfWork.Repository<Question>().InsertAsync(question);
                 await _unitOfWork.CommitAsync();
 

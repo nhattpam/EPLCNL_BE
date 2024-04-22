@@ -16,6 +16,7 @@ namespace Data.Models
         public Guid? ClassModuleId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public bool? IsActive { get; set; }
 
         public virtual ClassModule? ClassModule { get; set; }
         public virtual ICollection<Topic> Topics { get; set; }

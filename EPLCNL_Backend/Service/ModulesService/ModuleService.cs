@@ -75,6 +75,7 @@ namespace Service.ModulesService
                 var module = _mapper.Map<ModuleRequest, Module>(request);
                 module.Id = Guid.NewGuid();
                 module.CreatedDate = localTime;
+                module.IsActive = true;
                 await _unitOfWork.Repository<Module>().InsertAsync(module);
                 await _unitOfWork.CommitAsync();
 

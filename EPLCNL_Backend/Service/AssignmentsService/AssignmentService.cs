@@ -73,6 +73,7 @@ namespace Service.AssignmentsService
                 var assignment = _mapper.Map<AssignmentRequest, Assignment>(request);
                 assignment.Id = Guid.NewGuid();
                 assignment.CreatedDate = localTime;
+                assignment.IsActive = true;
                 await _unitOfWork.Repository<Assignment>().InsertAsync(assignment);
                 await _unitOfWork.CommitAsync();
 

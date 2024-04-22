@@ -92,6 +92,7 @@ namespace Service.LessonsService
                 var lesson = _mapper.Map<LessonRequest, Lesson>(request);
                 lesson.Id = Guid.NewGuid();
                 lesson.CreatedDate = localTime;
+                lesson.IsActive = true;
                 await _unitOfWork.Repository<Lesson>().InsertAsync(lesson);
                 await _unitOfWork.CommitAsync();
 

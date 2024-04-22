@@ -13,6 +13,7 @@ namespace ViewModel.ResponseModel
         public string? Name { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public bool? IsActive { get; set; }
         public virtual CourseResponse? Course { get; set; }
 
     }
