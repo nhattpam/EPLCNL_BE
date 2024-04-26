@@ -112,7 +112,7 @@ namespace EPLCNL_API.Controllers
                     //roles
                     new Claim("Token Id", Guid.NewGuid().ToString()),
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(1440),
+                Expires = DateTime.MaxValue,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKeyBytes)
                         , SecurityAlgorithms.HmacSha256Signature)
             };
