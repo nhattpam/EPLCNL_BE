@@ -302,13 +302,16 @@ namespace Service.EnrollmentsService
                         && x.Quiz?.ModuleId == module.Id).ToList();
 
                     // Find the quiz attempt with the highest TotalGrade
-                    var highestGradeAttemptQuiz = filteredQuizAttempts.OrderByDescending(x => x.TotalGrade).FirstOrDefault();
-
-                    if (highestGradeAttemptQuiz != null && enrollment.Transaction?.LearnerId == highestGradeAttemptQuiz.LearnerId
-                        && highestGradeAttemptQuiz.TotalGrade >= highestGradeAttemptQuiz.Quiz?.GradeToPass)
+                    foreach (var highestGradeAttemptQuiz in filteredQuizAttempts)
                     {
-                        score += highestGradeAttemptQuiz.TotalGrade;
+                        if (highestGradeAttemptQuiz != null && enrollment.Transaction?.LearnerId == highestGradeAttemptQuiz.LearnerId
+                      && highestGradeAttemptQuiz.TotalGrade >= highestGradeAttemptQuiz.Quiz?.GradeToPass)
+                        {
+                            score += highestGradeAttemptQuiz.TotalGrade;
+                        }
                     }
+
+                  
 
                     // Find the assignment attempt with the highest TotalGrade
                     var highestGradeAttemptAssignment = filteredAssignmentAttempts.OrderByDescending(x => x.TotalGrade).FirstOrDefault();

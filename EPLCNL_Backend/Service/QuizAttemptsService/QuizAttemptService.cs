@@ -105,7 +105,7 @@ namespace Service.QuizAttemptsService
                 {
                     foreach (var quizz in quizzes)
                     {
-                        if (quizz != null && quizz.GradeToPass.HasValue)
+                        if (quizz != null && quizz.GradeToPass.HasValue && quizz.IsActive == true)
                         {
                             courseScore += quizz.GradeToPass.Value;
                         }
@@ -118,7 +118,7 @@ namespace Service.QuizAttemptsService
                 {
                     foreach (var assignment in assignments)
                     {
-                        if (assignment != null && assignment.GradeToPass.HasValue)
+                        if (assignment != null && assignment.GradeToPass.HasValue && assignment.IsActive == true)
                         {
                             courseScore += assignment.GradeToPass.Value;
                         }
@@ -132,11 +132,15 @@ namespace Service.QuizAttemptsService
                 var quizAttempts = await GetAll();
                 var filteredQuizAttempts = quizAttempts
                     .Where(x => x.LearnerId == quizAttemptNow.LearnerId
-                    && x.Quiz.ModuleId == quizAttemptNow.Quiz.ModuleId).ToList();
+                    && x.Quiz.ModuleId == quizAttemptNow.Quiz.ModuleId
+                    && x.Quiz.IsActive == true
+                    ).ToList();
                 var assignmentAttempts = await GetAllAssignmentAttempts();
                 var filteredAssignmentAttempts = assignmentAttempts
                     .Where(x => x.LearnerId == quizAttemptNow.LearnerId
-                    && x.Assignment.ModuleId == quizAttemptNow.Quiz.ModuleId).ToList();
+                    && x.Assignment.ModuleId == quizAttemptNow.Quiz.ModuleId
+                    && x.Assignment.IsActive == true
+                    ).ToList();
 
                 // Find the quiz attempt with the highest TotalGrade
                 var highestGradeAttemptQuiz = filteredQuizAttempts.OrderByDescending(x => x.TotalGrade).FirstOrDefault();

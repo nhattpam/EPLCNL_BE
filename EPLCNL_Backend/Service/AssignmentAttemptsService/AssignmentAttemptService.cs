@@ -231,7 +231,7 @@ namespace Service.AssignmentAttemptsService
                     {
                         foreach (var quizz in quizzes)
                         {
-                            if (quizz != null && quizz.GradeToPass.HasValue)
+                            if (quizz != null && quizz.GradeToPass.HasValue && quizz.IsActive == true)
                             {
                                 courseScore += quizz.GradeToPass.Value;
                             }
@@ -244,7 +244,7 @@ namespace Service.AssignmentAttemptsService
                     {
                         foreach (var assignment in assignments)
                         {
-                            if (assignment != null && assignment.GradeToPass.HasValue)
+                            if (assignment != null && assignment.GradeToPass.HasValue && assignment.IsActive == true)
                             {
                                 courseScore += assignment.GradeToPass.Value;
                             }
@@ -258,12 +258,16 @@ namespace Service.AssignmentAttemptsService
                     var assignmentAttempts = await GetAll();
                     var filteredAssignmentAttempts = assignmentAttempts
                        .Where(x => x.LearnerId == assignmentAttemptNow.LearnerId
-                       && x.Assignment.ModuleId == assignmentAttemptNow.Assignment.ModuleId).ToList();
+                       && x.Assignment.ModuleId == assignmentAttemptNow.Assignment.ModuleId
+                       && x.Assignment.IsActive == true
+                       ).ToList();
                     // Get the quiz attempts list asynchronously
                     var quizAttempts = await GetAllQuizAttempts();
                     var filteredQuizAttempts = quizAttempts
                         .Where(x => x.LearnerId == assignmentAttemptNow.LearnerId
-                        && x.Quiz.ModuleId == assignmentAttemptNow.Assignment.ModuleId).ToList();
+                        && x.Quiz.ModuleId == assignmentAttemptNow.Assignment.ModuleId
+                        && x.Quiz.IsActive == true
+                        ).ToList();
 
                     // Find the quiz attempt with the highest TotalGrade
                     var highestGradeAttemptQuiz = filteredQuizAttempts.OrderByDescending(x => x.TotalGrade).FirstOrDefault();
