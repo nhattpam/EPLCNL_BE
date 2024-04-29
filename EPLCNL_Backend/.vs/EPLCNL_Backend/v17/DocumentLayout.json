@@ -42,8 +42,7 @@
               "RelativeToolTip": "Service\\QuizzesService\\QuizService.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAAwCEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T13:07:36.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-29T13:07:36.372Z"
             },
             {
               "$type": "Document",
@@ -53,7 +52,7 @@
               "RelativeDocumentMoniker": "Service\\EnrollmentsService\\EnrollmentService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\EnrollmentsService\\EnrollmentService.cs",
               "RelativeToolTip": "Service\\EnrollmentsService\\EnrollmentService.cs",
-              "ViewState": "AQIAAPEAAAAAAAAAAAAuwDYBAAAZAAAA",
+              "ViewState": "AQIAACQBAAAAAAAAAAAAADwBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T12:58:55.188Z",
               "EditorCaption": ""
@@ -81,8 +80,7 @@
               "RelativeToolTip": "Service\\QuizAttemptsService\\QuizAttemptService.cs",
               "ViewState": "AQIAAHUAAAAAAAAAAAAswI0AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T12:00:27.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-29T12:00:27.844Z"
             },
             {
               "$type": "Document",
@@ -94,8 +92,7 @@
               "RelativeToolTip": "Service\\AssignmentAttemptsService\\AssignmentAttemptService.cs",
               "ViewState": "AQIAAPsAAAAAAAAAAAAAACIBAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T11:58:47.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-29T11:58:47.636Z"
             }
           ]
         }

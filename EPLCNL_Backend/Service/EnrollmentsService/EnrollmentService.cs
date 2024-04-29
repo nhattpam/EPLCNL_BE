@@ -296,22 +296,27 @@ namespace Service.EnrollmentsService
                        && x.Assignment?.ModuleId == module.Id).ToList();
 
                     // Get the quiz attempts list asynchronously
+                    // Get the quiz attempts list asynchronously
                     var quizAttempts = await GetAllQuizAttempts();
-                    var filteredQuizAttempts = quizAttempts
+                    var highestGradeAttemptsByQuiz = quizAttempts
                         .Where(x => x.LearnerId == enrollment.Transaction?.LearnerId
-                        && x.Quiz?.ModuleId == module.Id).ToList();
+                                 && x.Quiz?.ModuleId == module.Id
+                                 && x.TotalGrade >= x.Quiz?.GradeToPass)
+                        .GroupBy(x => x.QuizId)
+                        .Select(group => group.OrderByDescending(x => x.TotalGrade).FirstOrDefault())
+                        .ToList();
 
-                    // Find the quiz attempt with the highest TotalGrade
-                    foreach (var highestGradeAttemptQuiz in filteredQuizAttempts)
+                    // Calculate total score from the highest attempts of each quiz
+                    foreach (var attempt in highestGradeAttemptsByQuiz)
                     {
-                        if (highestGradeAttemptQuiz != null && enrollment.Transaction?.LearnerId == highestGradeAttemptQuiz.LearnerId
-                      && highestGradeAttemptQuiz.TotalGrade >= highestGradeAttemptQuiz.Quiz?.GradeToPass)
+                        if (attempt != null)
                         {
-                            score += highestGradeAttemptQuiz.TotalGrade;
+                            score += attempt.TotalGrade;
                         }
                     }
 
-                  
+
+
 
                     // Find the assignment attempt with the highest TotalGrade
                     var highestGradeAttemptAssignment = filteredAssignmentAttempts.OrderByDescending(x => x.TotalGrade).FirstOrDefault();
