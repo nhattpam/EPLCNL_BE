@@ -255,8 +255,8 @@ namespace Service.LearnersService
                 var refunds = await _unitOfWork.Repository<RefundRequest>().GetAll()
                      .AsNoTracking()
                      .Include(x => x.Enrollment)
-                     .ThenInclude(x => x.Transaction.Learner)
-                    .Where(x => x.Enrollment.Transaction.LearnerId == id)
+                        .ThenInclude(x => x!.Transaction!.Learner)
+                    .Where(x => x.Enrollment!.Transaction!.Learner!.Id == id)
                     .ProjectTo<RefundResponse>(_mapper.ConfigurationProvider)
                     .ToListAsync();
 
