@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Data.Models;
 using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Service.EnrollmentsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,12 @@ namespace Service.LearnersService
     {
         private readonly IUnitOfWork _unitOfWork;
         private IMapper _mapper;
-        public LearnerService(IUnitOfWork unitOfWork, IMapper mapper)
+        private IEnrollmentService _enrollmentService;
+        public LearnerService(IUnitOfWork unitOfWork, IMapper mapper, IEnrollmentService enrollmentService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _enrollmentService = enrollmentService;
         }
 
         public async Task<List<LearnerResponse>> GetAll()
@@ -252,20 +255,37 @@ namespace Service.LearnersService
         {
             try
             {
+                var learner = await _unitOfWork.Repository<Learner>().GetAll()
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
+
+                if (learner == null)
+                {
+                    // Handle the case where the tutor with the specified id is not found
+                    return null;
+                }
                 var refunds = await _unitOfWork.Repository<RefundRequest>().GetAll()
                      .AsNoTracking()
-                     .Include(x => x.Enrollment)
-                        .ThenInclude(x => x!.Transaction!.Learner)
-                    .Where(x => x.Enrollment!.Transaction!.Learner!.Id == id)
                     .ProjectTo<RefundResponse>(_mapper.ConfigurationProvider)
                     .ToListAsync();
+
+                var learnerRefunds = new List<RefundResponse>();
+
+                foreach (var refund in refunds)
+                {
+                    var enrollment = await _enrollmentService.Get(refund.EnrollmentId ?? Guid.Empty);
+                    if (enrollment.Transaction?.LearnerId == id)
+                    {
+                        learnerRefunds.Add(refund);
+                    }
+                }
 
                 if (refunds.Count == 0)
                 {
                     throw new Exception("khong tim thay");
                 }
 
-                return refunds;
+                return learnerRefunds;
             }
 
             catch (Exception e)
