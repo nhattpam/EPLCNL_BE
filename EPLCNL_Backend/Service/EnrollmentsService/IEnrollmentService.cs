@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,13 @@ namespace Service.EnrollmentsService
         public Task<double?> GetCourseScore(Guid id);
         public Task<double?> GetLearningScore(Guid id);
 
+        public Task CheckAndProcessEnrollmentsAsync();
+
+        public Task ProcessEnrollmentAsync(EnrollmentResponse enrollment);
+
+        public Task<EnrollmentResponse[]> GetEligibleEnrollmentsAsync();
+
+        public bool Is60SecondsAfterEnrollment(EnrollmentResponse enrollment);
 
     }
 }

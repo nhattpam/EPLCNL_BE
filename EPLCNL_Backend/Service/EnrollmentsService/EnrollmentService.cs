@@ -9,6 +9,8 @@ using Service.AssignmentsService;
 using Service.CoursesService;
 using Service.ModulesService;
 using Service.QuizzesService;
+using Service.WalletHistoriesService;
+using Service.WalletsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +27,19 @@ namespace Service.EnrollmentsService
         private IMapper _mapper;
         private ICourseService _courseService;
         private IModuleService _moduleService;
+        private IWalletHistoryService _walletHistoryService;
+        private IWalletService _walletService;
         
         public EnrollmentService(IUnitOfWork unitOfWork, IMapper mapper,
-            ICourseService courseService, IModuleService moduleService)
+            ICourseService courseService, IModuleService moduleService,
+            IWalletService walletService, IWalletHistoryService walletHistoryService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _courseService = courseService;
             _moduleService = moduleService;
+            _walletHistoryService = walletHistoryService;
+            _walletService = walletService;
         }
 
         public async Task<List<EnrollmentResponse>> GetAll()
@@ -364,5 +371,90 @@ namespace Service.EnrollmentsService
             return list;
         }
 
+        public async Task CheckAndProcessEnrollmentsAsync()
+        {
+            // Logic to query enrollments that meet certain criteria (e.g., 60 seconds after enrollment)
+            // For each eligible enrollment, update the admin's wallet
+            // Example:
+            var enrollments = await GetEligibleEnrollmentsAsync();
+            foreach (var enrollment in enrollments)
+            {
+                if (enrollment.RefundStatus == false && Is60SecondsAfterEnrollment(enrollment))
+                {
+                    await ProcessEnrollmentAsync(enrollment);
+                }
+            }
+        }
+
+        public async Task ProcessEnrollmentAsync(EnrollmentResponse enrollment)
+        {
+            // Fetch the admin's wallet
+            var adminWallet = await _walletService.Get(new Guid("188e9df9-be4b-4531-858e-098ff8c3735c"));
+            var updatedAdminWallet = new WalletRequest()
+            {
+                Balance = adminWallet.Balance += enrollment.Transaction.Amount / 24000,
+                AccountId = adminWallet.AccountId,
+
+            };
+
+            // Save the updated wallet
+            await _walletService.Update(adminWallet.Id, updatedAdminWallet);
+
+            // Save wallet history
+            var adminWalletHistory = new WalletHistoryRequest()
+            {
+                WalletId = adminWallet.Id,
+                Note = $@"{enrollment.Transaction.Amount / 24000}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}"
+            };
+
+            await _walletHistoryService.Create(adminWalletHistory);
+        }
+
+        public async Task<EnrollmentResponse[]> GetEligibleEnrollmentsAsync()
+        {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
+
+            // Query enrollments where RefundStatus is false and 60 seconds have passed since enrollment
+            var eligibleEnrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
+                .Where(enrollment => enrollment.RefundStatus == false &&
+                    enrollment.EnrolledDate.HasValue &&
+                    EF.Functions.DateDiffSecond(enrollment.EnrolledDate.Value, localTime) >= 60)
+                .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
+                .ToArrayAsync();
+
+            return eligibleEnrollments;
+        }
+
+
+        public bool Is60SecondsAfterEnrollment(EnrollmentResponse enrollment)
+        {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
+
+            // Get the current UTC time
+            DateTime utcNow = DateTime.UtcNow;
+
+            // Convert the UTC time to UTC+7
+            DateTime localTime = utcNow + utcOffset;
+
+            if (enrollment.EnrolledDate.HasValue)
+            {
+                return localTime >= enrollment.EnrolledDate.Value.AddSeconds(60);
+            }
+            else
+            {
+                // Handle null case (e.g., return false or throw an exception)
+                return false;
+            }
+        }
+
+       
     }
 }

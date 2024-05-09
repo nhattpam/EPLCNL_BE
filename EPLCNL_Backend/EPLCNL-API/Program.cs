@@ -53,6 +53,7 @@ using Service.PeerReviewsService;
 using Service.AttendancesService;
 using Service.LearnerAttendancesService;
 using Service.SalariesService;
+using EPLCNL_API.BackgroundServices;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -222,6 +223,8 @@ builder.Services.AddCors(options =>
                                 .AllowAnyMethod();
         });
 });
+
+builder.Services.AddHostedService<EnrollmentCheckerService>();
 
 
 var app = builder.Build();
