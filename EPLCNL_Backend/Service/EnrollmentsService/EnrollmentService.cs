@@ -390,25 +390,49 @@ namespace Service.EnrollmentsService
         {
             // Fetch the admin's wallet
             var adminWallet = await _walletService.Get(new Guid("188e9df9-be4b-4531-858e-098ff8c3735c"));
-            var updatedAdminWallet = new WalletRequest()
+
+            // Fetch wallet histories for the admin
+            var walletHistories = await _walletService.GetWalletHistoryByWallet(adminWallet.Id);
+
+            // Check if the transaction ID exists in any wallet history note
+            bool transactionIdExists = walletHistories.Any(history => history.Note.Contains(enrollment.TransactionId.ToString()));
+
+            if (!transactionIdExists)
             {
-                Balance = adminWallet.Balance += enrollment.Transaction.Amount / 24000,
-                AccountId = adminWallet.AccountId,
+                // If the transaction ID does not exist, proceed with processing
 
-            };
+                // Set the UTC offset for UTC+7
+                TimeSpan utcOffset = TimeSpan.FromHours(7);
 
-            // Save the updated wallet
-            await _walletService.Update(adminWallet.Id, updatedAdminWallet);
+                // Get the current UTC time
+                DateTime utcNow = DateTime.UtcNow;
 
-            // Save wallet history
-            var adminWalletHistory = new WalletHistoryRequest()
-            {
-                WalletId = adminWallet.Id,
-                Note = $@"{enrollment.Transaction.Amount / 24000}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}"
-            };
+                // Convert the UTC time to UTC+7
+                DateTime localTime = utcNow + utcOffset;
 
-            await _walletHistoryService.Create(adminWalletHistory);
+                // Update admin's wallet balance
+                var updatedAdminWallet = new WalletRequest()
+                {
+                    Balance = adminWallet.Balance + (enrollment.Transaction.Amount / 24000),
+                    AccountId = adminWallet.AccountId,
+                };
+
+                // Save the updated wallet
+                await _walletService.Update(adminWallet.Id, updatedAdminWallet);
+
+                // Save wallet history
+                var adminWalletHistory = new WalletHistoryRequest()
+                {
+                    WalletId = adminWallet.Id,
+                    Note = $@"+ {enrollment.Transaction.Amount / 24000}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
+                    TransactionDate = localTime
+                };
+
+                await _walletHistoryService.Create(adminWalletHistory);
+            }
         }
+
+
 
         public async Task<EnrollmentResponse[]> GetEligibleEnrollmentsAsync()
         {

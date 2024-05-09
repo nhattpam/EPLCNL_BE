@@ -171,26 +171,26 @@ namespace Service.TransactionsService
 
                     await _enrollmentService.Create(enrollmentModel);
 
-                    var adminWallet = await _walletService.Get(Guid.Parse("188e9df9-be4b-4531-858e-098ff8c3735c"));
-                    adminWallet.Balance = adminWallet.Balance + (transaction.Amount /24000);
-                    // Now, you need to create a request object to update the wallet
-                    var updateAdminWalletRequest = new WalletRequest
-                    {
-                        AccountId = new Guid("9b868733-8ab1-4191-92ab-65d1b82863c3"),
-                        Balance = adminWallet.Balance
-                    };
+                    //var adminWallet = await _walletService.Get(Guid.Parse("188e9df9-be4b-4531-858e-098ff8c3735c"));
+                    //adminWallet.Balance = adminWallet.Balance + (transaction.Amount /24000);
+                    //// Now, you need to create a request object to update the wallet
+                    //var updateAdminWalletRequest = new WalletRequest
+                    //{
+                    //    AccountId = new Guid("9b868733-8ab1-4191-92ab-65d1b82863c3"),
+                    //    Balance = adminWallet.Balance
+                    //};
 
-                    // Call the update method with the request object
-                    await _walletService.Update(adminWallet.Id, updateAdminWalletRequest);
+                    //// Call the update method with the request object
+                    //await _walletService.Update(adminWallet.Id, updateAdminWalletRequest);
 
-                    var adminWalletHistory = new WalletHistoryRequest
-                    {
-                        WalletId = adminWallet.Id,
-                        Note = $"+ {transaction.Amount / 24000}$ from {learner?.Account?.FullName} by transaction {transaction.Id} at {transaction.TransactionDate}",
-                        TransactionDate = transaction.TransactionDate,
-                    };
+                    //var adminWalletHistory = new WalletHistoryRequest
+                    //{
+                    //    WalletId = adminWallet.Id,
+                    //    Note = $"+ {transaction.Amount / 24000}$ from {learner?.Account?.FullName} by transaction {transaction.Id} at {transaction.TransactionDate}",
+                    //    TransactionDate = transaction.TransactionDate,
+                    //};
 
-                    await _walletHistoryService.Create(adminWalletHistory);
+                    //await _walletHistoryService.Create(adminWalletHistory);
 
                     var learnerWallet = await _walletService.Get(learner.Account?.Wallet?.Id ?? new Guid());
                     learnerWallet.Balance = learnerWallet.Balance - (transaction.Amount / 24000);
