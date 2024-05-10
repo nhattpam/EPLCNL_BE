@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\enrollmentsservice\\enrollmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\service\\accountforumsservice\\accountforumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\accountforumsservice\\accountforumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|c:\\users\\nhattpam\\documents\\college\\capstone\\eplcnl-be\\eplcnl_backend\\service\\enrollmentsservice\\ienrollmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1EC16FD6-3968-49E6-BAF2-73AA7A958D20}|Service\\Service.csproj|solutionrelative:service\\enrollmentsservice\\ienrollmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,8 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountForumService.cs",
+              "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountForumsService\\AccountForumService.cs",
+              "RelativeDocumentMoniker": "Service\\AccountForumsService\\AccountForumService.cs",
+              "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\AccountForumsService\\AccountForumService.cs",
+              "RelativeToolTip": "Service\\AccountForumsService\\AccountForumService.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAIAwwCYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T01:34:27.137Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,27 +53,27 @@
               "RelativeDocumentMoniker": "Service\\EnrollmentsService\\EnrollmentService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\EnrollmentsService\\EnrollmentService.cs",
               "RelativeToolTip": "Service\\EnrollmentsService\\EnrollmentService.cs",
-              "ViewState": "AQIAAIEBAAAAAAAAAAAmwIoBAABPAAAA",
+              "ViewState": "AQIAAH4BAAAAAAAAAAAowKoBAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T00:58:16.934Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IEnrollmentService.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\EnrollmentsService\\IEnrollmentService.cs",
               "RelativeDocumentMoniker": "Service\\EnrollmentsService\\IEnrollmentService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\EnrollmentsService\\IEnrollmentService.cs",
               "RelativeToolTip": "Service\\EnrollmentsService\\IEnrollmentService.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAIA1wBwAAAAzAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAawBwAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T00:55:23.185Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\Program.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\Program.cs",
@@ -68,13 +85,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EnrollmentCheckerService.cs",
               "DocumentMoniker": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\BackgroundServices\\EnrollmentCheckerService.cs",
               "RelativeDocumentMoniker": "EPLCNL-API\\BackgroundServices\\EnrollmentCheckerService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\BackgroundServices\\EnrollmentCheckerService.cs",
               "RelativeToolTip": "EPLCNL-API\\BackgroundServices\\EnrollmentCheckerService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAABLAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAD4vxoAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T00:52:27.096Z",
               "EditorCaption": ""

@@ -29,7 +29,8 @@ namespace Service.EnrollmentsService
         private IModuleService _moduleService;
         private IWalletHistoryService _walletHistoryService;
         private IWalletService _walletService;
-        
+        private readonly object _lockObject = new object();
+
         public EnrollmentService(IUnitOfWork unitOfWork, IMapper mapper,
             ICourseService courseService, IModuleService moduleService,
             IWalletService walletService, IWalletHistoryService walletHistoryService)
@@ -376,16 +377,61 @@ namespace Service.EnrollmentsService
             // Logic to query enrollments that meet certain criteria (e.g., 60 seconds after enrollment)
             // For each eligible enrollment, update the admin's wallet
             // Example:
-            var enrollments = await GetEligibleEnrollmentsAsync();
+            IEnumerable<EnrollmentResponse> enrollments = null;
+            try
+            {
+                enrollments = await GetEligibleEnrollmentsAsync();
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions here
+                Console.WriteLine($"An error occurred while querying enrollments: {ex.Message}");
+                return; // Exit the method if an error occurs
+            }
+
+            List<EnrollmentResponse> enrollmentsToProcess = new List<EnrollmentResponse>();
+
             foreach (var enrollment in enrollments)
             {
-                if (enrollment.RefundStatus == false && Is60SecondsAfterEnrollment(enrollment))
+                // If not an online class, process after 60 seconds
+                if (enrollment.Transaction.Course.IsOnlineClass == false)
                 {
-                    await ProcessEnrollmentAsync(enrollment);
+                    if (enrollment.RefundStatus == false && Is60SecondsAfterEnrollment(enrollment))
+                    {
+                        enrollmentsToProcess.Add(enrollment);
+                    }
+                }
+                // If an online class, process after the end of start date of each class module
+                else
+                {
+                    if (enrollment.RefundStatus == false && await IsAfterAllClassModuleStartDatesAsync(enrollment))
+                    {
+                        enrollmentsToProcess.Add(enrollment);
+                    }
+                }
+            }
+
+            // Only one thread should execute this part at a time
+            lock (_lockObject)
+            {
+                try
+                {
+                    foreach (var enrollment in enrollmentsToProcess)
+                    {
+                        // Process each enrollment synchronously
+                        ProcessEnrollmentAsync(enrollment).Wait();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions here
+                    Console.WriteLine($"An error occurred while processing enrollments: {ex.Message}");
                 }
             }
         }
 
+
+        //Tranfer money
         public async Task ProcessEnrollmentAsync(EnrollmentResponse enrollment)
         {
             // Fetch the admin's wallet
@@ -478,7 +524,44 @@ namespace Service.EnrollmentsService
                 return false;
             }
         }
+        private async Task<bool> IsAfterAllClassModuleStartDatesAsync(EnrollmentResponse enrollment)
+        {
+            // Set the UTC offset for UTC+7
+            TimeSpan utcOffset = TimeSpan.FromHours(7);
 
-       
+            // Get all class modules for the course
+            var classModules = await _courseService.GetAllClassModulesByCourse(enrollment.Transaction.CourseId ?? Guid.Empty);
+
+            // If there are no class modules, return false
+            if (!classModules.Any())
+            {
+                return false;
+            }
+
+            // Find the highest start date among the class modules
+            DateTime? highestStartDate = classModules.Max(module => module.StartDate);
+
+            // Check if the highest start date is null
+            if (highestStartDate.HasValue)
+            {
+                // Get the current UTC time
+                DateTime utcNow = DateTime.UtcNow;
+
+                // Convert the UTC time to UTC+7
+                DateTime localTime = utcNow + utcOffset;
+
+                // Check if the current time is after the highest start date
+                return localTime > highestStartDate.Value;
+            }
+            else
+            {
+                // Handle the case where all start dates are null
+                // You may want to return true or false depending on the requirement
+                return false;
+            }
+        }
+
+
+
     }
 }
