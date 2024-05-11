@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Service.AssignmentAttemptsService;
 using Service.AssignmentsService;
+using Service.CentersService;
 using Service.CoursesService;
 using Service.ModulesService;
 using Service.QuizzesService;
+using Service.TutorService;
 using Service.WalletHistoriesService;
 using Service.WalletsService;
 using System;
@@ -29,11 +31,14 @@ namespace Service.EnrollmentsService
         private IModuleService _moduleService;
         private IWalletHistoryService _walletHistoryService;
         private IWalletService _walletService;
+        private ITutorService _tutorService;
+        private ICenterService _centerService;
         private readonly object _lockObject = new object();
 
         public EnrollmentService(IUnitOfWork unitOfWork, IMapper mapper,
             ICourseService courseService, IModuleService moduleService,
-            IWalletService walletService, IWalletHistoryService walletHistoryService)
+            IWalletService walletService, IWalletHistoryService walletHistoryService,
+            ITutorService tutorService, ICenterService centerService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
@@ -41,6 +46,8 @@ namespace Service.EnrollmentsService
             _moduleService = moduleService;
             _walletHistoryService = walletHistoryService;
             _walletService = walletService;
+            _tutorService = tutorService;
+            _centerService = centerService;
         }
 
         public async Task<List<EnrollmentResponse>> GetAll()
@@ -456,25 +463,95 @@ namespace Service.EnrollmentsService
                 // Convert the UTC time to UTC+7
                 DateTime localTime = utcNow + utcOffset;
 
-                // Update admin's wallet balance
-                var updatedAdminWallet = new WalletRequest()
+                var tutor = await _tutorService.Get(enrollment.Transaction.Course.TutorId ?? Guid.Empty);
+                if (tutor.IsFreelancer == false)
                 {
-                    Balance = adminWallet.Balance + (enrollment.Transaction.Amount / 24000),
-                    AccountId = adminWallet.AccountId,
-                };
+                    // Update admin's wallet balance
+                    var updatedAdminWallet = new WalletRequest()
+                    {
+                        Balance = adminWallet.Balance + (enrollment.Transaction.Amount / 24000) * 0.2m,
+                        AccountId = adminWallet.AccountId,
+                    };
 
-                // Save the updated wallet
-                await _walletService.Update(adminWallet.Id, updatedAdminWallet);
+                    // Save the updated admin wallet
+                    await _walletService.Update(adminWallet.Id, updatedAdminWallet);
 
-                // Save wallet history
-                var adminWalletHistory = new WalletHistoryRequest()
+                    // Save admin wallet history
+                    var adminWalletHistory = new WalletHistoryRequest()
+                    {
+                        WalletId = adminWallet.Id,
+                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.2m} $ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
+                        TransactionDate = localTime
+                    };
+                    await _walletHistoryService.Create(adminWalletHistory);
+
+
+                    var center = await _centerService.Get(tutor.CenterId ?? Guid.Empty);
+                    // Update center's wallet balance
+                    var updatedCenterWallet = new WalletRequest()
+                    {
+                        Balance = center.Account.Wallet.Balance + (enrollment.Transaction.Amount / 24000) * 0.8m,
+                        AccountId = center.AccountId,
+                    };
+
+                    // Save the updated center wallet
+                    await _walletService.Update(center.Account.Wallet.Id, updatedCenterWallet);
+
+                    // Save center wallet history
+                    var centerWalletHistory = new WalletHistoryRequest()
+                    {
+                        WalletId = center.Account.Wallet.Id,
+                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.8m}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
+                        TransactionDate = localTime
+                    };
+                    await _walletHistoryService.Create(centerWalletHistory);
+
+                }
+
+
+
+                if (tutor.IsFreelancer == true)
                 {
-                    WalletId = adminWallet.Id,
-                    Note = $@"+ {enrollment.Transaction.Amount / 24000}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
-                    TransactionDate = localTime
-                };
+                    // Update admin's wallet balance
+                    var updatedAdminWallet = new WalletRequest()
+                    {
+                        Balance = adminWallet.Balance + (enrollment.Transaction.Amount / 24000) * 0.2m,
+                        AccountId = adminWallet.AccountId,
+                    };
 
-                await _walletHistoryService.Create(adminWalletHistory);
+                    // Save the updated admin wallet
+                    await _walletService.Update(adminWallet.Id, updatedAdminWallet);
+
+                    // Save admin wallet history
+                    var adminWalletHistory = new WalletHistoryRequest()
+                    {
+                        WalletId = adminWallet.Id,
+                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.2m} $ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
+                        TransactionDate = localTime
+                    };
+                    await _walletHistoryService.Create(adminWalletHistory);
+
+
+                    // Update tutor's wallet balance
+                    var updatedTutorWallet = new WalletRequest()
+                    {
+                        Balance = tutor.Account.Wallet.Balance + (enrollment.Transaction.Amount / 24000) * 0.8m,
+                        AccountId = tutor.AccountId,
+                    };
+
+                    // Save the updated tutor wallet
+                    await _walletService.Update(tutor.Account.Wallet.Id, updatedTutorWallet);
+
+                    // Save tutor wallet history
+                    var tutorWalletHistory = new WalletHistoryRequest()
+                    {
+                        WalletId = tutor.Account.Wallet.Id,
+                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.8m}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
+                        TransactionDate = localTime
+                    };
+                    await _walletHistoryService.Create(tutorWalletHistory);
+                }
+
             }
         }
 
