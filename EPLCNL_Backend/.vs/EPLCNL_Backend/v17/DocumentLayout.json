@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Service\\EnrollmentsService\\EnrollmentService.cs",
               "ToolTip": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\Service\\EnrollmentsService\\EnrollmentService.cs",
               "RelativeToolTip": "Service\\EnrollmentsService\\EnrollmentService.cs",
-              "ViewState": "AQIAAGkCAAAAAAAAAAApwHcCAAANAAAA",
+              "ViewState": "AQIAAPEBAAAAAAAAAAAqwAsCAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T00:58:16.934Z",
               "IsPinned": true,
@@ -48,8 +48,7 @@
               "RelativeToolTip": "Service\\EnrollmentsService\\IEnrollmentService.cs",
               "ViewState": "AQIAABUAAAAAAAAAAIA1wBwAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T00:55:23.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T00:55:23.185Z"
             },
             {
               "$type": "Document",

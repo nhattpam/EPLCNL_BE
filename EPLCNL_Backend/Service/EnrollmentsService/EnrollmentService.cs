@@ -464,6 +464,8 @@ namespace Service.EnrollmentsService
                 DateTime localTime = utcNow + utcOffset;
 
                 var tutor = await _tutorService.Get(enrollment.Transaction.Course.TutorId ?? Guid.Empty);
+                var center = await _centerService.Get(tutor.CenterId ?? Guid.Empty);
+
                 if (tutor.IsFreelancer == false)
                 {
                     // Update admin's wallet balance
@@ -486,7 +488,6 @@ namespace Service.EnrollmentsService
                     await _walletHistoryService.Create(adminWalletHistory);
 
 
-                    var center = await _centerService.Get(tutor.CenterId ?? Guid.Empty);
                     // Update center's wallet balance
                     var updatedCenterWallet = new WalletRequest()
                     {
@@ -497,14 +498,56 @@ namespace Service.EnrollmentsService
                     // Save the updated center wallet
                     await _walletService.Update(center.Account.Wallet.Id, updatedCenterWallet);
 
-                    // Save center wallet history
+                    // Reload the center's wallet after updating
+                    var reloadedCenterWallet = await _walletService.Get(center.Account.Wallet.Id);
+
+                    // Save center wallet history for the updated balance
                     var centerWalletHistory = new WalletHistoryRequest()
                     {
-                        WalletId = center.Account.Wallet.Id,
-                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.8m}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
+                        WalletId = reloadedCenterWallet.Id,
+                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.8m}$ from Meowlish by course {enrollment.Transaction.Course.Name} at {localTime}",
                         TransactionDate = localTime
                     };
                     await _walletHistoryService.Create(centerWalletHistory);
+
+                    //send money to tutor of center
+                    var updatedCenterWallet2 = new WalletRequest()
+                    {
+                        Balance = reloadedCenterWallet.Balance - ((enrollment.Transaction.Amount / 24000) * 0.8m) * 0.7m,
+                        AccountId = center.AccountId,
+                    };
+
+                    // Save the updated center wallet
+                    await _walletService.Update(reloadedCenterWallet.Id, updatedCenterWallet2);
+
+                    // Save center wallet history
+                    var centerWalletHistory2 = new WalletHistoryRequest()
+                    {
+                        WalletId = reloadedCenterWallet.Id,
+                        Note = $@"- {((enrollment.Transaction.Amount / 24000) * 0.8m) * 0.7m}$ for transferring to {tutor.Account.FullName} by course {enrollment.Transaction.Course.Name} at {localTime}",
+                        TransactionDate = localTime
+                    };
+                    await _walletHistoryService.Create(centerWalletHistory2);
+
+                    // Update tutor's wallet balance
+                    var updatedTutorWallet = new WalletRequest()
+                    {
+                        Balance = tutor.Account.Wallet.Balance + ((enrollment.Transaction.Amount / 24000) * 0.8m) * 0.7m,
+                        AccountId = tutor.AccountId,
+                    };
+
+                    // Save the updated tutor wallet
+                    await _walletService.Update(tutor.Account.Wallet.Id, updatedTutorWallet);
+
+                    // Save tutor wallet history
+                    var tutorWalletHistory = new WalletHistoryRequest()
+                    {
+                        WalletId = tutor.Account.Wallet.Id,
+                        Note = $@"+ {((enrollment.Transaction.Amount / 24000) * 0.8m) * 0.7m}$ from {center.Name} by course {enrollment.Transaction.Course.Name} at {localTime}",
+                        TransactionDate = localTime
+                    };
+                    await _walletHistoryService.Create(tutorWalletHistory);
+
 
                 }
 
