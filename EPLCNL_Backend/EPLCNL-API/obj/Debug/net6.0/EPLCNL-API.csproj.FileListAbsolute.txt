@@ -366,3 +366,4 @@ D:\capstone_project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-
 D:\capstone_project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-API.pdb
 D:\capstone_project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\EPLCNL-API.genruntimeconfig.cache
 D:\capstone_project\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Debug\net6.0\ref\EPLCNL-API.dll
+C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Debug\net6.0\Polly.dll

@@ -35,6 +35,7 @@ C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\linux-x64\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\linux-x64\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\linux-x64\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\linux-x64\PubTmp\Out\Polly.dll
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

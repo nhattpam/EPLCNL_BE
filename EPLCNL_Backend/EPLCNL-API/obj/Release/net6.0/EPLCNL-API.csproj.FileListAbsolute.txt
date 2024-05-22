@@ -188,3 +188,4 @@ C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\EPLCNL-API.pdb
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\EPLCNL-API.genruntimeconfig.cache
 C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\obj\Release\net6.0\ref\EPLCNL-API.dll
+C:\Users\nhattpam\Documents\College\Capstone\eplcnl-be\EPLCNL_Backend\EPLCNL-API\bin\Release\net6.0\Polly.dll

@@ -28,7 +28,7 @@ namespace EPLCNL_API.BackgroundServices
                 }
 
                 // Wait for 60 seconds before next check
-                await Task.Delay(TimeSpan.FromSeconds(60), stoppingToken);
+                await Task.Delay(TimeSpan.FromSeconds(120), stoppingToken);
             }
         }
     }

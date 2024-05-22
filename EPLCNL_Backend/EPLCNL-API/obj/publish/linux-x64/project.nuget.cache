@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IdNjRiU/7UpkVTrIptCu3DfeFIaP3QCWtE3YGX16e6OAuVJn2WZNcyfnEqHc6+IY9ealOH62rG7YiglcLnMpEQ==",
+  "dgSpecHash": "azIVINMqV8aSRf2UgRqx5z1GJpg0f7WVehl9o1sBuPDYIGwiPO6qawlUgEsz19nZ5VqJUcm5/VSj2GdcYy2clQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\nhattpam\\Documents\\College\\Capstone\\eplcnl-be\\EPLCNL_Backend\\EPLCNL-API\\EPLCNL-API.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\nhattpam\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\nhattpam\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\nhattpam\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\nhattpam\\.nuget\\packages\\polly\\6.1.2\\polly.6.1.2.nupkg.sha512",
     "C:\\Users\\nhattpam\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\nhattpam\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\nhattpam\\.nuget\\packages\\runtime.any.system.diagnostics.tracing\\4.3.0\\runtime.any.system.diagnostics.tracing.4.3.0.nupkg.sha512",

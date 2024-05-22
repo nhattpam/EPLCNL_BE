@@ -224,6 +224,12 @@ builder.Services.AddCors(options =>
         });
 });
 
+// Configure HostOptions
+builder.Services.Configure<HostOptions>(options =>
+{
+    options.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.Ignore;
+});
+
 builder.Services.AddHostedService<EnrollmentCheckerService>();
 
 

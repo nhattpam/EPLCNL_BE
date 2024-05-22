@@ -464,10 +464,11 @@ namespace Service.EnrollmentsService
                 DateTime localTime = utcNow + utcOffset;
 
                 var tutor = await _tutorService.Get(enrollment.Transaction.Course.TutorId ?? Guid.Empty);
-                var center = await _centerService.Get(tutor.CenterId ?? Guid.Empty);
 
                 if (tutor.IsFreelancer == false)
                 {
+                    var center = await _centerService.Get(tutor.CenterId ?? Guid.Empty);
+
                     // Update admin's wallet balance
                     var updatedAdminWallet = new WalletRequest()
                     {
@@ -589,7 +590,7 @@ namespace Service.EnrollmentsService
                     var tutorWalletHistory = new WalletHistoryRequest()
                     {
                         WalletId = tutor.Account.Wallet.Id,
-                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.8m}$ from {enrollment.Transaction.Learner.Account.FullName} by transaction {enrollment.TransactionId} at {enrollment.Transaction.TransactionDate}",
+                        Note = $@"+ {(enrollment.Transaction.Amount / 24000) * 0.8m}$ for course {enrollment.Transaction.Course.Name} at {localTime}",
                         TransactionDate = localTime
                     };
                     await _walletHistoryService.Create(tutorWalletHistory);
