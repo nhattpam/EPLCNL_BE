@@ -615,8 +615,7 @@ namespace Service.EnrollmentsService
             // Query enrollments where RefundStatus is false and 60 seconds have passed since enrollment
             var eligibleEnrollments = await _unitOfWork.Repository<Enrollment>().GetAll()
                 .Where(enrollment => enrollment.RefundStatus == false &&
-                    enrollment.EnrolledDate.HasValue &&
-                    EF.Functions.DateDiffSecond(enrollment.EnrolledDate.Value, localTime) >= 60)
+                    enrollment.EnrolledDate.HasValue )
                 .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
                 .ToArrayAsync();
 
@@ -637,7 +636,7 @@ namespace Service.EnrollmentsService
 
             if (enrollment.EnrolledDate.HasValue)
             {
-                return localTime >= enrollment.EnrolledDate.Value.AddSeconds(60);
+                return localTime >= enrollment.EnrolledDate.Value.AddSeconds(120);
             }
             else
             {
