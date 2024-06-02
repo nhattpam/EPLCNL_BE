@@ -319,6 +319,11 @@
             Send mail for approving new centers.
             </summary>
         </member>
+        <member name="M:EPLCNL_API.Controllers.CentersController.GetAllEnrollmentsByCenter(System.Guid)">
+            <summary>
+            Get a list of enrollments by center id.
+            </summary>
+        </member>
         <member name="T:EPLCNL_API.Controllers.CertificatesController">
             <summary>
             Controller for managing certificates.

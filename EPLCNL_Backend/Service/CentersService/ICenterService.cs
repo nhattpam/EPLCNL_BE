@@ -14,6 +14,7 @@ namespace Service.CentersService
         public Task<CenterResponse> Get(Guid id);
         public Task<List<TutorResponse>> GetAllTutorsByCenter(Guid id);
         public Task<List<CourseResponse>> GetAllCoursesByCenter(Guid id);
+        public Task<List<EnrollmentResponse>> GetAllEnrollmentsByCenter(Guid id);
 
         public Task<CenterResponse> Create(CenterRequest request);
 

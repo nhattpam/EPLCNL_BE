@@ -256,5 +256,25 @@ namespace EPLCNL_API.Controllers
             }
             return Ok(center);
         }
+
+        /// <summary>
+        /// Get a list of enrollments by center id.
+        /// </summary>
+        [HttpGet("{id}/enrollments")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EnrollmentResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<List<EnrollmentResponse>>> GetAllEnrollmentsByCenter(Guid id)
+        {
+            try
+            {
+                var rs = await _centerService.GetAllEnrollmentsByCenter(id);
+                return Ok(rs);
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
     }
 }

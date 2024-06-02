@@ -5,6 +5,7 @@ using Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Service.AccountsService;
 using Service.CoursesService;
+using Service.TutorService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,12 +24,15 @@ namespace Service.CentersService
         private IMapper _mapper;
         private IAccountService _accountService;
         private ICourseService _courseService;
-        public CenterService(IUnitOfWork unitOfWork, IMapper mapper, IAccountService accountService, ICourseService courseService)
+        private ITutorService _tutorService;
+        public CenterService(IUnitOfWork unitOfWork, IMapper mapper,
+            IAccountService accountService, ICourseService courseService, ITutorService tutorService)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _accountService = accountService;
             _courseService = courseService;
+            _tutorService = tutorService;
         }
 
         public async Task<List<CenterResponse>> GetAll()
@@ -84,6 +88,28 @@ namespace Service.CentersService
                 .ToList();
 
             return tutors;
+        }
+
+        public async Task<List<EnrollmentResponse>> GetAllEnrollmentsByCenter(Guid centerId)
+        {
+            var center = await _unitOfWork.Repository<Center>()
+                .GetAll()
+                .Where(x => x.Id == centerId)
+                .FirstOrDefaultAsync();
+
+            if (center == null)
+            {
+                // Handle the case where the center with the specified id is not found
+                return null;
+            }
+
+            var enrollments = await _unitOfWork.Repository<Enrollment>()
+                .GetAll()
+                .Where(e => e.Transaction.Course.Tutor.CenterId == centerId)
+                .ProjectTo<EnrollmentResponse>(_mapper.ConfigurationProvider)
+                .ToListAsync();
+
+            return enrollments;
         }
 
 
